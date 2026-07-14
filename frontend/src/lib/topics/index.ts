@@ -1,0 +1,43 @@
+import { TopicData } from "../types/topic";
+import { getCategoryPath } from "../categories";
+import  { trindade } from "./trindade";
+import { epicteto } from "./epicteto";
+import {
+  romanos,
+  soteriologia,
+  alma,
+  confiabilidadeBiblia,
+  imaculadaConceicao,
+  escatologia,
+  deus,
+} from "./others";
+import { pacienciaTribulacao } from "./paciencia-tribulacao";
+import { tessalonicenses2 } from "./2tessalonicenses2";
+import { ruff } from "./ruff";
+
+export const topics: TopicData[] = [
+  trindade,
+  epicteto,
+  romanos,
+  soteriologia,
+  alma,
+  confiabilidadeBiblia,
+  imaculadaConceicao,
+  escatologia,
+  deus,
+  pacienciaTribulacao,
+  tessalonicenses2,
+  ruff,
+];
+
+export function getTopicBySlug(slug: string): TopicData | undefined {
+  return topics.find((t) => t.slug === slug);
+}
+
+export function getTopicPath(topic: TopicData): string {
+  return `${getCategoryPath(topic.categorySlug)}/${topic.slug}`;
+}
+
+export function getTopicByPath(path: string): TopicData | undefined {
+  return topics.find((t) => getTopicPath(t) === path);
+}
