@@ -64,7 +64,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
       </div>
 
       <section className="max-w-6xl mx-auto px-8">
-        <div className="relative h-[500px] overflow-hidden rounded-3xl">
+        <div className="relative h-125 overflow-hidden rounded-3xl">
           {topic.image ? (
             <Image
               src={topic.image}
@@ -80,8 +80,8 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               style={{ background: `linear-gradient(160deg, ${topic.accent}25, #0f0e0d 75%)` }}
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f0e0d] via-[#0f0e0d]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f0e0d]/30 via-transparent to-[#0f0e0d]/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#0f0e0d] via-[#0f0e0d]/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0f0e0d]/30 via-transparent to-[#0f0e0d]/30" />
 
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <div className="max-w-2xl">

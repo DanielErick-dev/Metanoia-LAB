@@ -4,8 +4,6 @@ import { useState } from "react";
 import { Highlight, Prism, themes } from "prism-react-renderer";
 import { Check, Copy } from "lucide-react";
 
-// prism-react-renderer só inclui um subconjunto de linguagens por padrão —
-// bash e toml precisam ser registradas manualmente a partir do prismjs.
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 require("prismjs/components/prism-bash");
 require("prismjs/components/prism-toml");
