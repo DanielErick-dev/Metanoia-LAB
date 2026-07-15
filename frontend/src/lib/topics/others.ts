@@ -209,6 +209,10 @@ export const deus: TopicData = {
       heading: "Argumento moral",
       body: "Se Deus não existe, valores morais objetivos não existem — apenas preferências evolutivas. Mas agimos como se tortura infantil fosse objetivamente errada, não apenas culturalmente indesejada. A existência de moralidade objetiva pressupõe um fundamento transcendente. C.S. Lewis desenvolveu essa linha de raciocínio de forma acessível em Mere Christianity.",
     },
+    {
+      heading: "Argumento ontológico",
+      body: "Anselmo de Cantuária define Deus como 'aquele do qual nada maior pode ser concebido'. Se esse ser existisse apenas na mente, seria possível conceber um ser ainda maior — que existisse também na realidade. Logo, o ser máximo precisa existir de fato, não só como ideia, sob pena de contradição. Alvin Plantinga reformulou o argumento em termos de lógica modal: se é possível que um ser maximamente grande exista, e a grandeza máxima implica existência necessária em todos os mundos possíveis, então esse ser existe no mundo atual também.",
+    },
   ],
   relatedSlugs: ["trindade", "confiabilidade-biblia", "imaculada-conceicao"],
 };
