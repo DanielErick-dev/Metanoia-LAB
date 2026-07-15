@@ -125,7 +125,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                 className="text-2xl text-stone-200 leading-relaxed font-normal italic"
                 style={{ fontFamily: "'Lora', Georgia, serif" }}
               >
-                "{topic.quote.text}"
+                “{topic.quote.text}”
               </p>
               <cite
                 className="text-sm mt-5 block not-italic tracking-widest uppercase"
