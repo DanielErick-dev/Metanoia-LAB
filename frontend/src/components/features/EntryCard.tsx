@@ -9,6 +9,7 @@ export interface EntryCardProps {
   accent: string;
   image?: string;
   imagePosition?: string;
+  priority?: boolean;
 }
 
 export function EntryCard({
@@ -19,6 +20,7 @@ export function EntryCard({
   accent,
   image,
   imagePosition = "top",
+  priority = false,
 }: EntryCardProps) {
   return (
     <Link href={href}>
@@ -31,6 +33,7 @@ export function EntryCard({
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             style={{ objectPosition: imagePosition }}
+            priority={priority}
           />
         ) : (
           <div

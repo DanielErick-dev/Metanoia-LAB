@@ -70,6 +70,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               src={topic.image}
               alt={topic.title}
               fill
+              sizes="(min-width: 1200px) 1152px, 100vw"
               className="object-cover"
               style={{ objectPosition: topic.imagePosition ?? "top" }}
               priority

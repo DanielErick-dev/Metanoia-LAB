@@ -5,9 +5,10 @@ import { EntryCard } from "./EntryCard";
 
 interface CategoryCardProps {
   category: CategoryData;
+  priority?: boolean;
 }
 
-export function CategoryCard({ category }: CategoryCardProps) {
+export function CategoryCard({ category, priority }: CategoryCardProps) {
   const childCount = getChildCategories(category.slug).length;
   const topicCount = topics.filter((t) => t.categorySlug === category.slug).length;
   const badge =
@@ -24,6 +25,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
       accent={category.accent}
       image={category.image}
       imagePosition={category.imagePosition}
+      priority={priority}
     />
   );
 }

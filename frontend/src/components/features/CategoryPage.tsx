@@ -124,11 +124,15 @@ export function CategoryPage({ category }: CategoryPageProps) {
       <section className="max-w-7xl mx-auto px-8 pb-24">
         {!isEmpty ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredCategories.map((c) => (
-              <CategoryCard key={c.slug} category={c} />
+            {filteredCategories.map((c, i) => (
+              <CategoryCard key={c.slug} category={c} priority={i === 0} />
             ))}
-            {filteredTopics.map((t) => (
-              <TopicCard key={t.slug} topic={t} />
+            {filteredTopics.map((t, i) => (
+              <TopicCard
+                key={t.slug}
+                topic={t}
+                priority={filteredCategories.length === 0 && i === 0}
+              />
             ))}
           </div>
         ) : (

@@ -85,8 +85,8 @@ export default function Home() {
 
         {!isEmpty ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((category) => (
-              <CategoryCard key={category.slug} category={category} />
+            {filtered.map((category, i) => (
+              <CategoryCard key={category.slug} category={category} priority={i === 0} />
             ))}
           </div>
         ) : (

@@ -5,9 +5,10 @@ import { EntryCard } from "./EntryCard";
 
 interface TopicCardProps {
   topic: TopicData;
+  priority?: boolean;
 }
 
-export function TopicCard({ topic }: TopicCardProps) {
+export function TopicCard({ topic, priority }: TopicCardProps) {
   const category = getCategoryBySlug(topic.categorySlug);
 
   return (
@@ -18,6 +19,8 @@ export function TopicCard({ topic }: TopicCardProps) {
       badge={category?.title ?? ""}
       accent={topic.accent}
       image={topic.image}
+      imagePosition={topic.imagePosition}
+      priority={priority}
     />
   );
 }
