@@ -1,8 +1,15 @@
 import { notFound } from "next/navigation";
-import { getTopicByPath, getTopicPath, topics } from "@/lib/topics";
+import {
+  getPresentationPath,
+  getTopicByPath,
+  getTopicByPresentationPath,
+  getTopicPath,
+  topics,
+} from "@/lib/topics";
 import { categories, getCategoryPath } from "@/lib/categories";
 import { TopicPage } from "@/components/features/TopicPage";
 import { CategoryPage } from "@/components/features/CategoryPage";
+import { SlidesPage } from "@/components/features/SlidesPage";
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -13,7 +20,10 @@ export function generateStaticParams() {
   const categoryParams = categories.map((c) => ({
     slug: getCategoryPath(c.slug).split("/"),
   }));
-  return [...topicParams, ...categoryParams];
+  const presentationParams = topics
+    .filter((t) => t.slides)
+    .map((t) => ({ slug: getPresentationPath(t).split("/") }));
+  return [...topicParams, ...categoryParams, ...presentationParams];
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -42,6 +52,11 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const path = slug.join("/");
+
+  const presentationTopic = getTopicByPresentationPath(path);
+  if (presentationTopic) {
+    return <SlidesPage topic={presentationTopic} />;
+  }
 
   const topic = getTopicByPath(path);
   if (topic) {

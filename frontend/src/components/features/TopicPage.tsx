@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { TopicData } from "@/lib/types/topic";
 import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/categories";
-import { getTopicPath } from "@/lib/topics";
+import { getPresentationPath, getTopicPath } from "@/lib/topics";
 import { Breadcrumb } from "./Breadcrumb";
 import { CodeBlock } from "./CodeBlock";
 
@@ -83,6 +83,21 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
           )}
           <div className="absolute inset-0 bg-linear-to-t from-[#0f0e0d] via-[#0f0e0d]/60 to-transparent" />
           <div className="absolute inset-0 bg-linear-to-r from-[#0f0e0d]/30 via-transparent to-[#0f0e0d]/30" />
+
+          {topic.slides && (
+            <Link
+              href={`/${getPresentationPath(topic)}`}
+              className="absolute top-8 right-8 md:top-12 md:right-12 flex items-center gap-2 text-xs font-medium tracking-widest uppercase px-4 py-2 rounded-full border backdrop-blur-sm transition-colors"
+              style={{
+                color: topic.accent,
+                borderColor: `${topic.accent}40`,
+                backgroundColor: `${topic.accent}12`,
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              Ver apresentação →
+            </Link>
+          )}
 
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <div className="max-w-2xl">

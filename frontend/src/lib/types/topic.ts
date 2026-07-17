@@ -14,6 +14,18 @@ export interface TopicSection {
   examples?: TopicExample[];
 }
 
+export interface Slide {
+  heading?: string;
+  body?: string;
+  quote?: {
+    text: string;
+    source: string;
+  };
+  image?: string;
+  /** URL de embed (ex: https://www.youtube.com/embed/ID). */
+  video?: string;
+}
+
 export interface TopicData {
   slug: string;
   title: string;
@@ -30,4 +42,5 @@ export interface TopicData {
   intro: string;
   sections: TopicSection[];
   relatedSlugs: string[];
+  slides?: Slide[];
 }

@@ -41,3 +41,16 @@ export function getTopicPath(topic: TopicData): string {
 export function getTopicByPath(path: string): TopicData | undefined {
   return topics.find((t) => getTopicPath(t) === path);
 }
+
+const PRESENTATION_SUFFIX = "/apresentacao";
+
+export function getPresentationPath(topic: TopicData): string {
+  return `${getTopicPath(topic)}${PRESENTATION_SUFFIX}`;
+}
+
+export function getTopicByPresentationPath(path: string): TopicData | undefined {
+  if (!path.endsWith(PRESENTATION_SUFFIX)) return undefined;
+  const topicPath = path.slice(0, -PRESENTATION_SUFFIX.length);
+  const topic = getTopicByPath(topicPath);
+  return topic?.slides ? topic : undefined;
+}

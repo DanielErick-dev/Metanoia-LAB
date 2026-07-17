@@ -215,4 +215,36 @@ export const deus: TopicData = {
     },
   ],
   relatedSlugs: ["trindade", "confiabilidade-biblia", "imaculada-conceicao"],
+  slides: [
+    {
+      heading: "Deus Existe?",
+      body: "Argumentos filosóficos a favor da existência de Deus",
+    },
+    {
+      heading: "Por que isso importa",
+      body: "Não é só uma questão religiosa. Determina o fundamento da moralidade, o significado da existência e a natureza da realidade.",
+    },
+    {
+      heading: "Argumento cosmológico de Kalām",
+      body: "Tudo que começa a existir tem uma causa. O universo começou a existir. Logo, o universo tem uma causa — atemporal, imaterial e poderosa.",
+    },
+    {
+      heading: "Argumento do ajuste fino",
+      body: "As constantes físicas do universo estão calibradas com precisão absurda para permitir vida. Acaso é astronomicamente improvável.",
+    },
+    {
+      heading: "Argumento moral",
+      body: "Agimos como se houvesse moralidade objetiva — não apenas preferência cultural. Isso pressupõe um fundamento transcendente.",
+    },
+    {
+      heading: "Argumento ontológico",
+      body: "Deus é 'aquele do qual nada maior pode ser concebido'. Um ser assim, para ser o maior possível, precisa existir de fato — não só como ideia.",
+    },
+    {
+      quote: {
+        text: "Os céus declaram a glória de Deus, e o firmamento anuncia a obra das suas mãos.",
+        source: "Salmos 19:1",
+      },
+    },
+  ],
 };
