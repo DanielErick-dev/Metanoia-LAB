@@ -9,8 +9,8 @@ export const ruff: TopicData = {
   image: "/images/ruff.jpg",
   imagePosition: "center",
   quote: {
-    text: "Uma ferramenta só, escrita em Rust, faz o trabalho de Flake8, Black e isort — e faz mais rápido.",
-    source: "Ruff — Python linter & formatter",
+    text: "Ruff is so fast that sometimes I add an intentional bug in the code just to confirm it's actually running and checking the code.",
+    source: "Sebastián Ramírez, criador do FastAPI",
   },
   intro:
     "Ruff é um linter de código Python desenvolvido em Rust, criado para substituir ferramentas como Flake8 e Black com um desempenho muito superior. Ele resolve dois problemas distintos: o check valida imports não utilizados, variáveis em desuso e boas práticas gerais de código, enquanto o format cuida apenas da aparência visual — indentação, uso de aspas, quebra de linha. O ideal é usar os dois em conjunto, já que resolvem problemas complementares.",
