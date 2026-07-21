@@ -14,6 +14,7 @@ import {
 import { pacienciaTribulacao } from "./paciencia-tribulacao";
 import { tessalonicenses2 } from "./2tessalonicenses2";
 import { ruff } from "./ruff";
+import { pytest } from "./pytest";
 
 export const topics: TopicData[] = [
   trindade,
@@ -28,6 +29,7 @@ export const topics: TopicData[] = [
   pacienciaTribulacao,
   tessalonicenses2,
   ruff,
+  pytest,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {

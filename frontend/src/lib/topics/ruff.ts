@@ -216,5 +216,5 @@ ignore = ["E501"]`,
       ],
     },
   ],
-  relatedSlugs: [],
+  relatedSlugs: ["pytest"],
 };
