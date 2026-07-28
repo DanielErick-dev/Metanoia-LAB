@@ -214,7 +214,7 @@ export const deus: TopicData = {
       body: "Anselmo de Cantuária define Deus como 'aquele do qual nada maior pode ser concebido'. Se esse ser existisse apenas na mente, seria possível conceber um ser ainda maior — que existisse também na realidade. Logo, o ser máximo precisa existir de fato, não só como ideia, sob pena de contradição. Alvin Plantinga reformulou o argumento em termos de lógica modal: se é possível que um ser maximamente grande exista, e a grandeza máxima implica existência necessária em todos os mundos possíveis, então esse ser existe no mundo atual também.",
     },
   ],
-  relatedSlugs: ["trindade", "confiabilidade-biblia", "imaculada-conceicao"],
+  relatedSlugs: ["trindade", "confiabilidade-biblia", "imaculada-conceicao", "problema-do-mal"],
   slides: [
     {
       heading: "Deus Existe?",

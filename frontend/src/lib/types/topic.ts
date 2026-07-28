@@ -38,6 +38,7 @@ export interface TopicData {
   quote: {
     text: string;
     source: string;
+    sourceUrl?: string;
   };
   intro: string;
   sections: TopicSection[];

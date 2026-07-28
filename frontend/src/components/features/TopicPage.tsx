@@ -158,11 +158,31 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
             <div className="border-t border-stone-800 mb-14" />
 
             <p
-              className="text-xl text-stone-300 leading-[1.85] mb-14 font-normal"
+              className={`text-xl text-stone-300 leading-[1.85] font-normal ${
+                topic.quote.sourceUrl ? "mb-3" : "mb-14"
+              }`}
               style={{ fontFamily: "'Lora', Georgia, serif" }}
             >
               {topic.intro}
             </p>
+
+            {topic.quote.sourceUrl && (
+              <p
+                className="text-sm text-stone-500 mb-14"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                Fonte original:{" "}
+                <a
+                  href={topic.quote.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
+                  style={{ color: topic.accent }}
+                >
+                  {topic.quote.source} ↗
+                </a>
+              </p>
+            )}
 
             <div className="space-y-0">
               {topic.sections.map((section, i) => (
