@@ -6,12 +6,18 @@ export interface TopicExample {
   note?: string;
 }
 
+export interface TopicLink {
+  text: string;
+  url: string;
+}
+
 export interface TopicSection {
   heading: string;
   body: string;
   code?: string;
   language?: string;
   examples?: TopicExample[];
+  links?: TopicLink[];
 }
 
 export interface Slide {

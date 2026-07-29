@@ -206,6 +206,24 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                     <CodeBlock code={section.code} language={section.language} />
                   )}
 
+                  {section.links && section.links.length > 0 && (
+                    <ul className="mt-6 space-y-2">
+                      {section.links.map((link, k) => (
+                        <li key={k}>
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
+                            style={{ color: topic.accent, fontFamily: "'DM Sans', sans-serif" }}
+                          >
+                            {link.text} ↗
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
                   {section.examples && section.examples.length > 0 && (
                     <div className="mt-10 space-y-10">
                       {section.examples.map((example, j) => (
