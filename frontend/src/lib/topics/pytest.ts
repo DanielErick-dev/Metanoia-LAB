@@ -34,6 +34,64 @@ def test_answer():
     assert func(3) == 4`,
     },
     {
+      heading: "Testes unitários e o vocabulário básico",
+      body: "Testes unitários têm por finalidade testar funções, classes e módulos do software de forma isolada, garantindo que os menores trechos de código também estejam funcionando corretamente. Antes de ir além do que já vimos, vale conhecer um termo que aparece o tempo todo: SUT, sigla para system under test — o sistema sob teste. De forma resumida, é o componente ou objeto que está sendo testado, a coisa que vai ser testada de fato. Dentro da terminologia de testes, existem duas taxonomias conhecidas para estruturar um teste: o modelo AAA e o modelo de 4 fases.",
+    },
+    {
+      heading: "AAA versus o modelo de 4 fases",
+      body: "AAA significa Arrange, Act, Assert. De forma didática: o Arrange é o arranjo geral do teste, a montagem ou setup; o Act é a execução de fato, o exercício; e o Assert é a verificação final. Por outro lado, existe o modelo de 4 fases: Setup, Exercise, Verify e Teardown. As três primeiras fases fazem basicamente a mesma coisa que o modelo AAA, porém com uma fase extra de Teardown, que consiste numa limpeza pós-verificação — por exemplo, apagar um usuário de teste que havia sido criado no banco de dados. Por isso, geralmente usamos o modelo AAA em testes unitários, enquanto o modelo de 4 fases aparece mais em testes de integração, para limpar os 'lixos' deixados após o teste, como no exemplo do banco de dados.",
+    },
+    {
+      heading: "Colocando o AAA em prática",
+      body: "Para exemplificar, vamos escrever uma função simples: ela recebe o código de uma resposta HTTP e devolve uma categoria — 'Sucesso' para códigos entre 200 e 299, 'Erro do cliente' para 400 a 499, 'Erro do servidor' para 500 a 599, e 'Desconhecido' para qualquer outro valor.",
+      code: `def classificar_status_http(codigo: int) -> str:
+    """
+    Recebe o código de uma resposta HTTP e devolve uma categoria:
+    - 200 a 299 -> "Sucesso"
+    - 400 a 499 -> "Erro do cliente"
+    - 500 a 599 -> "Erro do servidor"
+    - qualquer outro valor -> "Desconhecido"
+    """
+    if 200 <= codigo <= 299:
+        return "Sucesso"
+    elif 400 <= codigo <= 499:
+        return "Erro do cliente"
+    elif 500 <= codigo <= 599:
+        return "Erro do servidor"
+    else:
+        return "Desconhecido"`,
+      examples: [
+        {
+          title: "Testando o caminho de sucesso",
+          body: "No Arrange, montamos os valores iniciais: codigo_de_input, o que vamos passar para a função, e esperado, o que esperamos receber de volta. A variável resultado é o Act: ela realmente chama classificar_status_http passando o código, e a função é executada. Por fim, o Assert é a verificação: confere se resultado bate com esperado.",
+          code: `def test_classificar_status_http_deve_retornar_sucesso():
+    # Arrange
+    codigo_de_input = 200
+    esperado = "Sucesso"
+
+    # Act
+    resultado = classificar_status_http(codigo_de_input)
+
+    # Assert
+    assert resultado == esperado`,
+        },
+        {
+          title: "Testando um erro do cliente",
+          body: "Mesma estrutura, só muda o Arrange: dessa vez o código de entrada é 404, e o esperado passa a ser 'Erro do cliente'. O Act e o Assert seguem exatamente a mesma lógica do teste anterior.",
+          code: `def test_classificar_status_http_deve_retornar_erro_do_cliente():
+    # Arrange
+    codigo_de_input = 404
+    esperado = "Erro do cliente"
+
+    # Act
+    resultado = classificar_status_http(codigo_de_input)
+
+    # Assert
+    assert resultado == esperado`,
+        },
+      ],
+    },
+    {
       heading: "Testando orientação a objetos",
       body: "Num arquivo pedido.py, temos uma classe ItemCardapio (com nome e preço) e uma classe Pedido, que guarda uma lista de itens e tem métodos para adicionar item e calcular o total — com um cupom de desconto percentual opcional.",
       code: `class ItemCardapio:
