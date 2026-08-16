@@ -41,7 +41,7 @@ export interface TopicData {
   image?: string;
   /** CSS object-position (ex: "top", "center", "center 25%"). Padrão: "top". */
   imagePosition?: string;
-  quote: {
+  quote?: {
     text: string;
     source: string;
     sourceUrl?: string;
@@ -50,4 +50,6 @@ export interface TopicData {
   sections: TopicSection[];
   relatedSlugs: string[];
   slides?: Slide[];
+  /** Selo de status exibido no card. Omitir quando o conteúdo já estiver pronto. */
+  status?: "em-breve" | "em-construcao";
 }

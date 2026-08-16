@@ -2,23 +2,41 @@
 
 import { useState, useMemo } from "react";
 import { CategoryCard } from "@/components/features/CategoryCard";
-import { getChildCategories } from "@/lib/categories";
+import { TopicCard } from "@/components/features/TopicCard";
+import { categories, getChildCategories } from "@/lib/categories";
+import { topics } from "@/lib/topics";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const rootCategories = useMemo(() => getChildCategories(undefined), []);
+  const query = search.trim().toLowerCase();
+  const isSearching = query.length > 0;
 
-  const filtered = useMemo(
+  const matchedCategories = useMemo(
     () =>
-      rootCategories.filter(
-        (c) =>
-          c.title.toLowerCase().includes(search.toLowerCase()) ||
-          c.subtitle.toLowerCase().includes(search.toLowerCase())
-      ),
-    [rootCategories, search]
+      isSearching
+        ? categories.filter(
+            (c) =>
+              c.title.toLowerCase().includes(query) ||
+              c.subtitle.toLowerCase().includes(query)
+          )
+        : rootCategories,
+    [isSearching, query, rootCategories]
+  );
+  const matchedTopics = useMemo(
+    () =>
+      isSearching
+        ? topics.filter(
+            (t) =>
+              t.title.toLowerCase().includes(query) ||
+              t.subtitle.toLowerCase().includes(query)
+          )
+        : [],
+    [isSearching, query]
   );
 
-  const isEmpty = filtered.length === 0;
+  const isEmpty = matchedCategories.length === 0 && matchedTopics.length === 0;
+  const resultCount = matchedCategories.length + matchedTopics.length;
 
   return (
     <main className="min-h-screen bg-stone-950 text-stone-100">
@@ -50,7 +68,7 @@ export default function Home() {
 
           <div className="w-full md:w-80 shrink-0">
             <label className="block text-xs text-stone-500 tracking-widest uppercase mb-2">
-              Buscar categoria
+              Buscar em todo o site
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500 text-sm">
@@ -60,7 +78,7 @@ export default function Home() {
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="ex: programação, teologia..."
+                placeholder="ex: problema do mal, pytest..."
                 className="w-full bg-stone-900 border border-stone-700 rounded-xl pl-9 pr-4 py-3 text-sm text-stone-200 placeholder-stone-600 focus:outline-none focus:border-emerald-600 transition-colors"
               />
               {search && (
@@ -79,21 +97,30 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-8 pb-24">
         <div className="flex items-center justify-end pb-6">
           <span className="text-xs text-stone-600 whitespace-nowrap">
-            {filtered.length} {filtered.length === 1 ? "categoria" : "categorias"}
+            {isSearching
+              ? `${resultCount} ${resultCount === 1 ? "resultado" : "resultados"}`
+              : `${matchedCategories.length} ${matchedCategories.length === 1 ? "categoria" : "categorias"}`}
           </span>
         </div>
 
         {!isEmpty ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((category, i) => (
+            {matchedCategories.map((category, i) => (
               <CategoryCard key={category.slug} category={category} priority={i === 0} />
+            ))}
+            {matchedTopics.map((topic, i) => (
+              <TopicCard
+                key={topic.slug}
+                topic={topic}
+                priority={matchedCategories.length === 0 && i === 0}
+              />
             ))}
           </div>
         ) : (
           <div className="text-center py-24 text-stone-600">
             <p className="text-4xl mb-3">◌</p>
             <p className="text-sm">
-              Nenhuma categoria encontrada
+              Nenhum resultado encontrado
               {search && ` para "${search}"`}
             </p>
             {search && (

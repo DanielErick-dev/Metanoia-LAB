@@ -15,6 +15,7 @@ export const categories: CategoryData[] = [
     accent: "#f59e0b",
     image: "/images/escatologia.jpg",
     parentSlug: "teologia",
+    status: "em-breve",
   },
   {
     slug: "estoicismo",
@@ -23,6 +24,7 @@ export const categories: CategoryData[] = [
     accent: "#d97706",
     image: "/images/estoicismo.jpg",
     parentSlug: "filosofia",
+    status: "em-breve",
   },
   {
     slug: "filosofia",
@@ -30,6 +32,7 @@ export const categories: CategoryData[] = [
     subtitle: "Correntes de pensamento e grandes questões",
     accent: "#818cf8",
     image: "/images/filosofia.jpg",
+    status: "em-breve",
   },
   {
     slug: "historia",
@@ -37,6 +40,7 @@ export const categories: CategoryData[] = [
     subtitle: "Eventos, contextos e civilizações",
     accent: "#fb923c",
     image: "/images/historia.jpg",
+    status: "em-breve",
   },
   {
     slug: "ingles",
@@ -44,6 +48,7 @@ export const categories: CategoryData[] = [
     subtitle: "Estudo e prática do idioma",
     accent: "#f472b6",
     image: "/images/ingles.jpg",
+    status: "em-breve",
   },
   {
     slug: "programacao",
@@ -60,6 +65,13 @@ export const categories: CategoryData[] = [
     image: "/images/backend.jpg",
     imagePosition: "center",
     parentSlug: "programacao",
+  },
+  {
+    slug: "problema-do-mal",
+    title: "O Problema do Mal",
+    subtitle: "Tradução acadêmica, comentários e referências sobre o problema do mal",
+    accent: "#94a3b8",
+    parentSlug: "teologia",
   },
 ];
 

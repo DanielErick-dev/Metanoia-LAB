@@ -6,6 +6,7 @@ export const pytest: TopicData = {
   subtitle: "Framework de testes profissional para Python",
   categorySlug: "backend",
   accent: "#eab308",
+  status: "em-construcao",
   quote: {
     text: "Um framework de testes que executa arquivos e funções, testando o comportamento real do seu projeto.",
     source: "Pytest — Testing Framework",

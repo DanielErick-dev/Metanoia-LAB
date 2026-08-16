@@ -11,10 +11,8 @@ interface CategoryCardProps {
 export function CategoryCard({ category, priority }: CategoryCardProps) {
   const childCount = getChildCategories(category.slug).length;
   const topicCount = topics.filter((t) => t.categorySlug === category.slug).length;
-  const badge =
-    childCount > 0
-      ? `${childCount} ${childCount === 1 ? "subcategoria" : "subcategorias"}`
-      : `${topicCount} ${topicCount === 1 ? "tema" : "temas"}`;
+  const total = childCount + topicCount;
+  const badge = `${total} ${total === 1 ? "item" : "itens"}`;
 
   return (
     <EntryCard
@@ -26,6 +24,7 @@ export function CategoryCard({ category, priority }: CategoryCardProps) {
       image={category.image}
       imagePosition={category.imagePosition}
       priority={priority}
+      status={category.status}
     />
   );
 }

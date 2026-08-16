@@ -132,41 +132,45 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
       <div className="max-w-6xl mx-auto px-8 py-16">
         <div className="flex gap-16 items-start">
           <article className="flex-1 min-w-0 max-w-170">
-            <blockquote className="mb-14">
-              <div
-                className="w-8 h-0.5 mb-6"
-                style={{ backgroundColor: topic.accent }}
-              />
-              <p
-                className="text-2xl text-stone-200 leading-relaxed font-normal italic"
-                style={{ fontFamily: "'Lora', Georgia, serif" }}
-              >
-                “{topic.quote.text}”
-              </p>
-              <cite
-                className="text-sm mt-5 block not-italic tracking-widest uppercase"
-                style={{
-                  color: topic.accent,
-                  fontFamily: "'DM Sans', sans-serif",
-                  opacity: 0.8,
-                }}
-              >
-                {topic.quote.source}
-              </cite>
-            </blockquote>
+            {topic.quote && (
+              <>
+                <blockquote className="mb-14">
+                  <div
+                    className="w-8 h-0.5 mb-6"
+                    style={{ backgroundColor: topic.accent }}
+                  />
+                  <p
+                    className="text-2xl text-stone-200 leading-relaxed font-normal italic"
+                    style={{ fontFamily: "'Lora', Georgia, serif" }}
+                  >
+                    “{topic.quote.text}”
+                  </p>
+                  <cite
+                    className="text-sm mt-5 block not-italic tracking-widest uppercase"
+                    style={{
+                      color: topic.accent,
+                      fontFamily: "'DM Sans', sans-serif",
+                      opacity: 0.8,
+                    }}
+                  >
+                    {topic.quote.source}
+                  </cite>
+                </blockquote>
 
-            <div className="border-t border-stone-800 mb-14" />
+                <div className="border-t border-stone-800 mb-14" />
+              </>
+            )}
 
             <p
               className={`text-xl text-stone-300 leading-[1.85] font-normal ${
-                topic.quote.sourceUrl ? "mb-3" : "mb-14"
+                topic.quote?.sourceUrl ? "mb-3" : "mb-14"
               }`}
               style={{ fontFamily: "'Lora', Georgia, serif" }}
             >
               {topic.intro}
             </p>
 
-            {topic.quote.sourceUrl && (
+            {topic.quote?.sourceUrl && (
               <p
                 className="text-sm text-stone-500 mb-14"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}

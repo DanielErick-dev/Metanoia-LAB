@@ -10,7 +10,13 @@ export interface EntryCardProps {
   image?: string;
   imagePosition?: string;
   priority?: boolean;
+  status?: "em-breve" | "em-construcao";
 }
+
+const STATUS_LABEL: Record<"em-breve" | "em-construcao", string> = {
+  "em-breve": "Em breve",
+  "em-construcao": "Em construção",
+};
 
 export function EntryCard({
   href,
@@ -21,6 +27,7 @@ export function EntryCard({
   image,
   imagePosition = "top",
   priority = false,
+  status,
 }: EntryCardProps) {
   return (
     <Link href={href}>
@@ -47,6 +54,12 @@ export function EntryCard({
         )}
 
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/10" />
+
+        {status && (
+          <span className="absolute top-6 right-6 text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full border border-stone-500/40 bg-black/50 text-stone-300 backdrop-blur-sm">
+            {STATUS_LABEL[status]}
+          </span>
+        )}
 
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

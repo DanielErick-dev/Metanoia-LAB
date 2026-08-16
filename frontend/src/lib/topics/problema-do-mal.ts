@@ -1,10 +1,10 @@
 import { TopicData } from "@/lib/types/topic";
 
 export const problemaDoMal: TopicData = {
-  slug: "problema-do-mal",
-  title: "O Problema do Mal",
+  slug: "traducao-tooley",
+  title: "Tradução: O Problema do Mal (Tooley / SEP)",
   subtitle: "Tradução comentada do verbete da Stanford Encyclopedia of Philosophy",
-  categorySlug: "teologia",
+  categorySlug: "problema-do-mal",
   accent: "#94a3b8",
   quote: {
     text: "Por que existem estados de coisas tão indesejáveis, se há um ser muito poderoso, muito sábio e muito bom?",
@@ -229,5 +229,5 @@ export const problemaDoMal: TopicData = {
       ],
     },
   ],
-  relatedSlugs: ["Deus", "trindade", "soteriologia"],
+  relatedSlugs: ["comentario-daniel", "Deus", "trindade", "soteriologia"],
 };

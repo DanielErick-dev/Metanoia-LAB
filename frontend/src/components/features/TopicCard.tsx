@@ -21,6 +21,7 @@ export function TopicCard({ topic, priority }: TopicCardProps) {
       image={topic.image}
       imagePosition={topic.imagePosition}
       priority={priority}
+      status={topic.status}
     />
   );
 }
