@@ -16,7 +16,9 @@ import { tessalonicenses2 } from "./2tessalonicenses2";
 import { ruff } from "./ruff";
 import { pytest } from "./pytest";
 import { problemaDoMal } from "./problema-do-mal";
-import { problemaDoMalComentario } from "./problema-do-mal-comentario";
+import { comentarioDanielIntroducao } from "./comentario-daniel-introducao";
+import { comentarioDanielProblemaLogico } from "./comentario-daniel-problema-logico";
+import { comentarioDanielProblemaEvidencial } from "./comentario-daniel-problema-evidencial";
 
 export const topics: TopicData[] = [
   trindade,
@@ -33,7 +35,9 @@ export const topics: TopicData[] = [
   ruff,
   pytest,
   problemaDoMal,
-  problemaDoMalComentario,
+  comentarioDanielIntroducao,
+  comentarioDanielProblemaLogico,
+  comentarioDanielProblemaEvidencial,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {

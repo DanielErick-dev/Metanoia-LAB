@@ -206,6 +206,39 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                     {section.body}
                   </p>
 
+                  {section.citation && (
+                    <div
+                      className="mt-6 pl-5 py-1 border-l-2 space-y-3"
+                      style={{ borderColor: `${topic.accent}80` }}
+                    >
+                      {section.citation.lines.map((line, k) => (
+                        <p
+                          key={k}
+                          className="text-[1.0625rem] text-stone-300 italic leading-relaxed"
+                          style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        >
+                          {section.citation!.lines.length > 1 && (
+                            <span
+                              className="not-italic font-semibold mr-2"
+                              style={{ color: topic.accent }}
+                            >
+                              {k + 1}.
+                            </span>
+                          )}
+                          {line}
+                        </p>
+                      ))}
+                      {section.citation.source && (
+                        <p
+                          className="text-xs text-stone-500 tracking-widest uppercase not-italic"
+                          style={{ fontFamily: "'DM Sans', sans-serif" }}
+                        >
+                          — {section.citation.source}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   {section.code && (
                     <CodeBlock code={section.code} language={section.language} />
                   )}

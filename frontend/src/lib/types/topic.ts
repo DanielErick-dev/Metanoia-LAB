@@ -11,6 +11,12 @@ export interface TopicLink {
   url: string;
 }
 
+export interface TopicCitation {
+  /** Uma linha vira citação simples; várias linhas viram lista numerada. */
+  lines: string[];
+  source?: string;
+}
+
 export interface TopicSection {
   heading: string;
   body: string;
@@ -18,6 +24,8 @@ export interface TopicSection {
   language?: string;
   examples?: TopicExample[];
   links?: TopicLink[];
+  /** Citação ou premissas em destaque, exibida após o corpo do texto. */
+  citation?: TopicCitation;
 }
 
 export interface Slide {

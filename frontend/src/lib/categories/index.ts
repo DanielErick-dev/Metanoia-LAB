@@ -73,6 +73,13 @@ export const categories: CategoryData[] = [
     accent: "#94a3b8",
     parentSlug: "teologia",
   },
+  {
+    slug: "comentario-daniel",
+    title: "Comentário Daniel",
+    subtitle: "Reflexões pessoais sobre o problema do mal, capítulo por capítulo",
+    accent: "#94a3b8",
+    parentSlug: "problema-do-mal",
+  },
 ];
 
 export function getCategoryBySlug(slug: string): CategoryData | undefined {

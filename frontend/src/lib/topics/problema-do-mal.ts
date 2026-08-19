@@ -229,5 +229,5 @@ export const problemaDoMal: TopicData = {
       ],
     },
   ],
-  relatedSlugs: ["comentario-daniel", "Deus", "trindade", "soteriologia"],
+  relatedSlugs: ["introducao-epicuro", "Deus", "trindade", "soteriologia"],
 };
