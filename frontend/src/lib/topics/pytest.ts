@@ -160,7 +160,7 @@ def test_calcular_total_sem_cupom():
 # ================================== 2 passed in 0.01s ==================================`,
     },
     {
-      heading: "Testando regra de negócio, não só o caminho feliz",
+      heading: "Testando regra de negócio",
       body: "Pytest não serve só para conferir se a função devolve o valor certo — também dá para testar regra de negócio. Imagine alguém aplicando um cupom de 120%: do jeito que calcular_total está, ela aceita numa boa e o pedido fica com valor negativo, o que não faz sentido.",
       code: `def test_cupom_alto_nao_gera_valor_negativo():
     pedido = Pedido()
@@ -263,6 +263,32 @@ def test_cupom_fora_do_intervalo(pedido_completo):
       ],
     },
     {
+      heading: "Fixture usando outra fixture",
+      body: "Às vezes, dentro das nossas fixtures, uma fixture precisa de outra fixture — nesse caso, ela recebe o nome da outra fixture como parâmetro, do mesmo jeito que uma função de teste recebe uma fixture, só que agora é uma fixture recebendo outra. O pytest reconhece esse nome, executa a fixture 'de baixo' primeiro, e injeta o retorno dela automaticamente; você não chama a fixture como uma função normal, só declara o nome dela como parâmetro e o pytest resolve sozinho. Repare que pedido_completo, lá de trás, cria os itens direto dentro dela mesma — dá para melhorar isso separando os itens em uma fixture própria:",
+      code: `@pytest.fixture
+def itens_padrao():
+    item1 = ItemCardapio("Item 1", 10.0)
+    item2 = ItemCardapio("Item 2", 20.0)
+    return [item1, item2]
+
+@pytest.fixture
+def pedido_completo(itens_padrao):
+    pedido = Pedido()
+    for item in itens_padrao:
+        pedido.adicionar_item(item)
+    return pedido`,
+      examples: [
+        {
+          title: "Por que separar em duas fixtures",
+          body: "pedido_completo declara itens_padrao como parâmetro — o pytest executa itens_padrao primeiro, entrega a lista de itens pronta, e pedido_completo usa essa lista para montar o pedido. Se algum outro teste precisar só da lista de itens, sem nenhum pedido montado em cima, ele pode pedir itens_padrao diretamente, sem precisar passar por pedido_completo.",
+          code: `def test_itens_padrao_tem_dois_itens(itens_padrao):
+    assert len(itens_padrao) == 2
+    assert itens_padrao[0].nome == "Item 1"`,
+          note: "Esse teste usa itens_padrao sozinha, sem nenhum Pedido envolvido — e os testes que já usavam pedido_completo continuam funcionando exatamente igual, porque o pytest resolve a cadeia de fixtures por trás dos panos. Mantendo as duas fixtures separadas, itens_padrao pode tanto ser puxada direto por um teste quanto ser reaproveitada por pedido_completo ao mesmo tempo.",
+        },
+      ],
+    },
+    {
       heading: "Parametrize: testando várias entradas de uma vez",
       body: "Quando você quer passar parâmetros diferentes para uma mesma função de teste sem reescrevê-la, usa parametrize:",
       code: `@pytest.mark.parametrize("valor_desconto, valor_esperado", [
@@ -319,7 +345,7 @@ class FinalizadorDePedido:
       examples: [
         {
           title: "O que é o Mock",
-          body: "A função cobrar de ProcessadorDePagamentos simula uma chamada real a uma API: imprime uma mensagem, espera 5 segundos e devolve True. FinalizadorDePedido recebe o próprio ProcessadorDePagamentos por parâmetro — o que chamamos de injeção de dependência — e sua função finalizar calcula o total do pedido, chama cobrar passando o valor e o cartão, e verifica se foi aprovado. Mock é um objeto 'dublê': um substituto falso que usamos no lugar de uma dependência externa que não controlamos, com comportamento definido por nós — sem depender do comportamento real dela. Além de nativo do Python, o Mock deixa a gente controlar exatamente as situações que quer testar.",
+          body: "A função cobrar de ProcessadorDePagamentos simula uma chamada real a uma API: imprime uma mensagem, espera 5 segundos e devolve True. FinalizadorDePedido recebe o próprio ProcessadorDePagamentos por parâmetro — o que chamamos de injeção de dependência — e sua função finalizar calcula o total do pedido, chama cobrar passando o valor e o cartão, e verifica se foi aprovado. Mock é um objeto 'dublê': um substituto falso que usamos no lugar de uma dependência externa que não controlamos, com comportamento definido por nós — sem depender do comportamento real dela. Além de nativo do Python, o Mock deixa a gente controlar exatamente as situações que queremos testar.",
           code: `from unittest.mock import Mock
 
 mock_processador = Mock(ProcessadorDePagamentos)
