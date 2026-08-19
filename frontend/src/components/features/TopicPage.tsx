@@ -5,6 +5,7 @@ import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/cate
 import { getPresentationPath, getTopicPath } from "@/lib/topics";
 import { Breadcrumb } from "./Breadcrumb";
 import { CodeBlock } from "./CodeBlock";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 
 interface TopicPageProps {
   topic: TopicData;
@@ -311,7 +312,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
           </article>
 
           <aside
-            className="w-64 shrink-0 hidden lg:block sticky top-8"
+            className="w-64 shrink-0 hidden lg:block sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hide pb-8 pr-1"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             <div className="mb-10">
@@ -436,6 +437,8 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
           <span className="text-emerald-800">transformação pela verdade</span>
         </span>
       </footer>
+
+      <ScrollToTopButton />
     </main>
   );
 }
