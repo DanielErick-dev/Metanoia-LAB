@@ -12,7 +12,6 @@ export interface TopicLink {
 }
 
 export interface TopicCitation {
-  /** Uma linha vira citação simples; várias linhas viram lista numerada. */
   lines: string[];
   source?: string;
 }
@@ -24,7 +23,6 @@ export interface TopicSection {
   language?: string;
   examples?: TopicExample[];
   links?: TopicLink[];
-  /** Citação ou premissas em destaque, exibida após o corpo do texto. */
   citation?: TopicCitation;
 }
 
@@ -36,7 +34,6 @@ export interface Slide {
     source: string;
   };
   image?: string;
-  /** URL de embed (ex: https://www.youtube.com/embed/ID). */
   video?: string;
 }
 
@@ -47,8 +44,8 @@ export interface TopicData {
   categorySlug: string;
   accent: string;
   image?: string;
-  /** CSS object-position (ex: "top", "center", "center 25%"). Padrão: "top". */
   imagePosition?: string;
+  cardImagePosition?: string;
   quote?: {
     text: string;
     source: string;
@@ -58,6 +55,5 @@ export interface TopicData {
   sections: TopicSection[];
   relatedSlugs: string[];
   slides?: Slide[];
-  /** Selo de status exibido no card. Omitir quando o conteúdo já estiver pronto. */
   status?: "em-breve" | "em-construcao";
 }

@@ -19,7 +19,7 @@ export function TopicCard({ topic, priority }: TopicCardProps) {
       badge={category?.title ?? ""}
       accent={topic.accent}
       image={topic.image}
-      imagePosition={topic.imagePosition}
+      imagePosition={topic.cardImagePosition ?? topic.imagePosition}
       priority={priority}
       status={topic.status}
     />

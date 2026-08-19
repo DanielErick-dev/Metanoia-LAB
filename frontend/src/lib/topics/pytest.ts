@@ -7,6 +7,9 @@ export const pytest: TopicData = {
   categorySlug: "backend",
   accent: "#eab308",
   status: "em-construcao",
+  image: "/images/pytest.jpg",
+  imagePosition: "center 40%",
+  cardImagePosition: "75% 40%",
   quote: {
     text: "Um framework de testes que executa arquivos e funções, testando o comportamento real do seu projeto.",
     source: "Pytest — Testing Framework",
