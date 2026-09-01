@@ -7,4 +7,5 @@ export interface CategoryData {
   imagePosition?: string;
   parentSlug?: string;
   status?: "em-breve" | "em-construcao";
+  layout?: "guide";
 }

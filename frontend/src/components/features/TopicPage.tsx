@@ -4,7 +4,7 @@ import { TopicData } from "@/lib/types/topic";
 import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/categories";
 import { getPresentationPath, getTopicPath } from "@/lib/topics";
 import { Breadcrumb } from "./Breadcrumb";
-import { CodeBlock } from "./CodeBlock";
+import { TopicSections } from "./TopicSections";
 import { ScrollToTopButton } from "./ScrollToTopButton";
 
 interface TopicPageProps {
@@ -23,6 +23,16 @@ function estimateReadingMinutes(topic: TopicData): number {
     for (const example of section.examples ?? []) {
       words += countWords(example.body);
       if (example.note) words += countWords(example.note);
+    }
+    for (const entry of section.vocabList ?? []) {
+      words += countWords(entry.term) + countWords(entry.translation);
+      if (entry.note) words += countWords(entry.note);
+    }
+    for (const entry of section.expressions ?? []) {
+      words += countWords(entry.phrase) + countWords(entry.translation);
+      if (entry.explanation) words += countWords(entry.explanation);
+      if (entry.example) words += countWords(entry.example);
+      if (entry.exampleTranslation) words += countWords(entry.exampleTranslation);
     }
   }
   return Math.max(1, Math.ceil(words / 200));
@@ -189,126 +199,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               </p>
             )}
 
-            <div className="space-y-0">
-              {topic.sections.map((section, i) => (
-                <div key={i} className="mb-14">
-                  <h2
-                    id={`section-${i}`}
-                    className="text-2xl font-semibold text-stone-100 leading-snug mb-6 scroll-mt-8"
-                    style={{ fontFamily: "'Lora', Georgia, serif" }}
-                  >
-                    {section.heading}
-                  </h2>
-
-                  <p
-                    className="text-[1.125rem] text-stone-400 leading-[1.9]"
-                    style={{ fontFamily: "'Lora', Georgia, serif" }}
-                  >
-                    {section.body}
-                  </p>
-
-                  {section.citation && (
-                    <div
-                      className="mt-6 pl-5 py-1 border-l-2 space-y-3"
-                      style={{ borderColor: `${topic.accent}80` }}
-                    >
-                      {section.citation.lines.map((line, k) => (
-                        <p
-                          key={k}
-                          className="text-[1.0625rem] text-stone-300 italic leading-relaxed"
-                          style={{ fontFamily: "'Lora', Georgia, serif" }}
-                        >
-                          {section.citation!.lines.length > 1 && (
-                            <span
-                              className="not-italic font-semibold mr-2"
-                              style={{ color: topic.accent }}
-                            >
-                              {k + 1}.
-                            </span>
-                          )}
-                          {line}
-                        </p>
-                      ))}
-                      {section.citation.source && (
-                        <p
-                          className="text-xs text-stone-500 tracking-widest uppercase not-italic"
-                          style={{ fontFamily: "'DM Sans', sans-serif" }}
-                        >
-                          — {section.citation.source}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {section.code && (
-                    <CodeBlock code={section.code} language={section.language} />
-                  )}
-
-                  {section.links && section.links.length > 0 && (
-                    <ul className="mt-6 space-y-2">
-                      {section.links.map((link, k) => (
-                        <li key={k}>
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
-                            style={{ color: topic.accent, fontFamily: "'DM Sans', sans-serif" }}
-                          >
-                            {link.text} ↗
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {section.examples && section.examples.length > 0 && (
-                    <div className="mt-10 space-y-10">
-                      {section.examples.map((example, j) => (
-                        <div key={j}>
-                          {example.title && (
-                            <h3
-                              className="text-base font-semibold text-stone-200 mb-3"
-                              style={{ fontFamily: "'Lora', Georgia, serif" }}
-                            >
-                              {example.title}
-                            </h3>
-                          )}
-                          <p
-                            className="text-[1.0625rem] text-stone-400 leading-[1.9]"
-                            style={{ fontFamily: "'Lora', Georgia, serif" }}
-                          >
-                            {example.body}
-                          </p>
-                          <CodeBlock code={example.code} language={example.language} />
-                          {example.note && (
-                            <p
-                              className="text-sm text-stone-500 leading-relaxed mt-4"
-                              style={{ fontFamily: "'Lora', Georgia, serif" }}
-                            >
-                              {example.note}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {i < topic.sections.length - 1 && (
-                    <div className="flex items-center gap-3 mt-14">
-                      <div className="h-px flex-1 bg-stone-800/60" />
-                      <span
-                        className="text-xs opacity-30"
-                        style={{ color: topic.accent }}
-                      >
-                        ✦
-                      </span>
-                      <div className="h-px flex-1 bg-stone-800/60" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <TopicSections sections={topic.sections} accent={topic.accent} />
           </article>
 
           <aside

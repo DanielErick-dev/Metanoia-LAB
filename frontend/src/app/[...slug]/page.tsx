@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   getPresentationPath,
   getTopicByPath,
@@ -6,9 +6,10 @@ import {
   getTopicPath,
   topics,
 } from "@/lib/topics";
-import { categories, getCategoryPath } from "@/lib/categories";
+import { categories, getCategoryBySlug, getCategoryPath } from "@/lib/categories";
 import { TopicPage } from "@/components/features/TopicPage";
 import { CategoryPage } from "@/components/features/CategoryPage";
+import { GuidePage } from "@/components/features/GuidePage";
 import { SlidesPage } from "@/components/features/SlidesPage";
 
 interface PageProps {
@@ -64,11 +65,31 @@ export default async function Page({ params }: PageProps) {
       .map((s) => topics.find((t) => t.slug === s))
       .filter(Boolean) as typeof topics;
 
+    const topicCategory = getCategoryBySlug(topic.categorySlug);
+    if (topicCategory?.layout === "guide") {
+      const chapters = topics.filter((t) => t.categorySlug === topicCategory.slug);
+      const guideRelated = relatedTopics.filter(
+        (t) => !chapters.some((c) => c.slug === t.slug)
+      );
+      return (
+        <GuidePage
+          category={topicCategory}
+          chapters={chapters}
+          activeChapter={topic}
+          relatedTopics={guideRelated}
+        />
+      );
+    }
+
     return <TopicPage topic={topic} relatedTopics={relatedTopics} />;
   }
 
   const category = categories.find((c) => getCategoryPath(c.slug) === path);
   if (category) {
+    if (category.layout === "guide") {
+      const firstChapter = topics.find((t) => t.categorySlug === category.slug);
+      if (firstChapter) redirect(`/${getTopicPath(firstChapter)}`);
+    }
     return <CategoryPage category={category} />;
   }
 
