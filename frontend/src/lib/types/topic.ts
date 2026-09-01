@@ -16,6 +16,20 @@ export interface TopicCitation {
   source?: string;
 }
 
+export interface VocabEntry {
+  term: string;
+  translation: string;
+  note?: string;
+}
+
+export interface ExpressionEntry {
+  phrase: string;
+  translation: string;
+  explanation?: string;
+  example?: string;
+  exampleTranslation?: string;
+}
+
 export interface TopicSection {
   heading: string;
   body: string;
@@ -24,6 +38,8 @@ export interface TopicSection {
   examples?: TopicExample[];
   links?: TopicLink[];
   citation?: TopicCitation;
+  vocabList?: VocabEntry[];
+  expressions?: ExpressionEntry[];
 }
 
 export interface Slide {
