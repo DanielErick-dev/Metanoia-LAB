@@ -19,6 +19,11 @@ import { problemaDoMal } from "./problema-do-mal";
 import { comentarioDanielIntroducao } from "./comentario-daniel-introducao";
 import { comentarioDanielProblemaLogico } from "./comentario-daniel-problema-logico";
 import { comentarioDanielProblemaEvidencial } from "./comentario-daniel-problema-evidencial";
+import { vocabularioExpressoes } from "./vocabulario-expressoes";
+import { pytestDjangoConfiguracao } from "./pytest-django-configuracao";
+import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
+import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
+import { pytestDjangoConftest } from "./pytest-django-conftest";
 
 export const topics: TopicData[] = [
   trindade,
@@ -38,6 +43,11 @@ export const topics: TopicData[] = [
   comentarioDanielIntroducao,
   comentarioDanielProblemaLogico,
   comentarioDanielProblemaEvidencial,
+  vocabularioExpressoes,
+  pytestDjangoConfiguracao,
+  pytestDjangoMarcacaoDb,
+  pytestDjangoParametroDb,
+  pytestDjangoConftest,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {

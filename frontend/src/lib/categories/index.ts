@@ -48,7 +48,6 @@ export const categories: CategoryData[] = [
     subtitle: "Estudo e prática do idioma",
     accent: "#f472b6",
     image: "/images/ingles.jpg",
-    status: "em-breve",
   },
   {
     slug: "programacao",
@@ -79,6 +78,15 @@ export const categories: CategoryData[] = [
     subtitle: "Reflexões pessoais sobre o problema do mal, capítulo por capítulo",
     accent: "#94a3b8",
     parentSlug: "problema-do-mal",
+    layout: "guide",
+  },
+  {
+    slug: "pytest-django",
+    title: "Pytest + Django",
+    subtitle: "Testes unitários dentro do ecossistema Django",
+    accent: "#eab308",
+    parentSlug: "backend",
+    layout: "guide",
   },
 ];
 
