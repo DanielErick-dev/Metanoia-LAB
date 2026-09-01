@@ -102,7 +102,7 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
             </span>
 
             <h1
-              className="text-4xl md:text-5xl font-semibold text-white leading-tight mb-3"
+              className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white leading-tight mb-3 break-words"
               style={{ fontFamily: "'Lora', Georgia, serif" }}
             >
               {activeChapter.title}

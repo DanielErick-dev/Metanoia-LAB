@@ -87,7 +87,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
             >
               {childCategories.length > 0 ? "Categoria" : "Biblioteca"}
             </p>
-            <h1 className="text-4xl font-bold text-stone-100 leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-stone-100 leading-tight break-words">
               {category.title}
             </h1>
             <p className="text-stone-500 mt-3 max-w-xl">{category.subtitle}</p>

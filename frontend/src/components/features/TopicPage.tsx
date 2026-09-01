@@ -124,7 +124,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                 {category?.title}
               </span>
               <h1
-                className="text-5xl md:text-6xl font-semibold text-white leading-tight mb-3"
+                className="text-3xl sm:text-4xl md:text-6xl font-semibold text-white leading-tight mb-3 break-words"
                 style={{ fontFamily: "'Lora', Georgia, serif" }}
               >
                 {topic.title}
