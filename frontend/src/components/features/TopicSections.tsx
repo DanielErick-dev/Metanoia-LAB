@@ -27,6 +27,41 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
             {section.body}
           </p>
 
+          {section.table && (
+            <div className="mt-6 overflow-x-auto rounded-xl border border-stone-800">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr>
+                    {section.table.headers.map((header, k) => (
+                      <th
+                        key={k}
+                        className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
+                        style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                      >
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row, r) => (
+                    <tr key={r} className="border-b border-stone-800/60 last:border-0">
+                      {row.map((cell, c) => (
+                        <td
+                          key={c}
+                          className="px-4 py-3 text-stone-400 leading-relaxed align-top"
+                          style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
           {section.citation && (
             <div
               className="mt-6 pl-5 py-1 border-l-2 space-y-3"

@@ -468,5 +468,5 @@ export const vocabularioExpressoes: TopicData = {
       ],
     },
   ],
-  relatedSlugs: [],
+  relatedSlugs: ["some-any-no"],
 };

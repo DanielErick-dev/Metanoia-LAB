@@ -199,6 +199,32 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               </p>
             )}
 
+            {topic.quizUrl && (
+              <div
+                className="mb-14 p-6 rounded-2xl border flex flex-wrap items-center justify-between gap-4"
+                style={{ borderColor: `${topic.accent}40`, backgroundColor: `${topic.accent}0d` }}
+              >
+                <p
+                  className="text-sm text-stone-300"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  📝 Tem um quiz no final deste artigo — não esquece de testar o que aprendeu!
+                </p>
+                <Link
+                  href={topic.quizUrl}
+                  className="shrink-0 text-xs font-medium tracking-widest uppercase px-5 py-2.5 rounded-full border transition-colors"
+                  style={{
+                    color: topic.accent,
+                    borderColor: `${topic.accent}40`,
+                    backgroundColor: `${topic.accent}12`,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  Ir direto pro quiz →
+                </Link>
+              </div>
+            )}
+
             <TopicSections sections={topic.sections} accent={topic.accent} />
           </article>
 

@@ -30,6 +30,11 @@ export interface ExpressionEntry {
   exampleTranslation?: string;
 }
 
+export interface TopicTable {
+  headers: string[];
+  rows: string[][];
+}
+
 export interface TopicSection {
   heading: string;
   body: string;
@@ -40,6 +45,7 @@ export interface TopicSection {
   citation?: TopicCitation;
   vocabList?: VocabEntry[];
   expressions?: ExpressionEntry[];
+  table?: TopicTable;
 }
 
 export interface Slide {
@@ -72,4 +78,5 @@ export interface TopicData {
   relatedSlugs: string[];
   slides?: Slide[];
   status?: "em-breve" | "em-construcao";
+  quizUrl?: string;
 }

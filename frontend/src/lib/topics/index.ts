@@ -24,6 +24,7 @@ import { pytestDjangoConfiguracao } from "./pytest-django-configuracao";
 import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
 import { pytestDjangoConftest } from "./pytest-django-conftest";
+import { someAnyNo } from "./some-any-no";
 
 export const topics: TopicData[] = [
   trindade,
@@ -48,6 +49,7 @@ export const topics: TopicData[] = [
   pytestDjangoMarcacaoDb,
   pytestDjangoParametroDb,
   pytestDjangoConftest,
+  someAnyNo,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {

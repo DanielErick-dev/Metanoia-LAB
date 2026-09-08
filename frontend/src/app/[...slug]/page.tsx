@@ -7,9 +7,11 @@ import {
   topics,
 } from "@/lib/topics";
 import { categories, getCategoryBySlug, getCategoryPath } from "@/lib/categories";
+import { getQuizByPath, getQuizPath, quizzes } from "@/lib/quizzes";
 import { TopicPage } from "@/components/features/TopicPage";
 import { CategoryPage } from "@/components/features/CategoryPage";
 import { GuidePage } from "@/components/features/GuidePage";
+import { QuizPage } from "@/components/features/QuizPage";
 import { SlidesPage } from "@/components/features/SlidesPage";
 
 interface PageProps {
@@ -24,7 +26,8 @@ export function generateStaticParams() {
   const presentationParams = topics
     .filter((t) => t.slides)
     .map((t) => ({ slug: getPresentationPath(t).split("/") }));
-  return [...topicParams, ...categoryParams, ...presentationParams];
+  const quizParams = quizzes.map((q) => ({ slug: getQuizPath(q).split("/") }));
+  return [...topicParams, ...categoryParams, ...presentationParams, ...quizParams];
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -36,6 +39,14 @@ export async function generateMetadata({ params }: PageProps) {
     return {
       title: `${topic.title} — Metanoia Lab`,
       description: topic.intro,
+    };
+  }
+
+  const quiz = getQuizByPath(path);
+  if (quiz) {
+    return {
+      title: `${quiz.title} — Metanoia Lab`,
+      description: quiz.subtitle,
     };
   }
 
@@ -57,6 +68,11 @@ export default async function Page({ params }: PageProps) {
   const presentationTopic = getTopicByPresentationPath(path);
   if (presentationTopic) {
     return <SlidesPage topic={presentationTopic} />;
+  }
+
+  const quiz = getQuizByPath(path);
+  if (quiz) {
+    return <QuizPage quiz={quiz} />;
   }
 
   const topic = getTopicByPath(path);
