@@ -197,5 +197,5 @@ export const someAnyNo: TopicData = {
       body: "SOME → afirmativa, ou pergunta que é pedido/oferta. ANY → pergunta genérica, negativa, ou afirmativa com sentido de 'qualquer'. NO → negativa direta, sem precisar de don't/doesn't. E, acima de tudo: uma única negação por frase em inglês — nunca duas.",
     },
   ],
-  relatedSlugs: ["vocabulario-expressoes"],
+  relatedSlugs: ["expressoes-girias", "vocabulario-geral"],
 };

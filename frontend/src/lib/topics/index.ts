@@ -19,7 +19,14 @@ import { problemaDoMal } from "./problema-do-mal";
 import { comentarioDanielIntroducao } from "./comentario-daniel-introducao";
 import { comentarioDanielProblemaLogico } from "./comentario-daniel-problema-logico";
 import { comentarioDanielProblemaEvidencial } from "./comentario-daniel-problema-evidencial";
-import { vocabularioExpressoes } from "./vocabulario-expressoes";
+import { inglesVerbos } from "./ingles-verbos";
+import { inglesVocabularioGeral } from "./ingles-vocabulario-geral";
+import { inglesGramaticaIfOnlySuperlativo } from "./ingles-gramatica-if-only-superlativo";
+import { inglesExpressoesGirias } from "./ingles-expressoes-girias";
+import { inglesDizerQueEstaCansado } from "./ingles-dizer-que-esta-cansado";
+import { inglesConversasInformais } from "./ingles-conversas-informais";
+import { inglesPrecosPedidosDirecoes } from "./ingles-precos-pedidos-direcoes";
+import { inglesReacoesInterjeicoes } from "./ingles-reacoes-interjeicoes";
 import { pytestDjangoConfiguracao } from "./pytest-django-configuracao";
 import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
@@ -44,7 +51,14 @@ export const topics: TopicData[] = [
   comentarioDanielIntroducao,
   comentarioDanielProblemaLogico,
   comentarioDanielProblemaEvidencial,
-  vocabularioExpressoes,
+  inglesVerbos,
+  inglesVocabularioGeral,
+  inglesGramaticaIfOnlySuperlativo,
+  inglesExpressoesGirias,
+  inglesDizerQueEstaCansado,
+  inglesConversasInformais,
+  inglesPrecosPedidosDirecoes,
+  inglesReacoesInterjeicoes,
   pytestDjangoConfiguracao,
   pytestDjangoMarcacaoDb,
   pytestDjangoParametroDb,
