@@ -20,6 +20,8 @@ export interface VocabEntry {
   term: string;
   translation: string;
   note?: string;
+  example?: string;
+  exampleTranslation?: string;
 }
 
 export interface ExpressionEntry {

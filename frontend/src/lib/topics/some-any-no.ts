@@ -4,8 +4,9 @@ export const someAnyNo: TopicData = {
   slug: "some-any-no",
   title: "Some, Any e No",
   subtitle: "Regras de uso e quando usar cada uma",
-  categorySlug: "ingles",
+  categorySlug: "gramatica",
   accent: "#f472b6",
+  status: "em-construcao",
   quizUrl: "/ingles/some-any-no-quiz",
   intro:
     "Some, any e no são três das palavras mais confusas pra quem está aprendendo inglês, porque a lógica de uso não segue exatamente o português. Aqui vai a regra completa, com os compostos (somebody, anything, nowhere etc.) e bastante exemplo.",
@@ -197,5 +198,5 @@ export const someAnyNo: TopicData = {
       body: "SOME → afirmativa, ou pergunta que é pedido/oferta. ANY → pergunta genérica, negativa, ou afirmativa com sentido de 'qualquer'. NO → negativa direta, sem precisar de don't/doesn't. E, acima de tudo: uma única negação por frase em inglês — nunca duas.",
     },
   ],
-  relatedSlugs: ["expressoes-girias", "vocabulario-geral"],
+  relatedSlugs: ["expressoes-girias", "geral"],
 };

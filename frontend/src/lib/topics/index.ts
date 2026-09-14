@@ -23,7 +23,7 @@ import { inglesVerbos } from "./ingles-verbos";
 import { inglesVocabularioGeral } from "./ingles-vocabulario-geral";
 import { inglesGramaticaIfOnlySuperlativo } from "./ingles-gramatica-if-only-superlativo";
 import { inglesExpressoesGirias } from "./ingles-expressoes-girias";
-import { inglesDizerQueEstaCansado } from "./ingles-dizer-que-esta-cansado";
+import { inglesEmocoesSensacoes } from "./ingles-emocoes-sensacoes";
 import { inglesConversasInformais } from "./ingles-conversas-informais";
 import { inglesPrecosPedidosDirecoes } from "./ingles-precos-pedidos-direcoes";
 import { inglesReacoesInterjeicoes } from "./ingles-reacoes-interjeicoes";
@@ -32,6 +32,7 @@ import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
 import { pytestDjangoConftest } from "./pytest-django-conftest";
 import { someAnyNo } from "./some-any-no";
+import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
 
 export const topics: TopicData[] = [
   trindade,
@@ -55,7 +56,7 @@ export const topics: TopicData[] = [
   inglesVocabularioGeral,
   inglesGramaticaIfOnlySuperlativo,
   inglesExpressoesGirias,
-  inglesDizerQueEstaCansado,
+  inglesEmocoesSensacoes,
   inglesConversasInformais,
   inglesPrecosPedidosDirecoes,
   inglesReacoesInterjeicoes,
@@ -64,6 +65,7 @@ export const topics: TopicData[] = [
   pytestDjangoParametroDb,
   pytestDjangoConftest,
   someAnyNo,
+  designingWebApisCap1,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {

@@ -1,4 +1,7 @@
-import { TopicSection } from "@/lib/types/topic";
+"use client";
+
+import { useState } from "react";
+import { TopicSection, VocabEntry, ExpressionEntry } from "@/lib/types/topic";
 import { CodeBlock } from "./CodeBlock";
 import { SpeakButton } from "./SpeakButton";
 
@@ -7,213 +10,299 @@ interface TopicSectionsProps {
   accent: string;
 }
 
+function normalize(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+}
+
+function vocabMatches(entry: VocabEntry, query: string): boolean {
+  return [entry.term, entry.translation, entry.note, entry.example, entry.exampleTranslation]
+    .filter((value): value is string => Boolean(value))
+    .some((text) => normalize(text).includes(query));
+}
+
+function expressionMatches(entry: ExpressionEntry, query: string): boolean {
+  return [entry.phrase, entry.translation, entry.explanation, entry.example, entry.exampleTranslation]
+    .filter((value): value is string => Boolean(value))
+    .some((text) => normalize(text).includes(query));
+}
+
 export function TopicSections({ sections, accent }: TopicSectionsProps) {
+  const [search, setSearch] = useState("");
+  const query = normalize(search.trim());
+  const isFiltering = query.length > 0;
+
+  const hasVocab = sections.some(
+    (section) => (section.vocabList?.length ?? 0) > 0 || (section.expressions?.length ?? 0) > 0
+  );
+
+  const totalMatches = isFiltering
+    ? sections.reduce((sum, section) => {
+        const vocabCount = section.vocabList?.filter((entry) => vocabMatches(entry, query)).length ?? 0;
+        const exprCount = section.expressions?.filter((entry) => expressionMatches(entry, query)).length ?? 0;
+        return sum + vocabCount + exprCount;
+      }, 0)
+    : 0;
+
   return (
     <div className="space-y-0">
-      {sections.map((section, i) => (
-        <div key={i} className="mb-14">
-          <h2
-            id={`section-${i}`}
-            className="text-2xl font-semibold text-stone-100 leading-snug mb-6 scroll-mt-8"
-            style={{ fontFamily: "'Lora', Georgia, serif" }}
-          >
-            {section.heading}
-          </h2>
-
-          <p
-            className="text-[1.125rem] text-stone-400 leading-[1.9]"
-            style={{ fontFamily: "'Lora', Georgia, serif" }}
-          >
-            {section.body}
-          </p>
-
-          {section.table && (
-            <div className="mt-6 overflow-x-auto rounded-xl border border-stone-800">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr>
-                    {section.table.headers.map((header, k) => (
-                      <th
-                        key={k}
-                        className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
-                        style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
-                      >
-                        {header}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {section.table.rows.map((row, r) => (
-                    <tr key={r} className="border-b border-stone-800/60 last:border-0">
-                      {row.map((cell, c) => (
-                        <td
-                          key={c}
-                          className="px-4 py-3 text-stone-400 leading-relaxed align-top"
-                          style={{ fontFamily: "'Lora', Georgia, serif" }}
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-
-          {section.citation && (
-            <div
-              className="mt-6 pl-5 py-1 border-l-2 space-y-3"
-              style={{ borderColor: `${accent}80` }}
-            >
-              {section.citation.lines.map((line, k) => (
-                <p
-                  key={k}
-                  className="text-[1.0625rem] text-stone-300 italic leading-relaxed"
-                  style={{ fontFamily: "'Lora', Georgia, serif" }}
-                >
-                  {section.citation!.lines.length > 1 && (
-                    <span className="not-italic font-semibold mr-2" style={{ color: accent }}>
-                      {k + 1}.
-                    </span>
-                  )}
-                  {line}
-                </p>
-              ))}
-              {section.citation.source && (
-                <p
-                  className="text-xs text-stone-500 tracking-widest uppercase not-italic"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  — {section.citation.source}
-                </p>
-              )}
-            </div>
-          )}
-
-          {section.code && <CodeBlock code={section.code} language={section.language} />}
-
-          {section.links && section.links.length > 0 && (
-            <ul className="mt-6 space-y-2">
-              {section.links.map((link, k) => (
-                <li key={k}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
-                    style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    {link.text} ↗
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {section.vocabList && section.vocabList.length > 0 && (
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              {section.vocabList.map((entry, k) => (
-                <div key={k}>
-                  <p className="text-[1.0625rem]" style={{ fontFamily: "'Lora', Georgia, serif" }}>
-                    <span className="font-semibold" style={{ color: accent }}>
-                      {entry.term}
-                    </span>{" "}
-                    <SpeakButton text={entry.term} accent={accent} />
-                    <span className="text-stone-400"> — {entry.translation}</span>
-                  </p>
-                  {entry.note && (
-                    <p className="text-sm text-stone-600 mt-1 leading-relaxed">{entry.note}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {section.expressions && section.expressions.length > 0 && (
-            <div className="mt-6 space-y-5">
-              {section.expressions.map((entry, k) => (
-                <div key={k} className="border border-stone-800 rounded-xl p-5">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span
-                      className="font-semibold text-stone-100"
-                      style={{ fontFamily: "'Lora', Georgia, serif" }}
-                    >
-                      {entry.phrase}
-                    </span>
-                    <SpeakButton text={entry.phrase} accent={accent} />
-                    <span className="text-sm" style={{ color: accent }}>
-                      {entry.translation}
-                    </span>
-                  </div>
-                  {entry.explanation && (
-                    <p className="text-sm text-stone-500 leading-relaxed mt-2">
-                      {entry.explanation}
-                    </p>
-                  )}
-                  {entry.example && (
-                    <div className="mt-3 pl-4 border-l-2" style={{ borderColor: `${accent}40` }}>
-                      <p
-                        className="italic text-stone-300 leading-relaxed flex items-baseline gap-2"
-                        style={{ fontFamily: "'Lora', Georgia, serif" }}
-                      >
-                        <span>“{entry.example}”</span>
-                        <SpeakButton text={entry.example} accent={accent} />
-                      </p>
-                      {entry.exampleTranslation && (
-                        <p className="text-sm text-stone-500 mt-1">{entry.exampleTranslation}</p>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {section.examples && section.examples.length > 0 && (
-            <div className="mt-10 space-y-10">
-              {section.examples.map((example, j) => (
-                <div key={j}>
-                  {example.title && (
-                    <h3
-                      className="text-base font-semibold text-stone-200 mb-3"
-                      style={{ fontFamily: "'Lora', Georgia, serif" }}
-                    >
-                      {example.title}
-                    </h3>
-                  )}
-                  <p
-                    className="text-[1.0625rem] text-stone-400 leading-[1.9]"
-                    style={{ fontFamily: "'Lora', Georgia, serif" }}
-                  >
-                    {example.body}
-                  </p>
-                  <CodeBlock code={example.code} language={example.language} />
-                  {example.note && (
-                    <p
-                      className="text-sm text-stone-500 leading-relaxed mt-4"
-                      style={{ fontFamily: "'Lora', Georgia, serif" }}
-                    >
-                      {example.note}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {i < sections.length - 1 && (
-            <div className="flex items-center gap-3 mt-14">
-              <div className="h-px flex-1 bg-stone-800/60" />
-              <span className="text-xs opacity-30" style={{ color: accent }}>
-                ✦
-              </span>
-              <div className="h-px flex-1 bg-stone-800/60" />
-            </div>
+      {hasVocab && (
+        <div className="mb-12">
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500 text-sm">⌕</span>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Filtrar palavras e expressões..."
+              className="w-full bg-stone-900 border border-stone-700 rounded-xl pl-9 pr-10 py-3 text-sm text-stone-200 placeholder-stone-600 focus:outline-none focus:border-emerald-600 transition-colors"
+            />
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 hover:text-stone-300 transition-colors text-xs cursor-pointer"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+          {isFiltering && (
+            <p className="text-xs text-stone-600 mt-2">
+              {totalMatches === 0
+                ? `Nenhum resultado para “${search}”.`
+                : `${totalMatches} ${totalMatches === 1 ? "resultado" : "resultados"}`}
+            </p>
           )}
         </div>
-      ))}
+      )}
+
+      {sections.map((section, i) => {
+        const vocabList = isFiltering
+          ? section.vocabList?.filter((entry) => vocabMatches(entry, query))
+          : section.vocabList;
+        const expressions = isFiltering
+          ? section.expressions?.filter((entry) => expressionMatches(entry, query))
+          : section.expressions;
+
+        return (
+          <div key={i} className="mb-14">
+            <h2
+              id={`section-${i}`}
+              className="text-2xl font-semibold text-stone-100 leading-snug mb-6 scroll-mt-8"
+              style={{ fontFamily: "'Lora', Georgia, serif" }}
+            >
+              {section.heading}
+            </h2>
+
+            <p
+              className="text-[1.125rem] text-stone-400 leading-[1.9]"
+              style={{ fontFamily: "'Lora', Georgia, serif" }}
+            >
+              {section.body}
+            </p>
+
+            {section.table && (
+              <div className="mt-6 overflow-x-auto rounded-xl border border-stone-800">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr>
+                      {section.table.headers.map((header, k) => (
+                        <th
+                          key={k}
+                          className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
+                          style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                        >
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row, r) => (
+                      <tr key={r} className="border-b border-stone-800/60 last:border-0">
+                        {row.map((cell, c) => (
+                          <td
+                            key={c}
+                            className="px-4 py-3 text-stone-400 leading-relaxed align-top"
+                            style={{ fontFamily: "'Lora', Georgia, serif" }}
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {section.citation && (
+              <div
+                className="mt-6 pl-5 py-1 border-l-2 space-y-3"
+                style={{ borderColor: `${accent}80` }}
+              >
+                {section.citation.lines.map((line, k) => (
+                  <p
+                    key={k}
+                    className="text-[1.0625rem] text-stone-300 italic leading-relaxed"
+                    style={{ fontFamily: "'Lora', Georgia, serif" }}
+                  >
+                    {section.citation!.lines.length > 1 && (
+                      <span className="not-italic font-semibold mr-2" style={{ color: accent }}>
+                        {k + 1}.
+                      </span>
+                    )}
+                    {line}
+                  </p>
+                ))}
+                {section.citation.source && (
+                  <p
+                    className="text-xs text-stone-500 tracking-widest uppercase not-italic"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    — {section.citation.source}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {section.code && <CodeBlock code={section.code} language={section.language} />}
+
+            {section.links && section.links.length > 0 && (
+              <ul className="mt-6 space-y-2">
+                {section.links.map((link, k) => (
+                  <li key={k}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
+                      style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {link.text} ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {vocabList && vocabList.length > 0 && (
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                {vocabList.map((entry, k) => (
+                  <div key={k}>
+                    <p className="text-[1.0625rem]" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+                      <span className="font-semibold" style={{ color: accent }}>
+                        {entry.term}
+                      </span>{" "}
+                      <SpeakButton text={entry.term} accent={accent} />
+                      <span className="text-stone-400"> — {entry.translation}</span>
+                    </p>
+                    {entry.note && (
+                      <p className="text-sm text-stone-600 mt-1 leading-relaxed">{entry.note}</p>
+                    )}
+                    {entry.example && (
+                      <div className="mt-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
+                        <p className="text-sm italic text-stone-400 leading-relaxed flex items-baseline gap-2">
+                          <span>“{entry.example}”</span>
+                          <SpeakButton text={entry.example} accent={accent} />
+                        </p>
+                        {entry.exampleTranslation && (
+                          <p className="text-xs text-stone-600 mt-1">{entry.exampleTranslation}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {expressions && expressions.length > 0 && (
+              <div className="mt-6 space-y-5">
+                {expressions.map((entry, k) => (
+                  <div key={k} className="border border-stone-800 rounded-xl p-5">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span
+                        className="font-semibold text-stone-100"
+                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                      >
+                        {entry.phrase}
+                      </span>
+                      <SpeakButton text={entry.phrase} accent={accent} />
+                      <span className="text-sm" style={{ color: accent }}>
+                        {entry.translation}
+                      </span>
+                    </div>
+                    {entry.explanation && (
+                      <p className="text-sm text-stone-500 leading-relaxed mt-2">
+                        {entry.explanation}
+                      </p>
+                    )}
+                    {entry.example && (
+                      <div className="mt-3 pl-4 border-l-2" style={{ borderColor: `${accent}40` }}>
+                        <p
+                          className="italic text-stone-300 leading-relaxed flex items-baseline gap-2"
+                          style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        >
+                          <span>“{entry.example}”</span>
+                          <SpeakButton text={entry.example} accent={accent} />
+                        </p>
+                        {entry.exampleTranslation && (
+                          <p className="text-sm text-stone-500 mt-1">{entry.exampleTranslation}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {section.examples && section.examples.length > 0 && (
+              <div className="mt-10 space-y-10">
+                {section.examples.map((example, j) => (
+                  <div key={j}>
+                    {example.title && (
+                      <h3
+                        className="text-base font-semibold text-stone-200 mb-3"
+                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                      >
+                        {example.title}
+                      </h3>
+                    )}
+                    <p
+                      className="text-[1.0625rem] text-stone-400 leading-[1.9]"
+                      style={{ fontFamily: "'Lora', Georgia, serif" }}
+                    >
+                      {example.body}
+                    </p>
+                    <CodeBlock code={example.code} language={example.language} />
+                    {example.note && (
+                      <p
+                        className="text-sm text-stone-500 leading-relaxed mt-4"
+                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                      >
+                        {example.note}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {i < sections.length - 1 && (
+              <div className="flex items-center gap-3 mt-14">
+                <div className="h-px flex-1 bg-stone-800/60" />
+                <span className="text-xs opacity-30" style={{ color: accent }}>
+                  ✦
+                </span>
+                <div className="h-px flex-1 bg-stone-800/60" />
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

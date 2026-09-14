@@ -88,6 +88,36 @@ export const categories: CategoryData[] = [
     parentSlug: "backend",
     layout: "guide",
   },
+  {
+    slug: "gramatica",
+    title: "Gramática",
+    subtitle: "Regras e estruturas gramaticais do inglês",
+    accent: "#f472b6",
+    parentSlug: "ingles",
+    status: "em-construcao",
+  },
+  {
+    slug: "vocabulario",
+    title: "Vocabulário",
+    subtitle: "Palavras, frases e expressões organizadas por assunto",
+    accent: "#fb7185",
+    parentSlug: "ingles",
+    status: "em-construcao",
+  },
+  {
+    slug: "resenhas",
+    title: "Resenhas",
+    subtitle: "Resenhas e anotações de leitura de livros",
+    accent: "#2dd4bf",
+  },
+  {
+    slug: "designing-web-apis",
+    title: "Designing Web APIs",
+    subtitle: "Resenha do livro Designing Web APIs (O'Reilly) — do conceito de API até como desenhar, gerenciar e construir um ecossistema em torno dela",
+    accent: "#2dd4bf",
+    parentSlug: "resenhas",
+    layout: "guide",
+  },
 ];
 
 export function getCategoryBySlug(slug: string): CategoryData | undefined {
