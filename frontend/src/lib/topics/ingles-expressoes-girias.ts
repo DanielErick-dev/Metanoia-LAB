@@ -28,6 +28,13 @@ export const inglesExpressoesGirias: TopicData = {
           exampleTranslation: "Você já vai embora? Que pena.",
         },
         {
+          phrase: "boil down to",
+          translation: "se resumir a, reduzir-se a",
+          explanation: "Também aparece como 'boiled down to whether' (resumiu-se a saber se / no fim das contas dependia de...). Ex.: It all boils down to money = no final das contas, tudo se resume a dinheiro.",
+          example: "The answers boiled down to whether the API achieves what it's supposed to do.",
+          exampleTranslation: "As respostas resumem-se a saber se a API cumpre o que deveria.",
+        },
+        {
           phrase: "bugger",
           translation: "droga, caramba",
           explanation: "Xingamento leve, comum na gíria britânica.",

@@ -52,6 +52,12 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Decidimos ficar afinal.",
         },
         {
+          term: "also",
+          translation: "também",
+          example: "I also like coffee.",
+          exampleTranslation: "Eu também gosto de café.",
+        },
+        {
           term: "among",
           translation: "entre",
           note: "Usado quando o grupo tem 3 pessoas ou mais — diferente de between, usado num grupo de 2.",
@@ -69,6 +75,13 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "sendo assim, portanto",
           example: "He is the manager, and as such, he makes the final decisions.",
           exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais.",
+        },
+        {
+          term: "bespoke",
+          translation: "feito sob medida, personalizado",
+          note: "Geralmente pra algo feito especificamente pra aquele fim. Ex.: bespoke apps = aplicativos feitos sob medida.",
+          example: "A bespoke suit.",
+          exampleTranslation: "Um terno feito sob medida.",
         },
         {
           term: "between",
@@ -120,6 +133,12 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Cada aluno recebeu um livro.",
         },
         {
+          term: "enterprises",
+          translation: "empresas",
+          example: "Small enterprises often struggle to compete with big corporations.",
+          exampleTranslation: "Pequenas empresas costumam ter dificuldade de competir com grandes corporações.",
+        },
+        {
           term: "fairy",
           translation: "fada",
           example: "The story is about a fairy who grants wishes.",
@@ -157,6 +176,19 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Considerando os eventos recentes, a reunião foi cancelada.",
         },
         {
+          term: "increasingly",
+          translation: "cada vez mais",
+          example: "The problem is becoming increasingly complex.",
+          exampleTranslation: "O problema está ficando cada vez mais complexo.",
+        },
+        {
+          term: "into",
+          translation: "para dentro de, em",
+          note: "Também aparece em phrasal verbs, tipo delve into.",
+          example: "He walked into the room.",
+          exampleTranslation: "Ele entrou na sala.",
+        },
+        {
           term: "kind",
           translation: "espécie, raça ou tipo",
           example: "What kind of music do you like?",
@@ -192,6 +224,13 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "refeição",
           example: "That was a delicious meal.",
           exampleTranslation: "Aquela foi uma refeição deliciosa.",
+        },
+        {
+          term: "meanwhile",
+          translation: "enquanto isso",
+          note: "Traz o sentido de que, enquanto uma coisa acontece, outra ocorre ao mesmo tempo — parecido com while.",
+          example: "I was cooking, meanwhile, she was cleaning.",
+          exampleTranslation: "Eu estava cozinhando; enquanto isso, ela estava limpando.",
         },
         {
           term: "mighty",
@@ -237,16 +276,41 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Agora que você está aqui, podemos começar.",
         },
         {
+          term: "overall",
+          translation: "em geral, no todo, em suma",
+          example: "Overall, the trip was great.",
+          exampleTranslation: "No geral, a viagem foi ótima.",
+        },
+        {
           term: "plumbing",
           translation: "encanamento",
           example: "The plumbing in this house is old.",
           exampleTranslation: "O encanamento dessa casa é velho.",
         },
         {
+          term: "profit",
+          translation: "lucro",
+          example: "The company made a huge profit this year.",
+          exampleTranslation: "A empresa teve um lucro enorme esse ano.",
+        },
+        {
           term: "queen",
           translation: "rainha",
           example: "The queen addressed the nation.",
           exampleTranslation: "A rainha se dirigiu à nação.",
+        },
+        {
+          term: "rate",
+          translation: "taxa, ritmo ou velocidade (depende do contexto)",
+          note: "Ex.: interest rate = taxa de juros; heart rate = frequência cardíaca.",
+          example: "The rate of change in this industry is high.",
+          exampleTranslation: "O ritmo de mudança nessa indústria é alto.",
+        },
+        {
+          term: "replacement",
+          translation: "substituição, substituto",
+          example: "I need a replacement for this broken part.",
+          exampleTranslation: "Eu preciso de uma substituição para essa peça quebrada.",
         },
         {
           term: "schedule",
@@ -265,6 +329,12 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "brilhante",
           example: "Her shining smile lit up the room.",
           exampleTranslation: "O sorriso brilhante dela iluminou a sala.",
+        },
+        {
+          term: "shortly",
+          translation: "em breve, logo (tempo curto)",
+          example: "I'll be there shortly.",
+          exampleTranslation: "Eu estarei lá em breve (logo).",
         },
         {
           term: "sincere",
@@ -323,6 +393,20 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "problema",
           example: "We had trouble finding the address.",
           exampleTranslation: "Tivemos problema para encontrar o endereço.",
+        },
+        {
+          term: "unable",
+          translation: "incapaz, sem conseguir fazer algo",
+          note: "Contrário de able (capaz).",
+          example: "I was unable to attend the meeting.",
+          exampleTranslation: "Eu não consegui comparecer à reunião.",
+        },
+        {
+          term: "unwilling",
+          translation: "relutante, sem vontade de fazer algo",
+          note: "Contrário de willing (disposto).",
+          example: "He was unwilling to help.",
+          exampleTranslation: "Ele estava relutante em ajudar (ele não queria ajudar).",
         },
         {
           term: "weird",
@@ -405,6 +489,13 @@ export const inglesVocabularioGeral: TopicData = {
           explanation: "Literalmente 'sem costura' (seam = costura).",
           example: "The two pieces fit together seamlessly.",
           exampleTranslation: "As duas peças se encaixam perfeitamente.",
+        },
+        {
+          phrase: "supposed to",
+          translation: "deveria, é pra",
+          explanation: "Indica obrigação ou expectativa. Também aparece em perguntas: what is it supposed to do? = o que é pra isso fazer? / o que isso deveria fazer?",
+          example: "You are supposed to be here at 9am.",
+          exampleTranslation: "Você deveria estar aqui às 9h.",
         },
         {
           phrase: "Therefore",

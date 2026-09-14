@@ -15,6 +15,12 @@ export const inglesVerbos: TopicData = {
       body: "Verbos que fui anotando ao longo da leitura.",
       vocabList: [
         {
+          term: "achieve",
+          translation: "alcançar, atingir ou cumprir",
+          example: "She achieved her goal.",
+          exampleTranslation: "Ela alcançou seu objetivo/meta.",
+        },
+        {
           term: "appoint",
           translation: "nomear alguém para uma função",
           example: "They decided to appoint her as team leader.",
@@ -53,6 +59,13 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela trouxe a irmã dela para a festa.",
         },
         {
+          term: "delve into",
+          translation: "aprofundar-se em, mergulhar em, explorar a fundo um assunto",
+          note: "delve sozinho também significa aprofundar-se, investigar a fundo.",
+          example: "Let's delve into this topic.",
+          exampleTranslation: "Vamos nos aprofundar nesse tópico.",
+        },
+        {
           term: "doubt",
           translation: "duvidar",
           example: "I doubt he will come.",
@@ -85,6 +98,19 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Espero que você melhore logo.",
         },
         {
+          term: "launch",
+          translation: "lançar",
+          example: "They launched a new product.",
+          exampleTranslation: "Eles lançaram um novo produto.",
+        },
+        {
+          term: "lead",
+          translation: "liderar, conduzir",
+          note: "Também é substantivo, no sentido de indicação ou contato em potencial. Ex.: generate leads = gerar leads/contatos de vendas.",
+          example: "She leads the team.",
+          exampleTranslation: "Ela lidera o time.",
+        },
+        {
           term: "offer",
           translation: "oferecer",
           example: "They offered me a job.",
@@ -101,6 +127,12 @@ export const inglesVerbos: TopicData = {
           translation: "cutucar / espetar",
           example: "Stop prodding me!",
           exampleTranslation: "Para de me cutucar!",
+        },
+        {
+          term: "receive",
+          translation: "receber",
+          example: "We received the answer.",
+          exampleTranslation: "Nós recebemos a resposta.",
         },
         {
           term: "regret",
@@ -126,6 +158,13 @@ export const inglesVerbos: TopicData = {
           translation: "parecer",
           example: "You seem tired today.",
           exampleTranslation: "Você parece cansado hoje.",
+        },
+        {
+          term: "sell",
+          translation: "vender",
+          note: "Passado: sold. Ex.: She sold her old car. = Ela vendeu o carro velho dela.",
+          example: "They sell handmade jewelry.",
+          exampleTranslation: "Eles vendem joias artesanais.",
         },
         {
           term: "shall",
