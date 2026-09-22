@@ -37,6 +37,11 @@ export default function Home() {
 
   const isEmpty = matchedCategories.length === 0 && matchedTopics.length === 0;
   const resultCount = matchedCategories.length + matchedTopics.length;
+  const publishedCount = useMemo(() => topics.filter((t) => t.status !== "em-breve").length, []);
+  const activeAreas = useMemo(
+    () => rootCategories.filter((c) => c.status !== "em-breve").length,
+    [rootCategories]
+  );
 
   return (
     <main className="min-h-screen bg-stone-950 text-stone-100">
@@ -54,49 +59,68 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="max-w-7xl mx-auto px-8 pt-12 pb-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <p className="text-emerald-400 text-xs tracking-widest uppercase font-medium mb-3">
-              Laboratório de conhecimento
-            </p>
-            <h1 className="text-4xl font-bold text-stone-100 leading-tight">
-              Conhecimento em
-              <br />constante expansão
-            </h1>
-          </div>
+      <div className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 90% at 12% 0%, rgba(52,211,153,0.16), transparent 70%), radial-gradient(ellipse 45% 70% at 92% 10%, rgba(129,140,248,0.11), transparent 70%)",
+          }}
+        />
+        <section className="relative max-w-7xl mx-auto px-8 pt-14 pb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
+            <div className="max-w-4xl">
+              <p className="text-emerald-400 text-xs tracking-widest uppercase font-semibold mb-5">
+                Laboratório de conhecimento
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-50 leading-[1.05] tracking-tight break-words">
+                Conhecimento em
+                <br className="hidden md:block" />{" "}
+                constante{" "}
+                <span className="text-emerald-400 underline decoration-emerald-500/50 decoration-4 underline-offset-8">
+                  expansão
+                </span>
+              </h1>
+              <p className="mt-6 text-lg text-stone-400 leading-relaxed max-w-xl">
+                Uma biblioteca de estudos, traduções e anotações —{" "}
+                <span className="text-stone-200 font-medium whitespace-nowrap">{publishedCount} conteúdos</span> em{" "}
+                <span className="text-stone-200 font-medium whitespace-nowrap">{activeAreas} áreas</span>, e crescendo.
+              </p>
+            </div>
 
-          <div className="w-full md:w-80 shrink-0">
-            <label className="block text-xs text-stone-500 tracking-widest uppercase mb-2">
-              Buscar em todo o site
-            </label>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500 text-sm">
-                ⌕
-              </span>
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="ex: problema do mal, pytest..."
-                className="w-full bg-stone-900 border border-stone-700 rounded-xl pl-9 pr-4 py-3 text-sm text-stone-200 placeholder-stone-600 focus:outline-none focus:border-emerald-600 transition-colors"
-              />
-              {search && (
-                <button
-                  onClick={() => setSearch("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 hover:text-stone-300 transition-colors text-xs"
-                >
-                  ✕
-                </button>
-              )}
+            <div className="w-full md:w-96 shrink-0">
+              <label className="block text-xs text-stone-400 tracking-widest uppercase mb-2">
+                Buscar em todo o site
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-base">
+                  ⌕
+                </span>
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="ex: problema do mal, pytest..."
+                  className="w-full bg-stone-900/80 border border-stone-700 rounded-xl pl-10 pr-10 py-3.5 text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
+                />
+                {search && (
+                  <button
+                    onClick={() => setSearch("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 hover:text-stone-300 transition-colors text-xs cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="max-w-7xl mx-auto px-8 pb-24">
         <div className="flex items-center justify-end pb-6">
-          <span className="text-xs text-stone-600 whitespace-nowrap">
+          <span className="text-xs text-stone-500 whitespace-nowrap">
             {isSearching
               ? `${resultCount} ${resultCount === 1 ? "resultado" : "resultados"}`
               : `${matchedCategories.length} ${matchedCategories.length === 1 ? "categoria" : "categorias"}`}

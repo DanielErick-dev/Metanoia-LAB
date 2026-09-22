@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
 export interface EntryCardProps {
   href: string;
@@ -31,7 +32,10 @@ export function EntryCard({
 }: EntryCardProps) {
   return (
     <Link href={href}>
-      <article className="group relative overflow-hidden rounded-2xl border border-white/5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-stone-900 h-110">
+      <article
+        className="group relative overflow-hidden rounded-2xl border border-white/5 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2 hover:border-(--card-glow) hover:shadow-[0_28px_60px_-18px_var(--card-glow)] bg-stone-900 h-110"
+        style={{ "--card-glow": `${accent}90` } as CSSProperties}
+      >
         {image ? (
           <Image
             src={image}
@@ -53,7 +57,7 @@ export function EntryCard({
           </div>
         )}
 
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-black/10" />
 
         {status && (
           <span className="absolute top-6 right-6 text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full border border-stone-500/40 bg-black/50 text-stone-300 backdrop-blur-sm">
@@ -85,8 +89,8 @@ export function EntryCard({
               {title}
             </h2>
             <p
-              className="text-xs tracking-widest uppercase mb-1 opacity-70"
-              style={{ color: accent }}
+              className="text-xs font-medium tracking-widest uppercase mb-1 [text-shadow:0_1px_10px_rgb(0_0_0/0.85)]"
+              style={{ color: `color-mix(in srgb, ${accent} 60%, white)` }}
             >
               {subtitle}
             </p>
