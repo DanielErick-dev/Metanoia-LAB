@@ -39,6 +39,13 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Eu não aguento esse calor.",
         },
         {
+          term: "belong",
+          translation: "pertencer",
+          note: "belong to + pessoa/coisa; belong in/at + lugar.",
+          example: "This file belongs in the src folder.",
+          exampleTranslation: "Esse arquivo pertence à pasta src.",
+        },
+        {
           term: "bring",
           translation: "trazer",
           note: "Traz o sentido de trazer em direção a quem fala — diferente de take, que tem o sentido de levar para longe.",
@@ -66,10 +73,23 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Vamos nos aprofundar nesse tópico.",
         },
         {
+          term: "deserve",
+          translation: "merecer",
+          example: "You deserve a break.",
+          exampleTranslation: "Você merece um descanso.",
+        },
+        {
           term: "doubt",
           translation: "duvidar",
           example: "I doubt he will come.",
           exampleTranslation: "Eu duvido que ele venha.",
+        },
+        {
+          term: "drive",
+          translation: "dirigir; levar alguém de carro; conduzir (animais)",
+          note: "drive → drove → driven. Drive someone = levar de carro. Drive someone crazy/mad = deixar alguém louco.",
+          example: "I'll drive you home.",
+          exampleTranslation: "Eu vou te levar em casa de carro.",
         },
         {
           term: "ensured",
@@ -79,10 +99,45 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela garantiu que tudo estava pronto.",
         },
         {
+          term: "erect",
+          translation: "erguer",
+          note: "Como adjetivo, ereto.",
+          example: "They erected a statue.",
+          exampleTranslation: "Eles ergueram uma estátua.",
+        },
+        {
           term: "evolve",
           translation: "evoluir",
           example: "Technology continues to evolve quickly.",
           exampleTranslation: "A tecnologia continua evoluindo rapidamente.",
+        },
+        {
+          term: "fetch",
+          translation: "ir buscar e trazer",
+          note: "Em JavaScript, fetch() busca dados do servidor — mesmo conceito.",
+          example: "Fetch me a glass of water.",
+          exampleTranslation: "Vá me buscar um copo d'água.",
+        },
+        {
+          term: "forgive",
+          translation: "perdoar",
+          note: "No reflexivo não repete o pronome: forgive yourself (não 'forgive you yourself'), porque o reflexivo já contém o 'você'.",
+          example: "You need to forgive yourself.",
+          exampleTranslation: "Você precisa perdoar a si mesmo.",
+        },
+        {
+          term: "get through",
+          translation: "conseguir passar, atravessar",
+          note: "Também usado pra terminar algo longo: I got through the book = eu terminei o livro.",
+          example: "The message didn't get through.",
+          exampleTranslation: "A mensagem não chegou (não passou).",
+        },
+        {
+          term: "grant",
+          translation: "conceder",
+          note: "Passado: granted. Em programação: grant permissions.",
+          example: "The admin granted me access.",
+          exampleTranslation: "O administrador me concedeu acesso.",
         },
         {
           term: "hire",
@@ -111,10 +166,23 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela lidera o time.",
         },
         {
+          term: "left for",
+          translation: "partiu para",
+          note: "Passado de leave for.",
+          example: "She left for Brazil a week ago.",
+          exampleTranslation: "Ela partiu para o Brasil há uma semana.",
+        },
+        {
           term: "offer",
           translation: "oferecer",
           example: "They offered me a job.",
           exampleTranslation: "Eles me ofereceram um emprego.",
+        },
+        {
+          term: "pick",
+          translation: "escolher",
+          example: "Pick the right paradigm for your API.",
+          exampleTranslation: "Escolha o paradigma certo para a sua API.",
         },
         {
           term: "plan",
@@ -127,6 +195,13 @@ export const inglesVerbos: TopicData = {
           translation: "cutucar / espetar",
           example: "Stop prodding me!",
           exampleTranslation: "Para de me cutucar!",
+        },
+        {
+          term: "raise",
+          translation: "levantar; criar (filho)",
+          note: "Em Python: raise ValueError. Raise pede objeto (raise your hand); rise não (the sun rises).",
+          example: "She raised three kids on her own.",
+          exampleTranslation: "Ela criou três filhos sozinha.",
         },
         {
           term: "receive",
@@ -145,6 +220,19 @@ export const inglesVerbos: TopicData = {
           translation: "erguer-se novamente",
           example: "After the fall, he rose again.",
           exampleTranslation: "Depois da queda, ele se ergueu novamente.",
+        },
+        {
+          term: "ruin",
+          translation: "arruinar, estragar",
+          example: "You ruined the surprise.",
+          exampleTranslation: "Você estragou a surpresa.",
+        },
+        {
+          term: "rule",
+          translation: "governar",
+          note: "Também é substantivo: regra.",
+          example: "The queen rules the kingdom.",
+          exampleTranslation: "A rainha governa o reino.",
         },
         {
           term: "running",

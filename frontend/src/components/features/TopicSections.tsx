@@ -4,6 +4,8 @@ import { useState } from "react";
 import { TopicSection, VocabEntry, ExpressionEntry } from "@/lib/types/topic";
 import { CodeBlock } from "./CodeBlock";
 import { SpeakButton } from "./SpeakButton";
+import { Lineup } from "./Lineup";
+import { Interrogation } from "./Interrogation";
 
 interface TopicSectionsProps {
   sections: TopicSection[];
@@ -33,6 +35,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
   const [search, setSearch] = useState("");
   const query = normalize(search.trim());
   const isFiltering = query.length > 0;
+  const suspects = sections.flatMap((section) => section.lineup?.map((entry) => entry.word) ?? []);
 
   const hasVocab = sections.some(
     (section) => (section.vocabList?.length ?? 0) > 0 || (section.expressions?.length ?? 0) > 0
@@ -104,7 +107,88 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
               {section.body}
             </p>
 
-            {section.table && (
+            {section.table && section.table.stackOnMobile && (
+              <>
+                <div className="mt-6 space-y-5 md:hidden">
+                  {section.table.headers.slice(1).map((paradigm, p) => {
+                    const column = p + 1;
+                    return (
+                      <div key={column} className="rounded-xl border border-stone-800 p-5">
+                        <p
+                          className="text-xl font-semibold mb-4"
+                          style={{ color: accent, fontFamily: "'Lora', Georgia, serif" }}
+                        >
+                          {paradigm}
+                        </p>
+                        <dl className="space-y-4">
+                          {section.table!.rows.map((row, r) => (
+                            <div key={r}>
+                              <dt className="text-[0.7rem] uppercase tracking-widest text-stone-500 mb-1">
+                                {row[0]}
+                              </dt>
+                              <dd
+                                className={`text-sm text-stone-300 leading-relaxed break-words ${
+                                  section.table!.monoRows?.includes(r)
+                                    ? "font-mono text-xs whitespace-pre overflow-x-auto"
+                                    : "whitespace-pre-line"
+                                }`}
+                                style={
+                                  section.table!.monoRows?.includes(r)
+                                    ? undefined
+                                    : { fontFamily: "'Lora', Georgia, serif" }
+                                }
+                              >
+                                {row[column]}
+                              </dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-6 hidden overflow-x-auto rounded-xl border border-stone-800 md:block">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        {section.table.headers.map((header, k) => (
+                          <th
+                            key={k}
+                            className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
+                            style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row, r) => (
+                        <tr key={r} className="border-b border-stone-800/60 last:border-0">
+                          {row.map((cell, c) => (
+                            <td
+                              key={c}
+                              className={`px-4 py-3 text-stone-400 leading-relaxed align-top ${
+                                section.table!.monoRows?.includes(r) ? "font-mono text-xs whitespace-pre" : "whitespace-pre-line"
+                              }`}
+                              style={
+                                section.table!.monoRows?.includes(r)
+                                  ? undefined
+                                  : { fontFamily: "'Lora', Georgia, serif" }
+                              }
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
+
+            {section.table && !section.table.stackOnMobile && (
               <div className="mt-6 overflow-x-auto rounded-xl border border-stone-800">
                 <table className="w-full text-sm border-collapse">
                   <thead>
@@ -167,6 +251,14 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                   </p>
                 )}
               </div>
+            )}
+
+            {section.lineup && section.lineup.length > 0 && (
+              <Lineup entries={section.lineup} accent={accent} />
+            )}
+
+            {section.interrogation && section.interrogation.length > 0 && (
+              <Interrogation entries={section.interrogation} suspects={suspects} accent={accent} />
             )}
 
             {section.code && <CodeBlock code={section.code} language={section.language} />}

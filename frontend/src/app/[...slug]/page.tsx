@@ -1,11 +1,14 @@
 import { notFound, redirect } from "next/navigation";
 import {
+  getFlashcardsPath,
   getPresentationPath,
+  getTopicByFlashcardsPath,
   getTopicByPath,
   getTopicByPresentationPath,
   getTopicPath,
   topics,
 } from "@/lib/topics";
+import { getFlashcardsForTopic } from "@/lib/flashcards";
 import { categories, getCategoryBySlug, getCategoryPath } from "@/lib/categories";
 import { getQuizByPath, getQuizPath, quizzes } from "@/lib/quizzes";
 import { TopicPage } from "@/components/features/TopicPage";
@@ -13,6 +16,7 @@ import { CategoryPage } from "@/components/features/CategoryPage";
 import { GuidePage } from "@/components/features/GuidePage";
 import { QuizPage } from "@/components/features/QuizPage";
 import { SlidesPage } from "@/components/features/SlidesPage";
+import { FlashcardsPage } from "@/components/features/FlashcardsPage";
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -27,7 +31,10 @@ export function generateStaticParams() {
     .filter((t) => t.slides)
     .map((t) => ({ slug: getPresentationPath(t).split("/") }));
   const quizParams = quizzes.map((q) => ({ slug: getQuizPath(q).split("/") }));
-  return [...topicParams, ...categoryParams, ...presentationParams, ...quizParams];
+  const flashcardParams = topics
+    .filter((t) => getFlashcardsForTopic(t).length > 0)
+    .map((t) => ({ slug: getFlashcardsPath(t).split("/") }));
+  return [...topicParams, ...categoryParams, ...presentationParams, ...quizParams, ...flashcardParams];
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -39,6 +46,14 @@ export async function generateMetadata({ params }: PageProps) {
     return {
       title: `${topic.title} — Metanoia Lab`,
       description: topic.intro,
+    };
+  }
+
+  const flashcardsTopic = getTopicByFlashcardsPath(path);
+  if (flashcardsTopic) {
+    return {
+      title: `Flashcards — ${flashcardsTopic.title} — Metanoia Lab`,
+      description: flashcardsTopic.subtitle,
     };
   }
 
@@ -68,6 +83,11 @@ export default async function Page({ params }: PageProps) {
   const presentationTopic = getTopicByPresentationPath(path);
   if (presentationTopic) {
     return <SlidesPage topic={presentationTopic} />;
+  }
+
+  const flashcardsTopic = getTopicByFlashcardsPath(path);
+  if (flashcardsTopic) {
+    return <FlashcardsPage topic={flashcardsTopic} />;
   }
 
   const quiz = getQuizByPath(path);

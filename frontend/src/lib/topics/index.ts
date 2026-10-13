@@ -1,5 +1,6 @@
 import { TopicData } from "../types/topic";
 import { getCategoryPath } from "../categories";
+import { getFlashcardsForTopic } from "../flashcards";
 import  { trindade } from "./trindade";
 import { epicteto } from "./epicteto";
 import {
@@ -28,12 +29,15 @@ import { inglesConversasInformais } from "./ingles-conversas-informais";
 import { inglesPrecosPedidosDirecoes } from "./ingles-precos-pedidos-direcoes";
 import { inglesReacoesInterjeicoes } from "./ingles-reacoes-interjeicoes";
 import { ingles50ExpressoesCurtas } from "./ingles-50-expressoes-curtas";
+import { inglesVocabularioTecnicoProgramacao } from "./ingles-vocabulario-tecnico-programacao";
 import { pytestDjangoConfiguracao } from "./pytest-django-configuracao";
 import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
 import { pytestDjangoConftest } from "./pytest-django-conftest";
+import { inglesOughGang } from "./ingles-ough-gang";
 import { someAnyNo } from "./some-any-no";
 import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
+import { designingWebApisCap2 } from "./designing-web-apis-paradigmas";
 
 export const topics: TopicData[] = [
   trindade,
@@ -62,12 +66,15 @@ export const topics: TopicData[] = [
   inglesPrecosPedidosDirecoes,
   inglesReacoesInterjeicoes,
   ingles50ExpressoesCurtas,
+  inglesVocabularioTecnicoProgramacao,
+  inglesOughGang,
   pytestDjangoConfiguracao,
   pytestDjangoMarcacaoDb,
   pytestDjangoParametroDb,
   pytestDjangoConftest,
   someAnyNo,
   designingWebApisCap1,
+  designingWebApisCap2,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {
@@ -93,4 +100,17 @@ export function getTopicByPresentationPath(path: string): TopicData | undefined 
   const topicPath = path.slice(0, -PRESENTATION_SUFFIX.length);
   const topic = getTopicByPath(topicPath);
   return topic?.slides ? topic : undefined;
+}
+
+const FLASHCARDS_SUFFIX = "/flashcards";
+
+export function getFlashcardsPath(topic: TopicData): string {
+  return `${getTopicPath(topic)}${FLASHCARDS_SUFFIX}`;
+}
+
+export function getTopicByFlashcardsPath(path: string): TopicData | undefined {
+  if (!path.endsWith(FLASHCARDS_SUFFIX)) return undefined;
+  const topicPath = path.slice(0, -FLASHCARDS_SUFFIX.length);
+  const topic = getTopicByPath(topicPath);
+  return topic && getFlashcardsForTopic(topic).length > 0 ? topic : undefined;
 }

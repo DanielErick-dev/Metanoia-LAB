@@ -32,9 +32,38 @@ export interface ExpressionEntry {
   exampleTranslation?: string;
 }
 
+export interface LineupExample {
+  en: string;
+  pt: string;
+}
+
+export interface LineupEntry {
+  word: string;
+  meaning: string;
+  details?: string[];
+  informal?: {
+    word: string;
+    note: string;
+  };
+  forms?: {
+    label: string;
+    pairs: [string, string][];
+  };
+  examples?: LineupExample[];
+}
+
+export interface InterrogationEntry {
+  sentence: string;
+  answer: string;
+  accept?: string[];
+  translation: string;
+}
+
 export interface TopicTable {
   headers: string[];
   rows: string[][];
+  stackOnMobile?: boolean;
+  monoRows?: number[];
 }
 
 export interface TopicSection {
@@ -48,6 +77,8 @@ export interface TopicSection {
   vocabList?: VocabEntry[];
   expressions?: ExpressionEntry[];
   table?: TopicTable;
+  lineup?: LineupEntry[];
+  interrogation?: InterrogationEntry[];
 }
 
 export interface Slide {

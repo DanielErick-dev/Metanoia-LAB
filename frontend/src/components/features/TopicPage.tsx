@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { TopicData } from "@/lib/types/topic";
 import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/categories";
-import { getPresentationPath, getTopicPath } from "@/lib/topics";
+import { getFlashcardsPath, getPresentationPath, getTopicPath } from "@/lib/topics";
+import { getFlashcardsForTopic } from "@/lib/flashcards";
 import { Breadcrumb } from "./Breadcrumb";
 import { TopicSections } from "./TopicSections";
 import { ScrollToTopButton } from "./ScrollToTopButton";
@@ -28,6 +29,11 @@ function estimateReadingMinutes(topic: TopicData): number {
       words += countWords(entry.term) + countWords(entry.translation);
       if (entry.note) words += countWords(entry.note);
     }
+    for (const entry of section.lineup ?? []) {
+      words += countWords(entry.word) + countWords(entry.meaning);
+      for (const detail of entry.details ?? []) words += countWords(detail);
+      for (const example of entry.examples ?? []) words += countWords(example.en) + countWords(example.pt);
+    }
     for (const entry of section.expressions ?? []) {
       words += countWords(entry.phrase) + countWords(entry.translation);
       if (entry.explanation) words += countWords(entry.explanation);
@@ -46,6 +52,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
     { label: topic.title, href: `/${getTopicPath(topic)}` },
   ];
   const readingMinutes = estimateReadingMinutes(topic);
+  const flashcardsCount = getFlashcardsForTopic(topic).length;
   const backHref = `/${getCategoryPath(topic.categorySlug)}`;
   const backLabel = category?.title ?? "Biblioteca";
 
@@ -221,6 +228,33 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                   }}
                 >
                   Ir direto pro quiz →
+                </Link>
+              </div>
+            )}
+
+            {flashcardsCount > 0 && (
+              <div
+                className="mb-14 p-6 rounded-2xl border flex flex-wrap items-center justify-between gap-4"
+                style={{ borderColor: `${topic.accent}40`, backgroundColor: `${topic.accent}0d` }}
+              >
+                <p
+                  className="text-sm text-stone-300"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  📇 Pratique com flashcards e repetição espaçada ({flashcardsCount}{" "}
+                  {flashcardsCount === 1 ? "cartão" : "cartões"}).
+                </p>
+                <Link
+                  href={`/${getFlashcardsPath(topic)}`}
+                  className="shrink-0 text-xs font-medium tracking-widest uppercase px-5 py-2.5 rounded-full border transition-colors"
+                  style={{
+                    color: topic.accent,
+                    borderColor: `${topic.accent}40`,
+                    backgroundColor: `${topic.accent}12`,
+                    fontFamily: "'DM Sans', sans-serif",
+                  }}
+                >
+                  Praticar com flashcards →
                 </Link>
               </div>
             )}
