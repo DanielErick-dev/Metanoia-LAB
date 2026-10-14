@@ -17,6 +17,7 @@ import { GuidePage } from "@/components/features/GuidePage";
 import { QuizPage } from "@/components/features/QuizPage";
 import { SlidesPage } from "@/components/features/SlidesPage";
 import { FlashcardsPage } from "@/components/features/FlashcardsPage";
+import { DictionaryPage } from "@/components/features/DictionaryPage";
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -125,6 +126,9 @@ export default async function Page({ params }: PageProps) {
     if (category.layout === "guide") {
       const firstChapter = topics.find((t) => t.categorySlug === category.slug);
       if (firstChapter) redirect(`/${getTopicPath(firstChapter)}`);
+    }
+    if (category.layout === "dictionary") {
+      return <DictionaryPage category={category} />;
     }
     return <CategoryPage category={category} />;
   }

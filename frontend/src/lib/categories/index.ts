@@ -105,6 +105,14 @@ export const categories: CategoryData[] = [
     status: "em-construcao",
   },
   {
+    slug: "dicionario",
+    title: "Dicionário",
+    subtitle: "Todas as palavras e expressões que já anotei, num lugar só pra consultar",
+    accent: "#f472b6",
+    parentSlug: "ingles",
+    layout: "dictionary",
+  },
+  {
     slug: "resenhas",
     title: "Resenhas",
     subtitle: "Resenhas e anotações de leitura de livros",
