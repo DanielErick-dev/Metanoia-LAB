@@ -43,6 +43,10 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
           exampleTranslation: "Scope creep é um problema comum em projetos de software.",
         },
         {
+          term: "delivery",
+          translation: "entrega",
+        },
+        {
           term: "discoverable",
           translation: "que dá pra descobrir, explorável",
           example: "GraphQL is natively discoverable.",
@@ -56,11 +60,30 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
           exampleTranslation: "O GraphQL permite que os clientes aninhem consultas.",
         },
         {
+          term: "ensure",
+          translation: "garantir",
+        },
+        {
+          term: "enterprise",
+          translation: "corporativo",
+        },
+        {
           term: "error-prone",
           translation: "propenso a erros",
           note: "Prone = propenso.",
           example: "Manual deployments are error-prone.",
           exampleTranslation: "Deploys manuais são propensos a erros.",
+        },
+        {
+          term: "further",
+          translation: "além disso, também; adicional; no sentido de distância",
+          note: "No sentido de além disso, é igual a also. Como adicional: for further information, contact us. Também pode ser verbo: to further = promover ou fazer avançar.",
+          example: "I can't go any further.",
+        },
+        {
+          term: "huge",
+          translation: "enorme",
+          note: "Parecido com big, porém mais forte.",
         },
         {
           term: "introspection",
@@ -81,6 +104,26 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
           translation: "bem, de forma agradável",
           example: "It doesn't fit into REST nicely.",
           exampleTranslation: "Isso não se encaixa bem no REST.",
+        },
+        {
+          term: "noise",
+          translation: "ruído ou barulho",
+        },
+        {
+          term: "noisy",
+          translation: "barulhento",
+        },
+        {
+          term: "often",
+          translation: "frequentemente, muitas vezes",
+        },
+        {
+          term: "onus",
+          translation: "ônus ou responsabilidade",
+        },
+        {
+          term: "overhead",
+          translation: "custo extra",
         },
         {
           term: "procedure",
@@ -110,6 +153,14 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
           exampleTranslation: "Cada requisição é uma ida e volta até o servidor.",
         },
         {
+          term: "simultaneously",
+          translation: "simultaneamente",
+        },
+        {
+          term: "stale",
+          translation: "velho, desatualizado",
+        },
+        {
           term: "subresource",
           translation: "subrecurso",
           example: "Issues are a subresource of a repository.",
@@ -123,10 +174,26 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
           exampleTranslation: "Você acessa tudo através de um único endpoint.",
         },
         {
+          term: "two-way",
+          translation: "mão dupla",
+        },
+        {
           term: "unlike",
           translation: "diferente de",
           example: "Unlike REST, GraphQL has one endpoint.",
           exampleTranslation: "Diferente do REST, o GraphQL tem um único endpoint.",
+        },
+        {
+          term: "wary",
+          translation: "cuidadoso, cauteloso, desconfiado",
+        },
+        {
+          term: "waste",
+          translation: "desperdício",
+        },
+        {
+          term: "whenever",
+          translation: "sempre que",
         },
         {
           term: "within",

@@ -248,8 +248,36 @@ Content-Type: application/json
       },
     },
     {
+      heading: "Event-driven APIs",
+      body: "Um outro padrão é conhecido como event-driven APIs. Imagine que temos um servidor e que precisamos ter em mãos as informações desse servidor em tempo real. Em vez de ficarmos mandando N requisições sem parar para o servidor, correndo o risco de várias requisições perdidas sem receber nada novo, a melhor forma é usando event-driven APIs. O livro cita 3 exemplos: webhooks, WebSockets e HTTP streaming.",
+    },
+    {
+      heading: "Webhooks",
+      body: "Imagine que agora o próprio servidor te avisa assim que ocorre algo: essa é a ideia do webhook. Você define uma URL para quando um determinado serviço ocorrer — por exemplo, um aluno foi criado — ele enviar uma mensagem para você (para a sua API, por exemplo): “Opa, recebi um aluno novo aqui, viu? Aqui estão os dados dele…”. Assim fica parecendo simples, mas o autor alerta sobre alguns problemas que nascem junto:",
+      citation: {
+        lines: [
+          "Quantas vezes o webhook vai avisar caso ocorra uma falha? Como vai lidar com as retentativas?",
+          "Para o webhook chegar na API, ele precisa de acesso. Como se defender de alguém que finge ser o seu webhook? Isso abre uma brecha de segurança.",
+          "Se o app tiver firewall, como a resposta vai chegar no app?",
+        ],
+        source: "Problemas apontados pelo autor",
+      },
+    },
+    {
+      heading: "O outro lado do webhook",
+      body: "O autor deixa claro aquilo que o webhook resolve, mas mostra também que, resolvendo um lado, surgem complexidades e novas responsabilidades do outro lado.",
+    },
+    {
+      heading: "WebSockets",
+      body: "Se antes o servidor avisava quando tinha algo novo, agora, usando WebSockets, é estabelecida uma chamada bidirecional, isto é, tanto um lado fala quanto o outro: uma comunicação entre ambos, tanto de servidor para navegador quanto de servidor para servidor. Funcionam na porta 80 ou 443, então isso ajuda muito na questão do firewall, que era um empecilho no uso de webhooks. A sua desvantagem é que é necessário ter uma conexão estável para poder manter a comunicação viva a todo instante, e, em termos de escalabilidade, pode ficar difícil manter milhares de conexões simultaneamente.",
+    },
+    {
+      heading: "HTTP streaming",
+      body: "O HTTP streaming eu diria que é um primo do WebSockets, com a diferença de que o cliente pede uma única vez para o servidor, e o servidor vai enviando a resposta em pedaços, aos poucos. Então apenas o servidor fica “falando” dentro dessa comunicação.",
+    },
+    {
       heading: "Como escolher o paradigma",
-      body: "Na prática, o paradigma que vamos escolher depende da complexidade da nossa API. Se nossa API for 90% CRUD, por exemplo, um padrão REST pode ser a melhor escolha. Mas se o que estamos desenvolvendo foge muito do CRUD, então talvez o REST não seja a melhor escolha.",
+      body: "Na prática, o paradigma que vamos escolher depende da complexidade da nossa API. Se nossa API for 90% CRUD, por exemplo, um padrão REST pode ser a melhor escolha. Mas se o que estamos desenvolvendo foge muito do CRUD, então talvez o REST não seja a melhor escolha. Da mesma forma, se precisamos manter uma conexão ativa o tempo inteiro, WebSockets pode ser melhor; mas se envolve mobile e não há a necessidade de conexão ativa a todo momento, então um webhook pode ser melhor. Cada caso é um caso a ser avaliado, e em alguns casos pode haver até mais de um paradigma junto, de acordo com o problema.",
     },
   ],
   relatedSlugs: ["o-que-e-uma-api"],
