@@ -29,7 +29,7 @@ export function FlashcardsPage({ topic }: FlashcardsPageProps) {
           <span className="text-emerald-400 text-xl">◈</span>
           <span
             className="font-medium tracking-widest text-xs uppercase text-stone-400 group-hover:text-white transition-colors"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
           >
             Metanoia Lab
           </span>
@@ -37,7 +37,7 @@ export function FlashcardsPage({ topic }: FlashcardsPageProps) {
         <Link
           href={backHref}
           className="text-xs text-stone-600 hover:text-stone-300 transition-colors flex items-center gap-2 tracking-wide"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
         >
           ← {topic.title}
         </Link>
@@ -54,20 +54,20 @@ export function FlashcardsPage({ topic }: FlashcardsPageProps) {
             color: topic.accent,
             borderColor: `${topic.accent}40`,
             backgroundColor: `${topic.accent}12`,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "var(--font-dm-sans), sans-serif",
           }}
         >
           {category?.title}
         </span>
         <h1
           className="text-3xl sm:text-4xl font-semibold text-white leading-tight mb-3 break-words"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           Flashcards — {topic.title}
         </h1>
         <p
           className="text-base text-stone-400 tracking-wide mb-12"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
         >
           {topic.subtitle}
         </p>
@@ -76,7 +76,7 @@ export function FlashcardsPage({ topic }: FlashcardsPageProps) {
       </div>
 
       <footer className="border-t border-stone-800/60 py-8 text-center text-stone-700 text-xs tracking-wide">
-        <span style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <span style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}>
           Metanoia Lab —{" "}
           <span className="text-emerald-800">transformação pela verdade</span>
         </span>

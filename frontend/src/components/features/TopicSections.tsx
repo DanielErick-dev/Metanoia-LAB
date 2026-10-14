@@ -6,6 +6,7 @@ import { CodeBlock } from "./CodeBlock";
 import { SpeakButton } from "./SpeakButton";
 import { Lineup } from "./Lineup";
 import { Interrogation } from "./Interrogation";
+import { Confrontation } from "./Confrontation";
 
 interface TopicSectionsProps {
   sections: TopicSection[];
@@ -95,14 +96,14 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
             <h2
               id={`section-${i}`}
               className="text-2xl font-semibold text-stone-100 leading-snug mb-6 scroll-mt-8"
-              style={{ fontFamily: "'Lora', Georgia, serif" }}
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
             >
               {section.heading}
             </h2>
 
             <p
               className="text-[1.125rem] text-stone-400 leading-[1.9]"
-              style={{ fontFamily: "'Lora', Georgia, serif" }}
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
             >
               {section.body}
             </p>
@@ -116,7 +117,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                       <div key={column} className="rounded-xl border border-stone-800 p-5">
                         <p
                           className="text-xl font-semibold mb-4"
-                          style={{ color: accent, fontFamily: "'Lora', Georgia, serif" }}
+                          style={{ color: accent, fontFamily: "var(--font-lora), Georgia, serif" }}
                         >
                           {paradigm}
                         </p>
@@ -135,7 +136,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                                 style={
                                   section.table!.monoRows?.includes(r)
                                     ? undefined
-                                    : { fontFamily: "'Lora', Georgia, serif" }
+                                    : { fontFamily: "var(--font-lora), Georgia, serif" }
                                 }
                               >
                                 {row[column]}
@@ -155,7 +156,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                           <th
                             key={k}
                             className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
-                            style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                            style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
                           >
                             {header}
                           </th>
@@ -174,7 +175,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                               style={
                                 section.table!.monoRows?.includes(r)
                                   ? undefined
-                                  : { fontFamily: "'Lora', Georgia, serif" }
+                                  : { fontFamily: "var(--font-lora), Georgia, serif" }
                               }
                             >
                               {cell}
@@ -197,7 +198,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                         <th
                           key={k}
                           className="text-left px-4 py-3 font-semibold tracking-wide uppercase text-xs border-b border-stone-800"
-                          style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                          style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
                         >
                           {header}
                         </th>
@@ -211,7 +212,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                           <td
                             key={c}
                             className="px-4 py-3 text-stone-400 leading-relaxed align-top"
-                            style={{ fontFamily: "'Lora', Georgia, serif" }}
+                            style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                           >
                             {cell}
                           </td>
@@ -232,7 +233,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                   <p
                     key={k}
                     className="text-[1.0625rem] text-stone-300 italic leading-relaxed"
-                    style={{ fontFamily: "'Lora', Georgia, serif" }}
+                    style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                   >
                     {section.citation!.lines.length > 1 && (
                       <span className="not-italic font-semibold mr-2" style={{ color: accent }}>
@@ -245,7 +246,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                 {section.citation.source && (
                   <p
                     className="text-xs text-stone-500 tracking-widest uppercase not-italic"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
                   >
                     — {section.citation.source}
                   </p>
@@ -255,6 +256,10 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
 
             {section.lineup && section.lineup.length > 0 && (
               <Lineup entries={section.lineup} accent={accent} />
+            )}
+
+            {section.confrontation && section.confrontation.length > 0 && (
+              <Confrontation entries={section.confrontation} accent={accent} />
             )}
 
             {section.interrogation && section.interrogation.length > 0 && (
@@ -272,7 +277,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
-                      style={{ color: accent, fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
                     >
                       {link.text} ↗
                     </a>
@@ -285,7 +290,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                 {vocabList.map((entry, k) => (
                   <div key={k}>
-                    <p className="text-[1.0625rem]" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+                    <p className="text-[1.0625rem]" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
                       <span className="font-semibold" style={{ color: accent }}>
                         {entry.term}
                       </span>{" "}
@@ -318,7 +323,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                       <span
                         className="font-semibold text-stone-100"
-                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                       >
                         {entry.phrase}
                       </span>
@@ -336,7 +341,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                       <div className="mt-3 pl-4 border-l-2" style={{ borderColor: `${accent}40` }}>
                         <p
                           className="italic text-stone-300 leading-relaxed flex items-baseline gap-2"
-                          style={{ fontFamily: "'Lora', Georgia, serif" }}
+                          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                         >
                           <span>“{entry.example}”</span>
                           <SpeakButton text={entry.example} accent={accent} />
@@ -358,14 +363,14 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                     {example.title && (
                       <h3
                         className="text-base font-semibold text-stone-200 mb-3"
-                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                       >
                         {example.title}
                       </h3>
                     )}
                     <p
                       className="text-[1.0625rem] text-stone-400 leading-[1.9]"
-                      style={{ fontFamily: "'Lora', Georgia, serif" }}
+                      style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                     >
                       {example.body}
                     </p>
@@ -373,7 +378,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                     {example.note && (
                       <p
                         className="text-sm text-stone-500 leading-relaxed mt-4"
-                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                       >
                         {example.note}
                       </p>

@@ -8,7 +8,7 @@ export const inglesOughGang: TopicData = {
   accent: "#facc15",
   status: "em-construcao",
   intro:
-    "Through, throughout, thought, although, though, thorough e tough: sete palavras com quase a mesma cara, que vivem sendo confundidas. Cada uma tem sua ficha com pronúncia, significado e exemplos — e no final tem um interrogatório pra ver se você sabe quem é quem.",
+    "Through, throughout, thought, although, though, thorough e tough: sete palavras com quase a mesma cara, que vivem sendo confundidas. Primeiro você conhece cada suspeito pela ficha, depois coloca os parecidos frente a frente na acareação e, no final, encara o interrogatório pra ver se sabe quem é quem.",
   sections: [
     {
       heading: "The Lineup",
@@ -112,6 +112,130 @@ export const inglesOughGang: TopicData = {
       ],
     },
     {
+      heading: "Acareação",
+      body: "Acareação é quando a polícia coloca dois suspeitos frente a frente pra ver a diferença entre eles. Aqui é igual: os parecidos lado a lado, e o que entrega cada um é o contexto da frase.",
+      confrontation: [
+        {
+          title: "A família through",
+          suspects: [
+            {
+              word: "through",
+              context: "Passar por algo, atravessar. Tem movimento: entra de um lado e sai do outro.",
+              example: {
+                en: "I went through a really difficult time last year.",
+                pt: "Eu passei por um momento difícil ano passado.",
+              },
+            },
+            {
+              word: "throughout",
+              context: "Durante todo / por toda a parte. Fala de tempo ou espaço do começo ao fim.",
+              example: {
+                en: "She was calm throughout her visit to the dentist.",
+                pt: "Ela ficou calma durante toda sua visita no dentista.",
+              },
+            },
+          ],
+          hook: "Throughout é literalmente through + out: atravessar até sair do outro lado. Por isso é o \"do começo ao fim\". Pensa no drive-thru: você atravessa o restaurante inteiro — throughout é isso esticado pelo tempo todo.",
+        },
+        {
+          title: "Os gêmeos de cara",
+          suspects: [
+            {
+              word: "though",
+              context: "Contraste: mas, embora. Aparece ligando ideias, geralmente no fim da frase.",
+              example: {
+                en: "I'm busy today, we could meet tomorrow though.",
+                pt: "Eu estou ocupado hoje, mas poderíamos nos encontrar amanhã.",
+              },
+            },
+            {
+              word: "through",
+              context: "Movimento: através de, passar por. Vem antes do lugar ou da situação atravessada.",
+              example: {
+                en: "I went through a really difficult time last year.",
+                pt: "Eu passei por um momento difícil ano passado.",
+              },
+            },
+            {
+              word: "thorough",
+              context: "Qualidade: completo, minucioso. Descreve algo, então vem colado num substantivo.",
+              example: {
+                en: "thorough cleaning",
+                pt: "limpeza detalhada (completa)",
+              },
+            },
+          ],
+          hook: "Thorough é through com um \"o\" a mais — e as duas palavras têm a mesma origem. Uma limpeza thorough é a que passa por tudo, sem pular nenhum canto.",
+        },
+        {
+          title: "Os dois embora",
+          suspects: [
+            {
+              word: "although",
+              context: "Embora. Abre a frase, antes da ideia que vai ser contrariada.",
+              example: {
+                en: "Although I was hungry, I didn't eat anything.",
+                pt: "Embora eu estivesse com fome, eu não comi nada.",
+              },
+            },
+            {
+              word: "though",
+              context: "Mesmo sentido, mas no fim da frase. Também pode abrir a frase como although.",
+              example: {
+                en: "I'm busy today, we could meet tomorrow though.",
+                pt: "Eu estou ocupado hoje, mas poderíamos nos encontrar amanhã.",
+              },
+            },
+          ],
+          hook: "Although é o irmão mais velho (all + though): chega primeiro e abre a frase. Though é o caçula que fecha a frase. No final da frase só cabe though — although nunca.",
+        },
+        {
+          title: "O T de Think",
+          suspects: [
+            {
+              word: "thought",
+              context: "Passado de think (pensei, achei) ou um pensamento, uma ideia.",
+              example: {
+                en: "I thought you were busy.",
+                pt: "Eu achei que você estava ocupado.",
+              },
+            },
+            {
+              word: "though",
+              context: "Contraste: mas, embora. Não tem nada a ver com pensar.",
+              example: {
+                en: "I'm busy today, we could meet tomorrow though.",
+                pt: "Eu estou ocupado hoje, mas poderíamos nos encontrar amanhã.",
+              },
+            },
+          ],
+          hook: "Thought termina com T — o T de Think. Se a frase fala de pensar ou achar no passado, é ele. A mesma família: think → thought, buy → bought, bring → brought.",
+        },
+        {
+          title: "O durão",
+          suspects: [
+            {
+              word: "tough",
+              context: "Difícil, duro, resistente. É uma característica, então aparece depois de is / very.",
+              example: {
+                en: "Her father is very tough.",
+                pt: "Seu pai é muito durão.",
+              },
+            },
+            {
+              word: "though",
+              context: "Contraste: mas, embora. Nunca vem depois de very.",
+              example: {
+                en: "I'm busy today, we could meet tomorrow though.",
+                pt: "Eu estou ocupado hoje, mas poderíamos nos encontrar amanhã.",
+              },
+            },
+          ],
+          hook: "Tough termina com som de F — de Forte. Se a frase descreve algo ou alguém como difícil ou durão (very ___), é o tough.",
+        },
+      ],
+    },
+    {
       heading: "Interrogatório",
       body: "Complete a frase com o suspeito certo. A tradução é a sua pista.",
       interrogation: [
@@ -129,6 +253,11 @@ export const inglesOughGang: TopicData = {
           sentence: "think → ___",
           answer: "thought",
           translation: "o passado de think",
+        },
+        {
+          sentence: "I ___ you were busy.",
+          answer: "thought",
+          translation: "Eu achei que você estava ocupado.",
         },
         {
           sentence: "___ I was hungry, I didn't eat anything.",

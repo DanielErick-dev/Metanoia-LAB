@@ -34,6 +34,10 @@ function estimateReadingMinutes(topic: TopicData): number {
       for (const detail of entry.details ?? []) words += countWords(detail);
       for (const example of entry.examples ?? []) words += countWords(example.en) + countWords(example.pt);
     }
+    for (const entry of section.confrontation ?? []) {
+      words += countWords(entry.hook);
+      for (const suspect of entry.suspects) words += countWords(suspect.context) + countWords(suspect.example.en);
+    }
     for (const entry of section.expressions ?? []) {
       words += countWords(entry.phrase) + countWords(entry.translation);
       if (entry.explanation) words += countWords(entry.explanation);
@@ -63,7 +67,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
           <span className="text-emerald-400 text-xl">◈</span>
           <span
             className="font-medium tracking-widest text-xs uppercase text-stone-400 group-hover:text-white transition-colors"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
           >
             Metanoia Lab
           </span>
@@ -71,7 +75,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
         <Link
           href={backHref}
           className="text-xs text-stone-600 hover:text-stone-300 transition-colors flex items-center gap-2 tracking-wide"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
         >
           ← {backLabel}
         </Link>
@@ -110,7 +114,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                 color: topic.accent,
                 borderColor: `${topic.accent}40`,
                 backgroundColor: `${topic.accent}12`,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "var(--font-dm-sans), sans-serif",
               }}
             >
               Ver apresentação →
@@ -125,20 +129,20 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                   color: topic.accent,
                   borderColor: `${topic.accent}40`,
                   backgroundColor: `${topic.accent}12`,
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "var(--font-dm-sans), sans-serif",
                 }}
               >
                 {category?.title}
               </span>
               <h1
                 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-white leading-tight mb-3 break-words"
-                style={{ fontFamily: "'Lora', Georgia, serif" }}
+                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
               >
                 {topic.title}
               </h1>
               <p
                 className="text-base text-stone-400 tracking-wide"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
               >
                 {topic.subtitle}
               </p>
@@ -159,7 +163,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                   />
                   <p
                     className="text-2xl text-stone-200 leading-relaxed font-normal italic"
-                    style={{ fontFamily: "'Lora', Georgia, serif" }}
+                    style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                   >
                     “{topic.quote.text}”
                   </p>
@@ -167,7 +171,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                     className="text-sm mt-5 block not-italic tracking-widest uppercase"
                     style={{
                       color: topic.accent,
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "var(--font-dm-sans), sans-serif",
                       opacity: 0.8,
                     }}
                   >
@@ -183,7 +187,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               className={`text-xl text-stone-300 leading-[1.85] font-normal ${
                 topic.quote?.sourceUrl ? "mb-3" : "mb-14"
               }`}
-              style={{ fontFamily: "'Lora', Georgia, serif" }}
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
             >
               {topic.intro}
             </p>
@@ -191,7 +195,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
             {topic.quote?.sourceUrl && (
               <p
                 className="text-sm text-stone-500 mb-14"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
               >
                 Fonte original:{" "}
                 <a
@@ -213,7 +217,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               >
                 <p
                   className="text-sm text-stone-300"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
                 >
                   📝 Tem um quiz no final deste artigo — não esquece de testar o que aprendeu!
                 </p>
@@ -224,7 +228,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                     color: topic.accent,
                     borderColor: `${topic.accent}40`,
                     backgroundColor: `${topic.accent}12`,
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "var(--font-dm-sans), sans-serif",
                   }}
                 >
                   Ir direto pro quiz →
@@ -239,7 +243,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
               >
                 <p
                   className="text-sm text-stone-300"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
                 >
                   📇 Pratique com flashcards e repetição espaçada ({flashcardsCount}{" "}
                   {flashcardsCount === 1 ? "cartão" : "cartões"}).
@@ -251,7 +255,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                     color: topic.accent,
                     borderColor: `${topic.accent}40`,
                     backgroundColor: `${topic.accent}12`,
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "var(--font-dm-sans), sans-serif",
                   }}
                 >
                   Praticar com flashcards →
@@ -264,7 +268,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
 
           <aside
             className="w-64 shrink-0 hidden lg:block sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hide pb-8 pr-1"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
           >
             <div className="mb-10">
               <p className="text-xs text-stone-600 tracking-widest uppercase mb-5">
@@ -354,7 +358,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
           <div className="max-w-6xl mx-auto px-8">
             <p
               className="text-xs text-stone-600 tracking-widest uppercase mb-6"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
             >
               Ver também
             </p>
@@ -371,7 +375,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                   />
                   <span
                     className="text-sm text-stone-400 group-hover:text-stone-200 transition-colors"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
                   >
                     {related.title}
                   </span>
@@ -383,7 +387,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
       )}
 
       <footer className="border-t border-stone-800/60 py-8 text-center text-stone-700 text-xs tracking-wide">
-        <span style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <span style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}>
           Metanoia Lab —{" "}
           <span className="text-emerald-800">transformação pela verdade</span>
         </span>

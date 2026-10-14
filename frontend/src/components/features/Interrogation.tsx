@@ -2,6 +2,7 @@
 
 import { useState, type CSSProperties } from "react";
 import { InterrogationEntry } from "@/lib/types/topic";
+import { typewriter } from "./caseFonts";
 
 interface InterrogationProps {
   entries: InterrogationEntry[];
@@ -9,7 +10,7 @@ interface InterrogationProps {
   accent: string;
 }
 
-const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+const MONO = typewriter.style.fontFamily;
 
 function shuffledIndices(length: number): number[] {
   const indices = Array.from({ length }, (_, i) => i);
@@ -53,7 +54,13 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
   const [before, after] = entry ? entry.sentence.split("___") : ["", ""];
 
   return (
-    <div className="mt-8 rounded-2xl border border-stone-800 overflow-hidden" style={{ backgroundColor: "#141210" }}>
+    <div
+      className="mt-8 rounded-2xl border border-stone-800 overflow-hidden"
+      style={{
+        backgroundColor: "#100f0d",
+        backgroundImage: `radial-gradient(ellipse 60% 70% at 50% 0%, ${accent}26, transparent 70%)`,
+      }}
+    >
       <div
         className="flex items-center justify-between px-5 py-3 border-b border-stone-800"
         style={{ fontFamily: MONO }}
@@ -67,15 +74,19 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
 
       {order === null && (
         <div className="px-6 py-10 text-center">
-          <p className="text-4xl mb-4">🕵️</p>
-          <p className="text-stone-300 mb-6" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+          <div className="mx-auto mb-6 flex flex-col items-center" aria-hidden>
+            <span className="w-px h-8 bg-stone-600" />
+            <span className="w-14 h-6 rounded-t-full bg-stone-700" />
+            <span className="w-10 h-2 rounded-b-full" style={{ backgroundColor: accent, boxShadow: `0 6px 40px 12px ${accent}55` }} />
+          </div>
+          <p className="text-stone-300 mb-6" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
             {entries.length} frases, {suspects.length} suspeitos. Descubra quem completa cada uma.
           </p>
           <button
             type="button"
             onClick={start}
             className="text-xs font-semibold tracking-widest uppercase px-6 py-3 rounded-full text-[#0f0e0d] hover:opacity-90 transition-opacity cursor-pointer"
-            style={{ backgroundColor: accent, fontFamily: "'DM Sans', sans-serif" }}
+            style={{ backgroundColor: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
           >
             Começar interrogatório
           </button>
@@ -87,7 +98,7 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
           <p className="text-[0.65rem] tracking-widest uppercase text-stone-600 mb-4" style={{ fontFamily: MONO }}>
             Pergunta {step + 1} de {order.length} · {score} confissões
           </p>
-          <p className="text-xl sm:text-2xl text-stone-100 leading-relaxed mb-2" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+          <p className="text-xl sm:text-2xl text-stone-100 leading-relaxed mb-2" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
             {before}
             <span
               className="inline-block min-w-20 px-2 mx-1 border-b-2 text-center"
@@ -122,7 +133,7 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
                   onClick={() => answer(word)}
                   disabled={answered}
                   className="px-4 py-2 rounded-lg border text-sm font-semibold transition-colors enabled:hover:border-stone-400 enabled:cursor-pointer"
-                  style={{ ...style, fontFamily: "'Lora', Georgia, serif" }}
+                  style={{ ...style, fontFamily: "var(--font-lora), Georgia, serif" }}
                 >
                   {word}
                 </button>
@@ -144,7 +155,7 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
                   setGuess(null);
                 }}
                 className="text-xs tracking-widest uppercase px-5 py-2.5 rounded-full border transition-colors cursor-pointer"
-                style={{ color: accent, borderColor: `${accent}40`, backgroundColor: `${accent}12`, fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: accent, borderColor: `${accent}40`, backgroundColor: `${accent}12`, fontFamily: "var(--font-dm-sans), sans-serif" }}
               >
                 {step === order.length - 1 ? "Ver veredito →" : "Próximo →"}
               </button>
@@ -156,12 +167,12 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
       {finished && order && (
         <div className="px-6 py-10 text-center">
           <p
-            className="inline-block text-2xl font-bold tracking-[0.2em] uppercase px-5 py-2 border-4 rounded-md -rotate-6 mb-6"
+            className="inline-block text-2xl tracking-[0.2em] uppercase px-5 py-2 border-4 rounded-md -rotate-6 mb-6"
             style={{ color: accent, borderColor: accent, fontFamily: MONO }}
           >
             Case closed
           </p>
-          <p className="text-stone-300 mb-6" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+          <p className="text-stone-300 mb-6" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
             Você acertou {score} de {order.length}.{" "}
             {score === order.length ? "Detetive de primeira. 🏆" : "Volte pro line-up e tente de novo."}
           </p>
@@ -169,7 +180,7 @@ export function Interrogation({ entries, suspects, accent }: InterrogationProps)
             type="button"
             onClick={start}
             className="text-xs tracking-widest uppercase px-5 py-2.5 rounded-full border transition-colors cursor-pointer"
-            style={{ color: accent, borderColor: `${accent}40`, backgroundColor: `${accent}12`, fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: accent, borderColor: `${accent}40`, backgroundColor: `${accent}12`, fontFamily: "var(--font-dm-sans), sans-serif" }}
           >
             Reabrir o caso
           </button>

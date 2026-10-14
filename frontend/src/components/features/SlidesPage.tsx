@@ -97,7 +97,7 @@ export function SlidesPage({ topic }: SlidesPageProps) {
             {slide.heading && (
               <h1
                 className="text-4xl md:text-6xl font-semibold text-white leading-tight mb-8"
-                style={{ fontFamily: "'Lora', Georgia, serif" }}
+                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
               >
                 {slide.heading}
               </h1>
@@ -105,7 +105,7 @@ export function SlidesPage({ topic }: SlidesPageProps) {
             {slide.body && (
               <p
                 className="text-xl md:text-2xl text-stone-300 leading-relaxed"
-                style={{ fontFamily: "'Lora', Georgia, serif" }}
+                style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
               >
                 {slide.body}
               </p>
@@ -114,7 +114,7 @@ export function SlidesPage({ topic }: SlidesPageProps) {
               <blockquote>
                 <p
                   className="text-2xl md:text-3xl text-stone-200 italic leading-relaxed"
-                  style={{ fontFamily: "'Lora', Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
                 >
                   “{slide.quote.text}”
                 </p>

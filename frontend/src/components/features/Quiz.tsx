@@ -80,7 +80,7 @@ export function Quiz({ quiz }: QuizProps) {
       <div className="text-center py-16">
         <p
           className="text-2xl text-stone-100 mb-3"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           {quiz.questions.length} perguntas de múltipla escolha
         </p>
@@ -107,7 +107,7 @@ export function Quiz({ quiz }: QuizProps) {
         <p className="text-sm text-stone-600 tracking-widest uppercase mb-4">Resultado</p>
         <p
           className="text-5xl font-semibold text-white mb-3"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           {score} / {quiz.questions.length}
         </p>
@@ -140,7 +140,7 @@ export function Quiz({ quiz }: QuizProps) {
 
       <p
         className="text-2xl text-stone-100 leading-relaxed mb-8"
-        style={{ fontFamily: "'Lora', Georgia, serif" }}
+        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
       >
         {question.question}
       </p>
@@ -170,7 +170,7 @@ export function Quiz({ quiz }: QuizProps) {
               style={{
                 borderColor,
                 backgroundColor: bgColor,
-                fontFamily: "'Lora', Georgia, serif",
+                fontFamily: "var(--font-lora), Georgia, serif",
               }}
             >
               <span className="text-stone-200">{option}</span>
@@ -204,7 +204,7 @@ export function Quiz({ quiz }: QuizProps) {
             borderColor: toast.type === "correct" ? "#4ade8060" : "#f8717160",
             backgroundColor: toast.type === "correct" ? "#052e16f0" : "#450a0af0",
             color: toast.type === "correct" ? "#86efac" : "#fca5a5",
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "var(--font-dm-sans), sans-serif",
           }}
         >
           {toast.message}

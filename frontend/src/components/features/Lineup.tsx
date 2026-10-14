@@ -3,13 +3,20 @@
 import { useState } from "react";
 import { LineupEntry } from "@/lib/types/topic";
 import { SpeakButton } from "./SpeakButton";
+import { typewriter } from "./caseFonts";
 
 interface LineupProps {
   entries: LineupEntry[];
   accent: string;
 }
 
-const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+const PAPER = "#e9dfc6";
+const INK = "#2b2418";
+const RED_INK = "#a3261f";
+const LABEL_STYLE = { fontFamily: "var(--font-dm-sans), sans-serif", color: "#5b4a30" };
+const LABEL = "text-[0.72rem] font-bold tracking-[0.18em] uppercase";
+const STATURE = [10, 26, 4, 18, 30, 0, 14];
+const CHART_MARKS = ["7'", "6'6\"", "6'", "5'6\"", "5'", "4'6\""];
 
 function caseNumber(index: number): string {
   return `#${String(index + 1).padStart(3, "0")}`;
@@ -20,69 +27,102 @@ function cautionTape(accent: string): string {
 }
 
 export function Lineup({ entries, accent }: LineupProps) {
-  const [open, setOpen] = useState<Set<number>>(new Set());
-  const allOpen = open.size === entries.length;
+  const [selected, setSelected] = useState(0);
+  const [revealed, setRevealed] = useState<Set<number>>(new Set());
+  const allRevealed = revealed.size === entries.length;
+  const entry = entries[selected];
+  const isRevealed = revealed.has(selected);
 
-  function toggle(index: number) {
-    setOpen((current) => {
-      const next = new Set(current);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
-      return next;
-    });
+  function reveal(index: number) {
+    setRevealed((current) => new Set(current).add(index));
   }
 
   function toggleAll() {
-    setOpen(allOpen ? new Set() : new Set(entries.map((_, i) => i)));
+    setRevealed(allRevealed ? new Set() : new Set(entries.map((_, i) => i)));
   }
 
-  function jumpTo(index: number) {
-    setOpen((current) => new Set(current).add(index));
-    document.getElementById(`suspect-${index}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  function go(step: number) {
+    setSelected((current) => (current + step + entries.length) % entries.length);
   }
 
   return (
     <div className="mt-8">
       <div className="rounded-2xl overflow-hidden border border-stone-800">
         <div className="h-3" style={{ background: cautionTape(accent) }} />
-        <div
-          className="relative px-4 pt-6 pb-4"
-          style={{
-            backgroundColor: "#141210",
-            backgroundImage: `repeating-linear-gradient(to bottom, transparent 0 23px, ${accent}1f 23px 24px)`,
-          }}
-        >
-          <p
-            className="text-[0.65rem] tracking-[0.3em] uppercase text-center mb-5"
-            style={{ color: accent, fontFamily: MONO }}
-          >
-            ★ Police line-up — do not cross ★
-          </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {entries.map((entry, i) => (
-              <button
-                key={entry.word}
-                type="button"
-                onClick={() => jumpTo(i)}
-                className="group flex flex-col items-center px-3 py-2 rounded-lg border border-stone-700 bg-[#0f0e0d]/80 hover:-translate-y-1 transition-transform cursor-pointer"
-              >
-                <span className="text-[0.6rem] text-stone-600" style={{ fontFamily: MONO }}>
-                  {caseNumber(i)}
-                </span>
-                <span
-                  className="text-base font-semibold text-stone-100 group-hover:text-white"
-                  style={{ fontFamily: "'Lora', Georgia, serif" }}
-                >
-                  {entry.word}
-                </span>
-              </button>
-            ))}
+        <div className="relative overflow-x-auto" style={{ backgroundColor: "#16140f" }}>
+          <div className="relative min-w-[640px] h-[290px] px-6">
+            <div className="absolute inset-x-0 top-6 bottom-0 flex flex-col justify-between pointer-events-none">
+              {CHART_MARKS.map((mark) => (
+                <div key={mark} className="flex items-center gap-2">
+                  <span className={`${typewriter.className} w-8 text-right text-[0.65rem] text-stone-600`}>{mark}</span>
+                  <div className="h-px flex-1" style={{ backgroundColor: `${accent}22` }} />
+                </div>
+              ))}
+            </div>
+
+            <div className="relative h-full flex items-end justify-center gap-3 pl-8">
+              {entries.map((suspect, i) => {
+                const active = i === selected;
+                return (
+                  <button
+                    key={suspect.word}
+                    type="button"
+                    onClick={() => setSelected(i)}
+                    aria-pressed={active}
+                    aria-label={`Suspeito ${caseNumber(i)}: ${suspect.word}`}
+                    className="group relative flex flex-col items-center w-[72px] cursor-pointer focus-visible:outline-none"
+                  >
+                    <span
+                      className="absolute -inset-x-3 bottom-0 top-[-40px] rounded-t-full transition-opacity duration-300"
+                      style={{
+                        background: `radial-gradient(ellipse at 50% 30%, ${accent}40, transparent 70%)`,
+                        opacity: active ? 1 : 0,
+                      }}
+                    />
+                    <span
+                      className="relative w-10 h-11 rounded-full transition-colors duration-300"
+                      style={{ backgroundColor: active ? `${accent}cc` : "#3a352c", marginBottom: 4 }}
+                    />
+                    <span
+                      className="relative w-[64px] rounded-t-[32px] transition-colors duration-300 group-hover:brightness-125 group-focus-visible:ring-2"
+                      style={{
+                        height: 110 + STATURE[i % STATURE.length],
+                        backgroundColor: active ? `${accent}99` : "#2c2822",
+                      }}
+                    />
+                    <span
+                      className={`absolute left-1/2 -translate-x-1/2 bottom-6 w-[78px] rounded-sm border px-1 py-1.5 text-center shadow-lg transition-transform duration-300 ${
+                        active ? "-translate-y-1 scale-105" : "group-hover:-translate-y-0.5"
+                      }`}
+                      style={{ backgroundColor: "#0b0a08", borderColor: active ? accent : "#4a443a" }}
+                    >
+                      <span className={`${typewriter.className} block text-[0.5rem] tracking-wider text-stone-500`}>
+                        METANOIA PD
+                      </span>
+                      <span
+                        className="block text-[0.82rem] font-semibold leading-tight text-white"
+                        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+                      >
+                        {suspect.word}
+                      </span>
+                      <span className={`${typewriter.className} block text-[0.6rem]`} style={{ color: accent }}>
+                        {caseNumber(i)}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className="h-3" style={{ background: cautionTape(accent) }} />
       </div>
 
-      <div className="flex justify-end mt-6 mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 mt-5 mb-6">
+        <p className={`${typewriter.className} text-xs text-stone-400`}>
+          <span className="sm:hidden">Arraste o line-up pro lado e toque num suspeito pra puxar a ficha dele.</span>
+          <span className="hidden sm:inline">Clique num suspeito pra puxar a ficha dele.</span>
+        </p>
         <button
           type="button"
           onClick={toggleAll}
@@ -91,139 +131,159 @@ export function Lineup({ entries, accent }: LineupProps) {
             color: accent,
             borderColor: `${accent}40`,
             backgroundColor: `${accent}12`,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "var(--font-dm-sans), sans-serif",
           }}
         >
-          {allOpen ? "Fechar todas as fichas" : "Abrir todas as fichas"}
+          {allRevealed ? "Esconder significados" : "Revelar todos"}
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {entries.map((entry, i) => {
-          const isOpen = open.has(i);
-          return (
-            <div
-              key={entry.word}
-              id={`suspect-${i}`}
-              className="rounded-xl border border-stone-800 bg-stone-900/40 overflow-hidden scroll-mt-24 self-start"
+      <div className="relative pt-5">
+        <div
+          className={`${typewriter.className} absolute top-0 left-6 px-4 pt-1.5 pb-3 rounded-t-md text-xs tracking-widest`}
+          style={{ backgroundColor: "#d8cba9", color: INK }}
+        >
+          CASE FILE {caseNumber(selected)}
+        </div>
+
+        <div
+          key={entry.word}
+          className="relative rounded-md rounded-tl-none px-6 py-7 sm:px-8 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-2 duration-300"
+          style={{
+            backgroundColor: PAPER,
+            color: INK,
+            backgroundImage: `repeating-linear-gradient(to bottom, transparent 0 27px, ${INK}14 27px 28px)`,
+          }}
+        >
+          <span
+            className={`${typewriter.className} absolute top-5 right-5 sm:right-8 text-lg sm:text-xl tracking-[0.2em] px-3 py-1 border-[3px] rounded-sm rotate-[8deg] opacity-80 select-none`}
+            style={{ color: RED_INK, borderColor: RED_INK }}
+          >
+            WANTED
+          </span>
+
+          <p style={LABEL_STYLE} className={`${LABEL} mb-1`}>
+            SUSPEITO {selected + 1} DE {entries.length}
+          </p>
+          <div className="flex items-baseline gap-3 mb-6 pr-28">
+            <h3
+              className="text-4xl sm:text-5xl font-semibold break-words"
+              style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
             >
-              <div
-                className="relative px-5 pt-4 pb-5"
-                style={{
-                  backgroundImage: `repeating-linear-gradient(to bottom, transparent 0 15px, ${accent}14 15px 16px)`,
-                }}
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[0.65rem] tracking-widest text-stone-500" style={{ fontFamily: MONO }}>
-                    CASE {caseNumber(i)}
+              {entry.word}
+            </h3>
+            <SpeakButton text={entry.word} accent={RED_INK} />
+          </div>
+
+          <div className="space-y-6 max-w-xl">
+            <div>
+              <p style={LABEL_STYLE} className={`${LABEL} mb-1.5`}>KNOWN FOR</p>
+              {isRevealed ? (
+                <p
+                  className="text-xl font-semibold leading-snug animate-in fade-in duration-500"
+                  style={{ fontFamily: "var(--font-lora), Georgia, serif", color: RED_INK }}
+                >
+                  {entry.meaning}
+                </p>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => reveal(selected)}
+                  className={`${typewriter.className} group w-full text-left rounded-sm px-4 py-3 cursor-pointer transition-transform hover:-rotate-[0.6deg]`}
+                  style={{ backgroundColor: INK, color: PAPER }}
+                >
+                  <span className="flex items-center gap-3 tracking-[0.3em]">
+                    <span className="h-3 flex-1 max-w-16 rounded-[1px]" style={{ backgroundColor: PAPER }} />
+                    CLASSIFIED
+                    <span className="h-3 flex-1 max-w-16 rounded-[1px]" style={{ backgroundColor: PAPER }} />
                   </span>
-                  <span
-                    className="text-[0.6rem] tracking-[0.2em] uppercase px-2 py-0.5 rounded-sm font-bold text-[#0f0e0d]"
-                    style={{ backgroundColor: accent, fontFamily: MONO }}
-                  >
-                    Wanted
+                  <span className="block text-[0.7rem] opacity-80 mt-0.5 group-hover:opacity-100">
+                    Lembra o que significa? Clique pra conferir.
                   </span>
-                </div>
-                <div className="rounded-md bg-[#0f0e0d] border border-stone-700 px-4 py-3">
-                  <div className="flex items-baseline gap-2">
-                    <span
-                      className="text-3xl font-semibold text-white break-words"
-                      style={{ fontFamily: "'Lora', Georgia, serif" }}
-                    >
-                      {entry.word}
-                    </span>
-                    <SpeakButton text={entry.word} accent={accent} />
-                  </div>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => toggle(i)}
-                aria-expanded={isOpen}
-                className="w-full flex items-center justify-between px-5 py-3 border-t border-stone-800 text-xs tracking-widest uppercase text-stone-400 hover:text-stone-200 transition-colors cursor-pointer"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                <span>{isOpen ? "Fechar ficha" : "Abrir ficha"}</span>
-                <span className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>▾</span>
-              </button>
-
-              {isOpen && (
-                <div className="px-5 pb-5 pt-1 space-y-4">
-                  <div>
-                    <p className="text-[0.65rem] tracking-widest uppercase text-stone-600 mb-1" style={{ fontFamily: MONO }}>
-                      Known for
-                    </p>
-                    <p
-                      className="text-[1.0625rem] font-semibold leading-snug"
-                      style={{ color: accent, fontFamily: "'Lora', Georgia, serif" }}
-                    >
-                      {entry.meaning}
-                    </p>
-                  </div>
-
-                  {entry.details && entry.details.length > 0 && (
-                    <ul className="space-y-1.5">
-                      {entry.details.map((detail, k) => (
-                        <li key={k} className="text-sm text-stone-400 leading-relaxed flex gap-2">
-                          <span style={{ color: accent }}>›</span>
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {entry.forms && (
-                    <div>
-                      <p className="text-[0.65rem] tracking-widest uppercase text-stone-600 mb-2" style={{ fontFamily: MONO }}>
-                        {entry.forms.label}
-                      </p>
-                      <div className="space-y-1">
-                        {entry.forms.pairs.map(([base, past]) => (
-                          <p key={base} className="text-sm text-stone-300" style={{ fontFamily: MONO }}>
-                            {base} <span className="text-stone-600">→</span>{" "}
-                            <span style={{ color: accent }}>{past}</span>
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {entry.informal && (
-                    <div className="rounded-lg border border-dashed px-4 py-3" style={{ borderColor: `${accent}50` }}>
-                      <p className="text-[0.65rem] tracking-widest uppercase text-stone-600 mb-1" style={{ fontFamily: MONO }}>
-                        Street name
-                      </p>
-                      <p className="text-sm text-stone-300 leading-relaxed">
-                        <span className="font-semibold" style={{ color: accent, fontFamily: MONO }}>
-                          {entry.informal.word}
-                        </span>{" "}
-                        — {entry.informal.note}
-                      </p>
-                    </div>
-                  )}
-
-                  {entry.examples && entry.examples.length > 0 && (
-                    <div className="space-y-3">
-                      {entry.examples.map((example) => (
-                        <div key={example.en} className="pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
-                          <p
-                            className="italic text-stone-200 leading-relaxed flex items-baseline gap-2"
-                            style={{ fontFamily: "'Lora', Georgia, serif" }}
-                          >
-                            <span>“{example.en}”</span>
-                            <SpeakButton text={example.en} accent={accent} />
-                          </p>
-                          <p className="text-sm text-stone-500 mt-1">{example.pt}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                </button>
               )}
             </div>
-          );
-        })}
+
+            {entry.details && entry.details.length > 0 && (
+              <ul className="space-y-2">
+                {entry.details.map((detail) => (
+                  <li key={detail} className="text-[0.95rem] leading-relaxed flex gap-2.5" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
+                    <span style={{ color: RED_INK }}>✎</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {entry.forms && (
+              <div>
+                <p style={LABEL_STYLE} className={`${LABEL} mb-2`}>
+                  {entry.forms.label.toUpperCase()}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {entry.forms.pairs.map(([base, past]) => (
+                    <span
+                      key={base}
+                      className={`${typewriter.className} text-sm px-3 py-1 rounded-sm border`}
+                      style={{ borderColor: `${INK}40` }}
+                    >
+                      {base} → <span style={{ color: RED_INK }}>{past}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {entry.informal && (
+              <div className="rounded-sm border-2 border-dashed px-4 py-3" style={{ borderColor: `${INK}55` }}>
+                <p style={LABEL_STYLE} className={`${LABEL} mb-1`}>STREET NAME</p>
+                <p className="text-[0.95rem] leading-relaxed" style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>
+                  <span className={`${typewriter.className} text-lg`} style={{ color: RED_INK }}>
+                    {entry.informal.word}
+                  </span>{" "}
+                  — {entry.informal.note}
+                </p>
+              </div>
+            )}
+
+            {entry.examples && entry.examples.length > 0 && (
+              <div>
+                <p style={LABEL_STYLE} className={`${LABEL} mb-2`}>FLAGRANTES</p>
+                <div className="space-y-3">
+                  {entry.examples.map((example) => (
+                    <div key={example.en} className="pl-4 border-l-[3px]" style={{ borderColor: RED_INK }}>
+                      <p
+                        className="text-lg italic leading-relaxed flex items-baseline gap-2"
+                        style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+                      >
+                        <span>“{example.en}”</span>
+                        <SpeakButton text={example.en} accent={RED_INK} />
+                      </p>
+                      <p className="text-sm opacity-85 mt-0.5">{example.pt}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center justify-between mt-8 pt-4 border-t border-dashed" style={{ borderColor: `${INK}40` }}>
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              className={`${typewriter.className} text-sm px-3 py-1.5 rounded-sm cursor-pointer hover:bg-black/10 transition-colors`}
+            >
+              ← {entries[(selected - 1 + entries.length) % entries.length].word}
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              className={`${typewriter.className} text-sm px-3 py-1.5 rounded-sm cursor-pointer hover:bg-black/10 transition-colors`}
+            >
+              {entries[(selected + 1) % entries.length].word} →
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

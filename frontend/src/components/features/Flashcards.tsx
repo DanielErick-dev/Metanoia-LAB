@@ -146,7 +146,7 @@ export function Flashcards({ cards, accent, storageKey }: FlashcardsProps) {
       <div className="text-center py-16">
         <p
           className="text-2xl text-stone-100 mb-3"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           {cards.length} {cards.length === 1 ? "cartão" : "cartões"}
         </p>
@@ -175,7 +175,7 @@ export function Flashcards({ cards, accent, storageKey }: FlashcardsProps) {
       <div className="text-center py-16">
         <p
           className="text-2xl text-stone-100 mb-3"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           Tudo em dia! 🎉
         </p>
@@ -206,7 +206,7 @@ export function Flashcards({ cards, accent, storageKey }: FlashcardsProps) {
         <p className="text-sm text-stone-600 tracking-widest uppercase mb-4">Resultado</p>
         <p
           className="text-5xl font-semibold text-white mb-3"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
         >
           {results.correct} / {total}
         </p>
@@ -243,7 +243,7 @@ export function Flashcards({ cards, accent, storageKey }: FlashcardsProps) {
         <div className="flex items-center gap-3 mb-6">
           <p
             className="text-3xl text-stone-100"
-            style={{ fontFamily: "'Lora', Georgia, serif" }}
+            style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
           >
             {current.front}
           </p>
@@ -252,7 +252,7 @@ export function Flashcards({ cards, accent, storageKey }: FlashcardsProps) {
 
         {flipped && (
           <div className="w-full border-t border-stone-800 pt-6 mt-2 space-y-4">
-            <p className="text-xl" style={{ color: accent, fontFamily: "'Lora', Georgia, serif" }}>
+            <p className="text-xl" style={{ color: accent, fontFamily: "var(--font-lora), Georgia, serif" }}>
               {current.translation}
             </p>
             {current.note && (

@@ -52,6 +52,18 @@ export interface LineupEntry {
   examples?: LineupExample[];
 }
 
+export interface ConfrontationSuspect {
+  word: string;
+  context: string;
+  example: LineupExample;
+}
+
+export interface ConfrontationEntry {
+  title: string;
+  suspects: ConfrontationSuspect[];
+  hook: string;
+}
+
 export interface InterrogationEntry {
   sentence: string;
   answer: string;
@@ -78,6 +90,7 @@ export interface TopicSection {
   expressions?: ExpressionEntry[];
   table?: TopicTable;
   lineup?: LineupEntry[];
+  confrontation?: ConfrontationEntry[];
   interrogation?: InterrogationEntry[];
 }
 
