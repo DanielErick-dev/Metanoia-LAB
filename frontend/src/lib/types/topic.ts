@@ -19,6 +19,7 @@ export interface TopicCitation {
 export interface VocabMore {
   text?: string;
   example?: string;
+  exampleTranslation?: string;
 }
 
 export interface VocabEntry {

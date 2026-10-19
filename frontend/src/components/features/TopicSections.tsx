@@ -27,7 +27,7 @@ function vocabMatches(entry: VocabEntry, query: string): boolean {
     entry.note,
     entry.example,
     entry.exampleTranslation,
-    ...(entry.more ?? []).flatMap((item) => [item.text, item.example]),
+    ...(entry.more ?? []).flatMap((item) => [item.text, item.example, item.exampleTranslation]),
   ]
     .filter((value): value is string => Boolean(value))
     .some((text) => normalize(text).includes(query));
@@ -336,6 +336,9 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                                   <span>“{item.example}”</span>
                                   <SpeakButton text={item.example} accent={accent} />
                                 </p>
+                              )}
+                              {item.exampleTranslation && (
+                                <p className="text-xs text-stone-600 mt-1">{item.exampleTranslation}</p>
                               )}
                             </li>
                           ))}

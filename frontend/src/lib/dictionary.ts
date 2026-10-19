@@ -74,7 +74,7 @@ function buildDictionary(): DictionaryEntry[] {
           ],
           examples: [
             ...example(entry.example, entry.exampleTranslation),
-            ...(entry.more ?? []).flatMap((item) => example(item.example)),
+            ...(entry.more ?? []).flatMap((item) => example(item.example, item.exampleTranslation)),
           ],
           source,
         });
