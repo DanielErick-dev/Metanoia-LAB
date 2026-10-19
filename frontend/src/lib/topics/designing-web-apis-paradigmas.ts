@@ -280,5 +280,5 @@ Content-Type: application/json
       body: "Na prática, o paradigma que vamos escolher depende da complexidade da nossa API. Se nossa API for 90% CRUD, por exemplo, um padrão REST pode ser a melhor escolha. Mas se o que estamos desenvolvendo foge muito do CRUD, então talvez o REST não seja a melhor escolha. Da mesma forma, se precisamos manter uma conexão ativa o tempo inteiro, WebSockets pode ser melhor; mas se envolve mobile e não há a necessidade de conexão ativa a todo momento, então um webhook pode ser melhor. Cada caso é um caso a ser avaliado, e em alguns casos pode haver até mais de um paradigma junto, de acordo com o problema.",
     },
   ],
-  relatedSlugs: ["o-que-e-uma-api"],
+  relatedSlugs: ["o-que-e-uma-api", "seguranca-de-api"],
 };

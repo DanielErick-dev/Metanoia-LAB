@@ -68,8 +68,14 @@ function buildDictionary(): DictionaryEntry[] {
       for (const entry of section.vocabList ?? []) {
         add(entry.term, {
           meaning: entry.translation,
-          notes: entry.note ? [entry.note] : [],
-          examples: example(entry.example, entry.exampleTranslation),
+          notes: [
+            ...(entry.note ? [entry.note] : []),
+            ...(entry.more ?? []).flatMap((item) => (item.text ? [item.text] : [])),
+          ],
+          examples: [
+            ...example(entry.example, entry.exampleTranslation),
+            ...(entry.more ?? []).flatMap((item) => example(item.example)),
+          ],
           source,
         });
       }

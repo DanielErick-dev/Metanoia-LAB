@@ -21,7 +21,14 @@ function normalize(text: string): string {
 }
 
 function vocabMatches(entry: VocabEntry, query: string): boolean {
-  return [entry.term, entry.translation, entry.note, entry.example, entry.exampleTranslation]
+  return [
+    entry.term,
+    entry.translation,
+    entry.note,
+    entry.example,
+    entry.exampleTranslation,
+    ...(entry.more ?? []).flatMap((item) => [item.text, item.example]),
+  ]
     .filter((value): value is string => Boolean(value))
     .some((text) => normalize(text).includes(query));
 }
@@ -310,6 +317,30 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                           <p className="text-xs text-stone-600 mt-1">{entry.exampleTranslation}</p>
                         )}
                       </div>
+                    )}
+                    {entry.more && entry.more.length > 0 && (
+                      <details className="group mt-2">
+                        <summary
+                          className="cursor-pointer select-none list-none text-xs uppercase tracking-wider inline-flex items-center gap-1.5"
+                          style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
+                        >
+                          <span className="transition-transform group-open:rotate-90">›</span>
+                          mais usos ({entry.more.length})
+                        </summary>
+                        <ul className="mt-2 space-y-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
+                          {entry.more.map((item, m) => (
+                            <li key={m}>
+                              {item.text && <p className="text-sm text-stone-600 leading-relaxed">{item.text}</p>}
+                              {item.example && (
+                                <p className="text-sm italic text-stone-400 leading-relaxed flex items-baseline gap-2">
+                                  <span>“{item.example}”</span>
+                                  <SpeakButton text={item.example} accent={accent} />
+                                </p>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
                     )}
                   </div>
                 ))}

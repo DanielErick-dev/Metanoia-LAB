@@ -16,12 +16,18 @@ export interface TopicCitation {
   source?: string;
 }
 
+export interface VocabMore {
+  text?: string;
+  example?: string;
+}
+
 export interface VocabEntry {
   term: string;
   translation: string;
   note?: string;
   example?: string;
   exampleTranslation?: string;
+  more?: VocabMore[];
 }
 
 export interface ExpressionEntry {
