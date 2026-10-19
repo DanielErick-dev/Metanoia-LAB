@@ -1,5 +1,5 @@
 import { topics, getTopicPath } from "./topics";
-import { LineupEntry, LineupExample } from "./types/topic";
+import { LineupEntry, LineupExample, VocabMore } from "./types/topic";
 
 export const DICTIONARY_CATEGORY = "vocabulario";
 
@@ -9,6 +9,7 @@ export interface DictionarySense {
   informal?: LineupEntry["informal"];
   forms?: LineupEntry["forms"];
   examples: LineupExample[];
+  uses?: VocabMore[];
   source: {
     title: string;
     href: string;
@@ -68,14 +69,9 @@ function buildDictionary(): DictionaryEntry[] {
       for (const entry of section.vocabList ?? []) {
         add(entry.term, {
           meaning: entry.translation,
-          notes: [
-            ...(entry.note ? [entry.note] : []),
-            ...(entry.more ?? []).flatMap((item) => (item.text ? [item.text] : [])),
-          ],
-          examples: [
-            ...example(entry.example, entry.exampleTranslation),
-            ...(entry.more ?? []).flatMap((item) => example(item.example, item.exampleTranslation)),
-          ],
+          notes: entry.note ? [entry.note] : [],
+          examples: example(entry.example, entry.exampleTranslation),
+          uses: entry.more,
           source,
         });
       }

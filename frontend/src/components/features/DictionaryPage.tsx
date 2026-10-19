@@ -161,6 +161,27 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
                   </div>
                 )}
 
+                {sense.uses && sense.uses.length > 0 && (
+                  <div className="space-y-2.5 mb-3">
+                    {sense.uses.map((use, u) => (
+                      <div key={u}>
+                        {use.text && (
+                          <p className="text-[0.95rem] text-stone-300 leading-relaxed" style={SERIF}>
+                            {use.text}
+                          </p>
+                        )}
+                        {use.example && (
+                          <p className="italic text-stone-200 leading-relaxed flex items-baseline gap-2 mt-0.5" style={SERIF}>
+                            <span>“{use.example}”</span>
+                            <SpeakButton text={use.example} accent={accent} />
+                          </p>
+                        )}
+                        {use.exampleTranslation && <p className="text-sm text-stone-400 mt-0.5">{use.exampleTranslation}</p>}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <Link
                   href={sense.source.href}
                   className="inline-flex items-center gap-1.5 text-xs tracking-wide text-stone-500 hover:text-stone-200 transition-colors"

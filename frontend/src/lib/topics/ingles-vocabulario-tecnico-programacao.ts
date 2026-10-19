@@ -17,11 +17,12 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "accomplish",
           translation: "realizar, conseguir, alcançar",
-          note: "No livro: accomplish this by asking you to log in = conseguem isso pedindo que você faça login. É parecido com achieve.",
           example: "We accomplished all the goals this month.",
           exampleTranslation: "Nós alcançamos todas as metas este mês.",
           more: [
+            { text: "No livro: accomplish this by asking you to log in = conseguem isso pedindo que você faça login." },
             { text: "Substantivo: accomplishment = conquista." },
+            { text: "É parecido com achieve." },
           ],
         },
         {
@@ -34,23 +35,22 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "against",
           translation: "contra",
-          note: "protect against attacks = proteger contra ataques. checked against = conferido com, comparado com.",
-          example: "Validate the input against a schema.",
-          exampleTranslation: "Valide a entrada com base em um schema.",
+          example: "It’s against the rules.",
+          exampleTranslation: "Isso é contra as regras.",
           more: [
-            { example: "It’s against the rules.", exampleTranslation: "Isso é contra as regras." },
+            { text: "protect against attacks = proteger contra ataques." },
+            { text: "checked against = conferido com, comparado com.", example: "Validate the input against a schema.", exampleTranslation: "Valide a entrada com base em um schema." },
           ],
         },
         {
           term: "apply",
           translation: "aplicar, mas também valer para e se candidatar",
-          note: "No livro: techniques that apply to web APIs = técnicas que valem para APIs web. Substantivo: application (aplicação, candidatura).",
-          example: "This rule applies to all users.",
-          exampleTranslation: "Essa regra vale para todos os usuários.",
           more: [
-            { text: "apply to = valer para / ser válido para." },
+            { text: "No livro: techniques that apply to web APIs = técnicas que valem para APIs web." },
+            { text: "apply to = valer para / ser válido para.", example: "This rule applies to all users.", exampleTranslation: "Essa regra vale para todos os usuários." },
             { text: "apply for = se candidatar a.", example: "I applied for a developer job.", exampleTranslation: "Eu me candidatei a uma vaga de desenvolvedor." },
             { text: "apply a patch = aplicar uma correção." },
+            { text: "Substantivo: application (aplicação, candidatura)." },
           ],
         },
         {
@@ -63,11 +63,12 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "as well",
           translation: "também",
-          note: "Costuma ir no fim da frase. Diferença: too e as well ficam no fim; also costuma ir antes do verbo.",
           example: "I study English, and I read comics as well.",
           exampleTranslation: "Eu estudo inglês e também leio quadrinhos.",
           more: [
+            { text: "Costuma ir no fim da frase." },
             { text: "as well as = assim como, além de.", example: "loss of data as well as revenue.", exampleTranslation: "perda de dados, assim como de receita." },
+            { text: "Diferença: too e as well ficam no fim; also costuma ir antes do verbo." },
           ],
         },
         {
@@ -80,10 +81,9 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "breach",
           translation: "violação, brecha",
-          note: "/briːtʃ/. security breach = violação de segurança. data breach = vazamento/violação de dados. ⚠️ Não confunda com beach (praia).",
-          example: "The company suffered a data breach last year.",
-          exampleTranslation: "A empresa sofreu um vazamento de dados no ano passado.",
           more: [
+            { text: "security breach = violação de segurança." },
+            { text: "data breach = vazamento/violação de dados.", example: "The company suffered a data breach last year.", exampleTranslation: "A empresa sofreu um vazamento de dados no ano passado." },
             { text: "Também é verbo.", example: "Hackers breached the server.", exampleTranslation: "Hackers invadiram o servidor." },
             { text: "breach of contract = quebra de contrato." },
           ],
@@ -91,12 +91,11 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "checked",
           translation: "verificado, conferido",
-          note: "check = verificar. Do trecho “is checked against an existing record”.",
           example: "The server checks the password.",
           exampleTranslation: "O servidor verifica a senha.",
           more: [
+            { text: "check = verificar. Do trecho “is checked against an existing record”." },
             { text: "check X against Y = comparar/conferir X com Y.", example: "The password is checked against the database.", exampleTranslation: "A senha é conferida com o banco de dados." },
-            { text: "Não confundir com cracked (rachado, quebrado): em segurança, crack a password = quebrar uma senha. Quem faz isso é o cracker.", example: "The hacker cracked the password.", exampleTranslation: "O hacker quebrou a senha." },
           ],
         },
         {
@@ -122,9 +121,12 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "disastrous",
           translation: "desastroso",
-          note: "/dɪˈzæstrəs/. Vem de disaster (desastre). Advérbio: disastrously.",
           example: "A weak password policy can be disastrous.",
           exampleTranslation: "Uma política de senhas fraca pode ser desastrosa.",
+          more: [
+            { text: "Vem de disaster (desastre)." },
+            { text: "Advérbio: disastrously." },
+          ],
         },
         {
           term: "discoverable",
@@ -135,10 +137,10 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "discovered",
           translation: "descoberto(a)",
-          note: "Verbo discover (discover → discovered). É descobrir algo que já existia e ninguém tinha visto.",
           example: "A new vulnerability was discovered yesterday.",
           exampleTranslation: "Uma nova vulnerabilidade foi descoberta ontem.",
           more: [
+            { text: "Verbo discover (discover → discovered). É descobrir algo que já existia e ninguém tinha visto." },
             { text: "always being discovered = presente contínuo passivo: “estão sendo descobertas o tempo todo”." },
             { text: "find out = obter uma informação, figure out = chegar à resposta pensando, discover = achar algo novo." },
             { text: "Substantivo: discovery." },
@@ -147,9 +149,12 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "early on",
           translation: "logo no início, nos primeiros tempos",
-          note: "Parecido com at first e in the beginning. Oposto: later on.",
           example: "Early on, we used Basic Authentication.",
           exampleTranslation: "No início, nós usávamos Basic Authentication.",
+          more: [
+            { text: "Parecido com at first e in the beginning." },
+            { text: "Oposto: later on." },
+          ],
         },
         {
           term: "enable",
@@ -161,21 +166,22 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "enforce",
           translation: "impor, fazer cumprir",
-          note: "Não é só “aplicar”: é obrigar a regra a valer. enforce access control = impor controle de acesso. Substantivo: enforcement.",
           example: "The server enforces rate limits.",
           exampleTranslation: "O servidor impõe limites de requisições.",
           more: [
-            { example: "We enforce HTTPS on every endpoint.", exampleTranslation: "Nós exigimos HTTPS em todos os endpoints." },
+            { text: "Não é só “aplicar”: é obrigar a regra a valer." },
+            { text: "enforce access control = impor controle de acesso.", example: "We enforce HTTPS on every endpoint.", exampleTranslation: "Nós exigimos HTTPS em todos os endpoints." },
+            { text: "Substantivo: enforcement." },
             { text: "law enforcement = autoridades policiais." },
           ],
         },
         {
           term: "engineers",
           translation: "engenheiros",
-          note: "Em tech: software engineer, DevOps engineer. Pronúncia: en-ji-NEERS (acento no final).",
           example: "Engineers reviewed the code.",
           exampleTranslation: "Os engenheiros revisaram o código.",
           more: [
+            { text: "Em tech: software engineer, DevOps engineer." },
             { text: "O verbo to engineer = projetar, construir." },
           ],
         },
@@ -197,12 +203,10 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "expose",
           translation: "expor",
-          note: "Em programação: expor um endpoint, dados ou credenciais. Substantivo: exposure.",
-          example: "This endpoint exposes user data.",
-          exampleTranslation: "Esse endpoint expõe dados dos usuários.",
           more: [
-            { text: "exposed credentials = credenciais expostas." },
-            { example: "Never expose your API key in the frontend.", exampleTranslation: "Nunca exponha sua chave de API no frontend." },
+            { text: "Em programação: expor um endpoint, dados ou credenciais.", example: "This endpoint exposes user data.", exampleTranslation: "Esse endpoint expõe dados dos usuários." },
+            { text: "exposed credentials = credenciais expostas.", example: "Never expose your API key in the frontend.", exampleTranslation: "Nunca exponha sua chave de API no frontend." },
+            { text: "Substantivo: exposure." },
           ],
         },
         {
@@ -227,10 +231,11 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "leak",
           translation: "vazar / vazamento",
-          note: "Passado: leaked. Adjetivo: leaky.",
           example: "The database leaked thousands of passwords.",
           exampleTranslation: "O banco de dados vazou milhares de senhas.",
           more: [
+            { text: "Passado: leaked." },
+            { text: "Adjetivo: leaky." },
             { text: "Em programação: data leak e memory leak (vazamento de memória, quando o programa consome memória sem liberar)." },
           ],
         },
@@ -266,23 +271,26 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "other means",
           translation: "outros meios",
-          note: "means é “meio, forma” e fica igual no singular e no plural. via a bug or other means = por um bug ou outros meios.",
           example: "He got access by other means.",
           exampleTranslation: "Ele conseguiu acesso por outros meios.",
           more: [
+            { text: "means é “meio, forma” e fica igual no singular e no plural." },
+            { text: "via a bug or other means = por um bug ou outros meios." },
             { text: "by all means = com certeza, fique à vontade." },
             { text: "a means to an end = um meio para um fim." },
-            { text: "⚠️ means também é o verbo mean (significa).", example: "What does this mean?", exampleTranslation: "O que isso significa?" },
+            { text: "means também é o verbo mean (significa).", example: "What does this mean?", exampleTranslation: "O que isso significa?" },
           ],
         },
         {
           term: "outside",
           translation: "fora de",
-          note: "Oposto de inside. outside your company = fora da sua empresa. Também vale outside of.",
           example: "Developers outside the company use our API.",
           exampleTranslation: "Desenvolvedores de fora da empresa usam a nossa API.",
           more: [
+            { text: "Oposto de inside." },
+            { text: "outside your company = fora da sua empresa." },
             { text: "outsider = quem é de fora." },
+            { text: "Também vale outside of." },
           ],
         },
         {
@@ -292,13 +300,14 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "poor",
           translation: "pobre, mas também ruim, fraco",
-          note: "No livro: poor security implementations = implementações de segurança ruins. Oposto de qualidade: poor ≠ good.",
           example: "The app has poor performance.",
           exampleTranslation: "O app tem um desempenho ruim.",
           more: [
+            { text: "No livro: poor security implementations = implementações de segurança ruins." },
             { example: "We have a poor connection.", exampleTranslation: "Nossa conexão está ruim." },
             { text: "No sentido de “pobre”: a poor family." },
             { text: "Poor guy! = coitado!" },
+            { text: "Oposto de qualidade: poor ≠ good." },
           ],
         },
         {
@@ -318,11 +327,9 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "record",
           translation: "registro (substantivo) / gravar, registrar (verbo)",
-          note: "Substantivo, pronúncia REH-kerd. Em banco de dados é uma linha de dados. Verbo, pronúncia ri-KORD.",
-          example: "The database has 1,000 records.",
-          exampleTranslation: "O banco de dados tem 1.000 registros.",
           more: [
-            { example: "We record all requests in a log.", exampleTranslation: "Nós registramos todas as requisições em um log." },
+            { text: "Substantivo: em banco de dados é uma linha de dados.", example: "The database has 1,000 records.", exampleTranslation: "O banco de dados tem 1.000 registros." },
+            { text: "Verbo:", example: "We record all requests in a log.", exampleTranslation: "Nós registramos todas as requisições em um log." },
             { text: "break a record = bater um recorde." },
             { text: "on record = oficialmente registrado." },
           ],
@@ -336,21 +343,24 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "revenue",
           translation: "receita, faturamento",
-          note: "/ˈrevənuː/. É o dinheiro que entra, antes de descontar custos. Profit = lucro (depois dos custos).",
           example: "The company’s annual revenue grew 20%.",
           exampleTranslation: "O faturamento anual da empresa cresceu 20%.",
           more: [
-            { text: "Expressão: revenue stream = fonte de receita." },
+            { text: "É o dinheiro que entra, antes de descontar custos." },
+            { text: "Profit = lucro (depois dos custos)." },
+            { text: "revenue stream = fonte de receita." },
           ],
         },
         {
           term: "revoke",
           translation: "revogar, cancelar (uma permissão)",
-          note: "/rɪˈvoʊk/. No livro: users cannot revoke access to one app. Substantivo: revocation. O oposto é grant (conceder).",
           example: "You can revoke the app’s access at any time.",
           exampleTranslation: "Você pode revogar o acesso do app a qualquer momento.",
           more: [
+            { text: "No livro: users cannot revoke access to one app." },
             { example: "The token was revoked.", exampleTranslation: "O token foi revogado." },
+            { text: "Substantivo: revocation." },
+            { text: "O oposto é grant (conceder)." },
             { text: "Em OAuth você vai ver bastante revoke token e grant access." },
           ],
         },
@@ -378,11 +388,11 @@ export const inglesVocabularioTecnicoProgramacao: TopicData = {
         {
           term: "tend (to)",
           translation: "tender a, costumar",
-          note: "tend to + verbo descreve tendência ou hábito. Substantivo: tendency.",
           example: "Engineers tend to prefer simple solutions.",
           exampleTranslation: "Engenheiros tendem a preferir soluções simples.",
           more: [
-            { example: "I tend to wake up early.", exampleTranslation: "Eu costumo acordar cedo." },
+            { text: "tend to + verbo descreve tendência ou hábito.", example: "I tend to wake up early.", exampleTranslation: "Eu costumo acordar cedo." },
+            { text: "Substantivo: tendency." },
             { text: "Outro sentido: tend = cuidar de.", example: "She tends the garden.", exampleTranslation: "Ela cuida do jardim." },
           ],
         },
