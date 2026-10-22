@@ -15,10 +15,41 @@ export const inglesVerbos: TopicData = {
       body: "Verbos que fui anotando ao longo da leitura.",
       vocabList: [
         {
+          term: "accomplish",
+          translation: "realizar, conseguir, alcançar",
+          example: "We accomplished all the goals this month.",
+          exampleTranslation: "Nós alcançamos todas as metas este mês.",
+          more: [
+            { text: "Substantivo: accomplishment = conquista." },
+            { text: "É parecido com achieve." },
+          ],
+        },
+        {
           term: "achieve",
           translation: "alcançar, atingir ou cumprir",
           example: "She achieved her goal.",
           exampleTranslation: "Ela alcançou seu objetivo/meta.",
+        },
+        {
+          term: "address",
+          translation: "resolver, tratar",
+          example: "We need to address this bug before the release.",
+          exampleTranslation: "Precisamos resolver esse bug antes do lançamento.",
+          more: [
+            { text: "Substantivo: endereço.", example: "What’s your email address?", exampleTranslation: "Qual é o seu endereço de e-mail?" },
+            { text: "IP address = endereço IP." },
+            { text: "address the audience = dirigir-se ao público." },
+          ],
+        },
+        {
+          term: "apply",
+          translation: "aplicar, mas também valer para e se candidatar",
+          more: [
+            { text: "apply to = valer para / ser válido para.", example: "This rule applies to all users.", exampleTranslation: "Essa regra vale para todos os usuários." },
+            { text: "apply for = se candidatar a.", example: "I applied for a developer job.", exampleTranslation: "Eu me candidatei a uma vaga de desenvolvedor." },
+            { text: "apply a patch = aplicar uma correção." },
+            { text: "Substantivo: application (aplicação, candidatura)." },
+          ],
         },
         {
           term: "appoint",
@@ -66,6 +97,23 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela trouxe a irmã dela para a festa.",
         },
         {
+          term: "checked",
+          translation: "verificado, conferido",
+          example: "The server checks the password.",
+          exampleTranslation: "O servidor verifica a senha.",
+          more: [
+            { text: "check = verificar." },
+            { text: "check X against Y = comparar/conferir X com Y.", example: "The password is checked against the database.", exampleTranslation: "A senha é conferida com o banco de dados." },
+          ],
+        },
+        {
+          term: "creep",
+          translation: "crescer aos poucos, sem controle",
+          note: "Passado: crept. Ex.: scope creep = o escopo do projeto crescendo sem controle; payload creep = o payload que vai inchando.",
+          example: "Scope creep is a common problem in software projects.",
+          exampleTranslation: "Scope creep é um problema comum em projetos de software.",
+        },
+        {
           term: "delve into",
           translation: "aprofundar-se em, mergulhar em, explorar a fundo um assunto",
           note: "delve sozinho também significa aprofundar-se, investigar a fundo.",
@@ -73,10 +121,46 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Vamos nos aprofundar nesse tópico.",
         },
         {
+          term: "denies",
+          translation: "nega",
+          note: "deny na 3ª pessoa.",
+          example: "The server denies the request.",
+          exampleTranslation: "O servidor nega a requisição.",
+          more: [
+            { text: "Passado: denied.", example: "He denied everything.", exampleTranslation: "Ele negou tudo." },
+            { text: "O erro access_denied do OAuth vem de deny → denied." },
+            { text: "Substantivo: denial." },
+          ],
+        },
+        {
           term: "deserve",
           translation: "merecer",
           example: "You deserve a break.",
           exampleTranslation: "Você merece um descanso.",
+        },
+        {
+          term: "directs",
+          translation: "direciona, encaminha",
+          note: "direct na 3ª pessoa.",
+          example: "The link directs you to the login page.",
+          exampleTranslation: "O link te direciona para a página de login.",
+          more: [
+            { text: "Adjetivo: direct = direto." },
+            { text: "Substantivo: direction." },
+            { text: "directions = instruções de como chegar." },
+          ],
+        },
+        {
+          term: "discovered",
+          translation: "descoberto(a)",
+          example: "A new vulnerability was discovered yesterday.",
+          exampleTranslation: "Uma nova vulnerabilidade foi descoberta ontem.",
+          more: [
+            { text: "Verbo discover (discover → discovered). É descobrir algo que já existia e ninguém tinha visto." },
+            { text: "always being discovered = presente contínuo passivo: “estão sendo descobertas o tempo todo”." },
+            { text: "find out = obter uma informação, figure out = chegar à resposta pensando, discover = achar algo novo." },
+            { text: "Substantivo: discovery." },
+          ],
         },
         {
           term: "doubt",
@@ -90,6 +174,29 @@ export const inglesVerbos: TopicData = {
           note: "drive → drove → driven. Drive someone = levar de carro. Drive someone crazy/mad = deixar alguém louco.",
           example: "I'll drive you home.",
           exampleTranslation: "Eu vou te levar em casa de carro.",
+        },
+        {
+          term: "enable",
+          translation: "permitir, habilitar",
+          note: "Estrutura: enable + alguém + to + verbo. Oposto: disable.",
+          example: "GraphQL enables clients to nest queries.",
+          exampleTranslation: "O GraphQL permite que os clientes aninhem consultas.",
+        },
+        {
+          term: "enforce",
+          translation: "impor, fazer cumprir",
+          example: "The server enforces rate limits.",
+          exampleTranslation: "O servidor impõe limites de requisições.",
+          more: [
+            { text: "Não é só “aplicar”: é obrigar a regra a valer." },
+            { text: "enforce access control = impor controle de acesso.", example: "We enforce HTTPS on every endpoint.", exampleTranslation: "Nós exigimos HTTPS em todos os endpoints." },
+            { text: "Substantivo: enforcement." },
+            { text: "law enforcement = autoridades policiais." },
+          ],
+        },
+        {
+          term: "ensure",
+          translation: "garantir",
         },
         {
           term: "ensured",
@@ -110,6 +217,38 @@ export const inglesVerbos: TopicData = {
           translation: "evoluir",
           example: "Technology continues to evolve quickly.",
           exampleTranslation: "A tecnologia continua evoluindo rapidamente.",
+        },
+        {
+          term: "exchanges",
+          translation: "troca",
+          note: "exchange na 3ª pessoa. Estrutura: exchange X for Y = trocar X por Y.",
+          example: "I exchanged dollars for reais.",
+          exampleTranslation: "Eu troquei dólares por reais.",
+          more: [
+            { text: "exchange rate = taxa de câmbio." },
+            { text: "exchange student = estudante de intercâmbio." },
+          ],
+        },
+        {
+          term: "expose",
+          translation: "expor",
+          more: [
+            { text: "Em programação: expor um endpoint, dados ou credenciais.", example: "This endpoint exposes user data.", exampleTranslation: "Esse endpoint expõe dados dos usuários." },
+            { text: "exposed credentials = credenciais expostas.", example: "Never expose your API key in the frontend.", exampleTranslation: "Nunca exponha sua chave de API no frontend." },
+            { text: "Substantivo: exposure." },
+          ],
+        },
+        {
+          term: "faced",
+          translation: "enfrentados",
+          note: "Passado de face.",
+          example: "The challenges faced by developers are many.",
+          exampleTranslation: "Os desafios enfrentados pelos desenvolvedores são muitos.",
+          more: [
+            { text: "issues faced by = problemas enfrentados por. É a forma curta de “issues that were faced by”." },
+            { text: "Verbo face = enfrentar.", example: "We face a tough deadline.", exampleTranslation: "Nós enfrentamos um prazo apertado." },
+            { text: "Também é rosto e encarar: face the facts = encarar os fatos." },
+          ],
         },
         {
           term: "fetch",
@@ -153,6 +292,27 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Espero que você melhore logo.",
         },
         {
+          term: "kept",
+          translation: "mantido, guardado",
+          note: "Passado e particípio de keep: keep → kept → kept.",
+          example: "Passwords should be kept secret.",
+          exampleTranslation: "Senhas devem ser mantidas em segredo.",
+          more: [
+            { text: "be kept = ser mantido (voz passiva)." },
+            { text: "Passado simples.", example: "I kept the old version.", exampleTranslation: "Eu mantive a versão antiga." },
+          ],
+        },
+        {
+          term: "labeled",
+          translation: "rotulado, com o nome de",
+          example: "Click the button labeled Submit.",
+          exampleTranslation: "Clique no botão com o texto Submit.",
+          more: [
+            { text: "Grafia: labeled (EUA) e labelled (Reino Unido)." },
+            { text: "Substantivo: label = rótulo, etiqueta." },
+          ],
+        },
+        {
           term: "launch",
           translation: "lançar",
           example: "They launched a new product.",
@@ -166,11 +326,29 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela lidera o time.",
         },
         {
+          term: "leak",
+          translation: "vazar / vazamento",
+          example: "The database leaked thousands of passwords.",
+          exampleTranslation: "O banco de dados vazou milhares de senhas.",
+          more: [
+            { text: "Passado: leaked." },
+            { text: "Adjetivo: leaky." },
+            { text: "Em programação: data leak e memory leak (vazamento de memória, quando o programa consome memória sem liberar)." },
+          ],
+        },
+        {
           term: "left for",
           translation: "partiu para",
           note: "Passado de leave for.",
           example: "She left for Brazil a week ago.",
           exampleTranslation: "Ela partiu para o Brasil há uma semana.",
+        },
+        {
+          term: "nest",
+          translation: "aninhar",
+          note: "Como em nested loops.",
+          example: "You can nest queries inside each other.",
+          exampleTranslation: "Você pode aninhar consultas umas dentro das outras.",
         },
         {
           term: "offer",
@@ -216,6 +394,17 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Eu me arrependo de não ter estudado mais.",
         },
         {
+          term: "revoke",
+          translation: "revogar, cancelar (uma permissão)",
+          example: "You can revoke the app’s access at any time.",
+          exampleTranslation: "Você pode revogar o acesso do app a qualquer momento.",
+          more: [
+            { example: "The token was revoked.", exampleTranslation: "O token foi revogado." },
+            { text: "Substantivo: revocation." },
+            { text: "O oposto é grant (conceder)." },
+          ],
+        },
+        {
           term: "rise again",
           translation: "erguer-se novamente",
           example: "After the fall, he rose again.",
@@ -242,6 +431,18 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Ela está dirigindo o departamento inteiro agora.",
         },
         {
+          term: "seeks",
+          translation: "busca, procura",
+          note: "seek na 3ª pessoa. Mais formal que look for.",
+          example: "She seeks advice from a mentor.",
+          exampleTranslation: "Ela busca conselhos com um mentor.",
+          more: [
+            { text: "seek → sought → sought." },
+            { text: "seek help = buscar ajuda." },
+            { text: "attention-seeking = que busca atenção." },
+          ],
+        },
+        {
           term: "seem",
           translation: "parecer",
           example: "You seem tired today.",
@@ -266,6 +467,17 @@ export const inglesVerbos: TopicData = {
           note: "Geralmente substituindo alguém ou algo.",
           example: "He took over the company after his father retired.",
           exampleTranslation: "Ele assumiu o controle da empresa depois que o pai dele se aposentou.",
+        },
+        {
+          term: "tend (to)",
+          translation: "tender a, costumar",
+          example: "Engineers tend to prefer simple solutions.",
+          exampleTranslation: "Engenheiros tendem a preferir soluções simples.",
+          more: [
+            { text: "tend to + verbo descreve tendência ou hábito.", example: "I tend to wake up early.", exampleTranslation: "Eu costumo acordar cedo." },
+            { text: "Substantivo: tendency." },
+            { text: "Outro sentido: tend = cuidar de.", example: "She tends the garden.", exampleTranslation: "Ela cuida do jardim." },
+          ],
         },
         {
           term: "yielded",

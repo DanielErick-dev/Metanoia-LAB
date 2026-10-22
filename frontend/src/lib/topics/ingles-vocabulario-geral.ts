@@ -40,6 +40,13 @@ export const inglesVocabularioGeral: TopicData = {
       body: "Substantivos, adjetivos, pronomes e conectores soltos.",
       vocabList: [
         {
+          term: "advantages over",
+          translation: "vantagens sobre, em relação a",
+          note: "Over, aqui, no sentido de comparação.",
+          example: "GraphQL has advantages over REST.",
+          exampleTranslation: "O GraphQL tem vantagens em relação ao REST.",
+        },
+        {
           term: "aforementioned",
           translation: "mencionado anteriormente",
           example: "The aforementioned rules apply to everyone.",
@@ -50,6 +57,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "afinal, no final das contas",
           example: "We decided to stay after all.",
           exampleTranslation: "Decidimos ficar afinal.",
+        },
+        {
+          term: "against",
+          translation: "contra",
+          example: "It’s against the rules.",
+          exampleTranslation: "Isso é contra as regras.",
+          more: [
+            { text: "protect against attacks = proteger contra ataques." },
+            { text: "checked against = conferido com, comparado com.", example: "Validate the input against a schema.", exampleTranslation: "Valide a entrada com base em um schema." },
+          ],
         },
         {
           term: "also",
@@ -71,6 +88,13 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Todos se reuniram no salão de anúncios.",
         },
         {
+          term: "approaches",
+          translation: "abordagens",
+          note: "Plural de approach.",
+          example: "There are three approaches to this problem.",
+          exampleTranslation: "Existem três abordagens para esse problema.",
+        },
+        {
           term: "as for",
           translation: "com relação a / quanto a",
           example: "As for the meeting, it's been postponed.",
@@ -83,10 +107,31 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais.",
         },
         {
+          term: "as well",
+          translation: "também",
+          example: "I study English, and I read comics as well.",
+          exampleTranslation: "Eu estudo inglês e também leio quadrinhos.",
+          more: [
+            { text: "Costuma ir no fim da frase." },
+            { text: "as well as = assim como, além de.", example: "loss of data as well as revenue.", exampleTranslation: "perda de dados, assim como de receita." },
+            { text: "Diferença: too e as well ficam no fim; also costuma ir antes do verbo." },
+          ],
+        },
+        {
           term: "at least",
           translation: "pelo menos",
           example: "At least I did something.",
           exampleTranslation: "Pelo menos eu fiz alguma coisa.",
+        },
+        {
+          term: "at some point",
+          translation: "em algum momento",
+          example: "At some point, you’ll need to revoke access.",
+          exampleTranslation: "Em algum momento, você vai precisar revogar o acesso.",
+          more: [
+            { text: "at this point = a essa altura." },
+            { text: "at one point = em certo momento do passado." },
+          ],
         },
         {
           term: "awfully",
@@ -110,6 +155,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Você é maluco?",
         },
         {
+          term: "behalf",
+          translation: "lado, nome",
+          note: "Só existe em expressões.",
+          more: [
+            { text: "on behalf of = em nome de.", example: "The app acts on behalf of the user.", exampleTranslation: "O app age em nome do usuário." },
+            { text: "on my behalf = em meu nome.", example: "She spoke on my behalf.", exampleTranslation: "Ela falou em meu nome." },
+          ],
+        },
+        {
           term: "bespoke",
           translation: "feito sob medida, personalizado",
           note: "Geralmente pra algo feito especificamente pra aquele fim. Ex.: bespoke apps = aplicativos feitos sob medida.",
@@ -124,16 +178,42 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Existe um laço forte entre os dois amigos.",
         },
         {
+          term: "beyond",
+          translation: "além de",
+          note: "Também em beyond my control = fora do meu controle.",
+          example: "Beyond CRUD, APIs need other actions.",
+          exampleTranslation: "Além do CRUD, APIs precisam de outras ações.",
+        },
+        {
           term: "bold",
           translation: "ousado / corajoso / atrevido",
           example: "That was a bold decision.",
           exampleTranslation: "Aquela foi uma decisão ousada.",
         },
         {
+          term: "breach",
+          translation: "violação, brecha",
+          more: [
+            { text: "security breach = violação de segurança." },
+            { text: "data breach = vazamento/violação de dados.", example: "The company suffered a data breach last year.", exampleTranslation: "A empresa sofreu um vazamento de dados no ano passado." },
+            { text: "Também é verbo.", example: "Hackers breached the server.", exampleTranslation: "Hackers invadiram o servidor." },
+            { text: "breach of contract = quebra de contrato." },
+          ],
+        },
+        {
           term: "chaos",
           translation: "caos",
           example: "The room was total chaos.",
           exampleTranslation: "O quarto estava um caos total.",
+        },
+        {
+          term: "company",
+          translation: "empresa",
+          example: "She works at a tech company.",
+          exampleTranslation: "Ela trabalha em uma empresa de tecnologia.",
+          more: [
+            { text: "Também significa companhia: keep someone company = fazer companhia a alguém.", example: "Thanks for keeping me company.", exampleTranslation: "Obrigado por me fazer companhia." },
+          ],
         },
         {
           term: "current",
@@ -148,10 +228,30 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O novo cachorrinho deles é tão fofo.",
         },
         {
+          term: "delivery",
+          translation: "entrega",
+        },
+        {
           term: "dinner",
           translation: "janta",
           example: "We're having dinner at 8pm.",
           exampleTranslation: "Vamos jantar às 8 da noite.",
+        },
+        {
+          term: "disastrous",
+          translation: "desastroso",
+          example: "A weak password policy can be disastrous.",
+          exampleTranslation: "Uma política de senhas fraca pode ser desastrosa.",
+          more: [
+            { text: "Vem de disaster (desastre)." },
+            { text: "Advérbio: disastrously." },
+          ],
+        },
+        {
+          term: "discoverable",
+          translation: "que dá pra descobrir, explorável",
+          example: "GraphQL is natively discoverable.",
+          exampleTranslation: "O GraphQL é nativamente explorável.",
         },
         {
           term: "dumb",
@@ -172,6 +272,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Cada aluno recebeu um livro.",
         },
         {
+          term: "early on",
+          translation: "logo no início, nos primeiros tempos",
+          example: "Early on, we used Basic Authentication.",
+          exampleTranslation: "No início, nós usávamos Basic Authentication.",
+          more: [
+            { text: "Parecido com at first e in the beginning." },
+            { text: "Oposto: later on." },
+          ],
+        },
+        {
           term: "effort",
           translation: "esforço",
           example: "It takes a lot of effort.",
@@ -185,6 +295,20 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu também não gosto disso.",
         },
         {
+          term: "engineers",
+          translation: "engenheiros",
+          example: "Engineers reviewed the code.",
+          exampleTranslation: "Os engenheiros revisaram o código.",
+          more: [
+            { text: "Em tech: software engineer, DevOps engineer." },
+            { text: "O verbo to engineer = projetar, construir." },
+          ],
+        },
+        {
+          term: "enterprise",
+          translation: "corporativo",
+        },
+        {
           term: "enterprises",
           translation: "empresas",
           example: "Small enterprises often struggle to compete with big corporations.",
@@ -196,6 +320,13 @@ export const inglesVocabularioGeral: TopicData = {
           note: "Vem antes do substantivo.",
           example: "The entire team worked on it.",
           exampleTranslation: "A equipe inteira trabalhou nisso.",
+        },
+        {
+          term: "error-prone",
+          translation: "propenso a erros",
+          note: "Prone = propenso.",
+          example: "Manual deployments are error-prone.",
+          exampleTranslation: "Deploys manuais são propensos a erros.",
         },
         {
           term: "every single one of",
@@ -243,6 +374,13 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu confiro os logs de vez em quando.",
         },
         {
+          term: "further",
+          translation: "além disso, também; adicional; no sentido de distância",
+          note: "No sentido de além disso, é igual a also. Como adicional: for further information, contact us. Também pode ser verbo: to further = promover ou fazer avançar.",
+          example: "I can't go any further.",
+          exampleTranslation: "Não consigo ir mais longe.",
+        },
+        {
           term: "headmaster",
           translation: "diretor",
           example: "The headmaster called a meeting.",
@@ -259,6 +397,11 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "alteza",
           example: "Your Highness, please forgive me.",
           exampleTranslation: "Vossa Alteza, perdoe-me.",
+        },
+        {
+          term: "huge",
+          translation: "enorme",
+          note: "Parecido com big, porém mais forte.",
         },
         {
           term: "in a matter of days",
@@ -305,6 +448,23 @@ export const inglesVocabularioGeral: TopicData = {
           note: "Também aparece em phrasal verbs, tipo delve into.",
           example: "He walked into the room.",
           exampleTranslation: "Ele entrou na sala.",
+        },
+        {
+          term: "introspection",
+          translation: "introspecção",
+          note: "Em API: ela descreve a própria estrutura.",
+          example: "With introspection, you can ask the API which fields exist.",
+          exampleTranslation: "Com introspecção, você pode perguntar à API quais campos existem.",
+        },
+        {
+          term: "issues",
+          translation: "problemas, questões",
+          example: "We have a performance issue.",
+          exampleTranslation: "Nós temos um problema de performance.",
+          more: [
+            { text: "issue no GitHub = tarefa ou bug registrado.", example: "Open an issue on GitHub.", exampleTranslation: "Abra uma issue no GitHub." },
+            { text: "Também é verbo: issue = emitir.", example: "The provider issues a client ID.", exampleTranslation: "O provedor emite um client ID." },
+          ],
         },
         {
           term: "kind",
@@ -370,6 +530,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Foi só um mal-entendido.",
         },
         {
+          term: "multistep flow",
+          translation: "fluxo em várias etapas",
+          note: "multi- = vários; step = etapa/passo; flow = fluxo. O hífen é opcional (multi-step).",
+          example: "Checkout is a multistep flow: cart, address, payment.",
+          exampleTranslation: "O checkout é um fluxo em várias etapas: carrinho, endereço, pagamento.",
+          more: [
+            { text: "Parecidos: multi-factor, multiplayer." },
+          ],
+        },
+        {
           term: "my dear",
           translation: "minha querida",
           example: "Come here, my dear.",
@@ -389,6 +559,20 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu quase esqueci minhas chaves.",
         },
         {
+          term: "nicely",
+          translation: "bem, de forma agradável",
+          example: "It doesn't fit into REST nicely.",
+          exampleTranslation: "Isso não se encaixa bem no REST.",
+        },
+        {
+          term: "noise",
+          translation: "ruído ou barulho",
+        },
+        {
+          term: "noisy",
+          translation: "barulhento",
+        },
+        {
           term: "nothing but",
           translation: "nada além de / somente",
           example: "He wants nothing but the truth.",
@@ -401,10 +585,47 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Agora que você está aqui, podemos começar.",
         },
         {
+          term: "often",
+          translation: "frequentemente, muitas vezes",
+        },
+        {
+          term: "onus",
+          translation: "ônus ou responsabilidade",
+        },
+        {
+          term: "other means",
+          translation: "outros meios",
+          example: "He got access by other means.",
+          exampleTranslation: "Ele conseguiu acesso por outros meios.",
+          more: [
+            { text: "means é “meio, forma” e fica igual no singular e no plural." },
+            { text: "via a bug or other means = por um bug ou outros meios." },
+            { text: "by all means = com certeza, fique à vontade." },
+            { text: "a means to an end = um meio para um fim." },
+            { text: "means também é o verbo mean (significa).", example: "What does this mean?", exampleTranslation: "O que isso significa?" },
+          ],
+        },
+        {
+          term: "outside",
+          translation: "fora de",
+          example: "Developers outside the company use our API.",
+          exampleTranslation: "Desenvolvedores de fora da empresa usam a nossa API.",
+          more: [
+            { text: "Oposto de inside." },
+            { text: "outside your company = fora da sua empresa." },
+            { text: "outsider = quem é de fora." },
+            { text: "Também vale outside of." },
+          ],
+        },
+        {
           term: "overall",
           translation: "em geral, no todo, em suma",
           example: "Overall, the trip was great.",
           exampleTranslation: "No geral, a viagem foi ótima.",
+        },
+        {
+          term: "overhead",
+          translation: "custo extra",
         },
         {
           term: "pattern",
@@ -420,10 +641,51 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O encanamento dessa casa é velho.",
         },
         {
+          term: "poor",
+          translation: "pobre, mas também ruim, fraco",
+          example: "The app has poor performance.",
+          exampleTranslation: "O app tem um desempenho ruim.",
+          more: [
+            { example: "We have a poor connection.", exampleTranslation: "Nossa conexão está ruim." },
+            { text: "No sentido de “pobre”: a poor family." },
+            { text: "Poor guy! = coitado!" },
+            { text: "Oposto de qualidade: poor ≠ good." },
+          ],
+        },
+        {
+          term: "prevalent",
+          translation: "predominante, comum, muito difundido",
+          example: "SQL injection is a prevalent attack.",
+          exampleTranslation: "SQL injection é um ataque muito comum.",
+          more: [
+            { text: "Substantivo: prevalence." },
+            { text: "Parecidos: common, widespread." },
+          ],
+        },
+        {
+          term: "procedure",
+          translation: "procedimento",
+          note: "Ex.: Remote Procedure Call (RPC).",
+          example: "RPC stands for Remote Procedure Call.",
+          exampleTranslation: "RPC significa Remote Procedure Call (chamada de procedimento remoto).",
+        },
+        {
           term: "profit",
           translation: "lucro",
           example: "The company made a huge profit this year.",
           exampleTranslation: "A empresa teve um lucro enorme esse ano.",
+        },
+        {
+          term: "providers",
+          translation: "provedores",
+          note: "Plural de provider.",
+          example: "The provider issues a token.",
+          exampleTranslation: "O provedor emite um token.",
+          more: [
+            { text: "API provider = quem oferece a API." },
+            { text: "cloud provider = provedor de nuvem." },
+            { text: "Verbo: provide." },
+          ],
         },
         {
           term: "putrid",
@@ -437,6 +699,13 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "rainha",
           example: "The queen addressed the nation.",
           exampleTranslation: "A rainha se dirigiu à nação.",
+        },
+        {
+          term: "queries",
+          translation: "consultas",
+          note: "Plural de query (y → ies).",
+          example: "The server parses complex queries.",
+          exampleTranslation: "O servidor interpreta consultas complexas.",
         },
         {
           term: "rash",
@@ -466,10 +735,37 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele vive no reino sombrio.",
         },
         {
+          term: "record",
+          translation: "registro (substantivo) / gravar, registrar (verbo)",
+          more: [
+            { text: "Substantivo: em banco de dados é uma linha de dados.", example: "The database has 1,000 records.", exampleTranslation: "O banco de dados tem 1.000 registros." },
+            { text: "Verbo:", example: "We record all requests in a log.", exampleTranslation: "Nós registramos todas as requisições em um log." },
+            { text: "break a record = bater um recorde." },
+            { text: "on record = oficialmente registrado." },
+          ],
+        },
+        {
+          term: "relationship",
+          translation: "relação, relacionamento",
+          example: "The relationship between users and orders is clear.",
+          exampleTranslation: "A relação entre usuários e pedidos é clara.",
+        },
+        {
           term: "replacement",
           translation: "substituição, substituto",
           example: "I need a replacement for this broken part.",
           exampleTranslation: "Eu preciso de uma substituição para essa peça quebrada.",
+        },
+        {
+          term: "revenue",
+          translation: "receita, faturamento",
+          example: "The company’s annual revenue grew 20%.",
+          exampleTranslation: "O faturamento anual da empresa cresceu 20%.",
+          more: [
+            { text: "É o dinheiro que entra, antes de descontar custos." },
+            { text: "Profit = lucro (depois dos custos)." },
+            { text: "revenue stream = fonte de receita." },
+          ],
         },
         {
           term: "room",
@@ -477,6 +773,13 @@ export const inglesVocabularioGeral: TopicData = {
           note: "Não é só 'quarto' (isso é bedroom). Room é qualquer cômodo, e também espaço/margem.",
           example: "There's room for improvement.",
           exampleTranslation: "Há espaço para melhorias.",
+        },
+        {
+          term: "round trip",
+          translation: "ida e volta",
+          note: "Também round-trip ticket = passagem de ida e volta.",
+          example: "Each request is a round trip to the server.",
+          exampleTranslation: "Cada requisição é uma ida e volta até o servidor.",
         },
         {
           term: "sacred duty",
@@ -522,6 +825,10 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu estarei lá em breve (logo).",
         },
         {
+          term: "simultaneously",
+          translation: "simultaneamente",
+        },
+        {
           term: "sincere",
           translation: "sincero",
           example: "He gave a sincere apology.",
@@ -545,6 +852,30 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "primavera",
           example: "Flowers bloom in spring.",
           exampleTranslation: "As flores desabrocham na primavera.",
+        },
+        {
+          term: "stale",
+          translation: "velho, desatualizado",
+        },
+        {
+          term: "standard",
+          translation: "padrão",
+          note: "Substantivo e adjetivo.",
+          example: "OAuth 2.0 is the industry-standard protocol.",
+          exampleTranslation: "O OAuth 2.0 é o protocolo padrão da indústria.",
+          more: [
+            { text: "industry-standard = padrão da indústria." },
+            { text: "open standard = padrão aberto." },
+            { text: "standard library = biblioteca padrão." },
+            { text: "high standards = alto nível de exigência." },
+            { text: "Verbo: standardize." },
+          ],
+        },
+        {
+          term: "subresource",
+          translation: "subrecurso",
+          example: "Issues are a subresource of a repository.",
+          exampleTranslation: "Issues são um subrecurso de um repositório.",
         },
         {
           term: "sweetie",
@@ -587,6 +918,13 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "A empresa recebeu várias ameaças.",
         },
         {
+          term: "through",
+          translation: "através de, por meio de",
+          note: "Não confundir com though (embora) e thorough (minucioso).",
+          example: "You access everything through a single endpoint.",
+          exampleTranslation: "Você acessa tudo através de um único endpoint.",
+        },
+        {
           term: "till",
           translation: "até",
           note: "Mesma coisa que until, porém mais informal e comum.",
@@ -605,6 +943,10 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "problema",
           example: "We had trouble finding the address.",
           exampleTranslation: "Tivemos problema para encontrar o endereço.",
+        },
+        {
+          term: "two-way",
+          translation: "mão dupla",
         },
         {
           term: "unable",
@@ -626,11 +968,27 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Infelizmente, o servidor está fora do ar.",
         },
         {
+          term: "unlike",
+          translation: "diferente de",
+          example: "Unlike REST, GraphQL has one endpoint.",
+          exampleTranslation: "Diferente do REST, o GraphQL tem um único endpoint.",
+        },
+        {
           term: "unwilling",
           translation: "relutante, sem vontade de fazer algo",
           note: "Contrário de willing (disposto).",
           example: "He was unwilling to help.",
           exampleTranslation: "Ele estava relutante em ajudar (ele não queria ajudar).",
+        },
+        {
+          term: "upon",
+          translation: "ao, assim que",
+          note: "Formal. upon + substantivo/-ing descreve algo que acontece logo em seguida. É a versão formal de on e when.",
+          example: "Upon receiving the request, the server responds.",
+          exampleTranslation: "Ao receber a requisição, o servidor responde.",
+          more: [
+            { text: "once upon a time = era uma vez." },
+          ],
         },
         {
           term: "vast",
@@ -654,6 +1012,14 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O firewall bloqueia o ataque.",
         },
         {
+          term: "wary",
+          translation: "cuidadoso, cauteloso, desconfiado",
+        },
+        {
+          term: "waste",
+          translation: "desperdício",
+        },
+        {
           term: "weird",
           translation: "estranho",
           example: "It felt weird being back home.",
@@ -672,6 +1038,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Isso é o que espero que seja um ótimo ano.",
         },
         {
+          term: "whenever",
+          translation: "sempre que",
+        },
+        {
+          term: "whereas",
+          translation: "enquanto que, ao passo que",
+          example: "REST is about resources, whereas RPC is about actions.",
+          exampleTranslation: "O REST gira em torno de recursos, enquanto o RPC gira em torno de ações.",
+        },
+        {
           term: "which is why",
           translation: "por isso que, razão pela qual",
           example: "I was sick, which is why I missed class.",
@@ -682,6 +1058,13 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "sem",
           example: "She left with no explanation.",
           exampleTranslation: "Ela saiu sem explicação.",
+        },
+        {
+          term: "within",
+          translation: "dentro de",
+          note: "Mais formal que inside.",
+          example: "A comment exists within an issue.",
+          exampleTranslation: "Um comentário existe dentro de uma issue.",
         },
         {
           term: "wonderful",

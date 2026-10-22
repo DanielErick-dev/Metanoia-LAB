@@ -29,7 +29,6 @@ import { inglesConversasInformais } from "./ingles-conversas-informais";
 import { inglesPrecosPedidosDirecoes } from "./ingles-precos-pedidos-direcoes";
 import { inglesReacoesInterjeicoes } from "./ingles-reacoes-interjeicoes";
 import { ingles50ExpressoesCurtas } from "./ingles-50-expressoes-curtas";
-import { inglesVocabularioTecnicoProgramacao } from "./ingles-vocabulario-tecnico-programacao";
 import { pytestDjangoConfiguracao } from "./pytest-django-configuracao";
 import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
@@ -67,7 +66,6 @@ export const topics: TopicData[] = [
   inglesPrecosPedidosDirecoes,
   inglesReacoesInterjeicoes,
   ingles50ExpressoesCurtas,
-  inglesVocabularioTecnicoProgramacao,
   inglesOughGang,
   pytestDjangoConfiguracao,
   pytestDjangoMarcacaoDb,
