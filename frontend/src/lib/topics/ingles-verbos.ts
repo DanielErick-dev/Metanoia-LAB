@@ -45,6 +45,18 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "adopted",
+          translation: "adotado(a)",
+          example: "The API began to be widely adopted.",
+          exampleTranslation: "A API começou a ser amplamente adotada.",
+          conjugation: { base: "adopt", past: "adopted", participle: "adopted", irregular: false },
+          more: [
+            { label: "Verbo", text: "adopt a new tool = adotar uma ferramenta nova." },
+            { label: "Outro sentido", text: "adotar uma criança." },
+            { label: "Substantivo", text: "adoption = adoção." },
+          ],
+        },
+        {
           term: "apply",
           translation: "aplicar, mas também valer para e se candidatar",
           conjugation: { base: "apply", past: "applied", participle: "applied", irregular: false },
@@ -75,6 +87,18 @@ export const inglesVerbos: TopicData = {
           example: "I can't bear this heat.",
           exampleTranslation: "Eu não aguento esse calor.",
           conjugation: { base: "bear", past: "bore", participle: "borne", irregular: true },
+        },
+        {
+          term: "becomes",
+          translation: "torna-se, fica",
+          example: "Introducing new scopes becomes complicated.",
+          exampleTranslation: "Introduzir novos scopes fica complicado.",
+          conjugation: { base: "become", past: "became", participle: "become", irregular: true },
+          more: [
+            { label: "Forma", text: "become na 3ª pessoa." },
+            { label: "Exemplo", example: "It becomes harder over time.", exampleTranslation: "Fica mais difícil com o tempo." },
+            { label: "Passado simples", example: "She became a developer.", exampleTranslation: "Ela virou desenvolvedora." },
+          ],
         },
         {
           term: "belong",
@@ -147,6 +171,11 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "convert",
+          translation: "converter",
+          conjugation: { base: "convert", past: "converted", participle: "converted", irregular: false },
+        },
+        {
           term: "creep",
           translation: "crescer aos poucos, sem controle",
           example: "Scope creep is a common problem in software projects.",
@@ -211,6 +240,17 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "always being discovered = presente contínuo passivo: “estão sendo descobertas o tempo todo”." },
             { label: "Diferença", text: "find out = obter uma informação, figure out = chegar à resposta pensando, discover = achar algo novo." },
             { label: "Substantivo", text: "discovery." },
+          ],
+        },
+        {
+          term: "display",
+          translation: "exibir, mostrar / exibição",
+          example: "The provider will display all the requested scopes.",
+          exampleTranslation: "O provedor vai exibir todos os scopes pedidos.",
+          conjugation: { base: "display", past: "displayed", participle: "displayed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "tela, mostrador.", example: "The display is too bright.", exampleTranslation: "A tela está clara demais." },
+            { label: "Em tecnologia", text: "display: flex no CSS." },
           ],
         },
         {
@@ -327,6 +367,18 @@ export const inglesVerbos: TopicData = {
             { label: "Verbo", text: "face = enfrentar.", example: "We face a tough deadline.", exampleTranslation: "Nós enfrentamos um prazo apertado." },
             { label: "Outro sentido", text: "rosto, e também encarar." },
             { label: "Expressão", text: "face the facts = encarar os fatos." },
+          ],
+        },
+        {
+          term: "felt",
+          translation: "sentiu",
+          example: "Users felt more comfortable.",
+          exampleTranslation: "Os usuários se sentiram mais confortáveis.",
+          conjugation: { base: "feel", past: "felt", participle: "felt", irregular: true },
+          more: [
+            { label: "Forma", text: "Passado de feel." },
+            { label: "Exemplo", example: "I felt tired.", exampleTranslation: "Eu me senti cansado." },
+            { label: "Exemplo", example: "It felt great.", exampleTranslation: "A sensação foi ótima." },
           ],
         },
         {
@@ -470,6 +522,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "improved",
+          translation: "melhorou, melhorado",
+          example: "The change improved the conversion rate.",
+          exampleTranslation: "A mudança melhorou a taxa de conversão.",
+          conjugation: { base: "improve", past: "improved", participle: "improved", irregular: false },
+          more: [
+            { label: "Exemplo", example: "We improved the performance.", exampleTranslation: "Nós melhoramos o desempenho." },
+            { label: "Substantivo", text: "improvement = melhoria." },
+          ],
+        },
+        {
           term: "issue",
           translation: "emitir",
           conjugation: { base: "issue", past: "issued", participle: "issued", irregular: false },
@@ -502,6 +565,11 @@ export const inglesVerbos: TopicData = {
           example: "They launched a new product.",
           exampleTranslation: "Eles lançaram um novo produto.",
           conjugation: { base: "launch", past: "launched", participle: "launched", irregular: false },
+          more: [
+            { label: "Passado simples", example: "Slack launched its OAuth system.", exampleTranslation: "O Slack lançou seu sistema OAuth." },
+            { label: "Passado simples", example: "We launched the product last week.", exampleTranslation: "Lançamos o produto semana passada." },
+            { label: "Substantivo", text: "launch = lançamento." },
+          ],
         },
         {
           term: "lead",
@@ -544,6 +612,28 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Exemplo", example: "We can leverage this API.", exampleTranslation: "Podemos aproveitar essa API." },
             { label: "Observação", text: "Muito comum em ambiente corporativo." },
+          ],
+        },
+        {
+          term: "meant",
+          translation: "significou",
+          example: "Authorizing the scope meant the app gained read access.",
+          exampleTranslation: "Autorizar o scope significava que o app ganhava acesso de leitura.",
+          conjugation: { base: "mean", past: "meant", participle: "meant", irregular: true },
+          more: [
+            { label: "Forma", text: "Passado de mean." },
+            { label: "Outro sentido", text: "intenção.", example: "I meant to call you.", exampleTranslation: "Eu queria te ligar." },
+          ],
+        },
+        {
+          term: "might",
+          translation: "poderia, talvez (possibilidade)",
+          example: "An application might only need to identify a user.",
+          exampleTranslation: "Um aplicativo talvez só precise identificar um usuário.",
+          more: [
+            { label: "Exemplo", example: "It might rain today.", exampleTranslation: "Pode ser que chova hoje." },
+            { label: "Uso", text: "Mais fraco que may e can. Também é o passado de may em algumas estruturas." },
+            { label: "Substantivo", text: "força, poder.", example: "with all his might", exampleTranslation: "com toda a sua força" },
           ],
         },
         {
@@ -749,6 +839,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "shown",
+          translation: "mostrado",
+          example: "Users should be shown a clear warning.",
+          exampleTranslation: "Os usuários devem ver um aviso claro.",
+          conjugation: { base: "show", past: "showed", participle: "shown", irregular: true },
+          more: [
+            { label: "Forma", text: "Particípio de show." },
+            { label: "Expressão", text: "be shown = ser mostrado (voz passiva)." },
+          ],
+        },
+        {
           term: "snog",
           translation: "beijar na boca, “pegar” (britânico, informal)",
           example: "They were snogging behind the library.",
@@ -756,6 +857,17 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "snog", past: "snogged", participle: "snogged", irregular: false },
           more: [
             { label: "Variação", text: "No inglês americano o comum é make out." },
+          ],
+        },
+        {
+          term: "split",
+          translation: "dividir",
+          example: "Large providers split scopes by functionality.",
+          exampleTranslation: "Grandes provedores dividem scopes por funcionalidade.",
+          conjugation: { base: "split", past: "split", participle: "split", irregular: true },
+          more: [
+            { label: "Exemplo", example: "Let’s split the bill.", exampleTranslation: "Vamos dividir a conta." },
+            { label: "Em tecnologia", text: "str.split() no Python." },
           ],
         },
         {

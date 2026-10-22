@@ -3,7 +3,7 @@ import { TopicData } from "@/lib/types/topic";
 export const designingWebApisCap3: TopicData = {
   slug: "seguranca-de-api",
   title: "Capítulo 3 — Segurança de API",
-  subtitle: "Autenticação, autorização, os problemas do Basic Authentication e o OAuth 2.0",
+  subtitle: "Autenticação, autorização, os problemas do Basic Authentication, o OAuth 2.0 e os scopes",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
   status: "em-construcao",
@@ -93,6 +93,34 @@ export const designingWebApisCap3: TopicData = {
           ["5", "Y usa o token pra acessar os dados do usuário no X"],
         ],
       },
+    },
+    {
+      heading: "Scope: o limite de acesso",
+      body: "O scope é basicamente o escopo daquilo que a aplicação Y pode fazer ou receber por parte da aplicação X, é basicamente um limite de acesso a dados do usuário. Se, por exemplo, o app precisa apenas de um nome e eu passo pra ele diversas informações, não é a melhor prática, é provavelmente desnecessário e em alguns casos até mesmo perigoso. Então o scope serve justamente para limitar isso, passar apenas o necessário e inclusive separar os scopes. Por exemplo, um scope para dados públicos e sem problemas de segurança e um scope apenas para dados sensíveis que não podem ser compartilhados abertamente.",
+    },
+    {
+      heading: "Scopes sensíveis: Heroku e Twitter",
+      body: "Quando um app pede esse scope sensível, o usuário precisa receber um aviso claro do que está sendo compartilhado, pra saber direitinho o que está liberando. O autor do livro cita de exemplo o Heroku, que fez isso com as variáveis de configuração, que guardam segredos como a conexão do banco, e cita o Twitter, que também fez o mesmo com as mensagens diretas, porque vários apps estavam lendo mensagens diretas sem precisar.",
+    },
+    {
+      heading: "Scope colocado às pressas",
+      body: "O autor fala de como muitas APIs são construídas sem se preocupar com os scopes e que, com o tempo, conforme a necessidade, começam a colocar de forma apressada, gerando várias complicações. Por exemplo: imagine que uma aplicação tem um scope bem aberto, com vários dados sendo transmitidos, aí o dono da aplicação decide limitar o scope. Como ele faz essa limitação correndo o risco de quebrar vários aplicativos que se acostumaram com o scope aberto? É esse tipo de problema que deve ser evitado.",
+    },
+    {
+      heading: "Granular, mas sem exagero",
+      body: "Muitas aplicações começam também apenas com scopes mais simples, como: scope de apenas leitura, scope de escrita, scope de leitura e escrita e assim por diante. A montagem de um scope deve ser sempre de acordo com o contexto e os casos de uso do aplicativo. Só que também não adianta sair criando scope pra tudo, porque scopes demais acabam confundindo tanto o usuário quanto o desenvolvedor, então tem que ter equilíbrio entre ser granular e ser simples.",
+    },
+    {
+      heading: "O caso do Slack",
+      body: "O autor cita também o caso do Slack, que no começo tinha scopes bem amplos: autorizar o scope de leitura dava acesso a tudo — mensagens, canais, reações, arquivos e por aí vai —, muito mais do que os apps precisavam. No fim de 2015 eles lançaram 27 scopes granulares, com leitura e escrita separadas pra cada tipo de recurso. Com isso os apps passaram a receber só o essencial pra funcionar.",
+    },
+    {
+      heading: "Benefício: mais confiança, mais instalações",
+      body: "Imagine que você vai acessar esse aplicativo Y e, na hora de habilitar as permissões, o app tá pedindo um monte de permissão pra diversas coisas. Você tem o hábito de estranhar e ficar se perguntando: “rapaz, pra que tudo isso, hein?”. Agora, se esse app tem limites de scope, diminui a quantidade de permissões, o que aumenta a confiança do usuário, convertendo dessa forma em mais instalações com menos entraves. Isso acontece porque o usuário vê na hora da autorização exatamente o que está concedendo, e quando o pedido é pequeno e faz sentido, ele confia e aceita.",
+    },
+    {
+      heading: "O princípio do menor privilégio",
+      body: "Assim cada aplicação recebe apenas o que é necessário para o seu funcionamento, nada além. Dessa forma protege mais o usuário e também o provedor da API. Geralmente chama-se essa prática de princípio do menor privilégio (least privilege).",
     },
   ],
   relatedSlugs: ["paradigmas-de-api"],

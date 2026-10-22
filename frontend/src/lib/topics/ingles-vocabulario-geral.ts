@@ -60,6 +60,10 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "adoption",
+          translation: "adoção",
+        },
+        {
           term: "advantages over",
           translation: "vantagens sobre, em relação a",
           example: "GraphQL has advantages over REST.",
@@ -316,6 +320,18 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "reunião rápida de instruções",
         },
         {
+          term: "broad",
+          translation: "amplo, abrangente",
+          example: "The scopes were broad.",
+          exampleTranslation: "Os scopes eram amplos.",
+          more: [
+            { label: "Expressão", text: "a broad range of options = uma ampla gama de opções." },
+            { label: "Expressão", text: "in broad terms = em linhas gerais." },
+            { label: "Oposto", text: "narrow = estreito." },
+            { label: "Parecido", text: "wide." },
+          ],
+        },
+        {
           term: "buzz",
           translation: "zumbido, e também “burburinho”",
         },
@@ -327,6 +343,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Exemplo", example: "The school is buzzing with news.", exampleTranslation: "A escola está agitada com as notícias." },
             { label: "Substantivo", text: "buzz = zumbido, e também “burburinho”." },
+          ],
+        },
+        {
+          term: "by means of",
+          translation: "por meio de, através de",
+          example: "You can log in by means of a token.",
+          exampleTranslation: "Você pode entrar por meio de um token.",
+          more: [
+            { label: "Exemplo", example: "He escaped by means of a rope.", exampleTranslation: "Ele escapou por meio de uma corda." },
+            { label: "Uso", text: "Formal. Aparece bastante em livro técnico; no dia a dia, usa-se by + -ing ou through." },
           ],
         },
         {
@@ -342,6 +368,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ela trabalha em uma empresa de tecnologia.",
           more: [
             { label: "Outro sentido", text: "companhia: keep someone company = fazer companhia a alguém.", example: "Thanks for keeping me company.", exampleTranslation: "Obrigado por me fazer companhia." },
+          ],
+        },
+        {
+          term: "conversion rate",
+          translation: "taxa de conversão",
+          example: "The conversion rate improved after the change.",
+          exampleTranslation: "A taxa de conversão melhorou depois da mudança.",
+          more: [
+            { label: "Observação", text: "É a porcentagem de pessoas que fazem a ação desejada (instalar, comprar, cadastrar). Muito usado em marketing e produto." },
+            { label: "Exemplo", example: "Our signup conversion rate is 5%.", exampleTranslation: "Nossa taxa de conversão de cadastro é de 5%." },
+            { label: "Verbo", text: "convert = converter." },
           ],
         },
         {
@@ -573,6 +610,18 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "A história é sobre uma fada que realiza desejos.",
         },
         {
+          term: "far",
+          translation: "longe / muito",
+          example: "This went far beyond what apps needed.",
+          exampleTranslation: "Isso foi muito além do que os apps precisavam.",
+          more: [
+            { label: "Expressão", text: "far beyond = muito além." },
+            { label: "Expressão", text: "so far = até agora." },
+            { label: "Expressão", text: "as far as I know = pelo que eu sei." },
+            { label: "Forma", text: "Comparativo: farther/further." },
+          ],
+        },
+        {
           term: "far more",
           translation: "muito mais",
           example: "I did far more than all of you.",
@@ -608,6 +657,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "por um tempo",
           example: "I’ve been gone for a while.",
           exampleTranslation: "Fiquei fora por um tempo.",
+        },
+        {
+          term: "for instance",
+          translation: "por exemplo",
+          example: "For instance, Twitter offers three scope levels.",
+          exampleTranslation: "Por exemplo, o Twitter oferece três níveis de scope.",
+          more: [
+            { label: "Parecido", text: "for example." },
+            { label: "Uso", text: "Costuma abrir a frase, seguido de vírgula." },
+          ],
         },
         {
           term: "for that matter",
@@ -679,6 +738,30 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "reunião, encontro",
         },
         {
+          term: "gists",
+          translation: "trechos de código compartilhados (GitHub)",
+          example: "A gist is a simple way to share code.",
+          exampleTranslation: "Um gist é uma forma simples de compartilhar código.",
+          more: [
+            { label: "Em tecnologia", text: "No GitHub, gist é um snippet ou arquivo rápido, versionado." },
+            { label: "Outro sentido", text: "gist = essência.", example: "I get the gist.", exampleTranslation: "Entendi a ideia geral." },
+          ],
+        },
+        {
+          term: "grain",
+          translation: "grão",
+        },
+        {
+          term: "granular",
+          translation: "granular, detalhado, com controle fino",
+          example: "Granular scopes give more control.",
+          exampleTranslation: "Scopes granulares dão mais controle.",
+          more: [
+            { label: "Origem", text: "Vem de grain (grão). Granular = dividido em pequenas partes." },
+            { label: "Em tecnologia", text: "permissões, logs e dados granulares." },
+          ],
+        },
+        {
           term: "guilt",
           translation: "culpa",
           example: "She felt guilt after lying.",
@@ -739,6 +822,10 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "impersonation",
           translation: "imitação, ato de se passar por alguém",
+        },
+        {
+          term: "improvement",
+          translation: "melhoria",
         },
         {
           term: "in a matter of days",
@@ -954,6 +1041,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "moreover",
+          translation: "além disso, ademais (formal)",
+          example: "Moreover, users felt more comfortable.",
+          exampleTranslation: "Além disso, usuários se sentiram mais confortáveis.",
+          more: [
+            { label: "Parecido", text: "furthermore e also no começo da frase. Mais formal que besides." },
+            { label: "Uso", text: "Costuma ter vírgula depois. Aparece bastante em livro técnico; na conversa do dia a dia o natural é also ou plus." },
+          ],
+        },
+        {
           term: "multistep",
           translation: "em várias etapas",
           example: "Checkout is a multistep flow: cart, address, payment.",
@@ -980,6 +1077,10 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "students like myself and Gabriel = estudantes como eu e Gabriel." },
             { label: "Expressão", text: "I did it myself = eu mesmo fiz isso." },
           ],
+        },
+        {
+          term: "narrow",
+          translation: "estreito",
         },
         {
           term: "nearly",
@@ -1355,6 +1456,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Preciso checar minha agenda.",
         },
         {
+          term: "scope",
+          translation: "escopo, alcance",
+          example: "The scope of the project changed.",
+          exampleTranslation: "O escopo do projeto mudou.",
+          more: [
+            { label: "Exemplo", example: "That’s outside the scope of this task.", exampleTranslation: "Isso está fora do escopo desta tarefa." },
+            { label: "Em tecnologia", text: "Em OAuth: permissão que limita o acesso do app." },
+            { label: "Expressão", text: "scope creep = escopo crescendo sem controle (parecido com payload creep)." },
+          ],
+        },
+        {
           term: "shame",
           translation: "pena",
           example: "It's a shame you can't come.",
@@ -1482,6 +1594,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "subrecurso",
           example: "Issues are a subresource of a repository.",
           exampleTranslation: "Issues são um subrecurso de um repositório.",
+        },
+        {
+          term: "such",
+          translation: "tal, tão, desse tipo",
+          example: "Users felt comfortable giving such access.",
+          exampleTranslation: "Usuários se sentiram confortáveis em dar tal acesso.",
+          more: [
+            { label: "Expressão", text: "such as = tal como, como. Aparece pra listar exemplos." },
+            { label: "Expressão", text: "such a good idea = uma ideia tão boa." },
+          ],
         },
         {
           term: "sweetie",
@@ -1744,6 +1866,21 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "To whom it may concern = A quem possa interessar." },
             { label: "Uso", text: "who = sujeito, whom = objeto." },
+          ],
+        },
+        {
+          term: "wide",
+          translation: "largo",
+        },
+        {
+          term: "widely",
+          translation: "amplamente",
+          example: "The API is widely used.",
+          exampleTranslation: "A API é amplamente usada.",
+          more: [
+            { label: "Expressão", text: "widely known = amplamente conhecido." },
+            { label: "Expressão", text: "widely adopted = amplamente adotado." },
+            { label: "Adjetivo", text: "wide = largo." },
           ],
         },
         {
