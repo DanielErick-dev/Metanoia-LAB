@@ -27,7 +27,6 @@ export function getFlashcardsForTopic(topic: TopicData): Flashcard[] {
         id: slugifyId(entry.term),
         front: entry.term,
         translation: entry.translation,
-        note: entry.note,
         example: entry.example,
         exampleTranslation: entry.exampleTranslation,
       });

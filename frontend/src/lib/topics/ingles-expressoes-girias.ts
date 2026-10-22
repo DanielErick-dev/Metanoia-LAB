@@ -206,13 +206,6 @@ export const inglesExpressoesGirias: TopicData = {
           exampleTranslation: "Graças a Deus você está bem.",
         },
         {
-          phrase: "the workout",
-          translation: "o treino",
-          explanation: "Geralmente usado pra se referir a treinos de maneira geral.",
-          example: "The workout was insane.",
-          exampleTranslation: "O treino foi insano.",
-        },
-        {
           phrase: "then / after that",
           translation: "em seguida, depois",
           example: "We had dinner and, after that, we went to the movies.",
@@ -258,10 +251,31 @@ export const inglesExpressoesGirias: TopicData = {
           exampleTranslation: "Do que se trata essa história de uma funcionalidade nova?",
         },
         {
+          phrase: "what's the matter with her?",
+          translation: "o que ela tem? qual é o problema com ela?",
+          explanation: "the matter = o problema.",
+          example: "What's the matter? You look tired.",
+          exampleTranslation: "O que foi? Você parece cansado.",
+        },
+        {
           phrase: "whatever it is",
           translation: "seja lá o que for",
           example: "Whatever it is, I'll fix it.",
           exampleTranslation: "Seja lá o que for, eu vou consertar.",
+        },
+        {
+          phrase: "without further ado",
+          translation: "sem mais delongas, sem mais enrolação",
+          explanation: "Expressão fixa pra introduzir algo depois de uma fala.",
+          example: "Without further ado, let's start the meeting.",
+          exampleTranslation: "Sem mais delongas, vamos começar a reunião.",
+        },
+        {
+          phrase: "workout",
+          translation: "treino",
+          explanation: "Geralmente usado pra se referir a treinos de maneira geral.",
+          example: "The workout was insane.",
+          exampleTranslation: "O treino foi insano.",
         },
         {
           phrase: "will you",

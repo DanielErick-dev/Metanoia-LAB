@@ -17,17 +17,25 @@ export interface TopicCitation {
 }
 
 export interface VocabMore {
+  label: string;
   text?: string;
   example?: string;
   exampleTranslation?: string;
 }
 
+export interface VocabConjugation {
+  base: string;
+  past: string;
+  participle: string;
+  irregular: boolean;
+}
+
 export interface VocabEntry {
   term: string;
   translation: string;
-  note?: string;
   example?: string;
   exampleTranslation?: string;
+  conjugation?: VocabConjugation;
   more?: VocabMore[];
 }
 

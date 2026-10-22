@@ -1,15 +1,14 @@
 import { topics, getTopicPath } from "./topics";
-import { LineupEntry, LineupExample, VocabMore } from "./types/topic";
+import { LineupEntry, VocabConjugation, VocabMore } from "./types/topic";
 
 export const DICTIONARY_CATEGORY = "vocabulario";
 
 export interface DictionarySense {
   meaning: string;
-  notes: string[];
+  conjugation?: VocabConjugation;
   informal?: LineupEntry["informal"];
   forms?: LineupEntry["forms"];
-  examples: LineupExample[];
-  uses?: VocabMore[];
+  items: VocabMore[];
   source: {
     title: string;
     href: string;
@@ -39,8 +38,12 @@ function slugify(text: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
-function example(en?: string, pt?: string): LineupExample[] {
-  return en ? [{ en, pt: pt ?? "" }] : [];
+function notes(texts: string[]): VocabMore[] {
+  return texts.map((text) => ({ label: "Observação", text }));
+}
+
+function example(en?: string, pt?: string): VocabMore[] {
+  return en ? [{ label: "Exemplo", example: en, exampleTranslation: pt }] : [];
 }
 
 function buildDictionary(): DictionaryEntry[] {
@@ -69,27 +72,27 @@ function buildDictionary(): DictionaryEntry[] {
       for (const entry of section.vocabList ?? []) {
         add(entry.term, {
           meaning: entry.translation,
-          notes: entry.note ? [entry.note] : [],
-          examples: example(entry.example, entry.exampleTranslation),
-          uses: entry.more,
+          conjugation: entry.conjugation,
+          items: [...example(entry.example, entry.exampleTranslation), ...(entry.more ?? [])],
           source,
         });
       }
       for (const entry of section.lineup ?? []) {
         add(entry.word, {
           meaning: entry.meaning,
-          notes: entry.details ?? [],
           informal: entry.informal,
           forms: entry.forms,
-          examples: entry.examples ?? [],
+          items: [
+            ...notes(entry.details ?? []),
+            ...(entry.examples ?? []).flatMap((e) => example(e.en, e.pt)),
+          ],
           source,
         });
       }
       for (const entry of section.expressions ?? []) {
         add(entry.phrase, {
           meaning: entry.translation,
-          notes: entry.explanation ? [entry.explanation] : [],
-          examples: example(entry.example, entry.exampleTranslation),
+          items: [...notes(entry.explanation ? [entry.explanation] : []), ...example(entry.example, entry.exampleTranslation)],
           source,
         });
       }

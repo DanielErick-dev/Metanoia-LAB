@@ -7,6 +7,7 @@ import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/cate
 import { DictionaryEntry, dictionary, searchDictionary } from "@/lib/dictionary";
 import { Breadcrumb } from "./Breadcrumb";
 import { SpeakButton } from "./SpeakButton";
+import { VocabDetails } from "./VocabDetails";
 import { ScrollToTopButton } from "./ScrollToTopButton";
 
 interface DictionaryPageProps {
@@ -110,16 +111,6 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
                   </p>
                 )}
 
-                {sense.notes.length > 0 && (
-                  <ul className="space-y-1.5 mb-3">
-                    {sense.notes.map((note) => (
-                      <li key={note} className="text-[0.95rem] text-stone-300 leading-relaxed" style={SERIF}>
-                        {note}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
                 {sense.informal && (
                   <p className="text-[0.95rem] text-stone-300 leading-relaxed mb-3" style={SERIF}>
                     <span className="text-xs font-bold tracking-widest uppercase text-stone-500 mr-2" style={SANS}>
@@ -147,38 +138,9 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
                   </div>
                 )}
 
-                {sense.examples.length > 0 && (
-                  <div className="space-y-2.5 mb-3">
-                    {sense.examples.map((example) => (
-                      <div key={example.en}>
-                        <p className="italic text-stone-200 leading-relaxed flex items-baseline gap-2" style={SERIF}>
-                          <span>“{example.en}”</span>
-                          <SpeakButton text={example.en} accent={accent} />
-                        </p>
-                        {example.pt && <p className="text-sm text-stone-400 mt-0.5">{example.pt}</p>}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {sense.uses && sense.uses.length > 0 && (
-                  <div className="space-y-2.5 mb-3">
-                    {sense.uses.map((use, u) => (
-                      <div key={u}>
-                        {use.text && (
-                          <p className="text-[0.95rem] text-stone-300 leading-relaxed" style={SERIF}>
-                            {use.text}
-                          </p>
-                        )}
-                        {use.example && (
-                          <p className="italic text-stone-200 leading-relaxed flex items-baseline gap-2 mt-0.5" style={SERIF}>
-                            <span>“{use.example}”</span>
-                            <SpeakButton text={use.example} accent={accent} />
-                          </p>
-                        )}
-                        {use.exampleTranslation && <p className="text-sm text-stone-400 mt-0.5">{use.exampleTranslation}</p>}
-                      </div>
-                    ))}
+                {(sense.conjugation || sense.items.length > 0) && (
+                  <div className="mb-4">
+                    <VocabDetails conjugation={sense.conjugation} items={sense.items} accent={accent} />
                   </div>
                 )}
 

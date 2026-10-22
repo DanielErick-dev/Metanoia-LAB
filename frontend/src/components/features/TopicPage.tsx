@@ -27,7 +27,7 @@ function estimateReadingMinutes(topic: TopicData): number {
     }
     for (const entry of section.vocabList ?? []) {
       words += countWords(entry.term) + countWords(entry.translation);
-      if (entry.note) words += countWords(entry.note);
+      for (const item of entry.more ?? []) words += countWords(item.text ?? "");
     }
     for (const entry of section.lineup ?? []) {
       words += countWords(entry.word) + countWords(entry.meaning);

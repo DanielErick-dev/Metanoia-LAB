@@ -7,6 +7,7 @@ import { SpeakButton } from "./SpeakButton";
 import { Lineup } from "./Lineup";
 import { Interrogation } from "./Interrogation";
 import { Confrontation } from "./Confrontation";
+import { VocabDetails } from "./VocabDetails";
 
 interface TopicSectionsProps {
   sections: TopicSection[];
@@ -24,13 +25,20 @@ function vocabMatches(entry: VocabEntry, query: string): boolean {
   return [
     entry.term,
     entry.translation,
-    entry.note,
     entry.example,
     entry.exampleTranslation,
+    entry.conjugation?.past,
+    entry.conjugation?.participle,
     ...(entry.more ?? []).flatMap((item) => [item.text, item.example, item.exampleTranslation]),
   ]
     .filter((value): value is string => Boolean(value))
     .some((text) => normalize(text).includes(query));
+}
+
+function summaryLabel(entry: VocabEntry): string {
+  const details = entry.more?.length ? `mais detalhes (${entry.more.length})` : "";
+  if (!entry.conjugation) return details;
+  return details ? `conjugação e ${details}` : "conjugação";
 }
 
 function expressionMatches(entry: ExpressionEntry, query: string): boolean {
@@ -304,45 +312,27 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                       <SpeakButton text={entry.term} accent={accent} />
                       <span className="text-stone-400"> — {entry.translation}</span>
                     </p>
-                    {entry.note && (
-                      <p className="text-sm text-stone-600 mt-1 leading-relaxed">{entry.note}</p>
-                    )}
                     {entry.example && (
                       <div className="mt-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
-                        <p className="text-sm italic text-stone-400 leading-relaxed flex items-baseline gap-2">
-                          <span>“{entry.example}”</span>
-                          <SpeakButton text={entry.example} accent={accent} />
-                        </p>
-                        {entry.exampleTranslation && (
-                          <p className="text-xs text-stone-600 mt-1">{entry.exampleTranslation}</p>
-                        )}
+                        <VocabDetails
+                          items={[{ label: "Exemplo", example: entry.example, exampleTranslation: entry.exampleTranslation }]}
+                          accent={accent}
+                          size="sm"
+                        />
                       </div>
                     )}
-                    {entry.more && entry.more.length > 0 && (
+                    {(entry.conjugation || (entry.more && entry.more.length > 0)) && (
                       <details className="group mt-2">
                         <summary
                           className="cursor-pointer select-none list-none text-xs uppercase tracking-wider inline-flex items-center gap-1.5"
                           style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
                         >
                           <span className="transition-transform group-open:rotate-90">›</span>
-                          mais usos ({entry.more.length})
+                          {summaryLabel(entry)}
                         </summary>
-                        <ul className="mt-2 space-y-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
-                          {entry.more.map((item, m) => (
-                            <li key={m}>
-                              {item.text && <p className="text-sm text-stone-600 leading-relaxed">{item.text}</p>}
-                              {item.example && (
-                                <p className="text-sm italic text-stone-400 leading-relaxed flex items-baseline gap-2">
-                                  <span>“{item.example}”</span>
-                                  <SpeakButton text={item.example} accent={accent} />
-                                </p>
-                              )}
-                              {item.exampleTranslation && (
-                                <p className="text-xs text-stone-600 mt-1">{item.exampleTranslation}</p>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="mt-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>
+                          <VocabDetails conjugation={entry.conjugation} items={entry.more ?? []} accent={accent} size="sm" />
+                        </div>
                       </details>
                     )}
                   </div>
