@@ -116,6 +116,21 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Todos se reuniram no salão de anúncios.",
         },
         {
+          term: "apart",
+          translation: "separado, à parte",
+          example: "They live two blocks apart.",
+          exampleTranslation: "Eles moram a dois quarteirões de distância um do outro.",
+          more: [
+            { label: "Expressão", text: "apart from = além de / exceto, depende do contexto.", example: "Apart from errors, it’s useful to return metadata.", exampleTranslation: "Além dos erros, é útil devolver metadados." },
+            { label: "Exemplo", example: "Apart from Python, I also know PHP.", exampleTranslation: "Além de Python, eu também sei PHP." },
+            { label: "Outro sentido", text: "apart from no sentido de exceto.", example: "Apart from the last chapter, the book is great.", exampleTranslation: "Tirando o último capítulo, o livro é ótimo." },
+            { label: "Parecido", text: "besides, que é quase sinônimo de apart from no sentido de além de." },
+            { label: "Expressão", text: "take apart = desmontar.", example: "He took the old laptop apart.", exampleTranslation: "Ele desmontou o notebook velho." },
+            { label: "Expressão", text: "fall apart = desmoronar, se despedaçar.", example: "The plan fell apart.", exampleTranslation: "O plano desmoronou." },
+            { label: "Expressão", text: "tell apart = diferenciar, distinguir.", example: "I can’t tell the twins apart.", exampleTranslation: "Eu não consigo diferenciar os gêmeos." },
+          ],
+        },
+        {
           term: "application",
           translation: "aplicação, candidatura",
         },
@@ -328,6 +343,18 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "ousado / corajoso / atrevido",
           example: "That was a bold decision.",
           exampleTranslation: "Aquela foi uma decisão ousada.",
+        },
+        {
+          term: "both",
+          translation: "ambos, os dois",
+          example: "If both tokens are compromised, the attack can be detected.",
+          exampleTranslation: "Se os dois tokens forem comprometidos, o ataque pode ser detectado.",
+          more: [
+            { label: "Expressão", text: "both of them = os dois." },
+            { label: "Expressão", text: "both X and Y = tanto X quanto Y. O par é sempre both ... and, nunca both ... or.", example: "I speak both English and Portuguese.", exampleTranslation: "Eu falo tanto inglês quanto português." },
+            { label: "Uso", text: "Também pode vir depois do sujeito, como no português “nós dois”.", example: "We both agree.", exampleTranslation: "Nós dois concordamos." },
+            { label: "Diferença", text: "both = os dois, either = um dos dois, neither = nenhum dos dois." },
+          ],
         },
         {
           term: "bravado",
@@ -640,6 +667,8 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu também não gosto disso.",
           more: [
             { label: "Expressão", text: "either... or = ou... ou." },
+            { label: "Outro sentido", text: "um dos dois, qualquer um dos dois.", example: "You can use either token.", exampleTranslation: "Você pode usar qualquer um dos dois tokens." },
+            { label: "Oposto", text: "neither = nenhum dos dois." },
           ],
         },
         {
@@ -1572,6 +1601,19 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele vive no reino sombrio.",
         },
         {
+          term: "reasons",
+          translation: "motivos, razões",
+          example: "There are several reasons why this is safer.",
+          exampleTranslation: "Existem vários motivos pelos quais isso é mais seguro.",
+          more: [
+            { label: "Forma", text: "Plural de reason." },
+            { label: "Expressão", text: "for this reason = por esse motivo." },
+            { label: "Expressão", text: "reason for + substantivo = o motivo de algo.", example: "What’s the reason for the delay?", exampleTranslation: "Qual é o motivo do atraso?" },
+            { label: "Verbo", text: "reason = raciocinar." },
+            { label: "Adjetivo", text: "reasonable = razoável." },
+          ],
+        },
+        {
           term: "record",
           translation: "registro (substantivo) / gravar, registrar (verbo)",
           more: [
@@ -1699,6 +1741,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Esse lugar é uma merda.",
           more: [
             { label: "Observação", text: "Britânico/irlandês e vulgar. Variante de shit." },
+          ],
+        },
+        {
+          term: "short-lived",
+          translation: "de vida curta, de curta duração",
+          example: "Short-lived access tokens are more secure.",
+          exampleTranslation: "Access tokens de vida curta são mais seguros.",
+          more: [
+            { label: "Expressão", text: "a short-lived cache = um cache de curta duração." },
+            { label: "Formação", text: "short + lived, que aqui vem de life (vida), e não do verbo live." },
+            { label: "Oposto", text: "long-lived = de vida longa, que dura bastante.", example: "WebSockets keep a long-lived connection open.", exampleTranslation: "WebSockets mantêm uma conexão de longa duração aberta." },
           ],
         },
         {
@@ -1986,6 +2039,18 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Tivemos problema para encontrar o endereço.",
         },
         {
+          term: "troubleshooting",
+          translation: "resolução de problemas, diagnóstico",
+          example: "Verbose errors make troubleshooting easier.",
+          exampleTranslation: "Erros detalhados facilitam a resolução de problemas.",
+          more: [
+            { label: "Exemplo", example: "I spent hours troubleshooting this bug.", exampleTranslation: "Passei horas tentando resolver esse bug." },
+            { label: "Verbo", text: "troubleshoot = investigar e resolver um problema." },
+            { label: "Formação", text: "trouble (problema) + shoot (atirar), tipo “caçar o problema”." },
+            { label: "Em tecnologia", text: "Troubleshooting também é o nome da seção de documentação que lista problemas comuns e como resolver." },
+          ],
+        },
+        {
           term: "two-way",
           translation: "mão dupla",
         },
@@ -2037,6 +2102,19 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Uso", text: "Formal. upon + substantivo/-ing descreve algo que acontece logo em seguida. É a versão formal de on e when." },
             { label: "Expressão", text: "once upon a time = era uma vez." },
+          ],
+        },
+        {
+          term: "useful",
+          translation: "útil",
+          example: "It’s useful to return more metadata in the response.",
+          exampleTranslation: "É útil devolver mais metadados na resposta.",
+          more: [
+            { label: "Exemplo", example: "This tool is really useful.", exampleTranslation: "Essa ferramenta é muito útil." },
+            { label: "Uso", text: "it’s useful to + verbo é uma estrutura comum em texto técnico." },
+            { label: "Expressão", text: "useful for + substantivo ou -ing = útil para.", example: "Logs are useful for debugging.", exampleTranslation: "Logs são úteis para depurar." },
+            { label: "Oposto", text: "useless = inútil." },
+            { label: "Substantivo", text: "use = uso." },
           ],
         },
         {

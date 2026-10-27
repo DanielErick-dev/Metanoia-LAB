@@ -171,6 +171,33 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "choose",
+          translation: "escolher",
+          example: "Many APIs choose to issue short-lived tokens.",
+          exampleTranslation: "Muitas APIs escolhem emitir tokens de vida curta.",
+          conjugation: { base: "choose", past: "chose", participle: "chosen", irregular: true },
+          more: [
+            { label: "Passado simples", example: "She chose Python.", exampleTranslation: "Ela escolheu Python." },
+            { label: "Particípio", example: "I have chosen a framework.", exampleTranslation: "Eu escolhi um framework." },
+            { label: "Expressão", text: "choose to + verbo = optar por fazer algo." },
+            { label: "Substantivo", text: "choice = escolha." },
+            { label: "Parecido", text: "pick, mais informal." },
+          ],
+        },
+        {
+          term: "contained",
+          translation: "contido, controlado",
+          example: "The impact can be contained.",
+          exampleTranslation: "O impacto pode ser contido.",
+          conjugation: { base: "contain", past: "contained", participle: "contained", irregular: false },
+          more: [
+            { label: "Uso", text: "Aqui é no sentido de limitar o estrago, impedir que se espalhe.", example: "The fire was contained.", exampleTranslation: "O incêndio foi contido." },
+            { label: "Outro sentido", text: "conter, ter dentro.", example: "The file contains errors.", exampleTranslation: "O arquivo contém erros." },
+            { label: "Em tecnologia", text: "container, como no Docker, vem da mesma raiz: algo que contém." },
+            { label: "Expressão", text: "self-contained = independente, completo em si mesmo.", example: "Each module is self-contained.", exampleTranslation: "Cada módulo é independente." },
+          ],
+        },
+        {
           term: "convert",
           translation: "converter",
           conjugation: { base: "convert", past: "converted", participle: "converted", irregular: false },
@@ -355,6 +382,20 @@ export const inglesVerbos: TopicData = {
             { label: "Uso", text: "exchange X for Y = trocar X por Y." },
             { label: "Expressão", text: "exchange rate = taxa de câmbio." },
             { label: "Expressão", text: "exchange student = estudante de intercâmbio." },
+          ],
+        },
+        {
+          term: "expire",
+          translation: "expirar, vencer",
+          example: "The token expires in one hour.",
+          exampleTranslation: "O token expira em uma hora.",
+          conjugation: { base: "expire", past: "expired", participle: "expired", irregular: false },
+          more: [
+            { label: "Exemplo", example: "My password expired.", exampleTranslation: "Minha senha expirou." },
+            { label: "Adjetivo", text: "expired = expirado, vencido." },
+            { label: "Substantivo", text: "expiration (EUA) / expiry (Reino Unido)." },
+            { label: "Expressão", text: "token expiry = expiração do token." },
+            { label: "Em tecnologia", text: "No JWT, o campo exp guarda quando o token expira." },
           ],
         },
         {
@@ -745,6 +786,17 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "rank", past: "ranked", participle: "ranked", irregular: false },
         },
         {
+          term: "reason",
+          translation: "raciocinar",
+          example: "You can’t reason with him.",
+          exampleTranslation: "Não dá pra argumentar com ele.",
+          conjugation: { base: "reason", past: "reasoned", participle: "reasoned", irregular: false },
+          more: [
+            { label: "Expressão", text: "reason with + pessoa = argumentar, tentar convencer alguém com lógica." },
+            { label: "Substantivo", text: "reason = motivo, razão." },
+          ],
+        },
+        {
           term: "receive",
           translation: "receber",
           example: "We received the answer.",
@@ -779,6 +831,18 @@ export const inglesVerbos: TopicData = {
             { label: "Formação", text: "re- + enforce." },
             { label: "Expressão", text: "reinforce the rules = reforçar as regras." },
             { label: "Substantivo", text: "reinforcements = reforços, as tropas extras que chegam pra ajudar.", example: "Send reinforcements!", exampleTranslation: "Mandem reforços!" },
+          ],
+        },
+        {
+          term: "renewing",
+          translation: "renovando",
+          example: "Refresh tokens are a standard way of renewing expired access tokens.",
+          exampleTranslation: "Refresh tokens são a forma padrão de renovar access tokens expirados.",
+          conjugation: { base: "renew", past: "renewed", participle: "renewed", irregular: false },
+          more: [
+            { label: "Exemplo", example: "I need to renew my passport.", exampleTranslation: "Preciso renovar meu passaporte." },
+            { label: "Formação", text: "re- (de novo) + new (novo)." },
+            { label: "Substantivo", text: "renewal = renovação." },
           ],
         },
         {
@@ -1028,6 +1092,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "trap", past: "trapped", participle: "trapped", irregular: false },
           more: [
             { label: "Substantivo", text: "trap = armadilha." },
+          ],
+        },
+        {
+          term: "troubleshoot",
+          translation: "investigar e resolver um problema",
+          example: "We troubleshot the server all morning.",
+          exampleTranslation: "A gente ficou a manhã toda investigando o problema do servidor.",
+          conjugation: { base: "troubleshoot", past: "troubleshot", participle: "troubleshot", irregular: true },
+          more: [
+            { label: "Substantivo", text: "troubleshooting = resolução de problemas, diagnóstico." },
           ],
         },
         {
