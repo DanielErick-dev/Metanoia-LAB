@@ -34,6 +34,13 @@ export const inglesConversasInformais: TopicData = {
           exampleTranslation: "E aí, que que tá pegando? Quanto tempo!",
         },
         {
+          phrase: "see you guys in a bit",
+          translation: "a gente se vê daqui a pouco",
+          explanation: "in a bit = daqui a pouco. Também dá pra dizer só See you in a bit! (Até daqui a pouco!).",
+          example: "I’m grabbing a coffee, see you guys in a bit.",
+          exampleTranslation: "Vou pegar um café, até daqui a pouco, pessoal.",
+        },
+        {
           phrase: "see you later",
           translation: "vejo você depois, até mais",
           example: "I'm heading out now, see you later!",

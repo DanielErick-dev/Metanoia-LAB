@@ -35,6 +35,13 @@ export const inglesExpressoesGirias: TopicData = {
           exampleTranslation: "Ele traiu, mas tudo é válido no amor e na guerra.",
         },
         {
+          phrase: "banged up",
+          translation: "machucado, arrebentado",
+          explanation: "Também pode ser gíria britânica pra preso, na cadeia. Pra objeto, é amassado, detonado. Ex.: a banged-up car = um carro todo amassado.",
+          example: "He was all banged up after the fight.",
+          exampleTranslation: "Ele ficou todo arrebentado depois da briga.",
+        },
+        {
           phrase: "boil down to",
           translation: "se resumir a, reduzir-se a",
           explanation: "Também aparece como 'boiled down to whether' (resumiu-se a saber se / no fim das contas dependia de...). Ex.: It all boils down to money = no final das contas, tudo se resume a dinheiro.",
@@ -62,6 +69,13 @@ export const inglesExpressoesGirias: TopicData = {
           exampleTranslation: "Faça agora, entendeu?",
         },
         {
+          phrase: "chop chop",
+          translation: "rápido, anda logo",
+          explanation: "Dito pra apressar alguém, geralmente num tom mandão, de quem tá dando ordem.",
+          example: "Chop chop! To your rooms!",
+          exampleTranslation: "Rápido! Pros seus quartos!",
+        },
+        {
           phrase: "coming",
           translation: "já vou, vindo",
           explanation: "Usado quando alguém te chama e você está indo: 'yes, coming'.",
@@ -86,6 +100,13 @@ export const inglesExpressoesGirias: TopicData = {
           explanation: "Geralmente usado de forma debochada, tipo 'ahh, novidade essa, né?'.",
           example: "He was late again? Giant shocker.",
           exampleTranslation: "Ele se atrasou de novo? Grande surpresa.",
+        },
+        {
+          phrase: "give it a rest",
+          translation: "dá um tempo, para com isso",
+          explanation: "Usado quando alguém tá insistindo no mesmo assunto ou reclamando demais. Ex.: Give it a rest, you’ve said that ten times = para com isso, você já falou isso dez vezes.",
+          example: "Oh, give it a rest!",
+          exampleTranslation: "Ah, para com isso!",
         },
         {
           phrase: "good-time Charlies",

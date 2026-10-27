@@ -140,6 +140,28 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "arsehole",
+          translation: "babaca, filho da puta",
+          example: "Don’t be an arsehole.",
+          exampleTranslation: "Não seja babaca.",
+          more: [
+            { label: "Observação", text: "Britânico e vulgar. No inglês americano é asshole." },
+            { label: "Palavra base", text: "arse = bunda (britânico). No americano, ass." },
+          ],
+        },
+        {
+          term: "article",
+          translation: "artigo (texto) / peça, objeto",
+          example: "She wrote an article.",
+          exampleTranslation: "Ela escreveu um artigo.",
+          more: [
+            { label: "Outro sentido", text: "peça, objeto, item.", example: "She packed every article of clothing she owned.", exampleTranslation: "Ela colocou na mala cada peça de roupa que tinha." },
+            { label: "Expressão", text: "an article of clothing = uma peça de roupa." },
+            { label: "Gramática", text: "the e a/an são articles, os artigos gramaticais." },
+            { label: "Outro sentido", text: "artigo de lei.", example: "Article 5 of the Constitution protects free speech.", exampleTranslation: "O artigo 5º da Constituição protege a liberdade de expressão." },
+          ],
+        },
+        {
           term: "as for",
           translation: "com relação a / quanto a",
           example: "As for the meeting, it's been postponed.",
@@ -188,6 +210,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "awkward",
+          translation: "desajeitado, constrangedor",
+          example: "It was an awkward silence.",
+          exampleTranslation: "Foi um silêncio constrangedor.",
+          more: [
+            { label: "Uso", text: "Pra situação, é constrangedor, aquele clima esquisito em que ninguém sabe o que falar. Pra pessoa, é desajeitado, sem jeito.", example: "He’s awkward around new people.", exampleTranslation: "Ele fica sem jeito perto de gente nova." },
+            { label: "Expressão", text: "an awkward moment = um momento constrangedor." },
+            { label: "Outro sentido", text: "inconveniente, complicado.", example: "Is this an awkward time?", exampleTranslation: "É uma hora ruim?" },
+          ],
+        },
+        {
           term: "balmy",
           translation: "ameno, agradável (clima)",
           example: "It was a balmy summer evening.",
@@ -200,6 +233,7 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Você é maluco?",
           more: [
             { label: "Observação", text: "Gíria britânica." },
+            { label: "Exemplo", example: "You barmy ginger!", exampleTranslation: "Seu ruivo maluco!" },
           ],
         },
         {
@@ -296,6 +330,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Aquela foi uma decisão ousada.",
         },
         {
+          term: "bravado",
+          translation: "bravata, pose de valentão",
+          example: "His bravado hid his fear.",
+          exampleTranslation: "A bravata escondia o medo dele.",
+          more: [
+            { label: "Uso", text: "É coragem de fachada: a pose de quem quer parecer corajoso, mas no fundo tá com medo." },
+          ],
+        },
+        {
           term: "breach",
           translation: "violação, brecha",
           more: [
@@ -346,6 +389,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "by far",
+          translation: "de longe, com folga",
+          example: "She’s by far the best.",
+          exampleTranslation: "Ela é de longe a melhor.",
+          more: [
+            { label: "Expressão", text: "by far the biggest = de longe o maior." },
+            { label: "Uso", text: "Quase sempre acompanha um superlativo: the best, the biggest, the worst." },
+          ],
+        },
+        {
           term: "by means of",
           translation: "por meio de, através de",
           example: "You can log in by means of a token.",
@@ -356,10 +409,43 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "cagey",
+          translation: "reservado, desconfiado, evasivo",
+          example: "He was cagey about his past.",
+          exampleTranslation: "Ele foi evasivo sobre o passado.",
+          more: [
+            { label: "Exemplo", example: "Why are you being so cagey?", exampleTranslation: "Por que você tá tão cheio de segredo?" },
+            { label: "Uso", text: "É quando a pessoa enrola, desconversa ou não quer dar detalhes, geralmente porque tá escondendo algo ou não confia em quem pergunta. Costuma vir com about." },
+          ],
+        },
+        {
+          term: "caution",
+          translation: "cautela, cuidado",
+          example: "Proceed with caution.",
+          exampleTranslation: "Prossiga com cautela.",
+          more: [
+            { label: "Adjetivo", text: "cautious = cauteloso." },
+            { label: "Expressão", text: "throw caution to the wind = jogar a cautela pro alto.", example: "She threw caution to the wind and quit her job.", exampleTranslation: "Ela jogou a cautela pro alto e largou o emprego." },
+            { label: "Outro sentido", text: "aviso de perigo, em placas.", example: "Caution: wet floor.", exampleTranslation: "Cuidado: piso molhado." },
+          ],
+        },
+        {
           term: "chaos",
           translation: "caos",
           example: "The room was total chaos.",
           exampleTranslation: "O quarto estava um caos total.",
+        },
+        {
+          term: "childhoods",
+          translation: "infâncias",
+          example: "Their childhoods were hard.",
+          exampleTranslation: "As infâncias deles foram difíceis.",
+          more: [
+            { label: "Forma", text: "Plural de childhood." },
+            { label: "Sufixo", text: "-hood indica uma fase ou condição: child + -hood = infância." },
+            { label: "Expressão", text: "brotherhood = irmandade." },
+            { label: "Expressão", text: "neighborhood = vizinhança, bairro." },
+          ],
         },
         {
           term: "company",
@@ -421,6 +507,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "fofo",
           example: "Their new puppy is so cute.",
           exampleTranslation: "O novo cachorrinho deles é tão fofo.",
+        },
+        {
+          term: "daft",
+          translation: "bobo, tonto",
+          example: "Don’t be daft!",
+          exampleTranslation: "Não seja tonto!",
+          more: [
+            { label: "Expressão", text: "a daft idea = uma ideia boba." },
+            { label: "Observação", text: "Britânico. É um xingamento leve, muitas vezes até carinhoso, tipo “deixa de ser bobo”." },
+          ],
         },
         {
           term: "damned",
@@ -492,6 +588,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O tom dele foi desrespeitoso.",
           more: [
             { label: "Origem", text: "Sufixo -ful = cheio de. Ex.: respectful, helpful." },
+          ],
+        },
+        {
+          term: "drunken",
+          translation: "bêbado",
+          example: "A drunken man shouted.",
+          exampleTranslation: "Um homem bêbado gritou.",
+          more: [
+            { label: "Uso", text: "drunken vem antes do substantivo (a drunken man). Depois do verbo, usa drunk (He is drunk)." },
           ],
         },
         {
@@ -628,6 +733,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu fiz muito mais que todos vocês.",
         },
         {
+          term: "fella",
+          translation: "cara, sujeito",
+          example: "He’s a nice fella.",
+          exampleTranslation: "Ele é um cara legal.",
+          more: [
+            { label: "Origem", text: "Vem de fellow." },
+            { label: "Exemplo", example: "Hello, young fella.", exampleTranslation: "Olá, rapazinho." },
+            { label: "Outro sentido", text: "namorado, no inglês britânico e australiano.", example: "Is she bringing her fella?", exampleTranslation: "Ela vai trazer o namorado?" },
+          ],
+        },
+        {
           term: "fellow",
           translation: "colega, companheiro",
           more: [
@@ -644,6 +760,17 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Outro sentido", text: "bolsa de estudos acadêmica.", example: "She won a research fellowship.", exampleTranslation: "Ela ganhou uma bolsa de pesquisa." },
             { label: "Palavra relacionada", text: "fellow = colega, companheiro." },
             { label: "Expressão", text: "fellow students = colegas de classe." },
+          ],
+        },
+        {
+          term: "firsthand",
+          translation: "em primeira mão, na própria pele",
+          example: "I saw it firsthand.",
+          exampleTranslation: "Eu vi com meus próprios olhos.",
+          more: [
+            { label: "Expressão", text: "firsthand experience = experiência própria." },
+            { label: "Uso", text: "Funciona como advérbio (I saw it firsthand) e como adjetivo antes do substantivo (firsthand experience). Também aparece escrito first-hand." },
+            { label: "Oposto", text: "secondhand = de segunda mão: algo que você soube por outra pessoa, ou um objeto usado." },
           ],
         },
         {
@@ -675,6 +802,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu não uso Windows, nem Mac, aliás.",
           more: [
             { label: "Diferença", text: "Diferente de speaking of (por falar nisso)." },
+          ],
+        },
+        {
+          term: "fortress",
+          translation: "fortaleza",
+          example: "The fortress wall protected the city.",
+          exampleTranslation: "A muralha protegia a cidade.",
+          more: [
+            { label: "Expressão", text: "fortress wall = muralha da fortaleza." },
           ],
         },
         {
@@ -731,11 +867,23 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Parecido", text: "No sentido de além disso, é igual a also." },
             { label: "Outro sentido", text: "adicional.", example: "For further information, contact us.", exampleTranslation: "Para mais informações, entre em contato." },
             { label: "Verbo", text: "to further = promover ou fazer avançar." },
+            { label: "Expressão", text: "further away = mais longe.", example: "He moved further away.", exampleTranslation: "Ele se afastou mais." },
+            { label: "Forma", text: "Comparativo de far: far → further." },
           ],
         },
         {
           term: "gathering",
           translation: "reunião, encontro",
+        },
+        {
+          term: "ginger",
+          translation: "ruivo",
+          example: "You barmy ginger!",
+          exampleTranslation: "Seu ruivo maluco!",
+          more: [
+            { label: "Observação", text: "Comum no inglês britânico pra cabelo ruivo. Chamar alguém de ginger pode soar como provocação, depende do tom." },
+            { label: "Outro sentido", text: "gengibre.", example: "I’d like a ginger tea.", exampleTranslation: "Eu queria um chá de gengibre." },
+          ],
         },
         {
           term: "gists",
@@ -745,6 +893,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Em tecnologia", text: "No GitHub, gist é um snippet ou arquivo rápido, versionado." },
             { label: "Outro sentido", text: "gist = essência.", example: "I get the gist.", exampleTranslation: "Entendi a ideia geral." },
+          ],
+        },
+        {
+          term: "git",
+          translation: "idiota, babaca",
+          example: "You stupid git!",
+          exampleTranslation: "Seu idiota!",
+          more: [
+            { label: "Observação", text: "Insulto britânico." },
+            { label: "Curiosidade", text: "O Linus Torvalds disse que batizou o Git com esse nome de brincadeira, como se fosse um apelido pra ele mesmo." },
           ],
         },
         {
@@ -815,6 +973,8 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "huge",
           translation: "enorme",
+          example: "It’s a huge problem.",
+          exampleTranslation: "É um problema enorme.",
           more: [
             { label: "Parecido", text: "big, porém mais forte." },
           ],
@@ -881,6 +1041,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Observação", text: "Famoso por algo ruim." },
             { label: "Oposto", text: "O oposto de famous não é infamous, e sim unknown." },
+          ],
+        },
+        {
+          term: "infantry",
+          translation: "infantaria",
+          example: "The infantry marched first.",
+          exampleTranslation: "A infantaria marchou primeiro.",
+          more: [
+            { label: "Expressão", text: "infantry soldiers = soldados de infantaria." },
+            { label: "Origem", text: "Vem do italiano infante, o soldado jovem que lutava a pé. É a mesma raiz de infant (bebê)." },
           ],
         },
         {
@@ -958,6 +1128,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Singular", text: "lady." },
             { label: "Expressão", text: "ladies and gentlemen = senhoras e senhores." },
+          ],
+        },
+        {
+          term: "lasso",
+          translation: "laço (corda de cowboy)",
+          example: "He caught the horse with a lasso.",
+          exampleTranslation: "Ele pegou o cavalo com um laço.",
+          more: [
+            { label: "Verbo", text: "to lasso = laçar." },
           ],
         },
         {
@@ -1048,6 +1227,17 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Parecido", text: "furthermore e also no começo da frase. Mais formal que besides." },
             { label: "Uso", text: "Costuma ter vírgula depois. Aparece bastante em livro técnico; na conversa do dia a dia o natural é also ou plus." },
+          ],
+        },
+        {
+          term: "mouthbreathers",
+          translation: "idiotas, jecas",
+          example: "Those mouthbreathers can’t even read.",
+          exampleTranslation: "Esses burros nem sabem ler.",
+          more: [
+            { label: "Forma", text: "Plural de mouthbreather." },
+            { label: "Origem", text: "Literalmente, quem respira pela boca. Vem da imagem da pessoa de boca aberta, com cara de lerda." },
+            { label: "Observação", text: "Insulto pra gente lerda ou burra." },
           ],
         },
         {
@@ -1158,6 +1348,17 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "custo extra",
         },
         {
+          term: "painfully",
+          translation: "dolorosamente / extremamente",
+          example: "The silence was painfully long.",
+          exampleTranslation: "O silêncio foi dolorosamente longo.",
+          more: [
+            { label: "Uso", text: "Além do sentido literal, vira intensificador, tipo “de doer” ou “pra caramba”. Só que sempre com coisa incômoda ou constrangedora, nunca com coisa boa." },
+            { label: "Expressão", text: "painfully shy = tímido de doer, tímido pra caramba." },
+            { label: "Expressão", text: "painfully obvious = óbvio demais, chega a doer.", example: "It was painfully obvious that he was lying.", exampleTranslation: "Era óbvio demais que ele estava mentindo." },
+          ],
+        },
+        {
           term: "pattern",
           translation: "padrão",
           example: "This is a common design pattern in software.",
@@ -1255,6 +1456,19 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "prone",
           translation: "propenso",
+        },
+        {
+          term: "proof",
+          translation: "prova (evidência)",
+          example: "Do you have proof?",
+          exampleTranslation: "Você tem provas?",
+          more: [
+            { label: "Expressão", text: "proof of payment = comprovante de pagamento." },
+            { label: "Em tecnologia", text: "proof of concept (POC) = prova de conceito." },
+            { label: "Verbo", text: "prove = provar." },
+            { label: "Uso", text: "No sentido de evidência, é incontável: I have proof, e não I have a proof." },
+            { label: "Sufixo", text: "-proof no fim da palavra quer dizer “à prova de”: waterproof (à prova d’água), bulletproof (à prova de balas)." },
+          ],
         },
         {
           term: "proud",
@@ -1479,6 +1693,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O sorriso brilhante dela iluminou a sala.",
         },
         {
+          term: "shite",
+          translation: "merda",
+          example: "This place is shite.",
+          exampleTranslation: "Esse lugar é uma merda.",
+          more: [
+            { label: "Observação", text: "Britânico/irlandês e vulgar. Variante de shit." },
+          ],
+        },
+        {
           term: "shortly",
           translation: "em breve, logo (tempo curto)",
           example: "I'll be there shortly.",
@@ -1519,6 +1742,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "sleuth",
+          translation: "detetive",
+          example: "The sleuth followed the clues.",
+          exampleTranslation: "O detetive seguiu as pistas.",
+          more: [
+            { label: "Observação", text: "Informal, meio literário." },
+            { label: "Expressão", text: "play sleuth = bancar o detetive.", example: "She’s playing sleuth.", exampleTranslation: "Ela tá bancando a detetive." },
+            { label: "Verbo", text: "to sleuth = investigar." },
+          ],
+        },
+        {
           term: "slight",
           translation: "leve, pequeno",
           example: "There is a slight chance of rain.",
@@ -1531,6 +1765,16 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "slightly",
           translation: "levemente, um pouco",
+        },
+        {
+          term: "somehow",
+          translation: "de algum jeito",
+          example: "Somehow, it worked.",
+          exampleTranslation: "De algum jeito, funcionou.",
+          more: [
+            { label: "Exemplo", example: "We’ll fix it somehow.", exampleTranslation: "A gente resolve de algum jeito." },
+            { label: "Outro sentido", text: "sei lá por quê, quando você não sabe explicar uma sensação.", example: "Somehow, I don’t trust him.", exampleTranslation: "Sei lá por quê, eu não confio nele." },
+          ],
         },
         {
           term: "sophomore",
@@ -1559,6 +1803,17 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Outro sentido", text: "ânimo." },
             { label: "Expressão", text: "team spirit = espírito de equipe." },
+          ],
+        },
+        {
+          term: "spite",
+          translation: "rancor, despeito",
+          example: "He did it out of spite.",
+          exampleTranslation: "Ele fez por pura maldade.",
+          more: [
+            { label: "Expressão", text: "out of spite = por maldade, de pirraça, só pra provocar." },
+            { label: "Expressão", text: "in spite of = apesar de.", example: "We went out in spite of the rain.", exampleTranslation: "A gente saiu apesar da chuva." },
+            { label: "Parecido", text: "despite = apesar de (sem o of)." },
           ],
         },
         {
@@ -1682,6 +1937,25 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "toplofty",
+          translation: "arrogante, pretensioso",
+          example: "She’s a toplofty girl.",
+          exampleTranslation: "Ela é uma menina arrogante.",
+          more: [
+            { label: "Observação", text: "Bem raro e antigo." },
+            { label: "Parecido", text: "snobby, stuck-up." },
+          ],
+        },
+        {
+          term: "trap",
+          translation: "armadilha",
+          example: "It’s a trap!",
+          exampleTranslation: "É uma armadilha!",
+          more: [
+            { label: "Verbo", text: "trap = prender, encurralar." },
+          ],
+        },
+        {
           term: "trash can",
           translation: "lata de lixo",
           example: "Put it in the trash can.",
@@ -1790,6 +2064,7 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O firewall bloqueia o ataque.",
           more: [
             { label: "Em tecnologia", text: "firewall." },
+            { label: "Outro sentido", text: "muralha.", example: "The fortress wall protected the city.", exampleTranslation: "A muralha protegia a cidade." },
           ],
         },
         {
@@ -1918,6 +2193,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "ira, fúria",
           example: "He feared the king's wrath.",
           exampleTranslation: "Ele temia a ira do rei.",
+        },
+        {
+          term: "ya",
+          translation: "you (fala informal)",
+          example: "Do ya want a drink?",
+          exampleTranslation: "Você quer uma bebida?",
+          more: [
+            { label: "Uso", text: "Só aparece escrito pra imitar o jeito falado, com sotaque." },
+            { label: "Expressão", text: "See ya! = Até mais!" },
+          ],
         },
       ],
       expressions: [

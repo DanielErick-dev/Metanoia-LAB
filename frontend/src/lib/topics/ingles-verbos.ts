@@ -272,6 +272,18 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "drop in",
+          translation: "dar uma passadinha, aparecer",
+          example: "Drop in anytime.",
+          exampleTranslation: "Passa aqui quando quiser.",
+          conjugation: { base: "drop in", past: "dropped in", participle: "dropped in", irregular: false },
+          more: [
+            { label: "Uso", text: "Phrasal verb. É aparecer sem avisar, numa visita rápida." },
+            { label: "Expressão", text: "drop in on + pessoa = dar uma passada na casa de alguém.", example: "I’ll drop in on you tomorrow.", exampleTranslation: "Vou dar uma passada aí amanhã." },
+            { label: "Parecido", text: "drop by, stop by." },
+          ],
+        },
+        {
           term: "enable",
           translation: "permitir, habilitar",
           example: "GraphQL enables clients to nest queries.",
@@ -560,6 +572,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "lasso",
+          translation: "laçar",
+          example: "He lassoed the calf.",
+          exampleTranslation: "Ele laçou o bezerro.",
+          conjugation: { base: "lasso", past: "lassoed", participle: "lassoed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "lasso = laço (corda de cowboy)." },
+          ],
+        },
+        {
           term: "launch",
           translation: "lançar",
           example: "They launched a new product.",
@@ -673,11 +695,33 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "plan", past: "planned", participle: "planned", irregular: false },
         },
         {
+          term: "prevails",
+          translation: "prevalece, vence",
+          example: "Justice prevails.",
+          exampleTranslation: "A justiça prevalece.",
+          conjugation: { base: "prevail", past: "prevailed", participle: "prevailed", irregular: false },
+          more: [
+            { label: "Expressão", text: "prevail over = vencer, levar a melhor sobre.", example: "Good prevails over evil.", exampleTranslation: "O bem vence o mal." },
+            { label: "Parecido", text: "prevalent (predominante) é da mesma família." },
+          ],
+        },
+        {
           term: "prod",
           translation: "cutucar / espetar",
           example: "Stop prodding me!",
           exampleTranslation: "Para de me cutucar!",
           conjugation: { base: "prod", past: "prodded", participle: "prodded", irregular: false },
+        },
+        {
+          term: "prove",
+          translation: "provar",
+          example: "Can you prove it?",
+          exampleTranslation: "Você consegue provar?",
+          conjugation: { base: "prove", past: "proved", participle: "proved / proven", irregular: false },
+          more: [
+            { label: "Substantivo", text: "proof = prova." },
+            { label: "Outro sentido", text: "prove + adjetivo = se mostrar, acabar sendo.", example: "The test proved difficult.", exampleTranslation: "A prova se mostrou difícil." },
+          ],
         },
         {
           term: "provide",
@@ -724,6 +768,18 @@ export const inglesVerbos: TopicData = {
           example: "I regret not studying harder.",
           exampleTranslation: "Eu me arrependo de não ter estudado mais.",
           conjugation: { base: "regret", past: "regretted", participle: "regretted", irregular: false },
+        },
+        {
+          term: "reinforce",
+          translation: "reforçar",
+          example: "They reinforced the wall.",
+          exampleTranslation: "Eles reforçaram a muralha.",
+          conjugation: { base: "reinforce", past: "reinforced", participle: "reinforced", irregular: false },
+          more: [
+            { label: "Formação", text: "re- + enforce." },
+            { label: "Expressão", text: "reinforce the rules = reforçar as regras." },
+            { label: "Substantivo", text: "reinforcements = reforços, as tropas extras que chegam pra ajudar.", example: "Send reinforcements!", exampleTranslation: "Mandem reforços!" },
+          ],
         },
         {
           term: "revoke",
@@ -850,6 +906,14 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "sleuth",
+          translation: "investigar",
+          conjugation: { base: "sleuth", past: "sleuthed", participle: "sleuthed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "sleuth = detetive." },
+          ],
+        },
+        {
           term: "snog",
           translation: "beijar na boca, “pegar” (britânico, informal)",
           example: "They were snogging behind the library.",
@@ -886,6 +950,32 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "standardize", past: "standardized", participle: "standardized", irregular: false },
         },
         {
+          term: "stuck",
+          translation: "preso, travado",
+          example: "I’m stuck in traffic.",
+          exampleTranslation: "Estou preso no trânsito.",
+          conjugation: { base: "stick", past: "stuck", participle: "stuck", irregular: true },
+          more: [
+            { label: "Em tecnologia", example: "I’m stuck on this bug.", exampleTranslation: "Tô travado nesse bug." },
+            { label: "Expressão", text: "get stuck = ficar preso, empacar." },
+            { label: "Expressão", text: "be stuck with = ficar preso com, ter que aguentar.", example: "I’m stuck with this old laptop.", exampleTranslation: "Tô preso com esse notebook velho." },
+            { label: "Verbo base", text: "stick = grudar, colar, enfiar." },
+          ],
+        },
+        {
+          term: "take off",
+          translation: "sair correndo / decolar / tirar",
+          example: "He took off when he saw the guards.",
+          exampleTranslation: "Ele saiu correndo quando viu os guardas.",
+          conjugation: { base: "take off", past: "took off", participle: "taken off", irregular: true },
+          more: [
+            { label: "Uso", text: "No sentido de fugir, é sair de repente e rápido, tipo “vazar”." },
+            { label: "Outro sentido", text: "decolar.", example: "The plane took off on time.", exampleTranslation: "O avião decolou na hora." },
+            { label: "Outro sentido", text: "tirar (roupa).", example: "Take off your shoes.", exampleTranslation: "Tira os sapatos." },
+            { label: "Outro sentido", text: "deslanchar, fazer sucesso de repente.", example: "Her career took off after that film.", exampleTranslation: "A carreira dela deslanchou depois daquele filme." },
+          ],
+        },
+        {
           term: "take over",
           translation: "assumir o controle de algo",
           example: "He took over the company after his father retired.",
@@ -908,6 +998,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "threatened",
+          translation: "ameaçou / ameaçado",
+          example: "They threatened to leave.",
+          exampleTranslation: "Eles ameaçaram ir embora.",
+          conjugation: { base: "threaten", past: "threatened", participle: "threatened", irregular: false },
+          more: [
+            { label: "Substantivo", text: "threat = ameaça." },
+            { label: "Expressão", text: "feel threatened = se sentir ameaçado." },
+          ],
+        },
+        {
           term: "track",
           translation: "rastro, trilha, faixa / rastrear",
           example: "The police followed the tracks in the snow.",
@@ -917,6 +1018,29 @@ export const inglesVerbos: TopicData = {
             { label: "Exemplo", example: "This is my favorite track on the album.", exampleTranslation: "Essa é minha faixa favorita do álbum." },
             { label: "Expressão", text: "track down = localizar." },
             { label: "Expressão", text: "on track = no caminho certo." },
+          ],
+        },
+        {
+          term: "trap",
+          translation: "prender, encurralar",
+          example: "I’m trapped.",
+          exampleTranslation: "Estou preso.",
+          conjugation: { base: "trap", past: "trapped", participle: "trapped", irregular: false },
+          more: [
+            { label: "Substantivo", text: "trap = armadilha." },
+          ],
+        },
+        {
+          term: "tucked",
+          translation: "enfiado, guardado, ajeitado",
+          example: "The letter was tucked in his pocket.",
+          exampleTranslation: "A carta estava enfiada no bolso dele.",
+          conjugation: { base: "tuck", past: "tucked", participle: "tucked", irregular: false },
+          more: [
+            { label: "Expressão", text: "tuck in your shirt = põe a camisa pra dentro." },
+            { label: "Expressão", text: "tuck someone in = ajeitar a coberta de alguém na cama.", example: "Mom tucked me in every night.", exampleTranslation: "Minha mãe me cobria toda noite." },
+            { label: "Expressão", text: "tucked away = escondido, num cantinho.", example: "There’s a little café tucked away in the alley.", exampleTranslation: "Tem um cafezinho escondido no beco." },
+            { label: "Outro sentido", text: "tuck in = atacar a comida, começar a comer (britânico).", example: "Dinner’s ready, tuck in!", exampleTranslation: "O jantar tá pronto, pode atacar!" },
           ],
         },
         {
