@@ -89,6 +89,14 @@ export const categories: CategoryData[] = [
     layout: "guide",
   },
   {
+    slug: "fastapi",
+    title: "FastAPI",
+    subtitle: "APIs de alta performance com Python, do primeiro endpoint ao banco de dados",
+    accent: "#009688",
+    parentSlug: "backend",
+    layout: "guide",
+  },
+  {
     slug: "gramatica",
     title: "Gramática",
     subtitle: "Regras e estruturas gramaticais do inglês",

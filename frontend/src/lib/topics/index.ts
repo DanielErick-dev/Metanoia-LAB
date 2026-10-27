@@ -38,6 +38,16 @@ import { someAnyNo } from "./some-any-no";
 import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
 import { designingWebApisCap2 } from "./designing-web-apis-paradigmas";
 import { designingWebApisCap3 } from "./designing-web-apis-seguranca";
+import { fastapiIntroducao } from "./fastapi-introducao";
+import { fastapiInstalacao } from "./fastapi-instalacao";
+import { fastapiTypeHintsPydantic } from "./fastapi-type-hints-pydantic";
+import { fastapiUrlsRouters } from "./fastapi-urls-routers";
+import { fastapiSchemas } from "./fastapi-schemas";
+import { fastapiCrudBasico } from "./fastapi-crud-basico";
+import { fastapiModelsOrm } from "./fastapi-models-orm";
+import { fastapiCrudUsuarios } from "./fastapi-crud-usuarios";
+import { fastapiCrudMarcasCarros } from "./fastapi-crud-marcas-carros";
+import { fastapiProgramacaoAssincrona } from "./fastapi-programacao-assincrona";
 
 export const topics: TopicData[] = [
   trindade,
@@ -75,6 +85,16 @@ export const topics: TopicData[] = [
   designingWebApisCap1,
   designingWebApisCap2,
   designingWebApisCap3,
+  fastapiIntroducao,
+  fastapiInstalacao,
+  fastapiTypeHintsPydantic,
+  fastapiUrlsRouters,
+  fastapiSchemas,
+  fastapiCrudBasico,
+  fastapiModelsOrm,
+  fastapiCrudUsuarios,
+  fastapiCrudMarcasCarros,
+  fastapiProgramacaoAssincrona,
 ];
 
 export function getTopicBySlug(slug: string): TopicData | undefined {
