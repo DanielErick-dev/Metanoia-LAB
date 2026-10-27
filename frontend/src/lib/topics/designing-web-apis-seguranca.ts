@@ -3,7 +3,7 @@ import { TopicData } from "@/lib/types/topic";
 export const designingWebApisCap3: TopicData = {
   slug: "seguranca-de-api",
   title: "Capítulo 3 — Segurança de API",
-  subtitle: "Autenticação, autorização, os problemas do Basic Authentication, o OAuth 2.0 e os scopes",
+  subtitle: "Autenticação, autorização, os problemas do Basic Authentication, o OAuth 2.0, os scopes e a expiração e renovação de tokens",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
   status: "em-construcao",
@@ -121,6 +121,44 @@ export const designingWebApisCap3: TopicData = {
     {
       heading: "O princípio do menor privilégio",
       body: "Assim cada aplicação recebe apenas o que é necessário para o seu funcionamento, nada além. Dessa forma protege mais o usuário e também o provedor da API. Geralmente chama-se essa prática de princípio do menor privilégio (least privilege).",
+    },
+    {
+      heading: "As duas verificações do access token",
+      body: "Outro ponto: o app, tendo o access_token em mãos, passa a colocar o token de acesso nas suas requisições, enviando de volta para a API, que por sua vez faz 2 verificações:",
+      table: {
+        headers: ["Verificação", "Como funciona"],
+        rows: [
+          ["1. O access_token é válido?", "Pra isso, a API compara o token recebido com o token que está guardado no banco de dados."],
+          ["2. O token tem o scope que a ação exige?", "Por exemplo, postar uma mensagem exige um scope de escrita, e a API confere se o que o token carrega coincide com isso. O token pode ser válido, mas não ter permissão para uma determinada ação."],
+        ],
+      },
+    },
+    {
+      heading: "401 ou 403",
+      body: "Se qualquer uma das duas falhar, o servidor deve responder com um erro. Nós vimos essa explicação antes com autenticação e autorização: o servidor pode responder com um 401 para token inválido (não autenticado) e pode responder com 403 (não tem permissão), que é não autorizado. São coisas distintas. (Esse detalhe dos códigos 401 e 403 é um complemento meu, o livro não cita nesse trecho.)",
+    },
+    {
+      heading: "O erro precisa dizer qual é o problema",
+      body: "É importante isso estar explícito na API. Não pode um usuário estar fazendo uma ação e tomar um erro genérico sem saber qual o problema: “é erro de token ou de permissão?”. O código deve fornecer esse indício.",
+    },
+    {
+      heading: "Os cabeçalhos de scope do GitHub e do Slack",
+      body: "Pra ajudar nisso, o livro cita que muitas APIs, como GitHub e Slack, mandam na resposta dois cabeçalhos: o X-OAuth-Scopes, que mostra os scopes que o token tem, e o X-Accepted-OAuth-Scopes, que mostra os scopes que a ação exige. E quando falta scope, o Slack devolve um erro detalhado (missing_scope) dizendo o que era necessário (needed) e o que foi fornecido (provided), o que economiza muito tempo de quem está debugando.",
+      code: `{
+  "ok": false,
+  "error": "missing_scope",
+  "needed": "chat:write",
+  "provided": "channels:read"
+}`,
+      language: "json",
+    },
+    {
+      heading: "Expiração de token",
+      body: "O livro cita que, além das APIs disponibilizarem os tokens de acesso, elas devem disponibilizar uma forma de renovar esse token, visto que, por segurança, um token de acesso não deve ficar disponível por muito tempo (algumas horas ou dias), para que, em casos de vazamento, os danos sejam reduzidos.",
+    },
+    {
+      heading: "Refresh token",
+      body: "Então, para evitar a necessidade de fazer login toda hora para renovar o token de acesso, usa-se o refresh token: a aplicação passa o client ID, o client secret e o refresh token e, com isso, consegue obter um novo access token. Lembrando que ter o refresh token sozinho não adianta de nada sem o client secret, que é a senha guardada, então o atacante teria que roubar tanto o refresh token quanto a senha para poder fazer alguma coisa.",
     },
   ],
   relatedSlugs: ["paradigmas-de-api"],
