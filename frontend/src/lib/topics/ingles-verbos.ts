@@ -33,6 +33,13 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "achieve", past: "achieved", participle: "achieved", irregular: false },
         },
         {
+          term: "add",
+          translation: "adicionar, acrescentar",
+          example: "Add a layer of security.",
+          exampleTranslation: "Adicione uma camada de segurança.",
+          conjugation: { base: "add", past: "added", participle: "added", irregular: false },
+        },
+        {
           term: "address",
           translation: "resolver, tratar",
           example: "We need to address this bug before the release.",
@@ -55,6 +62,30 @@ export const inglesVerbos: TopicData = {
             { label: "Outro sentido", text: "adotar uma criança.", example: "They adopted a baby girl.", exampleTranslation: "Eles adotaram uma menininha." },
             { label: "Adjetivo", text: "adopted = adotado(a)." },
             { label: "Substantivo", text: "adoption = adoção." },
+          ],
+        },
+        {
+          term: "advertise",
+          translation: "anunciar, divulgar",
+          example: "They advertise on social media.",
+          exampleTranslation: "Eles anunciam nas redes sociais.",
+          conjugation: { base: "advertise", past: "advertised", participle: "advertised", irregular: false },
+          more: [
+            { label: "Substantivo", text: "advertising = publicidade, propaganda.", example: "Advertising pays for free apps.", exampleTranslation: "A publicidade paga os apps gratuitos." },
+            { label: "Substantivo", text: "ad (advertisement) = anúncio." },
+            { label: "Diferença", text: "advertising é publicidade; advertir, avisar é warn (warning = aviso)." },
+          ],
+        },
+        {
+          term: "agree",
+          translation: "concordar; aceitar",
+          example: "The customer must know what they agree to.",
+          exampleTranslation: "O cliente precisa saber o que está aceitando.",
+          conjugation: { base: "agree", past: "agreed", participle: "agreed", irregular: false },
+          more: [
+            { label: "Expressão", text: "agree to = aceitar (termos, condições); agree with = concordar com alguém." },
+            { label: "Exemplo", example: "We both agree.", exampleTranslation: "Nós dois concordamos." },
+            { label: "Substantivo", text: "agreement = acordo." },
           ],
         },
         {
@@ -128,6 +159,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "avoid",
+          translation: "evitar",
+          example: "Avoid sending secrets in payloads.",
+          exampleTranslation: "Evite mandar segredos nos payloads.",
+          conjugation: { base: "avoid", past: "avoided", participle: "avoided", irregular: false },
+          more: [
+            { label: "Uso", text: "avoid + verbo-ing, nunca avoid to.", example: "Avoid using weak passwords.", exampleTranslation: "Evite usar senhas fracas." },
+          ],
+        },
+        {
           term: "bang",
           translation: "bater com força, fazer barulho / estrondo",
           example: "Someone banged on the door.",
@@ -198,6 +239,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "belong", past: "belonged", participle: "belonged", irregular: false },
           more: [
             { label: "Uso", text: "belong to + pessoa/coisa; belong in/at + lugar." },
+          ],
+        },
+        {
+          term: "block",
+          translation: "bloquear / bloco; quarteirão",
+          example: "The firewall blocks inbound traffic.",
+          exampleTranslation: "O firewall bloqueia tráfego de entrada.",
+          conjugation: { base: "block", past: "blocked", participle: "blocked", irregular: false },
+          more: [
+            { label: "Substantivo", text: "block = bloco; quarteirão.", example: "They live two blocks apart.", exampleTranslation: "Eles moram a dois quarteirões de distância um do outro." },
           ],
         },
         {
@@ -283,6 +334,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "change",
+          translation: "mudar, trocar / mudança",
+          example: "The scope of the project changed.",
+          exampleTranslation: "O escopo do projeto mudou.",
+          conjugation: { base: "change", past: "changed", participle: "changed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "change = mudança.", example: "Apps subscribe to changes.", exampleTranslation: "Apps se inscrevem pra receber mudanças." },
+            { label: "Outro sentido", text: "troco (dinheiro)." },
+          ],
+        },
+        {
           term: "chase",
           translation: "perseguir, correr atrás",
           example: "The dog chased the cat.",
@@ -365,6 +427,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "click",
+          translation: "clicar / clique",
+          example: "Click the button labeled Submit.",
+          exampleTranslation: "Clique no botão com o texto Submit.",
+          conjugation: { base: "click", past: "clicked", participle: "clicked", irregular: false },
+          more: [
+            { label: "Exemplo", example: "The site tricks users into clicking.", exampleTranslation: "O site engana os usuários pra clicarem." },
+            { label: "Substantivo", text: "click = clique." },
+          ],
+        },
+        {
           term: "come",
           translation: "vir, chegar",
           example: "Come in, the door is open.",
@@ -375,6 +448,28 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "here it comes = lá vem.", example: "Here it comes, the bug report.", exampleTranslation: "Lá vem, o relatório de bug." },
             { label: "Phrasal verb", text: "come back = voltar.", example: "After the surgery, she came back stronger than ever.", exampleTranslation: "Depois da cirurgia, ela voltou mais forte do que nunca." },
             { label: "Expressão", text: "Thanks for coming in = obrigado por vir." },
+          ],
+        },
+        {
+          term: "compare",
+          translation: "comparar",
+          example: "Compare the signatures.",
+          exampleTranslation: "Compare as assinaturas.",
+          conjugation: { base: "compare", past: "compared", participle: "compared", irregular: false },
+          more: [
+            { label: "Uso", text: "compare X with/to Y = comparar X com Y." },
+            { label: "Substantivo", text: "comparison = comparação." },
+          ],
+        },
+        {
+          term: "confuse",
+          translation: "confundir",
+          example: "A misleading name confuses users.",
+          exampleTranslation: "Um nome enganoso confunde os usuários.",
+          conjugation: { base: "confuse", past: "confused", participle: "confused", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "confused = confuso; confusing = que confunde." },
+            { label: "Substantivo", text: "confusion = confusão." },
           ],
         },
         {
@@ -394,6 +489,16 @@ export const inglesVerbos: TopicData = {
           term: "convert",
           translation: "converter",
           conjugation: { base: "convert", past: "converted", participle: "converted", irregular: false },
+        },
+        {
+          term: "copy",
+          translation: "copiar / cópia",
+          example: "A phishing site copies a real login page.",
+          exampleTranslation: "Um site de phishing copia uma página de login real.",
+          conjugation: { base: "copy", past: "copied", participle: "copied", irregular: false },
+          more: [
+            { label: "Substantivo", text: "copy = cópia; exemplar." },
+          ],
         },
         {
           term: "could",
@@ -466,6 +571,17 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "deserve", past: "deserved", participle: "deserved", irregular: false },
         },
         {
+          term: "design",
+          translation: "projetar, desenhar / design, projeto",
+          example: "The app is designed to be addictive.",
+          exampleTranslation: "O app foi feito pra ser viciante.",
+          conjugation: { base: "design", past: "designed", participle: "designed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "design = projeto, desenho.", example: "This is a common design pattern in software.", exampleTranslation: "Esse é um padrão de projeto comum em software." },
+            { label: "Expressão", text: "be designed to = ser feito para." },
+          ],
+        },
+        {
           term: "direct",
           translation: "direcionar, encaminhar / direto",
           example: "The link directs you to the login page.",
@@ -488,6 +604,17 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "always being discovered = presente contínuo passivo: “estão sendo descobertas o tempo todo”." },
             { label: "Diferença", text: "find out = obter uma informação, figure out = chegar à resposta pensando, discover = achar algo novo." },
             { label: "Substantivo", text: "discovery = descoberta." },
+          ],
+        },
+        {
+          term: "dispatch",
+          translation: "despachar, enviar",
+          example: "Each dispatched request carries a token.",
+          exampleTranslation: "Cada requisição enviada leva um token.",
+          conjugation: { base: "dispatch", past: "dispatched", participle: "dispatched", irregular: false },
+          more: [
+            { label: "Uso", text: "Enviar oficialmente, pra um destino específico." },
+            { label: "Em tecnologia", text: "dispatch an event = disparar um evento." },
           ],
         },
         {
@@ -621,6 +748,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "ensure", past: "ensured", participle: "ensured", irregular: false },
           more: [
             { label: "Exemplo", example: "Tests ensure the code works.", exampleTranslation: "Os testes garantem que o código funciona." },
+          ],
+        },
+        {
+          term: "entice",
+          translation: "atrair, seduzir, tentar",
+          example: "The offer enticed new users.",
+          exampleTranslation: "A oferta atraiu novos usuários.",
+          conjugation: { base: "entice", past: "enticed", participle: "enticed", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "enticing = tentador, atraente.", example: "It can be enticing to invent your own system.", exampleTranslation: "Pode ser tentador inventar seu próprio sistema." },
           ],
         },
         {
@@ -815,6 +952,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "forge",
+          translation: "forjar, falsificar",
+          example: "In the absence of verification, anyone can forge requests.",
+          exampleTranslation: "Na ausência de verificação, qualquer um forja requisições.",
+          conjugation: { base: "forge", past: "forged", participle: "forged", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "forjar metal; forja (substantivo)." },
+            { label: "Em tecnologia", text: "CSRF = cross-site request forgery (falsificação de requisição entre sites)." },
+          ],
+        },
+        {
           term: "forget",
           translation: "esquecer",
           example: "Bugger! I forgot my umbrella.",
@@ -959,6 +1107,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "handle",
+          translation: "lidar com, cuidar de / alça, maçaneta",
+          example: "Security experts handled the vetting.",
+          exampleTranslation: "Especialistas de segurança fizeram a avaliação.",
+          conjugation: { base: "handle", past: "handled", participle: "handled", irregular: false },
+          more: [
+            { label: "Em tecnologia", text: "handle an error = tratar um erro; handler = função que trata um evento." },
+            { label: "Substantivo", text: "handle = alça, maçaneta." },
+          ],
+        },
+        {
           term: "hang",
           translation: "pendurar",
           example: "Hang your coat here.",
@@ -1015,6 +1174,16 @@ export const inglesVerbos: TopicData = {
             { label: "Substantivo", text: "help = ajuda.", example: "Thanks for your help.", exampleTranslation: "Obrigado pela ajuda." },
             { label: "Expressão", text: "Help! = Socorro!" },
             { label: "Adjetivo", text: "helpful = prestativo, útil." },
+          ],
+        },
+        {
+          term: "hide",
+          translation: "esconder",
+          example: "The cat is hiding behind the sofa.",
+          exampleTranslation: "O gato está escondido atrás do sofá.",
+          conjugation: { base: "hide", past: "hid", participle: "hidden", irregular: true },
+          more: [
+            { label: "Adjetivo", text: "hidden = escondido, oculto.", example: "Clickjacking tricks you into clicking something hidden.", exampleTranslation: "O clickjacking te engana pra clicar em algo escondido." },
           ],
         },
         {
@@ -1089,6 +1258,38 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "install",
+          translation: "instalar",
+          example: "Install the latest security patch.",
+          exampleTranslation: "Instale a última correção de segurança.",
+          conjugation: { base: "install", past: "installed", participle: "installed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "installation = instalação." },
+          ],
+        },
+        {
+          term: "intend",
+          translation: "pretender, ter a intenção de",
+          example: "I intend to finish the book this month.",
+          exampleTranslation: "Pretendo terminar o livro este mês.",
+          conjugation: { base: "intend", past: "intended", participle: "intended", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "intended = pretendido, planejado.", example: "Use the API as intended.", exampleTranslation: "Use a API como foi planejado." },
+            { label: "Uso", text: "intend to + verbo = pretender fazer algo." },
+            { label: "Substantivo", text: "intention = intenção." },
+          ],
+        },
+        {
+          term: "invent",
+          translation: "inventar",
+          example: "Don’t invent your own system.",
+          exampleTranslation: "Não invente seu próprio sistema.",
+          conjugation: { base: "invent", past: "invented", participle: "invented", irregular: false },
+          more: [
+            { label: "Substantivo", text: "invention = invenção." },
+          ],
+        },
+        {
           term: "keep",
           translation: "manter, guardar; continuar",
           example: "Passwords should be kept secret.",
@@ -1143,8 +1344,19 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "O banco de dados vazou milhares de senhas.",
           conjugation: { base: "leak", past: "leaked", participle: "leaked", irregular: false },
           more: [
-            { label: "Adjetivo", text: "leaky." },
+            { label: "Particípio", example: "The password was leaked.", exampleTranslation: "A senha foi vazada." },
+            { label: "Adjetivo", text: "leaky = que vaza, com vazamento." },
             { label: "Em tecnologia", text: "data leak e memory leak (vazamento de memória, quando o programa consome memória sem liberar)." },
+          ],
+        },
+        {
+          term: "learn",
+          translation: "aprender",
+          example: "We learned a hard lesson.",
+          exampleTranslation: "Aprendemos uma lição difícil.",
+          conjugation: { base: "learn", past: "learned (EUA) / learnt (Reino Unido)", participle: "learned (EUA) / learnt (Reino Unido)", irregular: false },
+          more: [
+            { label: "Expressão", text: "lessons learned = lições aprendidas." },
           ],
         },
         {
@@ -1204,6 +1416,28 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "listen", past: "listened", participle: "listened", irregular: false },
           more: [
             { label: "Uso", text: "listen to + algo ou alguém.", example: "I listen to music every day.", exampleTranslation: "Eu escuto música todo dia." },
+          ],
+        },
+        {
+          term: "live",
+          translation: "morar, viver",
+          example: "They live two blocks apart.",
+          exampleTranslation: "Eles moram a dois quarteirões de distância um do outro.",
+          conjugation: { base: "live", past: "lived", participle: "lived", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "live = ao vivo (pronúncia diferente do verbo)." },
+            { label: "Expressão", text: "short-lived = de vida curta." },
+          ],
+        },
+        {
+          term: "load",
+          translation: "carregar / carga",
+          example: "The page was loaded inside an iframe.",
+          exampleTranslation: "A página foi carregada dentro de um iframe.",
+          conjugation: { base: "load", past: "loaded", participle: "loaded", irregular: false },
+          more: [
+            { label: "Em tecnologia", text: "load balancer = balanceador de carga." },
+            { label: "Substantivo", text: "load = carga." },
           ],
         },
         {
@@ -1303,9 +1537,41 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "mislead",
+          translation: "enganar, induzir ao erro",
+          example: "Don't mislead your users.",
+          exampleTranslation: "Não engane seus usuários.",
+          conjugation: { base: "mislead", past: "misled", participle: "misled", irregular: true },
+          more: [
+            { label: "Adjetivo", text: "misleading = enganoso.", example: "A misleading name confuses users.", exampleTranslation: "Um nome enganoso confunde os usuários." },
+            { label: "Formação", text: "mis- (errado) + lead (conduzir)." },
+          ],
+        },
+        {
+          term: "miss",
+          translation: "perder, faltar; sentir falta",
+          example: "I was sick, which is why I missed class.",
+          exampleTranslation: "Eu estava doente, por isso que perdi a aula.",
+          conjugation: { base: "miss", past: "missed", participle: "missed", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "missing = faltando, desaparecido.", example: "The error happened due to a missing scope.", exampleTranslation: "O erro aconteceu devido a um scope faltando." },
+            { label: "Outro sentido", text: "sentir falta.", example: "I miss you.", exampleTranslation: "Sinto sua falta." },
+          ],
+        },
+        {
           term: "misunderstand",
           translation: "entender mal",
           conjugation: { base: "misunderstand", past: "misunderstood", participle: "misunderstood", irregular: true },
+        },
+        {
+          term: "mitigate",
+          translation: "mitigar, atenuar",
+          example: "Mitigate attacks with a timestamp.",
+          exampleTranslation: "Mitigue ataques com um timestamp.",
+          conjugation: { base: "mitigate", past: "mitigated", participle: "mitigated", irregular: false },
+          more: [
+            { label: "Substantivo", text: "mitigation = mitigação." },
+          ],
         },
         {
           term: "move",
@@ -1317,6 +1583,16 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "move on = seguir em frente.", example: "It's time to move on and forget about it.", exampleTranslation: "É hora de seguir em frente e esquecer isso." },
             { label: "Outro sentido", text: "mudar de casa.", example: "We moved to a new apartment.", exampleTranslation: "A gente se mudou pra um apartamento novo." },
             { label: "Substantivo", text: "move = jogada, movimento." },
+          ],
+        },
+        {
+          term: "must",
+          translation: "dever, ter que (obrigação)",
+          example: "Developers must patch their apps.",
+          exampleTranslation: "Os desenvolvedores precisam corrigir seus apps.",
+          more: [
+            { label: "Uso", text: "must + verbo sem to. Negativa: mustn't = não pode." },
+            { label: "Parecido", text: "have to." },
           ],
         },
         {
@@ -1356,6 +1632,27 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "pass out = desmaiar.", example: "She passed out from the heat.", exampleTranslation: "Ela desmaiou por causa do calor." },
             { label: "Outro sentido", text: "aprovar (lei).", example: "New laws were passed last year.", exampleTranslation: "Novas leis foram aprovadas no ano passado." },
             { label: "Substantivo", text: "pass = passe; aprovação." },
+          ],
+        },
+        {
+          term: "pay",
+          translation: "pagar",
+          example: "Advertising pays for free apps.",
+          exampleTranslation: "A publicidade paga os apps gratuitos.",
+          conjugation: { base: "pay", past: "paid", participle: "paid", irregular: true },
+          more: [
+            { label: "Expressão", text: "pay attention = prestar atenção." },
+            { label: "Substantivo", text: "payment = pagamento." },
+          ],
+        },
+        {
+          term: "perceive",
+          translation: "perceber, enxergar",
+          example: "How the platform is perceived matters.",
+          exampleTranslation: "Importa como a plataforma é percebida.",
+          conjugation: { base: "perceive", past: "perceived", participle: "perceived", irregular: false },
+          more: [
+            { label: "Substantivo", text: "perception = percepção." },
           ],
         },
         {
@@ -1412,6 +1709,29 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "prod", past: "prodded", participle: "prodded", irregular: false },
         },
         {
+          term: "prohibit",
+          translation: "proibir",
+          example: "The rules prohibit misleading names.",
+          exampleTranslation: "As regras proíbem nomes enganosos.",
+          conjugation: { base: "prohibit", past: "prohibited", participle: "prohibited", irregular: false },
+          more: [
+            { label: "Uso", text: "prohibit someone from + -ing = proibir alguém de fazer algo.", example: "The policy prohibits users from sharing passwords.", exampleTranslation: "A política proíbe os usuários de compartilharem senhas." },
+            { label: "Substantivo", text: "prohibition = proibição." },
+            { label: "Parecido", text: "forbid." },
+          ],
+        },
+        {
+          term: "protect",
+          translation: "proteger",
+          example: "Request signing protects webhooks.",
+          exampleTranslation: "A assinatura de requisições protege webhooks.",
+          conjugation: { base: "protect", past: "protected", participle: "protected", irregular: false },
+          more: [
+            { label: "Expressão", text: "protect against = proteger contra." },
+            { label: "Substantivo", text: "protection = proteção." },
+          ],
+        },
+        {
           term: "prove",
           translation: "provar",
           example: "Can you prove it?",
@@ -1447,6 +1767,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Em tecnologia", text: "raise ValueError, no Python." },
             { label: "Diferença", text: "raise pede objeto: raise your hand = levante a mão. rise não pede: the sun rises = o sol nasce." },
+          ],
+        },
+        {
+          term: "reach",
+          translation: "alcançar, atingir, chegar a",
+          example: "Targeted ads reach specific users.",
+          exampleTranslation: "Anúncios segmentados atingem usuários específicos.",
+          conjugation: { base: "reach", past: "reached", participle: "reached", irregular: false },
+          more: [
+            { label: "Expressão", text: "reach out = entrar em contato." },
           ],
         },
         {
@@ -1487,6 +1817,30 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "release",
+          translation: "lançar / lançamento, versão",
+          example: "Think before you release your API.",
+          exampleTranslation: "Pense antes de lançar sua API.",
+          conjugation: { base: "release", past: "released", participle: "released", irregular: false },
+          more: [
+            { label: "Substantivo", text: "release = lançamento, versão.", example: "Check the release notes.", exampleTranslation: "Confira as notas da versão." },
+            { label: "Expressão", text: "a new release = uma nova versão." },
+            { label: "Parecido", text: "launch." },
+          ],
+        },
+        {
+          term: "rely",
+          translation: "depender, confiar",
+          example: "These methods rely on developers.",
+          exampleTranslation: "Esses métodos dependem dos desenvolvedores.",
+          conjugation: { base: "rely", past: "relied", participle: "relied", irregular: false },
+          more: [
+            { label: "Uso", text: "rely on = contar com, depender de." },
+            { label: "Adjetivo", text: "reliable = confiável." },
+            { label: "Substantivo", text: "reliability = confiabilidade." },
+          ],
+        },
+        {
           term: "renew",
           translation: "renovar",
           example: "Refresh tokens are a standard way of renewing expired access tokens.",
@@ -1506,6 +1860,27 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "repeat", past: "repeated", participle: "repeated", irregular: false },
           more: [
             { label: "Exemplo", example: "Could you repeat that?", exampleTranslation: "Você pode repetir?" },
+          ],
+        },
+        {
+          term: "reset",
+          translation: "redefinir, resetar",
+          example: "Developers are able to reset the secret.",
+          exampleTranslation: "Os desenvolvedores conseguem resetar o secret.",
+          conjugation: { base: "reset", past: "reset", participle: "reset", irregular: true },
+          more: [
+            { label: "Expressão", text: "password reset = redefinição de senha." },
+          ],
+        },
+        {
+          term: "retrieve",
+          translation: "recuperar, buscar (dados)",
+          example: "Retrieve an issue.",
+          exampleTranslation: "Buscar uma issue.",
+          conjugation: { base: "retrieve", past: "retrieved", participle: "retrieved", irregular: false },
+          more: [
+            { label: "Exemplo", example: "The app retrieves the data from the API.", exampleTranslation: "O app busca os dados na API." },
+            { label: "Substantivo", text: "retrieval = recuperação, busca." },
           ],
         },
         {
@@ -1567,6 +1942,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "save",
+          translation: "salvar, guardar; economizar",
+          example: "The app saves its current state.",
+          exampleTranslation: "O app salva o seu estado atual.",
+          conjugation: { base: "save", past: "saved", participle: "saved", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "economizar.", example: "It saves a lot of time.", exampleTranslation: "Isso economiza muito tempo." },
+          ],
+        },
+        {
           term: "say",
           translation: "dizer, falar",
           example: "Sorry? Could you say that again?",
@@ -1586,6 +1971,17 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "screw up = estragar, fazer besteira.", example: "He screwed up the whole project.", exampleTranslation: "Ele estragou o projeto inteiro." },
             { label: "Substantivo", text: "screw = parafuso." },
             { label: "Expressão", text: "Screw it! = Dane-se! (informal)." },
+          ],
+        },
+        {
+          term: "secure",
+          translation: "proteger / seguro",
+          example: "Securing APIs is even more difficult.",
+          exampleTranslation: "Proteger APIs é ainda mais difícil.",
+          conjugation: { base: "secure", past: "secured", participle: "secured", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "secure = seguro.", example: "Short-lived access tokens are more secure.", exampleTranslation: "Access tokens de vida curta são mais seguros." },
+            { label: "Substantivo", text: "security = segurança." },
           ],
         },
         {
@@ -1631,6 +2027,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "send",
+          translation: "enviar, mandar",
+          example: "Send the token in the header.",
+          exampleTranslation: "Mande o token no cabeçalho.",
+          conjugation: { base: "send", past: "sent", participle: "sent", irregular: true },
+          more: [
+            { label: "Substantivo", text: "sender = remetente." },
+          ],
+        },
+        {
           term: "set",
           translation: "pôr, definir, configurar",
           example: "Set the alarm for 7.",
@@ -1649,6 +2055,16 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Vamos começar?",
         },
         {
+          term: "share",
+          translation: "compartilhar, dividir",
+          example: "The policy prohibits users from sharing passwords.",
+          exampleTranslation: "A política proíbe os usuários de compartilharem senhas.",
+          conjugation: { base: "share", past: "shared", participle: "shared", irregular: false },
+          more: [
+            { label: "Expressão", text: "shared secret = segredo compartilhado." },
+          ],
+        },
+        {
           term: "shoot",
           translation: "atirar / filmar / “droga!”",
           example: "The hunter shot the arrow.",
@@ -1657,6 +2073,15 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Exemplo", example: "Shoot, I forgot my keys!", exampleTranslation: "Droga, esqueci minhas chaves!" },
             { label: "Expressão", text: "shoot a movie = filmar um filme." },
+          ],
+        },
+        {
+          term: "should",
+          translation: "deveria",
+          example: "The error message should be understandable.",
+          exampleTranslation: "A mensagem de erro deve ser compreensível.",
+          more: [
+            { label: "Uso", text: "should + verbo sem to. Dá conselho ou indica o que é esperado." },
           ],
         },
         {
@@ -1681,6 +2106,19 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "shut up = cala a boca.", example: "Please shut up, the movie is starting.", exampleTranslation: "Por favor, cala a boca, o filme tá começando." },
             { label: "Phrasal verb", text: "shut down = fechar (empresa); desligar.", example: "The factory shut down last year.", exampleTranslation: "A fábrica fechou ano passado." },
             { label: "Expressão", text: "shut it = cala a boca (mais grosseiro).", example: "Shut it, I'm trying to focus.", exampleTranslation: "Cala a boca, tô tentando me concentrar." },
+          ],
+        },
+        {
+          term: "sign",
+          translation: "assinar / sinal, placa",
+          example: "Sign the contract here.",
+          exampleTranslation: "Assine o contrato aqui.",
+          conjugation: { base: "sign", past: "signed", participle: "signed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "signing = assinatura (o ato de assinar).", example: "Request signing protects webhooks.", exampleTranslation: "A assinatura de requisições protege webhooks." },
+            { label: "Diferença", text: "signing é o processo de assinar; signature é o resultado, a assinatura em si." },
+            { label: "Substantivo", text: "sign = sinal, placa." },
+            { label: "Phrasal verb", text: "sign up = cadastrar-se; sign in = entrar (login)." },
           ],
         },
         {
@@ -1809,6 +2247,17 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "study", past: "studied", participle: "studied", irregular: false },
           more: [
             { label: "Substantivo", text: "study = estudo; escritório (cômodo da casa)." },
+          ],
+        },
+        {
+          term: "subscribe",
+          translation: "assinar, inscrever-se",
+          example: "Apps subscribe to changes.",
+          exampleTranslation: "Apps se inscrevem pra receber mudanças.",
+          conjugation: { base: "subscribe", past: "subscribed", participle: "subscribed", irregular: false },
+          more: [
+            { label: "Uso", text: "subscribe to = assinar, se inscrever em." },
+            { label: "Substantivo", text: "subscription = assinatura, inscrição." },
           ],
         },
         {
@@ -1964,6 +2413,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "trick",
+          translation: "enganar / truque",
+          example: "The site tricks users into clicking.",
+          exampleTranslation: "O site engana os usuários pra clicarem.",
+          conjugation: { base: "trick", past: "tricked", participle: "tricked", irregular: false },
+          more: [
+            { label: "Uso", text: "trick someone into + -ing = enganar alguém pra fazer algo." },
+            { label: "Substantivo", text: "trick = truque.", example: "He showed us a magic trick.", exampleTranslation: "Ele mostrou um truque de mágica pra gente." },
+          ],
+        },
+        {
           term: "troubleshoot",
           translation: "investigar e resolver um problema",
           example: "We troubleshot the server all morning.",
@@ -1971,6 +2431,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "troubleshoot", past: "troubleshot", participle: "troubleshot", irregular: true },
           more: [
             { label: "Substantivo", text: "troubleshooting = resolução de problemas, diagnóstico." },
+          ],
+        },
+        {
+          term: "trust",
+          translation: "confiar / confiança",
+          example: "I don’t trust him.",
+          exampleTranslation: "Eu não confio nele.",
+          conjugation: { base: "trust", past: "trusted", participle: "trusted", irregular: false },
+          more: [
+            { label: "Substantivo", text: "trust = confiança.", example: "Less confusion, more trust.", exampleTranslation: "Menos confusão, mais confiança." },
           ],
         },
         {
@@ -2011,6 +2481,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "understand",
+          translation: "entender, compreender",
+          example: "I understood the concept.",
+          exampleTranslation: "Eu entendi o conceito.",
+          conjugation: { base: "understand", past: "understood", participle: "understood", irregular: true },
+          more: [
+            { label: "Adjetivo", text: "understandable = compreensível." },
+            { label: "Palavra relacionada", text: "misunderstand = entender mal." },
+          ],
+        },
+        {
           term: "unleash",
           translation: "soltar, liberar, libertar",
           example: "To unleash their value.",
@@ -2019,6 +2500,39 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Uso", text: "Sentido de liberar algo que estava contido ou preso. Pode ser usado de forma figurada, como liberação de poder." },
             { label: "Formação", text: "un- + leash (coleira): tirar a coleira." },
+          ],
+        },
+        {
+          term: "use",
+          translation: "usar / uso",
+          example: "Several developers use this API.",
+          exampleTranslation: "Vários desenvolvedores usam essa API.",
+          conjugation: { base: "use", past: "used", participle: "used", irregular: false },
+          more: [
+            { label: "Substantivo", text: "use = uso." },
+            { label: "Adjetivo", text: "useful = útil; useless = inútil." },
+            { label: "Expressão", text: "used to = costumava." },
+          ],
+        },
+        {
+          term: "verify",
+          translation: "verificar, confirmar",
+          example: "Verify the stated sender.",
+          exampleTranslation: "Verifique o remetente declarado.",
+          conjugation: { base: "verify", past: "verified", participle: "verified", irregular: false },
+          more: [
+            { label: "Substantivo", text: "verification = verificação." },
+          ],
+        },
+        {
+          term: "vet",
+          translation: "examinar com cuidado, avaliar",
+          example: "Security experts vetted the code.",
+          exampleTranslation: "Especialistas de segurança avaliaram o código.",
+          conjugation: { base: "vet", past: "vetted", participle: "vetted", irregular: false },
+          more: [
+            { label: "Substantivo", text: "vetting = avaliação criteriosa, verificação.", example: "Security experts handled the vetting.", exampleTranslation: "Especialistas de segurança fizeram a avaliação." },
+            { label: "Outro sentido", text: "vet = veterinário (abreviação de veterinarian)." },
           ],
         },
         {
