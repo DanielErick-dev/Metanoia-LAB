@@ -6,7 +6,6 @@ export const designingWebApisCap1: TopicData = {
   subtitle: "Definição, motivação, público-alvo e o que faz uma API excelente",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
-  status: "em-construcao",
   intro:
     "O capítulo 1 começa definindo o que é uma API, por que ela existe, pra quem ela é pensada e o que caracteriza uma API excelente.",
   sections: [

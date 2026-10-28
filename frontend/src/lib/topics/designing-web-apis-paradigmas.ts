@@ -6,7 +6,6 @@ export const designingWebApisCap2: TopicData = {
   subtitle: "REST, RPC e os demais paradigmas: como escolher o certo para a sua API",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
-  status: "em-construcao",
   intro:
     "Este capítulo mostra a importância de escolher um bom paradigma para a API desde o começo, e apresenta os paradigmas mais populares.",
   sections: [

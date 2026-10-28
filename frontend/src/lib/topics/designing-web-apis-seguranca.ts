@@ -3,10 +3,9 @@ import { TopicData } from "@/lib/types/topic";
 export const designingWebApisCap3: TopicData = {
   slug: "seguranca-de-api",
   title: "Capítulo 3 — Segurança de API",
-  subtitle: "Autenticação, autorização, os problemas do Basic Authentication, o OAuth 2.0, os scopes e a expiração e renovação de tokens",
+  subtitle: "Autenticação, autorização, os problemas do Basic Authentication, o OAuth 2.0, os scopes, a expiração e renovação de tokens, a revogação de acessos, as boas práticas de um servidor OAuth e a segurança de webhooks (tokens, assinaturas, Mutual TLS e thin payloads)",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
-  status: "em-construcao",
   intro:
     "Neste capítulo o autor fala sobre a parte de segurança das APIs, desde as práticas de segurança padrão contra ataques CSRF e XSS até algumas técnicas adicionais para tornar uma API mais segura.",
   sections: [
@@ -160,6 +159,151 @@ export const designingWebApisCap3: TopicData = {
       heading: "Refresh token",
       body: "Então, para evitar a necessidade de fazer login toda hora para renovar o token de acesso, usa-se o refresh token: a aplicação passa o client ID, o client secret e o refresh token e, com isso, consegue obter um novo access token. Lembrando que ter o refresh token sozinho não adianta de nada sem o client secret, que é a senha guardada, então o atacante teria que roubar tanto o refresh token quanto a senha para poder fazer alguma coisa.",
     },
+    {
+      heading: "Listar e revogar autorizações",
+      body: "O livro fala que vários provedores montam uma página listando todos os aplicativos e suas devidas permissões habilitadas, com a possibilidade de revogar acesso (cancelar um acesso) pela própria interface. Assim, por exemplo, posso cancelar o meu acesso ao app Y através do meu provedor X (poderia ser o Google, por exemplo).",
+    },
+    {
+      heading: "Revogação pela API",
+      body: "Junto com isso, é uma boa prática oferecer também via API a capacidade de revogar access tokens e refresh tokens, pra que o desenvolvedor consiga revogar por código, em casos de vazamento de tokens, sem depender da interface.",
+    },
+    {
+      heading: "10 boas práticas para um servidor OAuth 2.0",
+      body: "Em seguida ele lista 10 boas práticas para quem está construindo um servidor OAuth 2.0:",
+      table: {
+        headers: ["#", "Boa prática"],
+        rows: [
+          ["1", "Ter suporte ao parâmetro state."],
+          ["2", "Authorization codes de vida curta e de um único uso."],
+          ["3", "Em casos de dados muito sensíveis, utilizar refresh token de uso único."],
+          ["4", "Permitir que o desenvolvedor resete o client secret, pra que, se o secret e os refresh tokens vazarem, o app consiga cortar o atacante gerando um secret novo."],
+          ["5", "Colocar scopes dedicados para informações sensíveis."],
+          ["6", "Todos os endpoints em HTTPS, para uma segurança maior."],
+          ["7", "Verificar a redirect URL para garantir que é uma URL registrada no app, evitando ataques. Se a URL que veio na requisição não bater com nenhuma das registradas, o servidor mostra um erro sem nem exibir a tela de autorização, pra que os segredos não sejam devolvidos pro endereço de um atacante."],
+          ["8", "Proibir a tela de autorização em iframes através do uso do header X-Frame-Options, contra ataques de clickjacking."],
+          ["9", "Manter o usuário informado: por exemplo, quando uma nova autorização é concedida, ele receber um email avisando."],
+          ["10", "Proibir nomes enganosos. O livro cita que em 2017 um atacante usou o logo do Google num app chamado Google Docs e um milhão de contas caíram no phishing."],
+        ],
+      },
+    },
+    {
+      heading: "A lição do Facebook",
+      body: "O livro conta que, entre 2016 e 2018, o Facebook foi muito criticado porque desenvolvedores de apps de terceiros conseguiram minerar dados de clientes em grande escala. Tecnicamente estava tudo dentro das permissões da API e o usuário tinha autorizado, mas violava os termos de serviço da plataforma. Não foi traição de dentro do Facebook, foram apps de fora usando o acesso que receberam de forma abusiva.",
+    },
+    {
+      heading: "O que o autor tira disso",
+      body: "Os pontos que o autor tira desse caso:",
+      table: {
+        headers: ["Ponto", "O que significa"],
+        rows: [
+          ["Saber o que está aceitando", "O cliente precisa saber exatamente o que está aceitando. Scopes granulares ajudam, mas é um equilíbrio: se forem longos demais, o usuário acaba não lendo tudo, então o texto tem que ser claro e fácil de entender."],
+          ["Monitorar os apps de terceiros", "A plataforma precisa monitorar os apps de terceiros e procurar violações dos termos de serviço, podendo desligar o app ou limitar o uso dele (rate limit)."],
+          ["A confiança é com a plataforma", "O usuário autorizou, mas a confiança dele é com a plataforma, e não com o app de terceiros. No fim das contas, quem mais perde com a má reputação é a plataforma."],
+        ],
+        stackOnMobile: true,
+      },
+    },
+    {
+      heading: "Conclusão sobre as boas práticas",
+      body: "Esse trecho é basicamente um checklist de como não virar manchete de vazamento kkkkkk.",
+    },
+    {
+      heading: "Segurança de webhooks",
+      body: "O autor do livro volta a falar sobre webhooks, agora voltado para segurança. Ele diz que a segurança dos webhooks é levemente diferente da segurança das APIs web, isso porque geralmente as URLs dos webhooks são acessíveis publicamente pela internet. Então fica a pergunta: como garantir que a requisição está vindo realmente do servidor certo e não de alguém fingindo ser o app confiável, fazendo request pro webhook?",
+    },
+    {
+      heading: "Não existe um padrão único",
+      body: "O autor também avisa que não existe um padrão único, como o OAuth, pra proteger webhooks, mas existem alguns padrões comuns que os provedores seguem. Vejamos.",
+    },
+    {
+      heading: "Verification tokens",
+      body: "O livro cita a verificação por tokens, que de forma simples consiste em um token de verificação emitido pelo provedor da API. Esse token é único pra cada aplicação, ou seja, é um segredo compartilhado entre o app e o provedor. O autor cita o Slack como exemplo: a cada requisição, o Slack envia o token de verificação, e a aplicação compara o que recebeu com o valor que ela guardou. Caso não bata, a aplicação ignora a requisição. Dessa forma, a aplicação consegue garantir que a requisição vem do Slack e não de uma aplicação maliciosa.",
+    },
+    {
+      heading: "A fragilidade do verification token",
+      body: "É fácil de implementar e verificar, no entanto é frágil pelo fato de o token ser enviado em texto puro em toda requisição, o que possibilita que atacantes o roubem e simulem várias requisições para esse webhook.",
+    },
+    {
+      heading: "Request signing e webhook signatures",
+      body: "Aqui a diferença pro verification token é o que viaja na requisição. No token, o próprio segredo viaja. Na assinatura, o segredo nunca viaja: o provedor usa o segredo junto com o corpo da requisição pra calcular um HMAC (hash-based message authentication code, ou código de autenticação de mensagem baseado em hash), e envia só o resultado desse cálculo num header.",
+    },
+    {
+      heading: "O que é o HMAC",
+      body: "De forma simples e resumida, o HMAC é o resultado de um cálculo que combina o corpo da requisição com o segredo compartilhado do webhook (signing secret). A aplicação faz o mesmo cálculo com o segredo que ela guardou e compara. Se o hash calculado bater com o recebido, libera. Se não bater, ignora.",
+    },
+    {
+      heading: "O segredo não viaja",
+      body: "Stripe e GitHub usam esse mecanismo para proteger seus webhooks. Como o segredo não viaja, interceptar a requisição não entrega a chave pro atacante.",
+    },
+    {
+      heading: "Mutual Transport Layer Security",
+      body: "Quando a gente se conecta a uma URL https://, o servidor envia um certificado dele para o cliente, e o cliente, antes de confiar na resposta, verifica a integridade desse certificado. Nesse caso é uma comunicação com TLS normal (TLS é o protocolo que cria a conexão criptografada, o “S” do HTTPS).",
+    },
+    {
+      heading: "O certificado vai pros 2 lados",
+      body: "No caso do Mutual Transport Layer Security, corta pros 2 lados: não é somente o servidor que envia o certificado e o cliente apenas valida antes de receber. É mútuo: o próprio cliente envia de volta um certificado também, e o servidor valida a autenticidade dele antes de confiar.",
+    },
+    {
+      heading: "Antes mesmo de chegar no código",
+      body: "Diferente do request signing que vimos anteriormente, que é feito dentro do próprio código, o Mutual TLS é implementado num nível mais baixo, antes mesmo de chegar no código. Lembrando que, no nosso caso dos webhooks, o cliente é o próprio provedor (Stripe, por exemplo) e o servidor é o seu app. Com essa medida garantimos segurança mesmo que o desenvolvedor da aplicação deixe a desejar na segurança.",
+    },
+    {
+      heading: "Mais complexidade, mais segurança",
+      body: "Aumenta um pouco mais a complexidade, mas aumenta a segurança. (Esse ponto é um complemento meu, não do livro.)",
+    },
+    {
+      heading: "Onde o Mutual TLS aparece",
+      body: "O autor do livro cita como exemplo aplicações business-to-business e o DocuSign, que é um provedor que oferece esse tipo de suporte, além de dizer que esse tipo de medida de segurança geralmente é muito útil para desenvolvedores corporativos.",
+    },
+    {
+      heading: "As vulnerabilidades dos webhooks",
+      body: "Primeiramente, o autor demonstra as vulnerabilidades de se utilizar webhooks: alguns métodos dependem do desenvolvedor fazer a coisa certa (verification tokens e assinaturas só protegem se o dev realmente fizer a verificação, e ninguém o obriga), além de existirem N formas de tentar alcançar segurança.",
+    },
+    {
+      heading: "Thin payloads e API retrieval",
+      body: "Depois, ele diz que uma ótima forma de segurança é limitar as informações no payload. Em vez de mandar o evento completo (full event), o webhook manda só um aviso mínimo de que algo mudou. Pra descobrir o que mudou, a aplicação precisa fazer uma requisição autenticada à API do provedor. Assim, mesmo que o dev não verifique o webhook, a informação real só chega por um canal autenticado.",
+    },
+    {
+      heading: "O exemplo do Gmail",
+      body: "Em seguida, ele cita o exemplo do Google e do Gmail: o Gmail permite que o app acompanhe mudanças na caixa de entrada via webhook. Quando algo muda, ele manda só o e-mail da conta e um ID da mudança, e o app chama a API history.list pra buscar os detalhes completos. Então o fluxo fica, por exemplo:",
+      table: {
+        headers: ["Passo", "O que acontece"],
+        rows: [
+          ["1", "O Gmail diz para o app: “a conta X mudou, viu? A mudança foi #tal_mudança.”"],
+          ["2", "O app então recebe isso e manda uma requisição com o token OAuth: “opa, me passa os detalhes aí da #tal_mudança, por gentileza.”"],
+          ["3", "O Gmail então vai lá e devolve os detalhes somente para quem está autenticado."],
+        ],
+      },
+    },
+    {
+      heading: "Se vazar, vaza pouco",
+      body: "Dessa forma, por mais que vaze alguma informação do webhook, continua sendo mínima: o app ainda precisa fazer outra requisição pra pegar os dados, e aí tem que estar autenticado.",
+    },
+    {
+      heading: "Segurança x eficiência",
+      body: "Aumenta a segurança, porém diminui a eficiência, porque aumenta a quantidade de requisições. Mas é aquilo: não podemos ter tudo ao mesmo tempo, sempre que amplificamos um ponto o outro pode diminuir, é o que o autor do livro cita lá no começo, no capítulo 1. (Esse ponto é um complemento meu, não do livro.)",
+    },
+    {
+      heading: "Boas práticas de segurança em webhooks",
+      body: "O autor do livro diz que forçar padrões de segurança em webhooks é complicado, mas que existem algumas boas práticas que vale ter em mente na hora de construir o seu webhook. São elas:",
+      table: {
+        headers: ["#", "Boa prática"],
+        rows: [
+          ["1", "Nunca envie dados sensíveis, como segredos ou senhas, no meio dos payloads. Sempre use requisições autenticadas."],
+          ["2", "Caso esteja assinando webhooks, inclua o timestamp dentro do que é assinado, para evitar replay attacks."],
+          ["3", "Permita que o desenvolvedor regenere (rotacione) os segredos compartilhados, para que, em casos de segredo comprometido, a aplicação consiga manter as requisições futuras seguras."],
+          ["4", "Forneça aos desenvolvedores SDKs (software development kit) e códigos de exemplo que verifiquem a autenticidade das requisições e rejeitem as inválidas, para que os devs corram menos riscos de esquecer alguma configuração de segurança importante."],
+        ],
+      },
+    },
+    {
+      heading: "Conclusão do capítulo 3",
+      body: "A conclusão do autor é que segurança é difícil, mas deve ser pensada desde o início das APIs, porque depois que a API está em uso pode ser difícil fazer essas mudanças sem atrapalhar algum fluxo ou funcionamento.",
+    },
+    {
+      heading: "Não crie seu próprio mecanismo de segurança",
+      body: "O autor também fala sobre o perigo de criar seu próprio mecanismo de segurança: vale mais a pena usar algo testado por especialistas e hackers ao longo dos anos do que algo criado por você, que pode ser muito mais suscetível a erros e vulnerabilidades.",
+    },
   ],
-  relatedSlugs: ["paradigmas-de-api"],
+  relatedSlugs: ["o-que-e-uma-api", "paradigmas-de-api"],
 };
