@@ -25,6 +25,7 @@ const PLURALS: Record<string, string> = {
   Observação: "Observações",
   Parecido: "Parecidos",
   Variação: "Variações",
+  "Phrasal verb": "Phrasal verbs",
 };
 
 function groupByLabel(items: VocabMore[]): [string, VocabMore[]][] {

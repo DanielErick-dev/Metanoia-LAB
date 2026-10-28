@@ -109,11 +109,31 @@ export function searchDictionary(entries: DictionaryEntry[], query: string): Dic
   if (!q) return entries;
   const startsWith = entries.filter((e) => normalize(e.term).startsWith(q));
   const inTerm = entries.filter((e) => !startsWith.includes(e) && normalize(e.term).includes(q));
-  const inMeaning = entries.filter(
+  const found = new Set([...startsWith, ...inTerm]);
+  const inForms = entries.filter(
     (e) =>
-      !startsWith.includes(e) &&
-      !inTerm.includes(e) &&
-      e.senses.some((s) => normalize(s.meaning).includes(q))
+      !found.has(e) &&
+      e.senses.some((s) =>
+        [s.conjugation?.past, s.conjugation?.participle].some((form) => form && wordStarts(form, q))
+      )
   );
-  return [...startsWith, ...inTerm, ...inMeaning];
+  inForms.forEach((e) => found.add(e));
+  const inMeaning = entries.filter(
+    (e) => !found.has(e) && e.senses.some((s) => normalize(s.meaning).includes(q))
+  );
+  inMeaning.forEach((e) => found.add(e));
+  const inItems = entries.filter(
+    (e) => !found.has(e) && e.senses.some((s) => s.items.some((i) => i.text && wordStarts(i.text, q)))
+  );
+  return [...startsWith, ...inTerm, ...inForms, ...inMeaning, ...inItems];
+}
+
+function wordStarts(text: string, q: string): boolean {
+  const t = normalize(text);
+  let i = t.indexOf(q);
+  while (i !== -1) {
+    if (i === 0 || !/[a-z]/.test(t[i - 1])) return true;
+    i = t.indexOf(q, i + 1);
+  }
+  return false;
 }
