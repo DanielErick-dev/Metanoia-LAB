@@ -24,7 +24,7 @@ export const fastapiInstalacao: TopicData = {
     },
     {
       heading: "Iniciando o projeto",
-      body: "Agora que está funcionando, rode uv init dentro da sua pasta para inicializar o nosso gerenciador e, em seguida, adicione o FastAPI. O uv se responsabilizará por criar o nosso ambiente virtual .venv e instalar o FastAPI dentro dele.",
+      body: "Agora que está funcionando, rode uv init dentro da sua pasta para inicializar o nosso gerenciador e, em seguida, adicione o FastAPI. O uv init não cria o ambiente virtual: o .venv só é criado quando ele realmente é necessário, como num uv add ou uv sync. Então é no uv add que o uv cria o nosso .venv e instala o FastAPI dentro dele.",
       code: `uv init
 uv add "fastapi[standard]"`,
       language: "bash",
