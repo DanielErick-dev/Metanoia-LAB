@@ -219,15 +219,9 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Tô morto de cansado depois de mover todos aqueles móveis.",
           more: [
             { label: "Expressão", text: "after that = depois disso.", example: "We had dinner and, after that, we went to the movies.", exampleTranslation: "A gente jantou e, depois disso, foi ao cinema." },
-            { label: "Expressão", text: "after all = afinal, no final das contas." },
+            { label: "Expressão", text: "after all = afinal, no final das contas.", example: "We decided to stay after all.", exampleTranslation: "Decidimos ficar afinal." },
             { label: "Phrasal verb", text: "look after = cuidar de." },
           ],
-        },
-        {
-          term: "after all",
-          translation: "afinal, no final das contas",
-          example: "We decided to stay after all.",
-          exampleTranslation: "Decidimos ficar afinal.",
         },
         {
           term: "again",
@@ -246,6 +240,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "protect against attacks = proteger contra ataques." },
             { label: "Expressão", text: "checked against = conferido com, comparado com.", example: "Validate the input against a schema.", exampleTranslation: "Valide a entrada com base em um schema." },
+          ],
+        },
+        {
+          term: "all",
+          translation: "todo(s), toda(s); tudo",
+          example: "All the tests passed.",
+          exampleTranslation: "Todos os testes passaram.",
+          more: [
+            { label: "Expressão", text: "all at once = tudo de uma vez.", example: "Don't try to do it all at once.", exampleTranslation: "Não tenta fazer tudo de uma vez." },
+            { label: "Expressão", text: "after all = afinal, no final das contas." },
           ],
         },
         {
@@ -301,12 +305,6 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Diferença", text: "Usado quando o grupo tem 3 pessoas ou mais — diferente de between, usado num grupo de 2." },
           ],
-        },
-        {
-          term: "and yet",
-          translation: "e mesmo assim",
-          example: "He studied all night, and yet he failed.",
-          exampleTranslation: "Ele estudou a noite toda, e mesmo assim foi reprovado.",
         },
         {
           term: "announcement",
@@ -445,14 +443,13 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais.",
         },
         {
-          term: "as well",
-          translation: "também",
-          example: "I study English, and I read comics as well.",
-          exampleTranslation: "Eu estudo inglês e também leio quadrinhos.",
+          term: "astray",
+          translation: "fora do caminho, desviado",
+          example: "It can lead a design astray.",
+          exampleTranslation: "Isso pode desviar um design.",
           more: [
-            { label: "Uso", text: "Costuma ir no fim da frase." },
-            { label: "Expressão", text: "as well as = assim como, além de.", example: "loss of data as well as revenue.", exampleTranslation: "perda de dados, assim como de receita." },
-            { label: "Diferença", text: "too e as well ficam no fim; also costuma ir antes do verbo." },
+            { label: "Expressão", text: "lead astray = desviar, levar pro caminho errado." },
+            { label: "Expressão", text: "go astray = se perder, se extraviar.", example: "The message went astray.", exampleTranslation: "A mensagem se extraviou." },
           ],
         },
         {
@@ -480,6 +477,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "under attack = sob ataque.", example: "The server is under attack.", exampleTranslation: "O servidor está sob ataque." },
             { label: "Verbo", text: "attack = atacar.", example: "Hackers attacked the server.", exampleTranslation: "Hackers atacaram o servidor." },
+          ],
+        },
+        {
+          term: "audience",
+          translation: "público",
+          example: "The book was written for a developer audience.",
+          exampleTranslation: "O livro foi escrito para um público de desenvolvedores.",
+          more: [
+            { label: "Exemplo", example: "Narrowing down the audience helps you focus.", exampleTranslation: "Afunilar o público te ajuda a focar." },
           ],
         },
         {
@@ -546,6 +552,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Observação", text: "Gíria britânica." },
             { label: "Exemplo", example: "You barmy ginger!", exampleTranslation: "Seu ruivo maluco!" },
           ],
+        },
+        {
+          term: "battery",
+          translation: "bateria",
+          example: "I need to charge the battery.",
+          exampleTranslation: "Preciso carregar a bateria.",
         },
         {
           term: "beach",
@@ -907,6 +919,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "card",
+          translation: "cartão; carta (de baralho)",
+          example: "Can I pay by card?",
+          exampleTranslation: "Posso pagar no cartão?",
+          more: [
+            { label: "Expressão", text: "credit card = cartão de crédito.", example: "Developers should be able to charge credit cards.", exampleTranslation: "Os desenvolvedores devem conseguir cobrar cartões de crédito." },
+          ],
+        },
+        {
           term: "care",
           translation: "cuidado / importar-se",
           example: "It was great talking to you, take care!",
@@ -916,6 +937,15 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "take care = se cuida." },
             { label: "Verbo", text: "care = importar-se.", example: "I don't care.", exampleTranslation: "Não me importo." },
             { label: "Expressão", text: "take care of = cuidar de." },
+          ],
+        },
+        {
+          term: "case",
+          translation: "caso",
+          example: "In that case, we can start.",
+          exampleTranslation: "Nesse caso, podemos começar.",
+          more: [
+            { label: "Expressão", text: "use case = caso de uso.", example: "Pick one use case and focus on it.", exampleTranslation: "Escolha um caso de uso e foque nele." },
           ],
         },
         {
@@ -940,6 +970,12 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "caos",
           example: "The room was total chaos.",
           exampleTranslation: "O quarto estava um caos total.",
+        },
+        {
+          term: "chapter",
+          translation: "capítulo",
+          example: "In the previous chapter, we covered security.",
+          exampleTranslation: "No capítulo anterior, vimos segurança.",
         },
         {
           term: "child",
@@ -1099,6 +1135,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "credit",
+          translation: "crédito",
+          example: "Developers should be able to charge credit cards.",
+          exampleTranslation: "Os desenvolvedores devem conseguir cobrar cartões de crédito.",
+          more: [
+            { label: "Expressão", text: "credit card = cartão de crédito." },
+          ],
+        },
+        {
           term: "curfew",
           translation: "toque de recolher",
           example: "The students must be in the dorms by 10 pm because of the curfew.",
@@ -1209,6 +1254,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "Dear John = Prezado John (em cartas e e-mails)." },
             { label: "Expressão", text: "Oh dear! = Ai, meu Deus!" },
+          ],
+        },
+        {
+          term: "decision",
+          translation: "decisão",
+          example: "Decisions grounded in real use cases.",
+          exampleTranslation: "Decisões baseadas em casos de uso reais.",
+          more: [
+            { label: "Expressão", text: "make a decision = tomar uma decisão." },
+            { label: "Verbo", text: "decide = decidir." },
           ],
         },
         {
@@ -1398,6 +1453,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "easy",
+          translation: "fácil",
+          example: "It's not as easy as it sounds.",
+          exampleTranslation: "Não é tão fácil quanto parece.",
+          more: [
+            { label: "Expressão", text: "as easy as it sounds = tão fácil quanto parece." },
+            { label: "Oposto", text: "hard = difícil." },
+          ],
+        },
+        {
           term: "edge",
           translation: "beirada, borda",
           example: "Please step back from the edge.",
@@ -1518,15 +1583,9 @@ export const inglesVocabularioGeral: TopicData = {
           example: "I get up at 6am every day.",
           exampleTranslation: "Eu levanto às 6 da manhã todo dia.",
           more: [
-            { label: "Expressão", text: "every single one of = cada um, sem exceção." },
+            { label: "Expressão", text: "every single one of = cada um, sem exceção.", example: "Every single one of the tests passed.", exampleTranslation: "Cada um dos testes passou, sem exceção." },
             { label: "Diferença", text: "every olha o grupo todo; each olha um por um." },
           ],
-        },
-        {
-          term: "every single one of",
-          translation: "cada um, sem exceção",
-          example: "Every single one of the tests passed.",
-          exampleTranslation: "Cada um dos testes passou, sem exceção.",
         },
         {
           term: "everyone",
@@ -1700,12 +1759,6 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O checkout é um fluxo em várias etapas: carrinho, endereço, pagamento.",
         },
         {
-          term: "for a while",
-          translation: "por um tempo",
-          example: "I’ve been gone for a while.",
-          exampleTranslation: "Fiquei fora por um tempo.",
-        },
-        {
           term: "for instance",
           translation: "por exemplo",
           example: "For instance, Twitter offers three scope levels.",
@@ -1713,15 +1766,6 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Parecido", text: "for example." },
             { label: "Uso", text: "Costuma abrir a frase, seguido de vírgula." },
-          ],
-        },
-        {
-          term: "for that matter",
-          translation: "aliás, pra falar a verdade",
-          example: "I don't use Windows, or Mac for that matter.",
-          exampleTranslation: "Eu não uso Windows, nem Mac, aliás.",
-          more: [
-            { label: "Diferença", text: "Diferente de speaking of (por falar nisso)." },
           ],
         },
         {
@@ -1751,6 +1795,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Outro sentido", text: "livre.", example: "I'm free tonight.", exampleTranslation: "Tô livre hoje à noite." },
             { label: "Substantivo", text: "freedom = liberdade." },
+            { label: "Expressão", text: "free of charge = grátis, sem custo.", example: "The service is free of charge.", exampleTranslation: "O serviço é grátis." },
           ],
         },
         {
@@ -1830,12 +1875,6 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Verbo", text: "frighten = assustar." },
             { label: "Parecido", text: "afraid of, scared of." },
           ],
-        },
-        {
-          term: "from time to time",
-          translation: "de vez em quando",
-          example: "I check the logs from time to time.",
-          exampleTranslation: "Eu confiro os logs de vez em quando.",
         },
         {
           term: "full",
@@ -1990,10 +2029,13 @@ export const inglesVocabularioGeral: TopicData = {
         },
         {
           term: "ground",
-          translation: "chão, solo",
+          translation: "chão, solo / fundamentar, basear",
           example: "Look out! There's a hole in the ground.",
           exampleTranslation: "Cuidado! Tem um buraco no chão.",
+          conjugation: { base: "ground", past: "grounded", participle: "grounded", irregular: false },
           more: [
+            { label: "Adjetivo", text: "grounded = fundamentado, baseado.", example: "Decisions grounded in real use cases.", exampleTranslation: "Decisões baseadas em casos de uso reais." },
+            { label: "Outro sentido", text: "grounded = de castigo.", example: "I'm grounded.", exampleTranslation: "Tô de castigo." },
             { label: "Expressão", text: "background = fundo; histórico." },
           ],
         },
@@ -2110,6 +2152,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "diretora",
           example: "The headmistress welcomed the new students.",
           exampleTranslation: "A diretora deu boas-vindas aos novos alunos.",
+        },
+        {
+          term: "heart",
+          translation: "coração",
+          example: "It was a heartbreaking story.",
+          exampleTranslation: "Foi uma história de partir o coração.",
+          more: [
+            { label: "Adjetivo", text: "heartbreaking = de partir o coração, de cortar o coração." },
+            { label: "Formação", text: "heart + break + -ing." },
+          ],
         },
         {
           term: "heat",
@@ -2258,25 +2310,10 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "melhoria",
         },
         {
-          term: "in a matter of days",
-          translation: "em questão de dias",
-          example: "We'll be done in a matter of days.",
-          exampleTranslation: "Vamos terminar em questão de dias.",
-          more: [
-            { label: "Expressão", text: "in a matter of minutes = em questão de minutos." },
-          ],
-        },
-        {
           term: "in fact",
           translation: "de fato",
           example: "In fact, I already finished the report.",
           exampleTranslation: "De fato, eu já terminei o relatório.",
-        },
-        {
-          term: "in light of",
-          translation: "à luz de, considerando",
-          example: "In light of the recent events, the meeting was cancelled.",
-          exampleTranslation: "Considerando os eventos recentes, a reunião foi cancelada.",
         },
         {
           term: "inbound",
@@ -2490,6 +2527,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "landscape",
+          translation: "panorama, cenário",
+          example: "the landscape of transport",
+          exampleTranslation: "o panorama dos meios de transporte",
+          more: [
+            { label: "Outro sentido", text: "paisagem." },
+            { label: "Outro sentido", text: "modo paisagem (horizontal), em tela ou impressão." },
+          ],
+        },
+        {
           term: "lasso",
           translation: "laço (corda de cowboy) / laçar",
           example: "He caught the horse with a lasso.",
@@ -2606,7 +2653,7 @@ export const inglesVocabularioGeral: TopicData = {
           conjugation: { base: "light", past: "lit", participle: "lit", irregular: true },
           more: [
             { label: "Adjetivo", text: "light = leve; claro (cor)." },
-            { label: "Expressão", text: "in light of = à luz de, considerando." },
+            { label: "Expressão", text: "in light of = à luz de, considerando.", example: "In light of the recent events, the meeting was cancelled.", exampleTranslation: "Considerando os eventos recentes, a reunião foi cancelada." },
           ],
         },
         {
@@ -2686,6 +2733,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O servidor era o alvo principal.",
         },
         {
+          term: "many",
+          translation: "muitos, muitas",
+          example: "Don't try to solve too many problems at once.",
+          exampleTranslation: "Não tenta resolver problemas demais de uma vez.",
+          more: [
+            { label: "Expressão", text: "too many = demais (com coisas contáveis)." },
+            { label: "Diferença", text: "many vai com coisas contáveis (many problems); much com incontáveis (much time)." },
+          ],
+        },
+        {
           term: "marathon",
           translation: "maratona",
           example: "You finished the marathon? That's amazing!",
@@ -2703,8 +2760,10 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "what's the matter with…? = qual o problema com…?", example: "What's the matter with her?", exampleTranslation: "Qual é o problema dela?" },
             { label: "Verbo", text: "matter = importar.", example: "It doesn't matter.", exampleTranslation: "Não importa." },
-            { label: "Expressão", text: "in a matter of days = em questão de dias." },
-            { label: "Expressão", text: "for that matter = aliás." },
+            { label: "Expressão", text: "in a matter of days = em questão de dias.", example: "We'll be done in a matter of days.", exampleTranslation: "Vamos terminar em questão de dias." },
+            { label: "Expressão", text: "in a matter of minutes = em questão de minutos." },
+            { label: "Expressão", text: "for that matter = aliás, pra falar a verdade.", example: "I don't use Windows, or Mac for that matter.", exampleTranslation: "Eu não uso Windows, nem Mac, aliás." },
+            { label: "Diferença", text: "for that matter é diferente de speaking of (por falar nisso)." },
           ],
         },
         {
@@ -2842,6 +2901,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "most",
+          translation: "o mais; a maioria",
+          example: "Most developers use it.",
+          exampleTranslation: "A maioria dos desenvolvedores usa.",
+          more: [
+            { label: "Expressão", text: "get the most out of = tirar o máximo de.", example: "Help developers get the most out of your API.", exampleTranslation: "Ajude os devs a tirarem o máximo da sua API." },
+            { label: "Exemplo", example: "Get the most out of your time.", exampleTranslation: "Aproveite ao máximo o seu tempo." },
+          ],
+        },
+        {
           term: "mouthbreather",
           translation: "idiota, jeca",
           example: "Those mouthbreathers can’t even read.",
@@ -2912,7 +2981,15 @@ export const inglesVocabularioGeral: TopicData = {
         },
         {
           term: "narrow",
-          translation: "estreito",
+          translation: "estreito / estreitar, afunilar",
+          example: "The door is narrow.",
+          exampleTranslation: "A porta é estreita.",
+          conjugation: { base: "narrow", past: "narrowed", participle: "narrowed", irregular: false },
+          more: [
+            { label: "Verbo", text: "narrow = estreitar, afunilar." },
+            { label: "Phrasal verb", text: "narrow down = reduzir as opções, afunilar.", example: "Narrowing down the audience helps you focus.", exampleTranslation: "Afunilar o público te ajuda a focar." },
+            { label: "Oposto", text: "broad = amplo." },
+          ],
         },
         {
           term: "nearly",
@@ -3027,14 +3104,8 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Tô saindo agora, até mais!",
           more: [
             { label: "Expressão", text: "right now = agora mesmo." },
-            { label: "Expressão", text: "now that = agora que." },
+            { label: "Expressão", text: "now that = agora que.", example: "Now that you're here, we can start.", exampleTranslation: "Agora que você está aqui, podemos começar." },
           ],
-        },
-        {
-          term: "now that",
-          translation: "agora que",
-          example: "Now that you're here, we can start.",
-          exampleTranslation: "Agora que você está aqui, podemos começar.",
         },
         {
           term: "o'clock",
@@ -3058,6 +3129,9 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "often",
           translation: "frequentemente, muitas vezes",
+          more: [
+            { label: "Exemplo", example: "It happens quite often.", exampleTranslation: "Isso acontece com bastante frequência." },
+          ],
         },
         {
           term: "oh",
@@ -3073,6 +3147,17 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Variação", text: "OK, ok." },
             { label: "Exemplo", example: "Don't worry, that's ok.", exampleTranslation: "Não se preocupa, tá tudo bem." },
+          ],
+        },
+        {
+          term: "once",
+          translation: "uma vez",
+          example: "I check the logs once a day.",
+          exampleTranslation: "Eu confiro os logs uma vez por dia.",
+          more: [
+            { label: "Expressão", text: "at once = de uma vez, ao mesmo tempo.", example: "Don't try to solve too many problems at once.", exampleTranslation: "Não tenta resolver problemas demais de uma vez." },
+            { label: "Expressão", text: "all at once = tudo de uma vez." },
+            { label: "Outro sentido", text: "at once = imediatamente.", example: "Come here at once!", exampleTranslation: "Vem aqui imediatamente!" },
           ],
         },
         {
@@ -3098,6 +3183,8 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Verbo", text: "open = abrir.", example: "Open an issue on GitHub.", exampleTranslation: "Abra uma issue no GitHub." },
             { label: "Em tecnologia", text: "open source = código aberto." },
+            { label: "Adjetivo", text: "open-ended = aberto, sem resposta fechada.", example: "An open-ended question.", exampleTranslation: "Uma pergunta aberta." },
+            { label: "Oposto", text: "closed = fechado (closed question = pergunta fechada)." },
           ],
         },
         {
@@ -3154,6 +3241,15 @@ export const inglesVocabularioGeral: TopicData = {
         {
           term: "overhead",
           translation: "custo extra",
+        },
+        {
+          term: "overview",
+          translation: "visão geral",
+          example: "Give me an overview of the project.",
+          exampleTranslation: "Me dá uma visão geral do projeto.",
+          more: [
+            { label: "Exemplo", example: "We gave an overview.", exampleTranslation: "Nós demos uma visão geral." },
+          ],
         },
         {
           term: "own",
@@ -3263,6 +3359,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "phase",
+          translation: "fase",
+          example: "This is useful during the brainstorming phase.",
+          exampleTranslation: "Isso é útil durante a fase de brainstorming.",
+        },
+        {
           term: "phishing",
           translation: "golpe pra roubar dados",
           example: "A phishing site copies a real login page.",
@@ -3359,6 +3461,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "previous",
+          translation: "anterior",
+          example: "In the previous chapter, we covered security.",
+          exampleTranslation: "No capítulo anterior, vimos segurança.",
+        },
+        {
           term: "pride",
           translation: "orgulho",
         },
@@ -3376,6 +3484,15 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Palavra relacionada", text: "prison = prisão." },
             { label: "Expressão", text: "take someone prisoner = capturar alguém." },
             { label: "Expressão", text: "prisoner of war = prisioneiro de guerra." },
+          ],
+        },
+        {
+          term: "problem",
+          translation: "problema",
+          example: "Don't try to solve too many problems at once.",
+          exampleTranslation: "Não tenta resolver problemas demais de uma vez.",
+          more: [
+            { label: "Expressão", text: "no problem = sem problema, de nada." },
           ],
         },
         {
@@ -3491,6 +3608,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "question",
+          translation: "pergunta; questão",
+          example: "An open-ended question.",
+          exampleTranslation: "Uma pergunta aberta.",
+          conjugation: { base: "question", past: "questioned", participle: "questioned", irregular: false },
+          more: [
+            { label: "Verbo", text: "question = questionar, pôr em dúvida." },
+            { label: "Expressão", text: "open-ended question = pergunta aberta; closed question = pergunta fechada." },
+          ],
+        },
+        {
           term: "quick",
           translation: "rápido",
           example: "She finished the race quick as a bullet.",
@@ -3498,6 +3626,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Advérbio", text: "quickly = rapidamente." },
             { label: "Expressão", text: "a quick question = uma perguntinha rápida." },
+          ],
+        },
+        {
+          term: "quite",
+          translation: "bastante, bem",
+          example: "The book is quite good.",
+          exampleTranslation: "O livro é bem bom.",
+          more: [
+            { label: "Exemplo", example: "It happens quite often.", exampleTranslation: "Isso acontece com bastante frequência." },
           ],
         },
         {
@@ -3939,11 +4076,13 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Quanto custam esses sapatos?",
         },
         {
-          term: "short-lived",
-          translation: "de vida curta, de curta duração",
-          example: "Short-lived access tokens are more secure.",
-          exampleTranslation: "Access tokens de vida curta são mais seguros.",
+          term: "short",
+          translation: "curto; baixo (de altura)",
+          example: "The meeting was short.",
+          exampleTranslation: "A reunião foi curta.",
           more: [
+            { label: "Outro sentido", text: "baixo (de altura).", example: "He's short, but he plays basketball.", exampleTranslation: "Ele é baixo, mas joga basquete." },
+            { label: "Expressão", text: "short-lived = de vida curta, de curta duração.", example: "Short-lived access tokens are more secure.", exampleTranslation: "Access tokens de vida curta são mais seguros." },
             { label: "Expressão", text: "a short-lived cache = um cache de curta duração." },
             { label: "Formação", text: "short + lived, que aqui vem de life (vida), e não do verbo live." },
             { label: "Oposto", text: "long-lived = de vida longa, que dura bastante.", example: "WebSockets keep a long-lived connection open.", exampleTranslation: "WebSockets mantêm uma conexão de longa duração aberta." },
@@ -4268,6 +4407,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "strategic",
+          translation: "estratégico",
+          example: "a strategic decision",
+          exampleTranslation: "uma decisão estratégica",
+          more: [
+            { label: "Substantivo", text: "strategy = estratégia." },
+            { label: "Oposto", text: "tactical = tático." },
+          ],
+        },
+        {
           term: "string",
           translation: "texto (em programação); corda, barbante",
           example: "Make the strings readable.",
@@ -4302,6 +4451,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "sure",
+          translation: "certo, com certeza",
+          example: "Are you sure?",
+          exampleTranslation: "Você tem certeza?",
+          more: [
+            { label: "Expressão", text: "be sure = ter certeza." },
+            { label: "Expressão", text: "make sure = garantir, certificar-se.", example: "Make sure developers can do the task.", exampleTranslation: "Garanta que os desenvolvedores consigam fazer a tarefa." },
+            { label: "Outro sentido", text: "sure = claro, pode (como resposta)." },
+          ],
+        },
+        {
           term: "surgery",
           translation: "cirurgia",
           example: "After the surgery, she came back stronger than ever.",
@@ -4332,6 +4492,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "tactical",
+          translation: "tático",
+          example: "tactical best practices",
+          exampleTranslation: "boas práticas do dia a dia",
+          more: [
+            { label: "Uso", text: "tático é o prático, do dia a dia; estratégico é o plano maior." },
+            { label: "Oposto", text: "strategic = estratégico." },
+          ],
+        },
+        {
           term: "takeaway",
           translation: "lição principal, conclusão",
           example: "Here are the key takeaways.",
@@ -4351,6 +4521,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Adjetivo", text: "targeted = direcionado, segmentado.", example: "Targeted ads reach specific users.", exampleTranslation: "Anúncios segmentados atingem usuários específicos." },
             { label: "Verbo", text: "target = mirar, direcionar.", example: "The campaign targets young users.", exampleTranslation: "A campanha mira usuários jovens." },
           ],
+        },
+        {
+          term: "task",
+          translation: "tarefa",
+          example: "Make sure developers can do the task.",
+          exampleTranslation: "Garanta que os desenvolvedores consigam fazer a tarefa.",
         },
         {
           term: "tendency",
@@ -4532,7 +4708,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Outro sentido", text: "vez.", example: "Don't mess up this time.", exampleTranslation: "Não estraga dessa vez." },
             { label: "Expressão", text: "Long time no see! = Quanto tempo!" },
-            { label: "Expressão", text: "from time to time = de vez em quando." },
+            { label: "Expressão", text: "from time to time = de vez em quando.", example: "I check the logs from time to time.", exampleTranslation: "Eu confiro os logs de vez em quando." },
             { label: "Expressão", text: "What time is it? = Que horas são?" },
           ],
         },
@@ -4618,6 +4794,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O firewall bloqueia tráfego de entrada.",
           more: [
             { label: "Outro sentido", text: "trânsito.", example: "I’m stuck in traffic.", exampleTranslation: "Estou preso no trânsito." },
+          ],
+        },
+        {
+          term: "transport",
+          translation: "transporte / transportar",
+          example: "the landscape of transport",
+          exampleTranslation: "o panorama dos meios de transporte",
+          conjugation: { base: "transport", past: "transported", participle: "transported", irregular: false },
+          more: [
+            { label: "Verbo", text: "transport = transportar." },
           ],
         },
         {
@@ -4798,6 +4984,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Anúncios segmentados atingem usuários específicos.",
         },
         {
+          term: "various",
+          translation: "vários, diversos",
+          example: "Various approaches exist.",
+          exampleTranslation: "Existem várias abordagens.",
+          more: [
+            { label: "Diferença", text: "Parecido com several, mas sugere variedade." },
+          ],
+        },
+        {
           term: "vast",
           translation: "vasto",
           example: "The realm is as vast as the Otherworld.",
@@ -4945,7 +5140,9 @@ export const inglesVocabularioGeral: TopicData = {
           example: "We get along well.",
           exampleTranslation: "A gente se dá bem.",
           more: [
-            { label: "Expressão", text: "as well = também." },
+            { label: "Expressão", text: "as well = também. Costuma ir no fim da frase.", example: "I study English, and I read comics as well.", exampleTranslation: "Eu estudo inglês e também leio quadrinhos." },
+            { label: "Expressão", text: "as well as = assim como, além de.", example: "loss of data as well as revenue.", exampleTranslation: "perda de dados, assim como de receita." },
+            { label: "Diferença", text: "too e as well ficam no fim; also costuma ir antes do verbo." },
             { label: "Substantivo", text: "well = poço." },
           ],
         },
@@ -5007,7 +5204,7 @@ export const inglesVocabularioGeral: TopicData = {
           example: "I'll be ready in a little while.",
           exampleTranslation: "Vou estar pronto daqui a pouquinho.",
           more: [
-            { label: "Expressão", text: "for a while = por um tempo." },
+            { label: "Expressão", text: "for a while = por um tempo.", example: "I’ve been gone for a while.", exampleTranslation: "Fiquei fora por um tempo." },
             { label: "Conjunção", text: "while = enquanto.", example: "She called while I was cooking.", exampleTranslation: "Ela ligou enquanto eu cozinhava." },
             { label: "Parecido", text: "whilst (britânico, formal)." },
           ],

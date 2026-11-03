@@ -273,6 +273,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "brainstorm",
+          translation: "fazer um brainstorming, jogar ideias soltas",
+          example: "Let's brainstorm some ideas.",
+          exampleTranslation: "Vamos jogar umas ideias.",
+          conjugation: { base: "brainstorm", past: "brainstormed", participle: "brainstormed", irregular: false },
+          more: [
+            { label: "Substantivo", text: "brainstorming = tempestade de ideias, o momento de jogar ideias soltas.", example: "This is useful during the brainstorming phase.", exampleTranslation: "Isso é útil durante a fase de brainstorming." },
+          ],
+        },
+        {
           term: "break",
           translation: "quebrar; romper / pausa, intervalo",
           example: "Don't break the glass.",
@@ -283,6 +293,7 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "break up = terminar (namoro).", example: "They broke up last month.", exampleTranslation: "Eles terminaram mês passado." },
             { label: "Substantivo", text: "break = pausa, intervalo.", example: "You deserve a break.", exampleTranslation: "Você merece um descanso." },
             { label: "Expressão", text: "break a record = bater um recorde; break curfew = desrespeitar o toque de recolher." },
+            { label: "Palavra relacionada", text: "heartbreaking = de partir o coração." },
           ],
         },
         {
@@ -342,6 +353,18 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Substantivo", text: "change = mudança.", example: "Apps subscribe to changes.", exampleTranslation: "Apps se inscrevem pra receber mudanças." },
             { label: "Outro sentido", text: "troco (dinheiro)." },
+          ],
+        },
+        {
+          term: "charge",
+          translation: "cobrar",
+          example: "Developers should be able to charge credit cards.",
+          exampleTranslation: "Os desenvolvedores devem conseguir cobrar cartões de crédito.",
+          conjugation: { base: "charge", past: "charged", participle: "charged", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "carregar (bateria).", example: "I need to charge the battery.", exampleTranslation: "Preciso carregar a bateria." },
+            { label: "Expressão", text: "free of charge = grátis." },
+            { label: "Diferença", text: "carregar no sentido de levar é carry; carregar dados ou uma página é load." },
           ],
         },
         {
@@ -438,6 +461,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "close",
+          translation: "fechar / perto",
+          example: "Close the door, please.",
+          exampleTranslation: "Fecha a porta, por favor.",
+          conjugation: { base: "close", past: "closed", participle: "closed", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "closed = fechado.", example: "The door is closed.", exampleTranslation: "A porta tá fechada." },
+            { label: "Outro sentido", text: "close = perto, próximo.", example: "It's close, we can walk.", exampleTranslation: "É perto, dá pra ir a pé." },
+          ],
+        },
+        {
           term: "come",
           translation: "vir, chegar",
           example: "Come in, the door is open.",
@@ -510,6 +544,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "cover",
+          translation: "cobrir; abordar (um assunto)",
+          example: "In the previous chapter, we covered security.",
+          exampleTranslation: "No capítulo anterior, vimos segurança.",
+          conjugation: { base: "cover", past: "covered", participle: "covered", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "cobrir.", example: "Cover the hole.", exampleTranslation: "Cobre o buraco." },
+            { label: "Substantivo", text: "cover = capa." },
+          ],
+        },
+        {
           term: "crash",
           translation: "bater, colidir; travar (sistema) / batida",
           example: "The server may crash, or worse, lose data.",
@@ -529,6 +574,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Expressão", text: "scope creep = o escopo do projeto crescendo sem controle." },
             { label: "Expressão", text: "payload creep = o payload que vai inchando." },
+          ],
+        },
+        {
+          term: "decide",
+          translation: "decidir",
+          example: "We decided to stay after all.",
+          exampleTranslation: "Decidimos ficar afinal.",
+          conjugation: { base: "decide", past: "decided", participle: "decided", irregular: false },
+          more: [
+            { label: "Substantivo", text: "decision = decisão." },
           ],
         },
         {
@@ -579,6 +634,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Substantivo", text: "design = projeto, desenho.", example: "This is a common design pattern in software.", exampleTranslation: "Esse é um padrão de projeto comum em software." },
             { label: "Expressão", text: "be designed to = ser feito para." },
+          ],
+        },
+        {
+          term: "dig",
+          translation: "cavar",
+          example: "The dog dug a hole.",
+          exampleTranslation: "O cachorro cavou um buraco.",
+          conjugation: { base: "dig", past: "dug", participle: "dug", irregular: true },
+          more: [
+            { label: "Phrasal verb", text: "dig into = mergulhar em, se aprofundar.", example: "Let's dig into this idea.", exampleTranslation: "Vamos nos aprofundar nessa ideia." },
           ],
         },
         {
@@ -690,20 +755,10 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "drop", past: "dropped", participle: "dropped", irregular: false },
           more: [
             { label: "Phrasal verb", text: "drop off = deixar alguém num lugar (de carro).", example: "I'll drop you off at the airport.", exampleTranslation: "Eu te deixo no aeroporto." },
-            { label: "Phrasal verb", text: "drop in = dar uma passadinha, aparecer." },
-            { label: "Substantivo", text: "drop = gota; queda." },
-          ],
-        },
-        {
-          term: "drop in",
-          translation: "dar uma passadinha, aparecer",
-          example: "Drop in anytime.",
-          exampleTranslation: "Passa aqui quando quiser.",
-          conjugation: { base: "drop in", past: "dropped in", participle: "dropped in", irregular: false },
-          more: [
-            { label: "Uso", text: "Phrasal verb. É aparecer sem avisar, numa visita rápida." },
+            { label: "Phrasal verb", text: "drop in = dar uma passadinha, aparecer sem avisar, numa visita rápida.", example: "Drop in anytime.", exampleTranslation: "Passa aqui quando quiser." },
             { label: "Expressão", text: "drop in on + pessoa = dar uma passada na casa de alguém.", example: "I’ll drop in on you tomorrow.", exampleTranslation: "Vou dar uma passada aí amanhã." },
             { label: "Parecido", text: "drop by, stop by." },
+            { label: "Substantivo", text: "drop = gota; queda." },
           ],
         },
         {
@@ -748,6 +803,7 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "ensure", past: "ensured", participle: "ensured", irregular: false },
           more: [
             { label: "Exemplo", example: "Tests ensure the code works.", exampleTranslation: "Os testes garantem que o código funciona." },
+            { label: "Parecido", text: "make sure = garantir, certificar-se." },
           ],
         },
         {
@@ -758,6 +814,7 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "entice", past: "enticed", participle: "enticed", irregular: false },
           more: [
             { label: "Adjetivo", text: "enticing = tentador, atraente.", example: "It can be enticing to invent your own system.", exampleTranslation: "Pode ser tentador inventar seu próprio sistema." },
+            { label: "Parecido", text: "tempting = tentador." },
           ],
         },
         {
@@ -800,6 +857,13 @@ export const inglesVerbos: TopicData = {
             { label: "Substantivo", text: "excuse = desculpa, pretexto.", example: "That's no excuse.", exampleTranslation: "Isso não é desculpa." },
             { label: "Adjetivo", text: "inexcusable = imperdoável." },
           ],
+        },
+        {
+          term: "exist",
+          translation: "existir",
+          example: "Various approaches exist.",
+          exampleTranslation: "Existem várias abordagens.",
+          conjugation: { base: "exist", past: "existed", participle: "existed", irregular: false },
         },
         {
           term: "expire",
@@ -1008,8 +1072,10 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "get up = levantar(-se) da cama.", example: "I get up at 6am every day.", exampleTranslation: "Eu levanto às 6 da manhã todo dia." },
             { label: "Phrasal verb", text: "get in = chegar, entrar.", example: "When did you get in? I didn't hear you arrive.", exampleTranslation: "Quando você chegou? Não te ouvi chegar." },
             { label: "Phrasal verb", text: "get out = sair.", example: "Get out of my room!", exampleTranslation: "Sai do meu quarto!" },
-            { label: "Phrasal verb", text: "get through = conseguir passar; terminar algo longo." },
+            { label: "Phrasal verb", text: "get through = conseguir passar, atravessar.", example: "The message didn't get through.", exampleTranslation: "A mensagem não chegou (não passou)." },
+            { label: "Phrasal verb", text: "get through = terminar algo longo.", example: "I got through the book.", exampleTranslation: "Eu terminei o livro." },
             { label: "Phrasal verb", text: "get on with = continuar, seguir com." },
+            { label: "Expressão", text: "get the most out of = tirar o máximo de.", example: "Help developers get the most out of your API.", exampleTranslation: "Ajude os devs a tirarem o máximo da sua API." },
           ],
         },
         {
@@ -1024,22 +1090,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
-          term: "get through",
-          translation: "conseguir passar, atravessar",
-          example: "The message didn't get through.",
-          exampleTranslation: "A mensagem não chegou (não passou).",
-          conjugation: { base: "get through", past: "got through", participle: "gotten through (EUA) / got through (Reino Unido)", irregular: true },
-          more: [
-            { label: "Outro sentido", text: "terminar algo longo.", example: "I got through the book.", exampleTranslation: "Eu terminei o livro." },
-          ],
-        },
-        {
           term: "give",
           translation: "dar",
           example: "Can I think about it and give you an answer tomorrow?",
           exampleTranslation: "Posso pensar e te dar uma resposta amanhã?",
           conjugation: { base: "give", past: "gave", participle: "given", irregular: true },
           more: [
+            { label: "Passado simples", example: "We gave an overview.", exampleTranslation: "Nós demos uma visão geral." },
             { label: "Phrasal verb", text: "give up = desistir.", example: "Don't give up on your dreams.", exampleTranslation: "Não desista dos seus sonhos." },
             { label: "Expressão", text: "give it a rest = chega, para com isso.", example: "Oh, give it a rest!", exampleTranslation: "Ah, para com isso!" },
             { label: "Expressão", text: "give me a second = me dá um segundo." },
@@ -1335,6 +1392,7 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Substantivo", text: "indicação ou contato em potencial." },
             { label: "Expressão", text: "generate leads = gerar leads/contatos de vendas." },
+            { label: "Expressão", text: "lead astray = desviar, levar pro caminho errado.", example: "It can lead a design astray.", exampleTranslation: "Isso pode desviar um design." },
           ],
         },
         {
@@ -1426,7 +1484,6 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "live", past: "lived", participle: "lived", irregular: false },
           more: [
             { label: "Adjetivo", text: "live = ao vivo (pronúncia diferente do verbo)." },
-            { label: "Expressão", text: "short-lived = de vida curta." },
           ],
         },
         {
@@ -1487,6 +1544,8 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Uso", text: "Quando make vem acompanhado de outro verbo, não se usa to antes desse verbo: you make me laugh = você me faz rir; this song makes me happy = essa música me deixa feliz." },
             { label: "Expressão", text: "make sense = fazer sentido.", example: "I see, that makes sense now.", exampleTranslation: "Entendi, agora faz sentido." },
+            { label: "Expressão", text: "make sure = garantir, certificar-se.", example: "Make sure developers can do the task.", exampleTranslation: "Garanta que os desenvolvedores consigam fazer a tarefa." },
+            { label: "Diferença", text: "make sure é garantir; be sure é ter certeza." },
             { label: "Phrasal verb", text: "make up = fazer as pazes; inventar.", example: "They had a fight, but they made up.", exampleTranslation: "Eles brigaram, mas fizeram as pazes." },
             { label: "Diferença", text: "make é criar ou produzir algo (make a cake); do é realizar uma tarefa (do homework)." },
           ],
@@ -1661,6 +1720,9 @@ export const inglesVerbos: TopicData = {
           example: "Pick the right paradigm for your API.",
           exampleTranslation: "Escolha o paradigma certo para a sua API.",
           conjugation: { base: "pick", past: "picked", participle: "picked", irregular: false },
+          more: [
+            { label: "Uso", text: "by picking = ao escolher. by + verbo-ing = ao fazer algo, através de algo.", example: "By picking one use case, you can focus.", exampleTranslation: "Ao escolher um caso de uso, você consegue focar." },
+          ],
         },
         {
           term: "pinch",
@@ -2153,6 +2215,27 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "solve",
+          translation: "resolver",
+          example: "Don't try to solve too many problems at once.",
+          exampleTranslation: "Não tenta resolver problemas demais de uma vez.",
+          conjugation: { base: "solve", past: "solved", participle: "solved", irregular: false },
+          more: [
+            { label: "Substantivo", text: "solution = solução." },
+          ],
+        },
+        {
+          term: "sound",
+          translation: "soar, parecer / som",
+          example: "It sounds easy.",
+          exampleTranslation: "Parece fácil.",
+          conjugation: { base: "sound", past: "sounded", participle: "sounded", irregular: false },
+          more: [
+            { label: "Expressão", text: "as easy as it sounds = tão fácil quanto parece.", example: "It's not as easy as it sounds.", exampleTranslation: "Não é tão fácil quanto parece." },
+            { label: "Substantivo", text: "sound = som." },
+          ],
+        },
+        {
           term: "speak",
           translation: "falar",
           example: "I speak a little English.",
@@ -2282,32 +2365,12 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "take care = se cuida.", example: "It was great talking to you, take care!", exampleTranslation: "Foi ótimo falar com você, se cuida!" },
             { label: "Expressão", text: "take a photo = tirar uma foto.", example: "Hold still, I'm taking the photo.", exampleTranslation: "Fica parado, tô tirando a foto." },
             { label: "Outro sentido", text: "demorar, levar (tempo).", example: "It takes a lot of effort.", exampleTranslation: "Dá muito trabalho." },
-            { label: "Phrasal verb", text: "take off = decolar; tirar (roupa); sair correndo.", example: "The plane will take off in ten minutes.", exampleTranslation: "O avião vai decolar em dez minutos." },
-            { label: "Phrasal verb", text: "take over = assumir o controle." },
+            { label: "Phrasal verb", text: "take off = sair correndo, de repente e rápido, tipo “vazar”.", example: "He took off when he saw the guards.", exampleTranslation: "Ele saiu correndo quando viu os guardas." },
+            { label: "Phrasal verb", text: "take off = decolar.", example: "The plane will take off in ten minutes.", exampleTranslation: "O avião vai decolar em dez minutos." },
+            { label: "Phrasal verb", text: "take off = tirar (roupa).", example: "Take off your shoes.", exampleTranslation: "Tira os sapatos." },
+            { label: "Phrasal verb", text: "take off = deslanchar, fazer sucesso de repente.", example: "Her career took off after that film.", exampleTranslation: "A carreira dela deslanchou depois daquele filme." },
+            { label: "Phrasal verb", text: "take over = assumir o controle de algo, geralmente substituindo alguém ou algo.", example: "He took over the company after his father retired.", exampleTranslation: "Ele assumiu o controle da empresa depois que o pai dele se aposentou." },
             { label: "Diferença", text: "take é levar pra longe de quem fala; bring é trazer pra perto." },
-          ],
-        },
-        {
-          term: "take off",
-          translation: "sair correndo / decolar / tirar",
-          example: "He took off when he saw the guards.",
-          exampleTranslation: "Ele saiu correndo quando viu os guardas.",
-          conjugation: { base: "take off", past: "took off", participle: "taken off", irregular: true },
-          more: [
-            { label: "Uso", text: "No sentido de fugir, é sair de repente e rápido, tipo “vazar”." },
-            { label: "Outro sentido", text: "decolar.", example: "The plane took off on time.", exampleTranslation: "O avião decolou na hora." },
-            { label: "Outro sentido", text: "tirar (roupa).", example: "Take off your shoes.", exampleTranslation: "Tira os sapatos." },
-            { label: "Outro sentido", text: "deslanchar, fazer sucesso de repente.", example: "Her career took off after that film.", exampleTranslation: "A carreira dela deslanchou depois daquele filme." },
-          ],
-        },
-        {
-          term: "take over",
-          translation: "assumir o controle de algo",
-          example: "He took over the company after his father retired.",
-          exampleTranslation: "Ele assumiu o controle da empresa depois que o pai dele se aposentou.",
-          conjugation: { base: "take over", past: "took over", participle: "taken over", irregular: true },
-          more: [
-            { label: "Observação", text: "Geralmente substituindo alguém ou algo." },
           ],
         },
         {
@@ -2330,6 +2393,18 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Expressão", text: "tell apart = diferenciar." },
             { label: "Diferença", text: "tell pede a pessoa (tell me); say não (say something)." },
+          ],
+        },
+        {
+          term: "tempt",
+          translation: "tentar, atrair (com algo desejável)",
+          example: "Don't tempt me.",
+          exampleTranslation: "Não me tenta.",
+          conjugation: { base: "tempt", past: "tempted", participle: "tempted", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "tempting = tentador.", example: "It's tempting to solve every problem at once.", exampleTranslation: "É tentador resolver todos os problemas de uma vez." },
+            { label: "Parecido", text: "enticing = tentador, atraente." },
+            { label: "Substantivo", text: "temptation = tentação." },
           ],
         },
         {
