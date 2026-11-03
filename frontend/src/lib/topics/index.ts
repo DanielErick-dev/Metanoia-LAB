@@ -38,6 +38,7 @@ import { someAnyNo } from "./some-any-no";
 import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
 import { designingWebApisCap2 } from "./designing-web-apis-paradigmas";
 import { designingWebApisCap3 } from "./designing-web-apis-seguranca";
+import { designingWebApisCap4 } from "./designing-web-apis-boas-praticas";
 import { fastapiIntroducao } from "./fastapi-introducao";
 import { fastapiInstalacao } from "./fastapi-instalacao";
 import { fastapiTypeHintsPydantic } from "./fastapi-type-hints-pydantic";
@@ -85,6 +86,7 @@ export const topics: TopicData[] = [
   designingWebApisCap1,
   designingWebApisCap2,
   designingWebApisCap3,
+  designingWebApisCap4,
   fastapiIntroducao,
   fastapiInstalacao,
   fastapiTypeHintsPydantic,
