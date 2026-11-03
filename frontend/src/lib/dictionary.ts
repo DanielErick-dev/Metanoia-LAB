@@ -32,6 +32,10 @@ function normalize(text: string): string {
     .replace(/[̀-ͯ]/g, "");
 }
 
+function termKey(text: string): string {
+  return normalize(text).replace(/[’]/g, "'").replace(/[?!.]+$/, "");
+}
+
 function slugify(text: string): string {
   return normalize(text)
     .replace(/[^a-z0-9]+/g, "-")
@@ -50,7 +54,7 @@ function buildDictionary(): DictionaryEntry[] {
   const byTerm = new Map<string, DictionaryEntry>();
 
   function add(term: string, sense: DictionarySense) {
-    const key = normalize(term);
+    const key = termKey(term);
     const existing = byTerm.get(key);
     if (existing) {
       existing.senses.push(sense);
@@ -99,7 +103,31 @@ function buildDictionary(): DictionaryEntry[] {
     }
   }
 
-  return [...byTerm.values()].sort((a, b) => normalize(a.term).localeCompare(normalize(b.term)));
+  const entries = [...byTerm.values()].filter((entry) => !isCoveredByHost(entry, byTerm));
+  const usedIds = new Set<string>();
+  for (const entry of entries) {
+    let id = entry.id;
+    for (let n = 2; usedIds.has(id); n++) id = `${entry.id}-${n}`;
+    entry.id = id;
+    usedIds.add(id);
+  }
+  return entries.sort((a, b) => normalize(a.term).localeCompare(normalize(b.term)));
+}
+
+function isCompound(entry: DictionaryEntry): boolean {
+  return entry.isPhrase || entry.term.includes("-");
+}
+
+function isCoveredByHost(entry: DictionaryEntry, byTerm: Map<string, DictionaryEntry>): boolean {
+  if (!isCompound(entry)) return false;
+  const key = termKey(entry.term);
+  return [...byTerm.values()].some(
+    (host) =>
+      !isCompound(host) &&
+      host.senses.some((s) =>
+        s.items.some((i) => Boolean(i.text) && termKey(i.text!).startsWith(`${key} `))
+      )
+  );
 }
 
 export const dictionary = buildDictionary();
