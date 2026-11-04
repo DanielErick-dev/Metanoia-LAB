@@ -3,7 +3,7 @@ import { TopicData } from "@/lib/types/topic";
 export const designingWebApisCap4: TopicData = {
   slug: "boas-praticas-de-design",
   title: "Capítulo 4 — Boas práticas de design",
-  subtitle: "Definir os casos de uso, conferir se os desenvolvedores conseguem cumpri-los, não expor a arquitetura interna e não tentar resolver problemas demais de uma vez",
+  subtitle: "Definir os casos de uso, não expor a arquitetura interna, não tentar resolver problemas demais de uma vez, cuidar da experiência do desenvolvedor e oferecer uma boa documentação",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
   status: "em-construcao",
@@ -29,6 +29,22 @@ export const designingWebApisCap4: TopicData = {
     {
       heading: "Fazer uma coisa muito bem",
       body: "Por fim, o autor relata um comentário de um especialista do Google (Ido Green), que diz que a API deve permitir fazer uma coisa muito bem e deixar claro exatamente aquilo que ela não faz, reforçando o que foi citado anteriormente.",
+    },
+    {
+      heading: "A experiência do desenvolvedor",
+      body: "Em seguida o autor fala sobre a importância da experiência que o desenvolvedor precisa ter. Da mesma forma que cuidamos da interface para que o usuário final tenha uma boa experiência, a nossa API também precisa oferecer uma boa experiência ao desenvolvedor, senão os desenvolvedores tenderão a nunca mais voltar a usar essa API. (Se for boa, é provável que além de voltarem ainda indiquem a API a outros devs. Isso é uma observação minha, o livro não fala disso.) Além disso, o autor fala que o dev precisa ser capaz de entender e usar a API rapidamente, isso porque muitos devs usam essas APIs para não precisar construir uma suíte secundária de produtos para sustentar o produto principal. Sendo assim, usam a API para ganhar tempo e, se ela for difícil ou ruim de usar, podem acabar se arrependendo da decisão.",
+    },
+    {
+      heading: "Os devs sempre criam o inesperado",
+      body: "O autor também comenta, citando Romain Huet (Stripe), que por mais cuidado que se tenha ao desenhar a API, os devs sempre criam produtos inesperados. Desenhar uma API é como desenhar um caminho inicial que possibilita aos devs ampliar de acordo com o que eles quiserem, sem ficar engessados demais.",
+    },
+    {
+      heading: "Documentação",
+      body: "A documentação ajuda muito a começar. Além das informações gerais, é bom ter os tutoriais ensinando a usar a sua API e também os famosos Getting Started, para quem está começando ou quer ver algo mais contextual. O autor fala também dos SDKs (os kits que vimos antes), que ajudam nas configurações iniciais.",
+    },
+    {
+      heading: "Testar a API sem barreiras",
+      body: "Além dessas informações, é sempre bom ter uma área onde o usuário possa interagir com a API sem a necessidade de fazer login. Caso não seja possível testar a API sem login, ou caso seja apenas por OAuth, o ideal é que o cadastro seja o mínimo possível para poder usar, ou, no caso do OAuth, talvez gerar um access token pela própria interface. Se ficar complicado demais, existe uma chance alta de os devs desistirem e optarem por outra API.",
     },
   ],
   relatedSlugs: ["seguranca-de-api", "paradigmas-de-api"],
