@@ -2671,7 +2671,10 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "wish", past: "wished", participle: "wished", irregular: false },
           more: [
             { label: "Exemplo", example: "Make a wish!", exampleTranslation: "Faça um pedido!" },
-            { label: "Uso", text: "wish + passado expressa desejo irreal, como na estrutura do if only." },
+            { label: "Uso", text: "wish + passado expressa desejo irreal, como na estrutura do if only.", example: "I wish I had more time.", exampleTranslation: "Queria ter mais tempo (mas não tenho)." },
+            { label: "Uso", text: "Com o verbo be, usa-se were pra todas as pessoas.", example: "I wish I were there.", exampleTranslation: "Queria estar lá." },
+            { label: "Uso", text: "wish + had + particípio = arrependimento sobre o passado.", example: "I wish I had studied more.", exampleTranslation: "Queria ter estudado mais." },
+            { label: "Uso", text: "wish + would = vontade de que alguém mude o que faz.", example: "I wish you would answer my messages.", exampleTranslation: "Queria que você respondesse minhas mensagens." },
           ],
         },
         {
