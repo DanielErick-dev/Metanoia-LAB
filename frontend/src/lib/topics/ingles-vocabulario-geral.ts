@@ -184,6 +184,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "addition",
+          translation: "adição, acréscimo",
+          example: "This feature is a great addition to the app.",
+          exampleTranslation: "Essa funcionalidade é um ótimo acréscimo ao app.",
+          more: [
+            { label: "Expressão", text: "in addition to = além de.", example: "In addition to documents, tutorials help.", exampleTranslation: "Além dos documentos, tutoriais ajudam." },
+            { label: "Adjetivo", text: "additional = adicional.", example: "There's no additional cost.", exampleTranslation: "Não tem custo adicional." },
+            { label: "Verbo", text: "add = adicionar.", example: "Add some salt to the water.", exampleTranslation: "Põe um pouco de sal na água." },
+          ],
+        },
+        {
           term: "ado",
           translation: "agitação, rebuliço",
           more: [
@@ -466,16 +477,6 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Pelo menos eu fiz alguma coisa.",
         },
         {
-          term: "at some point",
-          translation: "em algum momento",
-          example: "At some point, you’ll need to revoke access.",
-          exampleTranslation: "Em algum momento, você vai precisar revogar o acesso.",
-          more: [
-            { label: "Expressão", text: "at this point = a essa altura.", example: "At this point, we can't cancel the trip.", exampleTranslation: "A essa altura, a gente não pode cancelar a viagem." },
-            { label: "Expressão", text: "at one point = em certo momento do passado.", example: "At one point, I almost gave up.", exampleTranslation: "Em certo momento, eu quase desisti." },
-          ],
-        },
-        {
           term: "attack",
           translation: "ataque / atacar",
           example: "The firewall blocked the attack.",
@@ -484,6 +485,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "under attack = sob ataque.", example: "The server is under attack.", exampleTranslation: "O servidor está sob ataque." },
             { label: "Verbo", text: "attack = atacar.", example: "Hackers attacked the server.", exampleTranslation: "Hackers atacaram o servidor." },
+          ],
+        },
+        {
+          term: "attrition",
+          translation: "desgaste, perda gradual, evasão",
+          example: "Attrition is high when signup is hard.",
+          exampleTranslation: "A evasão é alta quando o cadastro é difícil.",
+          more: [
+            { label: "Em tecnologia", text: "a perda de devs ou usuários que desistem no meio do caminho (o drop-off rate).", example: "A complex setup increases developer attrition.", exampleTranslation: "Uma configuração complicada aumenta a evasão de devs." },
+            { label: "Expressão", text: "employee attrition = rotatividade de funcionários.", example: "The company has high employee attrition.", exampleTranslation: "A empresa tem uma rotatividade alta de funcionários." },
           ],
         },
         {
@@ -540,6 +551,28 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "ameno, agradável (clima)",
           example: "It was a balmy summer evening.",
           exampleTranslation: "Foi uma noite de verão amena.",
+        },
+        {
+          term: "bar",
+          translation: "barra; nível de exigência",
+          example: "The bar for entry is low.",
+          exampleTranslation: "A exigência pra entrar é baixa.",
+          more: [
+            { label: "Origem", text: "Vem da barra do salto em altura: quanto mais alta, mais difícil passar." },
+            { label: "Expressão", text: "low bar = barreira baixa, pouco exigente.", example: "Setting up the API should be a low bar.", exampleTranslation: "Configurar a API deve ser algo simples de cumprir." },
+            { label: "Expressão", text: "raise the bar = elevar o nível.", example: "This new phone raises the bar for the whole market.", exampleTranslation: "Esse celular novo eleva o nível do mercado todo." },
+            { label: "Outro sentido", text: "bar, boteco.", example: "Let's meet at the bar after work.", exampleTranslation: "Vamos nos encontrar no bar depois do trabalho." },
+          ],
+        },
+        {
+          term: "bare",
+          translation: "nu, descoberto",
+          example: "Don't walk on the floor with bare feet.",
+          exampleTranslation: "Não anda no chão de pé descalço.",
+          more: [
+            { label: "Expressão", text: "bare minimum = o mínimo absoluto, o mínimo do mínimo.", example: "Ask for the bare minimum of information.", exampleTranslation: "Peça o mínimo absoluto de informação." },
+            { label: "Exemplo", example: "He always does the bare minimum.", exampleTranslation: "Ele sempre faz o mínimo do mínimo." },
+          ],
         },
         {
           term: "barely",
@@ -929,6 +962,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "carefully",
+          translation: "com cuidado",
+          example: "Design the API carefully.",
+          exampleTranslation: "Desenhe a API com cuidado.",
+          more: [
+            { label: "Adjetivo", text: "careful = cuidadoso.", example: "Be careful, the floor is wet.", exampleTranslation: "Cuidado, o chão tá molhado." },
+            { label: "Oposto", text: "carelessly = sem cuidado, de qualquer jeito." },
+          ],
+        },
+        {
           term: "case",
           translation: "caso",
           example: "In that case, we can start.",
@@ -1130,6 +1173,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Os desenvolvedores devem conseguir cobrar cartões de crédito.",
           more: [
             { label: "Expressão", text: "credit card = cartão de crédito.", example: "Can I pay by credit card?", exampleTranslation: "Posso pagar com cartão de crédito?" },
+          ],
+        },
+        {
+          term: "cumbersome",
+          translation: "trabalhoso, desajeitado, pesado",
+          example: "OAuth is cumbersome for developers.",
+          exampleTranslation: "OAuth é trabalhoso pra desenvolvedores.",
+          more: [
+            { label: "Expressão", text: "a cumbersome process = um processo burocrático e lento.", example: "Getting a visa is a cumbersome process.", exampleTranslation: "Tirar visto é um processo burocrático e lento." },
           ],
         },
         {
@@ -3207,6 +3259,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele quer nada além da verdade.",
         },
         {
+          term: "notion",
+          translation: "noção, ideia",
+          example: "A good API expands the notion of what's possible.",
+          exampleTranslation: "Uma boa API amplia a noção do que é possível.",
+          more: [
+            { label: "Expressão", text: "have no notion of = não ter noção de.", example: "I have no notion of how it works.", exampleTranslation: "Não tenho noção de como isso funciona." },
+          ],
+        },
+        {
           term: "now",
           translation: "agora",
           example: "I'm heading out now, see you later!",
@@ -3214,6 +3275,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "right now = agora mesmo.", example: "I need your help right now.", exampleTranslation: "Preciso da sua ajuda agora mesmo." },
             { label: "Expressão", text: "now that = agora que.", example: "Now that you're here, we can start.", exampleTranslation: "Agora que você está aqui, podemos começar." },
+          ],
+        },
+        {
+          term: "numb",
+          translation: "dormente, entorpecido",
+          example: "My hand went numb.",
+          exampleTranslation: "Minha mão ficou dormente.",
+          more: [
+            { label: "Outro sentido", text: "feel numb = sentir-se vazio, sem reação (emocional).", example: "After the news, I just felt numb.", exampleTranslation: "Depois da notícia, eu só me senti vazio." },
+            { label: "Observação", text: "O b final é mudo." },
           ],
         },
         {
@@ -3239,6 +3310,7 @@ export const inglesVocabularioGeral: TopicData = {
           term: "often",
           translation: "frequentemente, muitas vezes",
           more: [
+            { label: "Variação", text: "oftentimes = muitas vezes, frequentemente. Mesmo sentido de often, só mais enfático.", example: "Oftentimes, developers test without authentication.", exampleTranslation: "Muitas vezes, os devs testam sem autenticação." },
             { label: "Exemplo", example: "It happens quite often.", exampleTranslation: "Isso acontece com bastante frequência." },
           ],
         },
@@ -3284,6 +3356,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "ônus ou responsabilidade",
           example: "The onus is on the client to keep the token safe.",
           exampleTranslation: "A responsabilidade de manter o token seguro é do cliente.",
+        },
+        {
+          term: "opaque",
+          translation: "opaco, nada claro",
+          example: "An opaque API is hard to understand.",
+          exampleTranslation: "Uma API opaca é difícil de entender.",
+          more: [
+            { label: "Outro sentido", text: "opaco (que não deixa passar luz).", example: "The bathroom window has opaque glass.", exampleTranslation: "A janela do banheiro tem vidro opaco." },
+            { label: "Oposto", text: "transparent = transparente, claro." },
+          ],
         },
         {
           term: "open",
@@ -3529,6 +3611,19 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "encanamento",
           example: "The plumbing in this house is old.",
           exampleTranslation: "O encanamento dessa casa é velho.",
+        },
+        {
+          term: "point",
+          translation: "ponto; momento",
+          example: "That's a good point.",
+          exampleTranslation: "Esse é um bom ponto.",
+          more: [
+            { label: "Expressão", text: "point in time = momento específico.", example: "A guide gives information at a certain point in time.", exampleTranslation: "Um guia dá informação num momento específico." },
+            { label: "Expressão", text: "at this point in time = neste momento.", example: "At this point in time, we can't change the API.", exampleTranslation: "Neste momento, a gente não pode mudar a API." },
+            { label: "Expressão", text: "at some point = em algum momento.", example: "At some point, you’ll need to revoke access.", exampleTranslation: "Em algum momento, você vai precisar revogar o acesso." },
+            { label: "Expressão", text: "at this point = a essa altura.", example: "At this point, we can't cancel the trip.", exampleTranslation: "A essa altura, a gente não pode cancelar a viagem." },
+            { label: "Expressão", text: "at one point = em certo momento do passado.", example: "At one point, I almost gave up.", exampleTranslation: "Em certo momento, eu quase desisti." },
+          ],
         },
         {
           term: "policy",
@@ -4927,6 +5022,10 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Mande o token no cabeçalho.",
           more: [
             { label: "Expressão", text: "access token, refresh token, verification token.", example: "Use the refresh token to get a new access token.", exampleTranslation: "Usa o refresh token pra conseguir um access token novo." },
+            { label: "Expressão", text: "by the same token = pelo mesmo raciocínio, da mesma forma, pela mesma lógica.", example: "A clear API attracts developers. By the same token, a confusing API drives them away.", exampleTranslation: "Uma API clara atrai desenvolvedores. Pelo mesmo raciocínio, uma API confusa os afasta." },
+            { label: "Uso", text: "by the same token liga duas ideias que seguem a mesma lógica: se algo é verdade, então outra coisa também é. Pense em “e, pela mesma lógica,”. Costuma abrir a frase, seguido de vírgula, como moreover e further, mas com a ideia de consequência lógica, não só de soma.", example: "If you expect users to read the docs, by the same token, you must keep them updated.", exampleTranslation: "Se você espera que os usuários leiam a documentação, então também precisa mantê-la atualizada." },
+            { label: "Observação", text: "Aqui token não é o token de tecnologia (access token). Não traduza palavra por palavra: “pelo mesmo token” não faz sentido. É uma frase pronta, mais usada em texto formal." },
+            { label: "Origem", text: "token antigamente era “sinal, prova”, então a expressão vem de “pela mesma prova”. O sentido original sumiu e ela virou frase pronta." },
           ],
         },
         {
@@ -4971,12 +5070,31 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "toward",
+          translation: "em direção a, rumo a",
+          example: "Move toward a better design.",
+          exampleTranslation: "Avance rumo a um design melhor.",
+          more: [
+            { label: "Variação", text: "towards (britânico), com o mesmo sentido.", example: "She walked towards the door.", exampleTranslation: "Ela andou em direção à porta." },
+          ],
+        },
+        {
           term: "traffic",
           translation: "tráfego; trânsito",
           example: "The firewall blocks inbound traffic.",
           exampleTranslation: "O firewall bloqueia tráfego de entrada.",
           more: [
             { label: "Outro sentido", text: "trânsito.", example: "I’m stuck in traffic.", exampleTranslation: "Estou preso no trânsito." },
+          ],
+        },
+        {
+          term: "transactional",
+          translation: "transacional, relativo a transações",
+          example: "The SDK simplifies transactional layers.",
+          exampleTranslation: "O SDK simplifica as camadas transacionais.",
+          more: [
+            { label: "Substantivo", text: "transaction = transação.", example: "The transaction was approved.", exampleTranslation: "A transação foi aprovada." },
+            { label: "Em tecnologia", text: "operações de pedido e resposta, pagamentos e banco de dados.", example: "Transactional emails confirm each purchase.", exampleTranslation: "E-mails transacionais confirmam cada compra." },
           ],
         },
         {
@@ -5071,6 +5189,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Expliquei duas vezes, você entendeu?",
           more: [
             { label: "Parecido", text: "once = uma vez; three times = três vezes." },
+          ],
+        },
+        {
+          term: "typically",
+          translation: "tipicamente, normalmente",
+          example: "Typically, guides appear when getting started.",
+          exampleTranslation: "Normalmente, guias aparecem ao começar.",
+          more: [
+            { label: "Adjetivo", text: "typical = típico.", example: "It's a typical Monday morning.", exampleTranslation: "É uma típica manhã de segunda." },
+            { label: "Parecido", text: "usually." },
           ],
         },
         {

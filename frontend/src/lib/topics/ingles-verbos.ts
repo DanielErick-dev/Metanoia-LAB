@@ -38,6 +38,9 @@ export const inglesVerbos: TopicData = {
           example: "Add a layer of security.",
           exampleTranslation: "Adicione uma camada de segurança.",
           conjugation: { base: "add", past: "added", participle: "added", irregular: false },
+          more: [
+            { label: "Substantivo", text: "addition = adição, acréscimo.", example: "In addition to documents, tutorials help.", exampleTranslation: "Além dos documentos, tutoriais ajudam." },
+          ],
         },
         {
           term: "address",
@@ -309,6 +312,18 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "bring back = trazer de volta.", example: "Please bring back my book when you're done.", exampleTranslation: "Por favor, traga meu livro de volta quando terminar." },
             { label: "Phrasal verb", text: "bring about = causar, provocar.", example: "The new policy brought about many changes.", exampleTranslation: "A nova política causou muitas mudanças." },
             { label: "Diferença", text: "Traz o sentido de trazer em direção a quem fala — diferente de take, que tem o sentido de levar para longe." },
+          ],
+        },
+        {
+          term: "build",
+          translation: "construir",
+          example: "We're building a new app.",
+          exampleTranslation: "A gente tá construindo um app novo.",
+          conjugation: { base: "build", past: "built", participle: "built", irregular: true },
+          more: [
+            { label: "Phrasal verb", text: "build out = expandir, desenvolver algo além do básico.", example: "We built out the backend.", exampleTranslation: "Expandimos o backend." },
+            { label: "Exemplo", example: "Avoid having to build out a secondary product suite.", exampleTranslation: "Evite ter que construir uma suíte secundária de produtos." },
+            { label: "Em tecnologia", text: "build = a versão compilada do projeto.", example: "Thankfully, the build passed.", exampleTranslation: "Ainda bem que o build passou." },
           ],
         },
         {
@@ -892,6 +907,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "exist", past: "existed", participle: "existed", irregular: false },
         },
         {
+          term: "expect",
+          translation: "esperar, prever",
+          example: "We'd never expect that.",
+          exampleTranslation: "Nunca esperaríamos isso.",
+          conjugation: { base: "expect", past: "expected", participle: "expected", irregular: false },
+          more: [
+            { label: "Diferença", text: "expect é esperar no sentido de prever ou contar com algo; esperar aguardando é wait.", example: "I'm waiting for the bus, and I expect it to be late.", exampleTranslation: "Tô esperando o ônibus, e imagino que ele vai atrasar." },
+          ],
+        },
+        {
           term: "expire",
           translation: "expirar, vencer",
           example: "The token expires in one hour.",
@@ -1187,6 +1212,17 @@ export const inglesVerbos: TopicData = {
             { label: "Substantivo", text: "a guess = um palpite.", example: "I don't know the answer, so I'll take a guess.", exampleTranslation: "Não sei a resposta, então vou dar um palpite." },
             { label: "Expressão", text: "I guess so. = Acho que sim.", example: "\"Is it going to rain?\" \"I guess so.\"", exampleTranslation: "\"Vai chover?\" \"Acho que sim.\"" },
             { label: "Exemplo", example: "I guess it’s caused some issues.", exampleTranslation: "Acho que isso causou alguns problemas." },
+          ],
+        },
+        {
+          term: "guide",
+          translation: "guiar / guia",
+          example: "Getting Started guides.",
+          exampleTranslation: "Guias de primeiros passos.",
+          conjugation: { base: "guide", past: "guided", participle: "guided", irregular: false },
+          more: [
+            { label: "Verbo", text: "guide = guiar.", example: "The tutorial guides you step by step.", exampleTranslation: "O tutorial te guia passo a passo." },
+            { label: "Substantivo", text: "guide = guia (a pessoa).", example: "Our guide showed us the old town.", exampleTranslation: "Nosso guia mostrou a cidade velha pra gente." },
           ],
         },
         {
@@ -1751,6 +1787,16 @@ export const inglesVerbos: TopicData = {
           example: "They offered me a job.",
           exampleTranslation: "Eles me ofereceram um emprego.",
           conjugation: { base: "offer", past: "offered", participle: "offered", irregular: false },
+        },
+        {
+          term: "outline",
+          translation: "descrever em linhas gerais / esboço",
+          example: "Documents outline the API specifications.",
+          exampleTranslation: "Documentos descrevem as especificações da API.",
+          conjugation: { base: "outline", past: "outlined", participle: "outlined", irregular: false },
+          more: [
+            { label: "Substantivo", text: "outline = esboço, contorno.", example: "Write an outline first.", exampleTranslation: "Escreve um esboço primeiro." },
+          ],
         },
         {
           term: "pardon",
@@ -2433,6 +2479,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "supplement",
+          translation: "complementar / suplemento",
+          example: "You can supplement the docs with a sandbox.",
+          exampleTranslation: "Você pode complementar a documentação com um sandbox.",
+          conjugation: { base: "supplement", past: "supplemented", participle: "supplemented", irregular: false },
+          more: [
+            { label: "Substantivo", text: "supplement = suplemento.", example: "She takes a vitamin supplement.", exampleTranslation: "Ela toma um suplemento de vitamina." },
+            { label: "Diferença", text: "supplement acrescenta algo; complement combina, completa o que já tem." },
+          ],
+        },
+        {
           term: "suppose",
           translation: "supor, imaginar",
           example: "I suppose you're right.",
@@ -2616,6 +2673,7 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "try", past: "tried", participle: "tried", irregular: false },
           more: [
             { label: "Phrasal verb", text: "try on = experimentar (roupa).", example: "Can I try on this shirt?", exampleTranslation: "Posso experimentar essa camisa?" },
+            { label: "Phrasal verb", text: "try out = experimentar, testar pra ver se funciona.", example: "Developers can try out the API.", exampleTranslation: "Os devs podem experimentar a API." },
             { label: "Expressão", text: "give it a try = tentar, dar uma chance.", example: "I've never surfed, but I'll give it a try.", exampleTranslation: "Nunca surfei, mas vou tentar." },
           ],
         },
