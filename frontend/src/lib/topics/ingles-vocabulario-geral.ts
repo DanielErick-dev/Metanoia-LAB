@@ -110,6 +110,7 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Outro sentido", text: "cerca de, mais ou menos.", example: "I sleep about 7 hours.", exampleTranslation: "Eu durmo cerca de 7 horas." },
             { label: "Expressão", text: "be about to = estar prestes a.", example: "I'm about to leave.", exampleTranslation: "Tô prestes a sair." },
             { label: "Expressão", text: "what's all this about…? = que história é essa de…?", example: "What's all this about a new feature?", exampleTranslation: "Que história é essa de uma feature nova?" },
+            { label: "Expressão", text: "what it's about = sobre o que é, do que se trata.", example: "I don't know what it's about.", exampleTranslation: "Eu não sei do que se trata." },
           ],
         },
         {
@@ -447,12 +448,6 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "as of this writing = até o momento em que escrevo.", example: "As of this writing, the API has no limits.", exampleTranslation: "Até o momento em que escrevo, a API não tem limites." },
           ],
-        },
-        {
-          term: "as such",
-          translation: "sendo assim, portanto",
-          example: "He is the manager, and as such, he makes the final decisions.",
-          exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais.",
         },
         {
           term: "astray",
@@ -875,26 +870,6 @@ export const inglesVocabularioGeral: TopicData = {
           conjugation: { base: "buzz", past: "buzzed", participle: "buzzed", irregular: false },
           more: [
             { label: "Adjetivo", text: "buzzing = agitado, animado.", example: "The school is buzzing with news.", exampleTranslation: "A escola está agitada com as notícias." },
-          ],
-        },
-        {
-          term: "by far",
-          translation: "de longe, com folga",
-          example: "She’s by far the best.",
-          exampleTranslation: "Ela é de longe a melhor.",
-          more: [
-            { label: "Expressão", text: "by far the biggest = de longe o maior.", example: "This is by far the biggest city I've visited.", exampleTranslation: "Essa é de longe a maior cidade que eu já visitei." },
-            { label: "Uso", text: "Quase sempre acompanha um superlativo: the best, the biggest, the worst." },
-          ],
-        },
-        {
-          term: "by means of",
-          translation: "por meio de, através de",
-          example: "You can log in by means of a token.",
-          exampleTranslation: "Você pode entrar por meio de um token.",
-          more: [
-            { label: "Exemplo", example: "He escaped by means of a rope.", exampleTranslation: "Ele escapou por meio de uma corda." },
-            { label: "Uso", text: "Formal. Aparece bastante em livro técnico; no dia a dia, usa-se by + -ing ou through." },
           ],
         },
         {
@@ -1484,13 +1459,14 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Cada aluno recebeu um livro.",
         },
         {
-          term: "early on",
-          translation: "logo no início, nos primeiros tempos",
-          example: "Early on, we used Basic Authentication.",
-          exampleTranslation: "No início, nós usávamos Basic Authentication.",
+          term: "early",
+          translation: "cedo; no início",
+          example: "I woke up early today.",
+          exampleTranslation: "Acordei cedo hoje.",
           more: [
-            { label: "Parecido", text: "at first e in the beginning." },
-            { label: "Oposto", text: "later on." },
+            { label: "Expressão", text: "early on = logo no início, nos primeiros tempos.", example: "Early on, we used Basic Authentication.", exampleTranslation: "No início, nós usávamos Basic Authentication." },
+            { label: "Parecido", text: "early on ≈ at first, in the beginning." },
+            { label: "Oposto", text: "early on × later on; early × late." },
           ],
         },
         {
@@ -1721,6 +1697,8 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "so far = até agora.", example: "Hey, how's your day going so far?", exampleTranslation: "Ei, como tá sendo seu dia até agora?" },
             { label: "Expressão", text: "as far as I know = pelo que eu sei.", example: "As far as I know, the meeting is at three.", exampleTranslation: "Pelo que eu sei, a reunião é às três." },
             { label: "Forma", text: "Comparativo: farther/further." },
+            { label: "Expressão", text: "by far = de longe, com folga.", example: "She’s by far the best.", exampleTranslation: "Ela é de longe a melhor." },
+            { label: "Uso", text: "by far quase sempre acompanha um superlativo: the best, the biggest, the worst.", example: "This is by far the biggest city I've visited.", exampleTranslation: "Essa é de longe a maior cidade que eu já visitei." },
           ],
         },
         {
@@ -2895,6 +2873,8 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "by all means = com certeza, fique à vontade.", example: "Can I borrow your pen? By all means.", exampleTranslation: "Posso pegar sua caneta emprestada? Fica à vontade." },
             { label: "Expressão", text: "a means to an end = um meio para um fim.", example: "For him, the job is just a means to an end.", exampleTranslation: "Pra ele, o emprego é só um meio para um fim." },
             { label: "Verbo", text: "means também é o verbo mean (significa).", example: "What does this mean?", exampleTranslation: "O que isso significa?" },
+            { label: "Expressão", text: "by means of = por meio de, através de.", example: "You can log in by means of a token.", exampleTranslation: "Você pode entrar por meio de um token." },
+            { label: "Uso", text: "by means of é formal. Aparece bastante em livro técnico; no dia a dia, usa-se by + -ing ou through.", example: "He escaped by means of a rope.", exampleTranslation: "Ele escapou por meio de uma corda." },
           ],
         },
         {
@@ -3326,15 +3306,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Uso", text: "Aparece em muitos phrasal verbs: check out, find out, figure out, run out, pass out, watch out." },
             { label: "Expressão", text: "out of = sem (run out of milk); fora de.", example: "We ran out of milk again.", exampleTranslation: "Acabou o leite de novo." },
-          ],
-        },
-        {
-          term: "out with it",
-          translation: "desembucha, fala logo",
-          example: "Something’s wrong. Out with it!",
-          exampleTranslation: "Tem algo errado. Desembucha!",
-          more: [
-            { label: "Exemplo", example: "Come on, out with it, what happened?", exampleTranslation: "Vamos, desembucha, o que aconteceu?" },
+            { label: "Expressão", text: "out with it = desembucha, fala logo.", example: "Something’s wrong. Out with it!", exampleTranslation: "Tem algo errado. Desembucha!" },
           ],
         },
         {
@@ -4635,6 +4607,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "such as = tal como, como. Aparece pra listar exemplos.", example: "I like fruit such as apples and bananas.", exampleTranslation: "Eu gosto de frutas como maçã e banana." },
             { label: "Expressão", text: "such a good idea = uma ideia tão boa.", example: "That's such a good idea!", exampleTranslation: "Que ideia boa!" },
+            { label: "Expressão", text: "as such = sendo assim, portanto.", example: "He is the manager, and as such, he makes the final decisions.", exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais." },
           ],
         },
         {
@@ -5101,12 +5074,6 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
-          term: "two-way",
-          translation: "mão dupla",
-          example: "Is this a two-way street?",
-          exampleTranslation: "Essa rua é mão dupla?",
-        },
-        {
           term: "umbrella",
           translation: "guarda-chuva",
           example: "Bugger! I forgot my umbrella.",
@@ -5335,6 +5302,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "No way! = Não acredito! / De jeito nenhum!", example: "No way! You got the job?", exampleTranslation: "Não acredito! Você conseguiu o emprego?" },
             { label: "Outro sentido", text: "jeito, forma.", example: "Refresh tokens are a standard way of renewing expired access tokens.", exampleTranslation: "Refresh tokens são a forma padrão de renovar access tokens expirados." },
+            { label: "Adjetivo", text: "two-way = mão dupla.", example: "Is this a two-way street?", exampleTranslation: "Essa rua é mão dupla?" },
           ],
         },
         {
@@ -5387,12 +5355,6 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Diferença", text: "too e as well ficam no fim; also costuma ir antes do verbo." },
             { label: "Substantivo", text: "well = poço.", example: "They dug a well behind the house.", exampleTranslation: "Eles cavaram um poço atrás da casa." },
           ],
-        },
-        {
-          term: "what it's about",
-          translation: "sobre o que é? do que se trata?",
-          example: "I don't know what it's about.",
-          exampleTranslation: "Eu não sei do que se trata.",
         },
         {
           term: "whatever",
