@@ -136,6 +136,8 @@ export const inglesExpressoesGirias: TopicData = {
         {
           phrase: "I'm about to leave",
           translation: "estou prestes a sair, estou de saída",
+          example: "Can we talk later? I'm about to leave.",
+          exampleTranslation: "Dá pra gente conversar depois? Tô de saída.",
         },
         {
           phrase: "in a little while",
@@ -355,14 +357,20 @@ export const inglesExpressoesGirias: TopicData = {
           phrase: "I'm drinking water from this glass",
           translation: "eu estou bebendo água desse copo",
           explanation: "Glass é copo de vidro; se for copo de plástico, usamos cup.",
+          example: "Don't worry, I'm drinking water from this glass.",
+          exampleTranslation: "Relaxa, tô bebendo água desse copo.",
         },
         {
           phrase: "I'm holding a pen",
           translation: "eu estou segurando uma caneta",
+          example: "Wait a second, I'm holding a pen and a cup.",
+          exampleTranslation: "Espera um segundo, tô segurando uma caneta e um copo.",
         },
         {
           phrase: "I'm writing in my notebook",
           translation: "eu estou escrevendo no meu caderno",
+          example: "I'm writing in my notebook so I don't forget.",
+          exampleTranslation: "Tô escrevendo no meu caderno pra não esquecer.",
         },
       ],
     },
