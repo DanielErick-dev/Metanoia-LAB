@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CategoryData } from "@/lib/types/category";
 import { getCategoryBySlug, getCategoryChain, getCategoryPath } from "@/lib/categories";
 import { DictionaryEntry, dictionary, searchDictionary } from "@/lib/dictionary";
+import { normalize } from "@/lib/text-match";
 import { Breadcrumb } from "./Breadcrumb";
 import { SpeakButton } from "./SpeakButton";
 import { VocabDetails } from "./VocabDetails";
@@ -71,6 +72,7 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
 
   function renderEntry(entry: DictionaryEntry) {
     const expanded = autoOpen || open.has(entry.id);
+    const innerQuery = searching && !normalize(entry.term).includes(normalize(search)) ? search : "";
     return (
       <li key={entry.id} id={entry.id} className="border-b border-stone-800/80 scroll-mt-24">
         <div className="flex items-baseline gap-3 py-4">
@@ -140,7 +142,14 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
 
                 {(sense.conjugation || sense.items.length > 0) && (
                   <div className="mb-4">
-                    <VocabDetails conjugation={sense.conjugation} items={sense.items} accent={accent} />
+                    <VocabDetails
+                      key={innerQuery}
+                      conjugation={sense.conjugation}
+                      items={sense.items}
+                      accent={accent}
+                      filterable
+                      query={innerQuery}
+                    />
                   </div>
                 )}
 

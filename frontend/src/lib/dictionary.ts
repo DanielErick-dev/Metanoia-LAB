@@ -1,7 +1,9 @@
 import { topics, getTopicPath } from "./topics";
 import { LineupEntry, VocabConjugation, VocabMore } from "./types/topic";
+import { normalize, wordStarts } from "./text-match";
 
 export const DICTIONARY_CATEGORY = "vocabulario";
+const CORE_TOPICS = new Set(["verbos", "geral"]);
 
 export interface DictionarySense {
   meaning: string;
@@ -24,14 +26,6 @@ export interface DictionaryEntry {
   senses: DictionarySense[];
 }
 
-function normalize(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
-}
-
 function termKey(text: string): string {
   return normalize(text).replace(/[’]/g, "'").replace(/[?!.]+$/, "");
 }
@@ -52,9 +46,12 @@ function example(en?: string, pt?: string): VocabMore[] {
 
 function buildDictionary(): DictionaryEntry[] {
   const byTerm = new Map<string, DictionaryEntry>();
+  const coreKeys = new Set<string>();
+  let core = false;
 
   function add(term: string, sense: DictionarySense) {
     const key = termKey(term);
+    if (core) coreKeys.add(key);
     const existing = byTerm.get(key);
     if (existing) {
       existing.senses.push(sense);
@@ -72,6 +69,7 @@ function buildDictionary(): DictionaryEntry[] {
 
   for (const topic of topics.filter((t) => t.categorySlug === DICTIONARY_CATEGORY)) {
     const source = { title: topic.title, href: `/${getTopicPath(topic)}`, accent: topic.accent };
+    core = CORE_TOPICS.has(topic.slug);
     for (const section of topic.sections) {
       for (const entry of section.vocabList ?? []) {
         add(entry.term, {
@@ -103,7 +101,20 @@ function buildDictionary(): DictionaryEntry[] {
     }
   }
 
-  const entries = [...byTerm.values()].filter((entry) => !isCoveredByHost(entry, byTerm));
+  const conjugated = new Set(
+    [...byTerm.values()].flatMap((e) =>
+      e.senses.flatMap((s) =>
+        [s.conjugation?.past, s.conjugation?.participle].flatMap((form) =>
+          (form ?? "").split("/").map((f) => termKey(f.replace(/\(.*?\)/g, "")))
+        )
+      )
+    )
+  );
+  const entries = [...byTerm.values()].filter(
+    (entry) =>
+      !isCoveredByHost(entry, byTerm) &&
+      !(conjugated.has(termKey(entry.term)) && !coreKeys.has(termKey(entry.term)))
+  );
   const usedIds = new Set<string>();
   for (const entry of entries) {
     let id = entry.id;
@@ -154,14 +165,4 @@ export function searchDictionary(entries: DictionaryEntry[], query: string): Dic
     (e) => !found.has(e) && e.senses.some((s) => s.items.some((i) => i.text && wordStarts(i.text, q)))
   );
   return [...startsWith, ...inTerm, ...inForms, ...inMeaning, ...inItems];
-}
-
-function wordStarts(text: string, q: string): boolean {
-  const t = normalize(text);
-  let i = t.indexOf(q);
-  while (i !== -1) {
-    if (i === 0 || !/[a-z]/.test(t[i - 1])) return true;
-    i = t.indexOf(q, i + 1);
-  }
-  return false;
 }
