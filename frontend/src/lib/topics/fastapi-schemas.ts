@@ -2,7 +2,7 @@ import { TopicData } from "@/lib/types/topic";
 
 export const fastapiSchemas: TopicData = {
   slug: "schemas-fastapi",
-  title: "Capítulo 5 — Schemas",
+  title: "Capítulo 6 — Schemas",
   subtitle: "Em breve",
   categorySlug: "fastapi",
   accent: "#009688",

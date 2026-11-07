@@ -2,7 +2,7 @@ import { TopicData } from "@/lib/types/topic";
 
 export const fastapiProgramacaoAssincrona: TopicData = {
   slug: "programacao-assincrona",
-  title: "Capítulo 10 — Programação Assíncrona",
+  title: "Capítulo 11 — Programação Assíncrona",
   subtitle: "Em breve",
   categorySlug: "fastapi",
   accent: "#009688",

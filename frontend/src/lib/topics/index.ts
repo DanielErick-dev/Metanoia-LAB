@@ -42,6 +42,7 @@ import { designingWebApisCap4 } from "./designing-web-apis-boas-praticas";
 import { fastapiIntroducao } from "./fastapi-introducao";
 import { fastapiInstalacao } from "./fastapi-instalacao";
 import { fastapiTypeHintsPydantic } from "./fastapi-type-hints-pydantic";
+import { fastapiBasico } from "./fastapi-basico";
 import { fastapiUrlsRouters } from "./fastapi-urls-routers";
 import { fastapiSchemas } from "./fastapi-schemas";
 import { fastapiCrudBasico } from "./fastapi-crud-basico";
@@ -90,6 +91,7 @@ export const topics: TopicData[] = [
   fastapiIntroducao,
   fastapiInstalacao,
   fastapiTypeHintsPydantic,
+  fastapiBasico,
   fastapiUrlsRouters,
   fastapiSchemas,
   fastapiCrudBasico,

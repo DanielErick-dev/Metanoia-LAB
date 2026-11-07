@@ -2,7 +2,7 @@ import { TopicData } from "@/lib/types/topic";
 
 export const fastapiModelsOrm: TopicData = {
   slug: "models-orm-banco-de-dados",
-  title: "Capítulo 7 — Models, ORM e Banco de Dados",
+  title: "Capítulo 8 — Models, ORM e Banco de Dados",
   subtitle: "Em breve",
   categorySlug: "fastapi",
   accent: "#009688",

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { TopicSection, VocabEntry, ExpressionEntry } from "@/lib/types/topic";
+import Image from "next/image";
 import { CodeBlock } from "./CodeBlock";
 import { SpeakButton } from "./SpeakButton";
 import { Lineup } from "./Lineup";
@@ -282,6 +283,16 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
             )}
 
             {section.code && <CodeBlock code={section.code} language={section.language} />}
+
+            {section.image && (
+              <Image
+                src={section.image.src}
+                alt={section.image.alt}
+                width={section.image.width}
+                height={section.image.height}
+                className="mt-6 rounded-lg border border-stone-800 max-w-full h-auto"
+              />
+            )}
 
             {section.links && section.links.length > 0 && (
               <ul className="mt-6 space-y-2">

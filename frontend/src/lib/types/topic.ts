@@ -93,11 +93,19 @@ export interface TopicTable {
   monoRows?: number[];
 }
 
+export interface TopicImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface TopicSection {
   heading: string;
   body: string;
   code?: string;
   language?: string;
+  image?: TopicImage;
   examples?: TopicExample[];
   links?: TopicLink[];
   citation?: TopicCitation;

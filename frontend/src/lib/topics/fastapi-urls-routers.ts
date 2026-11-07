@@ -2,7 +2,7 @@ import { TopicData } from "@/lib/types/topic";
 
 export const fastapiUrlsRouters: TopicData = {
   slug: "urls-e-routers",
-  title: "Capítulo 4 — URLs e Routers",
+  title: "Capítulo 5 — URLs e Routers",
   subtitle: "Em breve",
   categorySlug: "fastapi",
   accent: "#009688",
