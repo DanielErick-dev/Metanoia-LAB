@@ -182,6 +182,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "bake",
+          translation: "assar no forno (pães, bolos, massas)",
+          example: "Bake the cake for 40 minutes.",
+          exampleTranslation: "Asse o bolo por 40 minutos.",
+          conjugation: { base: "bake", past: "baked", participle: "baked", irregular: false },
+          more: [
+            { label: "Uso", text: "calor seco e constante, geralmente em coisas que crescem ou firmam." },
+            { label: "Expressão", text: "baking soda = bicarbonato.", example: "Add a teaspoon of baking soda.", exampleTranslation: "Adicione uma colher de chá de bicarbonato." },
+          ],
+        },
+        {
           term: "bang",
           translation: "bater com força, fazer barulho / estrondo",
           example: "Someone banged on the door.",
@@ -391,6 +402,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "carve",
+          translation: "trinchar, esculpir",
+          example: "Carve the chicken before serving.",
+          exampleTranslation: "Trinche o frango antes de servir.",
+          conjugation: { base: "carve", past: "carved", participle: "carved", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "esculpir.", example: "He carved a small figure out of wood.", exampleTranslation: "Ele esculpiu uma pequena figura em madeira." },
+          ],
+        },
+        {
           term: "catch",
           translation: "pegar, apanhar; alcançar",
           example: "Catch the ball!",
@@ -585,6 +606,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "convert", past: "converted", participle: "converted", irregular: false },
         },
         {
+          term: "cook",
+          translation: "cozinhar",
+          example: "I cook dinner every night.",
+          exampleTranslation: "Eu cozinho o jantar toda noite.",
+          conjugation: { base: "cook", past: "cooked", participle: "cooked", irregular: false },
+          more: [
+            { label: "Substantivo", text: "cook = cozinheiro, quem cozinha.", example: "My mother is a great cook.", exampleTranslation: "Minha mãe é uma ótima cozinheira." },
+          ],
+        },
+        {
           term: "copy",
           translation: "copiar / cópia",
           example: "A phishing site copies a real login page.",
@@ -645,6 +676,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Expressão", text: "scope creep = o escopo do projeto crescendo sem controle.", example: "Watch out for scope creep in this project.", exampleTranslation: "Cuidado com o escopo crescendo sem controle nesse projeto." },
             { label: "Expressão", text: "payload creep = o payload que vai inchando.", example: "Payload creep made our responses huge.", exampleTranslation: "O payload foi inchando e deixou nossas respostas enormes." },
+          ],
+        },
+        {
+          term: "cut",
+          translation: "cortar",
+          example: "Cut the bread in half.",
+          exampleTranslation: "Corte o pão ao meio.",
+          conjugation: { base: "cut", past: "cut", participle: "cut", irregular: true },
+          more: [
+            { label: "Uso", text: "é o verbo genérico; chop, dice e slice são jeitos específicos de cortar." },
           ],
         },
         {
@@ -723,6 +764,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Substantivo", text: "design = projeto, desenho.", example: "This is a common design pattern in software.", exampleTranslation: "Esse é um padrão de projeto comum em software." },
             { label: "Expressão", text: "be designed to = ser feito para.", example: "This tool is designed to save you time.", exampleTranslation: "Essa ferramenta é feita pra te poupar tempo." },
+          ],
+        },
+        {
+          term: "dice",
+          translation: "cortar em cubinhos",
+          example: "Dice the tomatoes.",
+          exampleTranslation: "Corte os tomates em cubinhos.",
+          conjugation: { base: "dice", past: "diced", participle: "diced", irregular: false },
+          more: [
+            { label: "Substantivo", text: "dice = dados (por isso o “cubinho”).", example: "Roll the dice.", exampleTranslation: "Jogue os dados." },
           ],
         },
         {
@@ -1156,6 +1207,17 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "forgive", past: "forgave", participle: "forgiven", irregular: true },
           more: [
             { label: "Uso", text: "No reflexivo não repete o pronome: forgive yourself (não 'forgive you yourself'), porque o reflexivo já contém o 'você'." },
+          ],
+        },
+        {
+          term: "fry",
+          translation: "fritar",
+          example: "Fry the onions until golden.",
+          exampleTranslation: "Frite as cebolas até dourar.",
+          conjugation: { base: "fry", past: "fried", participle: "fried", irregular: false },
+          more: [
+            { label: "Expressão", text: "deep fry = fritar por imersão.", example: "Deep fry the chicken in hot oil.", exampleTranslation: "Frite o frango por imersão em óleo quente." },
+            { label: "Expressão", text: "pan-fry = fritar na frigideira.", example: "Pan-fry the fish for five minutes.", exampleTranslation: "Frite o peixe na frigideira por cinco minutos." },
           ],
         },
         {
@@ -1974,6 +2036,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "preheat",
+          translation: "preaquecer",
+          example: "Preheat the oven before baking the cake.",
+          exampleTranslation: "Preaqueça o forno antes de assar o bolo.",
+          conjugation: { base: "preheat", past: "preheated", participle: "preheated", irregular: false },
+        },
+        {
           term: "prevail",
           translation: "prevalecer, vencer",
           example: "Justice prevails.",
@@ -2220,6 +2289,20 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "roast",
+          translation: "assar (carnes e legumes); torrar",
+          example: "Roast the chicken at 200 degrees.",
+          exampleTranslation: "Asse o frango a 200 graus.",
+          conjugation: { base: "roast", past: "roasted", participle: "roasted", irregular: false },
+          more: [
+            { label: "Uso", text: "calor forte e dourado." },
+            { label: "Adjetivo", text: "roasted = assado.", example: "I love roasted potatoes.", exampleTranslation: "Adoro batatas assadas." },
+            { label: "Expressão", text: "roast beef = rosbife.", example: "We had roast beef for lunch.", exampleTranslation: "Comemos rosbife no almoço." },
+            { label: "Expressão", text: "roast chicken = frango assado.", example: "Sunday is roast chicken day.", exampleTranslation: "Domingo é dia de frango assado." },
+            { label: "Outro sentido", text: "torrar (café, castanhas).", example: "I love the smell of roasted coffee.", exampleTranslation: "Adoro o cheiro de café torrado." },
+          ],
+        },
+        {
           term: "rouse",
           translation: "despertar, agitar",
           example: "The noise roused me from a deep sleep.",
@@ -2354,6 +2437,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "serve",
+          translation: "servir",
+          example: "Serve the pasta hot.",
+          exampleTranslation: "Sirva a massa quente.",
+          conjugation: { base: "serve", past: "served", participle: "served", irregular: false },
+        },
+        {
           term: "set",
           translation: "pôr, definir, configurar",
           example: "Set the alarm for 7.",
@@ -2446,6 +2536,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "simmer",
+          translation: "cozinhar em fogo brando (sem ferver forte)",
+          example: "Let the sauce simmer for 20 minutes.",
+          exampleTranslation: "Deixe o molho cozinhar em fogo baixo por 20 minutos.",
+          conjugation: { base: "simmer", past: "simmered", participle: "simmered", irregular: false },
+          more: [
+            { label: "Uso", text: "só aparecem borbulhas pequenas na superfície." },
+          ],
+        },
+        {
           term: "sit",
           translation: "sentar",
           example: "Sit down, dinner is ready.",
@@ -2464,6 +2564,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Passado simples", example: "I'm exhausted, I barely slept last night.", exampleTranslation: "Tô exausto, mal dormi ontem à noite." },
             { label: "Adjetivo", text: "sleepy = com sono.", example: "I'm too sleepy to drive.", exampleTranslation: "Tô com sono demais pra dirigir." },
+          ],
+        },
+        {
+          term: "slice",
+          translation: "fatiar / fatia",
+          example: "Slice the cheese thinly.",
+          exampleTranslation: "Fatie o queijo fino.",
+          conjugation: { base: "slice", past: "sliced", participle: "sliced", irregular: false },
+          more: [
+            { label: "Substantivo", text: "a slice of cake = uma fatia de bolo.", example: "Can I have a slice of cake?", exampleTranslation: "Posso comer uma fatia de bolo?" },
           ],
         },
         {
@@ -2573,6 +2683,17 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "get stuck = ficar preso, empacar.", example: "I got stuck on the last question.", exampleTranslation: "Empaquei na última pergunta." },
             { label: "Expressão", text: "be stuck with = ficar preso com, ter que aguentar.", example: "I’m stuck with this old laptop.", exampleTranslation: "Tô preso com esse notebook velho." },
             { label: "Substantivo", text: "stick = graveto, vara.", example: "The dog brought back the stick.", exampleTranslation: "O cachorro trouxe o graveto de volta." },
+          ],
+        },
+        {
+          term: "stir",
+          translation: "mexer, mexer em círculos",
+          example: "Stir the soup so it doesn't burn.",
+          exampleTranslation: "Mexa a sopa pra não queimar.",
+          conjugation: { base: "stir", past: "stirred", participle: "stirred", irregular: false },
+          more: [
+            { label: "Exemplo", example: "Stir it every now and then.", exampleTranslation: "Mexa de vez em quando." },
+            { label: "Expressão", text: "stir-fry = fritar mexendo.", example: "Stir-fry the vegetables for three minutes.", exampleTranslation: "Frite os legumes mexendo por três minutos." },
           ],
         },
         {

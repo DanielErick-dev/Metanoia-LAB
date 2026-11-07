@@ -413,6 +413,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "armchair",
+          translation: "poltrona",
+          example: "She fell asleep in the armchair.",
+          exampleTranslation: "Ela dormiu na poltrona.",
+        },
+        {
           term: "army",
           translation: "exército",
           example: "The army marched to the castle.",
@@ -563,6 +569,18 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "baker",
+          translation: "padeiro",
+          example: "The baker opens the shop at six.",
+          exampleTranslation: "O padeiro abre a loja às seis.",
+        },
+        {
+          term: "bakery",
+          translation: "padaria",
+          example: "I bought bread at the bakery.",
+          exampleTranslation: "Comprei pão na padaria.",
+        },
+        {
           term: "balmy",
           translation: "ameno, agradável (clima)",
           example: "It was a balmy summer evening.",
@@ -608,6 +626,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Observação", text: "Gíria britânica." },
             { label: "Exemplo", example: "You barmy ginger!", exampleTranslation: "Seu ruivo maluco!" },
           ],
+        },
+        {
+          term: "batter",
+          translation: "massa líquida (de bolo)",
+          example: "Pour the batter into the cake pan.",
+          exampleTranslation: "Despeje a massa na forma de bolo.",
         },
         {
           term: "battery",
@@ -756,6 +780,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "board",
+          translation: "tábua; quadro",
+          example: "Write your answer on the board.",
+          exampleTranslation: "Escreva sua resposta no quadro.",
+          more: [
+            { label: "Expressão", text: "cutting board = tábua de cortar.", example: "Chop the onion on the cutting board.", exampleTranslation: "Pique a cebola na tábua de cortar." },
+          ],
+        },
+        {
           term: "bold",
           translation: "ousado / corajoso / atrevido",
           example: "That was a bold decision.",
@@ -791,6 +824,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Uso", text: "Também pode vir depois do sujeito, como no português “nós dois”.", example: "We both agree.", exampleTranslation: "Nós dois concordamos." },
             { label: "Diferença", text: "both = os dois, either = um dos dois, neither = nenhum dos dois." },
           ],
+        },
+        {
+          term: "bowl",
+          translation: "tigela, prato fundo",
+          example: "I ate a bowl of soup.",
+          exampleTranslation: "Tomei uma tigela de sopa.",
         },
         {
           term: "bravado",
@@ -887,6 +926,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "a bunch of = um monte de, um bando de.", example: "I have a bunch of emails to answer.", exampleTranslation: "Tenho um monte de e-mails pra responder." },
             { label: "Outro sentido", text: "cacho, buquê (a bunch of bananas).", example: "She bought a bunch of bananas.", exampleTranslation: "Ela comprou um cacho de bananas." },
           ],
+        },
+        {
+          term: "burner",
+          translation: "boca do fogão",
+          example: "Put the pot on the front burner.",
+          exampleTranslation: "Coloque a panela na boca da frente.",
         },
         {
           term: "bus",
@@ -1024,6 +1069,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "chair",
+          translation: "cadeira",
+          example: "Pull up a chair.",
+          exampleTranslation: "Puxe uma cadeira.",
+          more: [
+            { label: "Expressão", text: "high chair = cadeirinha de bebê.", example: "Put the baby in the high chair.", exampleTranslation: "Coloque o bebê na cadeirinha." },
+          ],
+        },
+        {
           term: "chaos",
           translation: "caos",
           example: "The room was total chaos.",
@@ -1087,6 +1141,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "cleaver",
+          translation: "cutelo",
+          example: "The butcher used a cleaver to cut the bone.",
+          exampleTranslation: "O açougueiro usou um cutelo pra cortar o osso.",
+        },
+        {
           term: "clickjacking",
           translation: "sequestro de clique",
           example: "Clickjacking tricks you into clicking something hidden.",
@@ -1095,6 +1155,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Formação", text: "click + hijack (sequestrar)." },
             { label: "Em tecnologia", text: "A proteção é o header X-Frame-Options, que proíbe a página de ser carregada dentro de iframes.", example: "Set the X-Frame-Options header to prevent clickjacking.", exampleTranslation: "Configura o header X-Frame-Options pra evitar clickjacking." },
           ],
+        },
+        {
+          term: "cloth",
+          translation: "pano",
+          example: "Clean the table with a damp cloth.",
+          exampleTranslation: "Limpe a mesa com um pano úmido.",
         },
         {
           term: "code",
@@ -1110,6 +1176,10 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "café",
           example: "Let's grab a coffee and catch up.",
           exampleTranslation: "Vamos tomar um café e colocar o papo em dia.",
+          more: [
+            { label: "Expressão", text: "coffee maker = cafeteira (elétrica).", example: "The coffee maker is on the counter.", exampleTranslation: "A cafeteira está na bancada." },
+            { label: "Expressão", text: "coffee pot = jarra de café.", example: "The coffee pot is empty.", exampleTranslation: "A jarra de café está vazia." },
+          ],
         },
         {
           term: "cold",
@@ -1175,12 +1245,32 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "container",
+          translation: "pote (com tampa, de plástico)",
+          example: "Store the leftovers in a container.",
+          exampleTranslation: "Guarde as sobras num pote.",
+          more: [
+            { label: "Uso", text: "Tupperware é a marca, usada também como nome comum desse pote." },
+            { label: "Em tecnologia", text: "container = contêiner (Docker).", example: "Run the app in a Docker container.", exampleTranslation: "Rode a aplicação num contêiner Docker." },
+          ],
+        },
+        {
           term: "contract",
           translation: "contrato",
           example: "Sign the contract here.",
           exampleTranslation: "Assine o contrato aqui.",
           more: [
             { label: "Expressão", text: "breach of contract = quebra de contrato.", example: "They sued him for breach of contract.", exampleTranslation: "Eles processaram ele por quebra de contrato." },
+          ],
+        },
+        {
+          term: "cooker",
+          translation: "fogão (Reino Unido)",
+          example: "Turn off the cooker.",
+          exampleTranslation: "Desligue o fogão.",
+          more: [
+            { label: "Expressão", text: "pressure cooker = panela de pressão.", example: "Cook the beans in a pressure cooker.", exampleTranslation: "Cozinhe o feijão na panela de pressão." },
+            { label: "Parecido", text: "stove (EUA)." },
           ],
         },
         {
@@ -1451,6 +1541,15 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "descoberta",
           example: "The discovery changed everything.",
           exampleTranslation: "A descoberta mudou tudo.",
+        },
+        {
+          term: "dish",
+          translation: "prato (louça ou receita)",
+          example: "Pasta is my favorite dish.",
+          exampleTranslation: "Massa é meu prato favorito.",
+          more: [
+            { label: "Expressão", text: "wash the dishes = lavar a louça.", example: "I'll wash the dishes after dinner.", exampleTranslation: "Eu lavo a louça depois do jantar." },
+          ],
         },
         {
           term: "disrespectful",
@@ -1921,6 +2020,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Parecido", text: "for example." },
             { label: "Uso", text: "Costuma abrir a frase, seguido de vírgula." },
+          ],
+        },
+        {
+          term: "fork",
+          translation: "garfo",
+          example: "I need a fork for the salad.",
+          exampleTranslation: "Preciso de um garfo pra salada.",
+          more: [
+            { label: "Expressão", text: "carving fork = garfo trinchante (o “garfão”).", example: "Hold the meat with the carving fork.", exampleTranslation: "Segure a carne com o garfo trinchante." },
           ],
         },
         {
@@ -2692,6 +2800,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Coloca a jaqueta, tá frio.",
         },
         {
+          term: "jar",
+          translation: "pote de vidro (com tampa)",
+          example: "Put the jam in a jar.",
+          exampleTranslation: "Coloque a geleia num pote.",
+          more: [
+            { label: "Uso", text: "é o pote de vidro, tipo o de conserva e geleia." },
+          ],
+        },
+        {
           term: "job",
           translation: "trabalho, emprego",
           example: "No way! You got the job?",
@@ -2699,6 +2816,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Exemplo", example: "I’m tired of this crap job.", exampleTranslation: "Estou cansado desse trabalho de merda." },
             { label: "Expressão", text: "good job! = mandou bem!", example: "Good job! The tests are all passing.", exampleTranslation: "Mandou bem! Os testes tão passando todos." },
+          ],
+        },
+        {
+          term: "jug",
+          translation: "jarra (Reino Unido)",
+          example: "Fill the jug with water.",
+          exampleTranslation: "Encha a jarra com água.",
+          more: [
+            { label: "Parecido", text: "pitcher (EUA)." },
           ],
         },
         {
@@ -2718,6 +2844,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Outro sentido", text: "acabou de.", example: "I just arrived.", exampleTranslation: "Acabei de chegar." },
             { label: "Adjetivo", text: "just = justo.", example: "It was a just decision.", exampleTranslation: "Foi uma decisão justa." },
+          ],
+        },
+        {
+          term: "kettle",
+          translation: "chaleira",
+          example: "Put the kettle on.",
+          exampleTranslation: "Coloca a chaleira no fogo (ou liga a chaleira).",
+          more: [
+            { label: "Expressão", text: "electric kettle = chaleira elétrica.", example: "I boil water in the electric kettle.", exampleTranslation: "Eu fervo água na chaleira elétrica." },
+            { label: "Uso", text: "muito comum em casas britânicas, por causa do chá." },
           ],
         },
         {
@@ -2757,6 +2893,21 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "kitchen",
+          translation: "cozinha (o cômodo)",
+          example: "We had dinner in the kitchen.",
+          exampleTranslation: "Jantamos na cozinha.",
+        },
+        {
+          term: "knife",
+          translation: "faca",
+          example: "Be careful, this knife is sharp.",
+          exampleTranslation: "Cuidado, essa faca é afiada.",
+          more: [
+            { label: "Plural", text: "knives = facas (o f vira v, como wife → wives)." },
+          ],
+        },
+        {
           term: "label",
           translation: "rótulo, etiqueta / rotular",
           example: "Click the button labeled Submit.",
@@ -2765,6 +2916,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Variação", text: "labeled (EUA) e labelled (Reino Unido).", example: "Each box is labelled with a name.", exampleTranslation: "Cada caixa tá etiquetada com um nome." },
             { label: "Substantivo", text: "label = rótulo, etiqueta.", example: "Read the label before using it.", exampleTranslation: "Leia o rótulo antes de usar." },
+          ],
+        },
+        {
+          term: "ladle",
+          translation: "concha",
+          example: "Serve the soup with a ladle.",
+          exampleTranslation: "Sirva a sopa com uma concha.",
+          more: [
+            { label: "Exemplo", example: "Pass me the ladle, please.", exampleTranslation: "Me passa a concha, por favor." },
           ],
         },
         {
@@ -3114,6 +3274,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Esses métodos dependem dos desenvolvedores.",
           more: [
             { label: "Em tecnologia", text: "HTTP methods = GET, POST, PATCH, DELETE…", example: "Use the POST method to create a new user.", exampleTranslation: "Usa o método POST pra criar um usuário novo." },
+          ],
+        },
+        {
+          term: "microwave",
+          translation: "micro-ondas",
+          example: "Heat the soup in the microwave.",
+          exampleTranslation: "Esquente a sopa no micro-ondas.",
+          conjugation: { base: "microwave", past: "microwaveed", participle: "microwaveed", irregular: false },
+          more: [
+            { label: "Verbo", text: "microwave = esquentar no micro-ondas.", example: "Microwave the rice for two minutes.", exampleTranslation: "Esquente o arroz no micro-ondas por dois minutos." },
           ],
         },
         {
@@ -3569,6 +3739,12 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Quem é de fora muitas vezes enxerga o problema com mais clareza.",
         },
         {
+          term: "oven",
+          translation: "forno",
+          example: "Preheat the oven to 180 degrees.",
+          exampleTranslation: "Preaqueça o forno a 180 graus.",
+        },
+        {
           term: "over",
           translation: "sobre, por cima; acabado",
           example: "The game is over.",
@@ -3634,6 +3810,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ela ficou pálida.",
           more: [
             { label: "Outro sentido", text: "claro, em cores: pale blue = azul claro.", example: "She wore a pale blue dress.", exampleTranslation: "Ela usou um vestido azul claro." },
+          ],
+        },
+        {
+          term: "pan",
+          translation: "panela rasa, frigideira",
+          example: "Heat the pan before adding oil.",
+          exampleTranslation: "Esquente a panela antes de colocar óleo.",
+          more: [
+            { label: "Expressão", text: "frying pan = frigideira.", example: "Fry the eggs in a frying pan.", exampleTranslation: "Frite os ovos na frigideira." },
+            { label: "Expressão", text: "cake pan = forma de bolo.", example: "Pour the batter into the cake pan.", exampleTranslation: "Despeje a massa na forma de bolo." },
+            { label: "Expressão", text: "baking pan = forma de assar.", example: "Grease the baking pan with butter.", exampleTranslation: "Unte a forma com manteiga." },
           ],
         },
         {
@@ -3740,6 +3927,17 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "pitcher",
+          translation: "jarra (EUA)",
+          example: "Fill the pitcher with water.",
+          exampleTranslation: "Encha a jarra com água.",
+          more: [
+            { label: "Exemplo", example: "a pitcher of juice", exampleTranslation: "uma jarra de suco" },
+            { label: "Outro sentido", text: "arremessador (no beisebol).", example: "The pitcher threw the ball very fast.", exampleTranslation: "O arremessador jogou a bola muito rápido." },
+            { label: "Parecido", text: "jug (Reino Unido)." },
+          ],
+        },
+        {
           term: "plane",
           translation: "avião",
           example: "The plane will take off in ten minutes.",
@@ -3747,6 +3945,12 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Parecido", text: "airplane (EUA), aeroplane (Reino Unido)." },
           ],
+        },
+        {
+          term: "plate",
+          translation: "prato (raso)",
+          example: "Put the food on the plate.",
+          exampleTranslation: "Coloque a comida no prato.",
         },
         {
           term: "platform",
@@ -3813,6 +4017,15 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "Poor guy! = coitado!", example: "Poor guy, he lost his job yesterday.", exampleTranslation: "Coitado, ele perdeu o emprego ontem." },
             { label: "Oposto", text: "good (em qualidade)." },
             { label: "Expressão", text: "Poor thing! = coitadinho!", example: "Poor thing!", exampleTranslation: "Coitadinho!" },
+          ],
+        },
+        {
+          term: "pot",
+          translation: "panela funda (alta)",
+          example: "Put water in the pot.",
+          exampleTranslation: "Coloque água na panela.",
+          more: [
+            { label: "Expressão", text: "moka pot = cafeteira italiana.", example: "I make coffee in a moka pot.", exampleTranslation: "Eu faço café numa cafeteira italiana." },
           ],
         },
         {
@@ -4379,6 +4592,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "saucepan",
+          translation: "panela pequena com cabo",
+          example: "Melt the butter in a saucepan.",
+          exampleTranslation: "Derreta a manteiga numa panelinha.",
+        },
+        {
           term: "scar",
           translation: "cicatriz",
           example: "He has scars on his arm.",
@@ -4398,6 +4617,17 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "agenda",
           example: "I need to check my schedule.",
           exampleTranslation: "Preciso checar minha agenda.",
+        },
+        {
+          term: "scoop",
+          translation: "colher grande, concha; bola (de sorvete)",
+          example: "Add a scoop of ice cream.",
+          exampleTranslation: "Adicione uma bola de sorvete.",
+          conjugation: { base: "scoop", past: "scooped", participle: "scooped", irregular: false },
+          more: [
+            { label: "Verbo", text: "scoop = pegar com concha ou colher.", example: "Scoop the rice onto the plate.", exampleTranslation: "Pegue o arroz com a colher e coloque no prato." },
+            { label: "Phrasal verb", text: "scoop out = tirar com a colher.", example: "Scoop out the seeds.", exampleTranslation: "Tire as sementes com a colher." },
+          ],
         },
         {
           term: "scope",
@@ -4649,6 +4879,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "skillet",
+          translation: "frigideira (mais comum nos EUA)",
+          example: "Heat the skillet over medium heat.",
+          exampleTranslation: "Esquente a frigideira em fogo médio.",
+          more: [
+            { label: "Parecido", text: "frying pan." },
+          ],
+        },
+        {
           term: "sleuth",
           translation: "detetive / investigar",
           example: "The sleuth followed the clues.",
@@ -4659,6 +4898,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "play sleuth = bancar o detetive.", example: "She’s playing sleuth.", exampleTranslation: "Ela tá bancando a detetive." },
             { label: "Verbo", text: "sleuth = investigar.", example: "I sleuthed around and found the bug.", exampleTranslation: "Investiguei por aí e achei o bug." },
           ],
+        },
+        {
+          term: "slicer",
+          translation: "fatiador",
+          example: "Use a slicer to cut thin potato slices.",
+          exampleTranslation: "Use um fatiador pra cortar fatias finas de batata.",
         },
         {
           term: "slight",
@@ -4834,6 +5079,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "spoon",
+          translation: "colher",
+          example: "Pass me a spoon, please.",
+          exampleTranslation: "Me passa uma colher, por favor.",
+          more: [
+            { label: "Expressão", text: "wooden spoon = colher de madeira.", example: "Stir the sauce with a wooden spoon.", exampleTranslation: "Mexa o molho com uma colher de madeira." },
+          ],
+        },
+        {
           term: "spring",
           translation: "primavera",
           example: "Flowers bloom in spring.",
@@ -4911,6 +5165,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele ficava repetindo a mesma história sem parar.",
           more: [
             { label: "Outro sentido", text: "andar (de prédio), mais no americano.", example: "We live in a three-story house.", exampleTranslation: "A gente mora numa casa de três andares." },
+          ],
+        },
+        {
+          term: "stove",
+          translation: "fogão (EUA)",
+          example: "Turn off the stove.",
+          exampleTranslation: "Desligue o fogão.",
+          more: [
+            { label: "Outro sentido", text: "fogão a lenha, aquecedor.", example: "We lit the wood stove to warm the house.", exampleTranslation: "Acendemos o fogão a lenha pra esquentar a casa." },
+            { label: "Parecido", text: "cooker (Reino Unido)." },
           ],
         },
         {
@@ -5015,6 +5279,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "tablespoon",
+          translation: "colher de sopa",
+          example: "Add two tablespoons of sugar.",
+          exampleTranslation: "Adicione duas colheres de sopa de açúcar.",
+          more: [
+            { label: "Observação", text: "em receitas, tbsp = tablespoon." },
+          ],
+        },
+        {
           term: "tactical",
           translation: "tático",
           example: "tactical best practices",
@@ -5059,6 +5332,15 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "tarefa",
           example: "Make sure developers can do the task.",
           exampleTranslation: "Garanta que os desenvolvedores consigam fazer a tarefa.",
+        },
+        {
+          term: "teaspoon",
+          translation: "colher de chá",
+          example: "Add one teaspoon of salt.",
+          exampleTranslation: "Adicione uma colher de chá de sal.",
+          more: [
+            { label: "Observação", text: "em receitas, tsp = teaspoon." },
+          ],
         },
         {
           term: "temper",
@@ -5359,6 +5641,17 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Avance rumo a um design melhor.",
           more: [
             { label: "Variação", text: "towards (britânico), com o mesmo sentido.", example: "She walked towards the door.", exampleTranslation: "Ela andou em direção à porta." },
+          ],
+        },
+        {
+          term: "towel",
+          translation: "toalha",
+          example: "Dry your hands with a towel.",
+          exampleTranslation: "Seque as mãos com uma toalha.",
+          more: [
+            { label: "Expressão", text: "dish towel = pano de prato (EUA).", example: "Dry the plates with a dish towel.", exampleTranslation: "Seque os pratos com um pano de prato." },
+            { label: "Expressão", text: "tea towel = pano de prato (Reino Unido).", example: "Dry the cups with a tea towel.", exampleTranslation: "Seque as xícaras com um pano de prato." },
+            { label: "Expressão", text: "kitchen towel = pano de cozinha.", example: "Wipe your hands on the kitchen towel.", exampleTranslation: "Limpe as mãos no pano de cozinha." },
           ],
         },
         {
@@ -5927,6 +6220,21 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "maravilhoso",
           example: "We had a wonderful time.",
           exampleTranslation: "Nós tivemos um tempo maravilhoso.",
+        },
+        {
+          term: "wood",
+          translation: "madeira",
+          example: "This table is made of wood.",
+          exampleTranslation: "Essa mesa é feita de madeira.",
+        },
+        {
+          term: "wooden",
+          translation: "de madeira",
+          example: "We have a wooden table in the kitchen.",
+          exampleTranslation: "Temos uma mesa de madeira na cozinha.",
+          more: [
+            { label: "Formação", text: "wood + -en." },
+          ],
         },
         {
           term: "word",
