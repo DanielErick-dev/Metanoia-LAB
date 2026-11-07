@@ -162,6 +162,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "assure",
+          translation: "assegurar, garantir (a alguém)",
+          example: "I assure you, it's safe.",
+          exampleTranslation: "Eu te garanto, é seguro.",
+          conjugation: { base: "assure", past: "assured", participle: "assured", irregular: false },
+          more: [
+            { label: "Diferença", text: "assure é convencer alguém; ensure é garantir que algo aconteça." },
+          ],
+        },
+        {
           term: "avoid",
           translation: "evitar",
           example: "Avoid sending secrets in payloads.",
@@ -246,6 +256,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "blind",
+          translation: "cegar, ofuscar",
+          example: "I was blinded by the light.",
+          exampleTranslation: "Fui ofuscado pela luz.",
+          conjugation: { base: "blind", past: "blinded", participle: "blinded", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "blind = cego.", example: "He has been blind since birth.", exampleTranslation: "Ele é cego de nascença." },
+            { label: "Outro sentido", text: "figurado: blinded by love = cego de amor.", example: "She was blinded by love.", exampleTranslation: "Ela estava cega de amor." },
+          ],
+        },
+        {
           term: "block",
           translation: "bloquear / bloco; quarteirão",
           example: "The firewall blocks inbound traffic.",
@@ -274,6 +295,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "be born", past: "was/were born", participle: "been born", irregular: true },
           more: [
             { label: "Expressão", text: "be born = nascer.", example: "She was born in Brazil.", exampleTranslation: "Ela nasceu no Brasil." },
+          ],
+        },
+        {
+          term: "bother",
+          translation: "incomodar, importunar",
+          example: "Sorry to bother you.",
+          exampleTranslation: "Desculpa te incomodar.",
+          conjugation: { base: "bother", past: "bothered", participle: "bothered", irregular: false },
+          more: [
+            { label: "Expressão", text: "Don't bother = nem se dê ao trabalho.", example: "Don't bother, I'll do it myself.", exampleTranslation: "Nem se dê ao trabalho, eu mesmo faço." },
           ],
         },
         {
@@ -564,6 +595,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "cost",
+          translation: "custar",
+          example: "It cost me a lot.",
+          exampleTranslation: "Me custou caro.",
+          conjugation: { base: "cost", past: "cost", participle: "cost", irregular: true },
+          more: [
+            { label: "Expressão", text: "cost lives = custar vidas.", example: "This mistake could cost lives.", exampleTranslation: "Esse erro pode custar vidas." },
+            { label: "Substantivo", text: "cost = custo.", example: "The cost is too high.", exampleTranslation: "O custo é alto demais." },
+          ],
+        },
+        {
           term: "could",
           translation: "poderia, podia; conseguia",
           example: "Could you say that again?",
@@ -604,6 +646,24 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "scope creep = o escopo do projeto crescendo sem controle.", example: "Watch out for scope creep in this project.", exampleTranslation: "Cuidado com o escopo crescendo sem controle nesse projeto." },
             { label: "Expressão", text: "payload creep = o payload que vai inchando.", example: "Payload creep made our responses huge.", exampleTranslation: "O payload foi inchando e deixou nossas respostas enormes." },
           ],
+        },
+        {
+          term: "dare",
+          translation: "ousar, ter coragem",
+          example: "How dare you!",
+          exampleTranslation: "Como você ousa!",
+          conjugation: { base: "dare", past: "dared", participle: "dared", irregular: false },
+          more: [
+            { label: "Expressão", text: "I dare you = aposto que você não tem coragem.", example: "I dare you to jump.", exampleTranslation: "Aposto que você não tem coragem de pular." },
+            { label: "Uso", text: "dare to + verbo.", example: "Nobody dared to speak.", exampleTranslation: "Ninguém teve coragem de falar." },
+          ],
+        },
+        {
+          term: "dazzle",
+          translation: "deslumbrar, ofuscar",
+          example: "The lights dazzled me.",
+          exampleTranslation: "As luzes me ofuscaram.",
+          conjugation: { base: "dazzle", past: "dazzled", participle: "dazzled", irregular: false },
         },
         {
           term: "decide",
@@ -1110,6 +1170,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "gawk",
+          translation: "encarar de boca aberta",
+          example: "Stop gawking at them!",
+          exampleTranslation: "Para de ficar encarando eles!",
+          conjugation: { base: "gawk", past: "gawked", participle: "gawked", irregular: false },
+          more: [
+            { label: "Uso", text: "gawk at = olhar fixo, meio grosseiro." },
+          ],
+        },
+        {
           term: "get",
           translation: "conseguir, pegar, receber; ficar, tornar-se; chegar; entender",
           example: "No way! You got the job?",
@@ -1400,6 +1470,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "infuriate",
+          translation: "enfurecer, deixar furioso",
+          example: "His attitude infuriates me.",
+          exampleTranslation: "A atitude dele me enfurece.",
+          conjugation: { base: "infuriate", past: "infuriated", participle: "infuriated", irregular: false },
+        },
+        {
           term: "install",
           translation: "instalar",
           example: "Install the latest security patch.",
@@ -1567,6 +1644,7 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "what's it like? = como é?", example: "I know what it's like to be nervous.", exampleTranslation: "Eu sei como é ficar nervoso." },
             { label: "Expressão", text: "feel like = estar com vontade de; ter a sensação de.", example: "I don't feel like cooking tonight.", exampleTranslation: "Tô sem vontade de cozinhar hoje à noite." },
             { label: "Expressão", text: "would like = gostaria (educado).", example: "I'd like a coffee, please.", exampleTranslation: "Eu queria um café, por favor." },
+            { label: "Expressão", text: "like that = assim, desse jeito.", example: "Don't talk to me like that.", exampleTranslation: "Não fale comigo desse jeito." },
           ],
         },
         {
@@ -1614,6 +1692,8 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "look out = cuidado!", example: "Look out! There's a hole in the ground.", exampleTranslation: "Cuidado! Tem um buraco no chão." },
             { label: "Expressão", text: "look forward to = estar ansioso por (no bom sentido).", example: "I'm looking forward to my English class tomorrow.", exampleTranslation: "Tô ansioso pela minha aula de inglês amanhã." },
             { label: "Expressão", text: "look like = parecer.", example: "It looks like it's gonna rain.", exampleTranslation: "Parece que vai chover." },
+            { label: "Expressão", text: "by the looks of it = pelo visto, pelo que parece.", example: "By the looks of it, it's going to rain.", exampleTranslation: "Pelo visto, vai chover." },
+            { label: "Exemplo", example: "She's been making out with him, by the looks of it.", exampleTranslation: "Pelo visto, ela tem se pegado com ele." },
           ],
         },
         {
@@ -1651,6 +1731,7 @@ export const inglesVerbos: TopicData = {
             { label: "Diferença", text: "make sure é garantir; be sure é ter certeza." },
             { label: "Phrasal verb", text: "make up = fazer as pazes; inventar.", example: "They had a fight, but they made up.", exampleTranslation: "Eles brigaram, mas fizeram as pazes." },
             { label: "Diferença", text: "make é criar ou produzir algo (make a cake); do é realizar uma tarefa (do homework)." },
+            { label: "Phrasal verb", text: "make out = se beijar, se pegar.", example: "They were making out in the car.", exampleTranslation: "Eles tavam se pegando no carro." },
           ],
         },
         {
@@ -1735,6 +1816,18 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "mitigate", past: "mitigated", participle: "mitigated", irregular: false },
           more: [
             { label: "Substantivo", text: "mitigation = mitigação.", example: "Rate limiting is a common mitigation for abuse.", exampleTranslation: "Limitar as requisições é uma mitigação comum contra abuso." },
+          ],
+        },
+        {
+          term: "monitor",
+          translation: "monitorar / monitor / fiscal",
+          example: "The teacher asked a student to monitor the hall.",
+          exampleTranslation: "A professora pediu a um aluno que vigiasse o corredor.",
+          conjugation: { base: "monitor", past: "monitored", participle: "monitored", irregular: false },
+          more: [
+            { label: "Substantivo", text: "monitor = monitor, a tela do computador.", example: "My monitor stopped working.", exampleTranslation: "Meu monitor parou de funcionar." },
+            { label: "Expressão", text: "hall monitor = aluno fiscal do corredor, na escola.", example: "He was the hall monitor at his school.", exampleTranslation: "Ele era o aluno fiscal do corredor na escola dele." },
+            { label: "Em tecnologia", text: "monitor a server = monitorar um servidor.", example: "We monitor the server all day.", exampleTranslation: "A gente monitora o servidor o dia todo." },
           ],
         },
         {
@@ -2033,6 +2126,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "remain",
+          translation: "permanecer, continuar, restar",
+          example: "Please remain calm.",
+          exampleTranslation: "Por favor, permaneça calmo.",
+          conjugation: { base: "remain", past: "remained", participle: "remained", irregular: false },
+          more: [
+            { label: "Outro sentido", text: "restar.", example: "Only two days remain.", exampleTranslation: "Só restam dois dias." },
+            { label: "Substantivo", text: "the remains = restos.", example: "They found the remains of an old castle.", exampleTranslation: "Encontraram os restos de um castelo antigo." },
+          ],
+        },
+        {
           term: "renew",
           translation: "renovar",
           example: "Refresh tokens are a standard way of renewing expired access tokens.",
@@ -2065,6 +2169,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "restore",
+          translation: "restaurar, restabelecer",
+          example: "Order was restored.",
+          exampleTranslation: "A ordem foi restabelecida.",
+          conjugation: { base: "restore", past: "restored", participle: "restored", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "restored = restaurado, restabelecido.", example: "The restored castle is open to visitors.", exampleTranslation: "O castelo restaurado está aberto a visitantes." },
+            { label: "Em tecnologia", text: "restore a backup = restaurar um backup.", example: "We restored the backup last night.", exampleTranslation: "A gente restaurou o backup ontem à noite." },
+          ],
+        },
+        {
           term: "retrieve",
           translation: "recuperar, buscar (dados)",
           example: "Retrieve an issue.",
@@ -2074,6 +2189,13 @@ export const inglesVerbos: TopicData = {
             { label: "Exemplo", example: "The app retrieves the data from the API.", exampleTranslation: "O app busca os dados na API." },
             { label: "Substantivo", text: "retrieval = recuperação, busca.", example: "Fast data retrieval matters for search engines.", exampleTranslation: "Uma busca rápida de dados é importante pros mecanismos de busca." },
           ],
+        },
+        {
+          term: "reveal",
+          translation: "revelar",
+          example: "He revealed the secret.",
+          exampleTranslation: "Ele revelou o segredo.",
+          conjugation: { base: "reveal", past: "revealed", participle: "revealed", irregular: false },
         },
         {
           term: "revoke",
@@ -2242,6 +2364,13 @@ export const inglesVerbos: TopicData = {
             { label: "Substantivo", text: "set = conjunto.", example: "I bought a new set of knives.", exampleTranslation: "Comprei um conjunto novo de facas." },
             { label: "Em tecnologia", text: "setup = configuração; set() no Python é um conjunto sem repetição.", example: "The setup takes less than five minutes.", exampleTranslation: "A configuração leva menos de cinco minutos." },
           ],
+        },
+        {
+          term: "shake",
+          translation: "sacudir, balançar",
+          example: "He shook his head.",
+          exampleTranslation: "Ele balançou a cabeça.",
+          conjugation: { base: "shake", past: "shook", participle: "shaken", irregular: true },
         },
         {
           term: "shall",
@@ -2476,6 +2605,17 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Uso", text: "subscribe to = assinar, se inscrever em." },
             { label: "Substantivo", text: "subscription = assinatura, inscrição.", example: "I canceled my streaming subscription.", exampleTranslation: "Cancelei minha assinatura de streaming." },
+          ],
+        },
+        {
+          term: "suit",
+          translation: "convir, cair bem / terno",
+          example: "Does Friday suit you?",
+          exampleTranslation: "Sexta-feira fica bom pra você?",
+          conjugation: { base: "suit", past: "suited", participle: "suited", irregular: false },
+          more: [
+            { label: "Expressão", text: "suit yourself = faça como quiser, num tom de “não ligo”.", example: "“I'm not coming.” “Suit yourself.”", exampleTranslation: "“Eu não vou.” “Faça como quiser.”" },
+            { label: "Substantivo", text: "suit = terno.", example: "He wore a black suit.", exampleTranslation: "Ele usou um terno preto." },
           ],
         },
         {
@@ -2798,6 +2938,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Phrasal verb", text: "watch out = cuidado!", example: "Watch out! There's a car coming.", exampleTranslation: "Cuidado! Tem um carro vindo." },
             { label: "Substantivo", text: "watch = relógio de pulso.", example: "My watch stopped working.", exampleTranslation: "Meu relógio parou de funcionar." },
+          ],
+        },
+        {
+          term: "wear",
+          translation: "vestir, usar (roupa)",
+          example: "She was wearing a blue dress.",
+          exampleTranslation: "Ela estava usando um vestido azul.",
+          conjugation: { base: "wear", past: "wore", participle: "worn", irregular: true },
+          more: [
+            { label: "Diferença", text: "wear é estar vestindo; put on é o ato de vestir." },
           ],
         },
         {

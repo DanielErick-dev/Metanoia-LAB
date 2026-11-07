@@ -413,6 +413,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "army",
+          translation: "exército",
+          example: "The army marched to the castle.",
+          exampleTranslation: "O exército marchou até o castelo.",
+        },
+        {
           term: "around",
           translation: "ao redor, por volta de, por aí",
           example: "They sat around the table.",
@@ -458,6 +464,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "A partir de hoje, a API é gratuita.",
           more: [
             { label: "Expressão", text: "as of this writing = até o momento em que escrevo.", example: "As of this writing, the API has no limits.", exampleTranslation: "Até o momento em que escrevo, a API não tem limites." },
+          ],
+        },
+        {
+          term: "asset",
+          translation: "ativo, patrimônio; ponto forte",
+          example: "She's a great asset to the team.",
+          exampleTranslation: "Ela é um grande trunfo pro time.",
+          more: [
+            { label: "Oposto", text: "liability." },
+            { label: "Em tecnologia", text: "assets = arquivos estáticos, como imagens e fontes.", example: "The images are in the assets folder.", exampleTranslation: "As imagens estão na pasta de assets." },
           ],
         },
         {
@@ -705,6 +721,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "not a big deal = nada demais.", example: "Don't worry about being late, it's not a big deal.", exampleTranslation: "Não se preocupa com o atraso, não é nada demais." },
             { label: "Parecido", text: "huge, mais forte." },
+            { label: "Forma", text: "bigger = maior; biggest = o maior. Dobra o g.", example: "A bigger problem.", exampleTranslation: "Um problema maior." },
           ],
         },
         {
@@ -743,6 +760,15 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "ousado / corajoso / atrevido",
           example: "That was a bold decision.",
           exampleTranslation: "Aquela foi uma decisão ousada.",
+        },
+        {
+          term: "bonkers",
+          translation: "maluco, doido (britânico, informal)",
+          example: "This is bonkers!",
+          exampleTranslation: "Isso é loucura!",
+          more: [
+            { label: "Parecido", text: "barmy e daft." },
+          ],
         },
         {
           term: "book",
@@ -1010,6 +1036,16 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "No capítulo anterior, vimos segurança.",
         },
         {
+          term: "cheese",
+          translation: "queijo",
+          example: "I'd like a cheese sandwich.",
+          exampleTranslation: "Eu queria um sanduíche de queijo.",
+          more: [
+            { label: "Expressão", text: "cheesed off = irritado, de saco cheio (britânico).", example: "I'm really cheesed off.", exampleTranslation: "Tô muito irritado." },
+            { label: "Observação", text: "cheesed off é mais forte que miffed." },
+          ],
+        },
+        {
           term: "child",
           translation: "criança; filho(a)",
           example: "Even a child can do it.",
@@ -1275,6 +1311,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "have a nice day = tenha um bom dia.", example: "Thanks for coming, have a nice day!", exampleTranslation: "Obrigado por vir, tenha um bom dia!" },
             { label: "Expressão", text: "How's your day going? = Como tá sendo seu dia?", example: "Hi! How's your day going?", exampleTranslation: "Oi! Como tá sendo seu dia?" },
           ],
+        },
+        {
+          term: "dazzling",
+          translation: "deslumbrante, ofuscante",
+          example: "A dazzling smile.",
+          exampleTranslation: "Um sorriso deslumbrante.",
         },
         {
           term: "deal",
@@ -1555,6 +1597,7 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "either... or = ou... ou.", example: "You can either stay or come with us.", exampleTranslation: "Você pode ou ficar ou vir com a gente." },
             { label: "Outro sentido", text: "um dos dois, qualquer um dos dois.", example: "You can use either token.", exampleTranslation: "Você pode usar qualquer um dos dois tokens." },
             { label: "Oposto", text: "neither = nenhum dos dois." },
+            { label: "Expressão", text: "either way = de qualquer jeito.", example: "Either way, we need to leave.", exampleTranslation: "De qualquer jeito, precisamos sair." },
           ],
         },
         {
@@ -1564,6 +1607,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Um e-mail novo chegou na caixa de entrada.",
           more: [
             { label: "Variação", text: "e-mail.", example: "I'll send you an e-mail later.", exampleTranslation: "Te mando um e-mail mais tarde." },
+          ],
+        },
+        {
+          term: "embarrassed",
+          translation: "constrangido, com vergonha",
+          example: "She felt embarrassed.",
+          exampleTranslation: "Ela ficou constrangida.",
+          more: [
+            { label: "Observação", text: "é só o sentido de constrangimento: cabelo ou fio embaraçado não é embarrassed. Dois r e dois s." },
           ],
         },
         {
@@ -1737,6 +1789,18 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "família",
           example: "juicy family drama",
           exampleTranslation: "drama de família suculento",
+        },
+        {
+          term: "fancy",
+          translation: "chique / gostar / imaginar",
+          example: "A fancy restaurant.",
+          exampleTranslation: "Um restaurante chique.",
+          conjugation: { base: "fancy", past: "fancied", participle: "fancied", irregular: false },
+          more: [
+            { label: "Verbo", text: "britânico: fancy someone = ter interesse romântico por alguém.", example: "I fancy him.", exampleTranslation: "Tô a fim dele." },
+            { label: "Outro sentido", text: "britânico: estar com vontade de.", example: "Do you fancy a coffee?", exampleTranslation: "Tá a fim de um café?" },
+            { label: "Expressão", text: "Fancy that! = Imagina só!", example: "They got married last week. Fancy that!", exampleTranslation: "Eles se casaram semana passada. Imagina só!" },
+          ],
         },
         {
           term: "far",
@@ -1999,6 +2063,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "fury",
+          translation: "fúria",
+          example: "She left the room in a fury.",
+          exampleTranslation: "Ela saiu da sala furiosa.",
+        },
+        {
           term: "game",
           translation: "jogo; partida",
           example: "Chill out, it's just a game.",
@@ -2027,6 +2097,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Ele se atrasou de novo? Que surpresa (só que não).",
           more: [
             { label: "Uso", text: "Na ironia, giant shocker é que não é surpresa nenhuma." },
+          ],
+        },
+        {
+          term: "gift",
+          translation: "presente",
+          example: "A birthday gift.",
+          exampleTranslation: "Um presente de aniversário.",
+          more: [
+            { label: "Outro sentido", text: "talento.", example: "She has a gift for languages.", exampleTranslation: "Ela tem talento pra idiomas." },
           ],
         },
         {
@@ -2098,6 +2177,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "gorgeous",
+          translation: "lindo, deslumbrante",
+          example: "You look gorgeous.",
+          exampleTranslation: "Você está linda(o).",
+          more: [
+            { label: "Uso", text: "serve pra pessoas, lugares e comida." },
+          ],
+        },
+        {
           term: "grain",
           translation: "grão",
           example: "There's a grain of sand in my shoe.",
@@ -2111,6 +2199,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Origem", text: "Vem de grain (grão). Granular = dividido em pequenas partes." },
             { label: "Em tecnologia", text: "permissões, logs e dados granulares.", example: "We need more granular permissions for each user.", exampleTranslation: "A gente precisa de permissões mais granulares pra cada usuário." },
+          ],
+        },
+        {
+          term: "grapevine",
+          translation: "parreira; boca a boca",
+          example: "The grapevine climbed up the wall.",
+          exampleTranslation: "A parreira subiu pela parede.",
+          more: [
+            { label: "Expressão", text: "through the grapevine = por boatos, por fofoca.", example: "I heard it through the grapevine.", exampleTranslation: "Fiquei sabendo por aí (por fofoca)." },
           ],
         },
         {
@@ -2308,6 +2405,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "hers",
+          translation: "dela (pronome possessivo)",
+          example: "That book is hers.",
+          exampleTranslation: "Esse livro é dela.",
+          more: [
+            { label: "Uso", text: "her vem antes do substantivo (her book); hers fica sozinho, sem apóstrofo." },
+            { label: "Palavra relacionada", text: "mine, yours, his, hers, ours, theirs." },
+          ],
+        },
+        {
           term: "herself",
           translation: "ela mesma",
           example: "She did it herself.",
@@ -2468,6 +2575,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "indeed",
+          translation: "de fato, realmente",
+          example: "Indeed, it works.",
+          exampleTranslation: "De fato, funciona.",
+          more: [
+            { label: "Uso", text: "pode ser resposta enfática, num tom formal.", example: "“Is it hard?” “Indeed.”", exampleTranslation: "“É difícil?” “De fato.”" },
+          ],
+        },
+        {
           term: "inexcusable",
           translation: "imperdoável, sem desculpa",
           example: "That behavior is inexcusable.",
@@ -2495,6 +2611,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "infantry soldiers = soldados de infantaria.", example: "The infantry soldiers waited for orders.", exampleTranslation: "Os soldados de infantaria esperaram as ordens." },
             { label: "Origem", text: "Vem do italiano infante, o soldado jovem que lutava a pé. É a mesma raiz de infant (bebê)." },
           ],
+        },
+        {
+          term: "infuriating",
+          translation: "irritante, de deixar furioso",
+          example: "It's infuriating when the bug disappears.",
+          exampleTranslation: "É de enfurecer quando o bug some.",
         },
         {
           term: "insane",
@@ -2777,6 +2899,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "liability",
+          translation: "responsabilidade, risco, ônus",
+          example: "He's a liability to the team.",
+          exampleTranslation: "Ele é um problema pro time.",
+          more: [
+            { label: "Outro sentido", text: "legal e financeiro: responsabilidade legal.", example: "The company has no liability for the damage.", exampleTranslation: "A empresa não tem responsabilidade legal pelo dano." },
+            { label: "Oposto", text: "asset." },
+          ],
+        },
+        {
           term: "light",
           translation: "luz / leve; acender",
           example: "Turn on the lights, please.",
@@ -2850,6 +2982,17 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "almoço",
           example: "Let's have lunch together.",
           exampleTranslation: "Vamos almoçar juntos.",
+        },
+        {
+          term: "mad",
+          translation: "louco / bravo",
+          example: "He's mad at me.",
+          exampleTranslation: "Ele está bravo comigo.",
+          more: [
+            { label: "Uso", text: "bravo é o sentido mais comum nos EUA; no inglês britânico, mad é maluco." },
+            { label: "Outro sentido", text: "britânico: maluco.", example: "You must be mad!", exampleTranslation: "Você só pode estar maluco!" },
+            { label: "Expressão", text: "mad about = louco por.", example: "She's mad about football.", exampleTranslation: "Ela é louca por futebol." },
+          ],
         },
         {
           term: "magic",
@@ -2972,6 +3115,12 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Em tecnologia", text: "HTTP methods = GET, POST, PATCH, DELETE…", example: "Use the POST method to create a new user.", exampleTranslation: "Usa o método POST pra criar um usuário novo." },
           ],
+        },
+        {
+          term: "miffed",
+          translation: "chateado, irritado (informal)",
+          example: "She was a bit miffed.",
+          exampleTranslation: "Ela ficou meio chateada.",
         },
         {
           term: "mighty",
@@ -3147,6 +3296,16 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "quase",
           example: "I nearly forgot my keys.",
           exampleTranslation: "Eu quase esqueci minhas chaves.",
+        },
+        {
+          term: "nerve",
+          translation: "nervo",
+          example: "The dentist hit a nerve.",
+          exampleTranslation: "O dentista atingiu um nervo.",
+          more: [
+            { label: "Expressão", text: "raw nerve = ponto sensível, ferida aberta (literal: nervo exposto).", example: "You hit a raw nerve.", exampleTranslation: "Você tocou num ponto sensível." },
+            { label: "Uso", text: "hit a raw nerve ou touch a raw nerve." },
+          ],
         },
         {
           term: "nervous",
@@ -3469,6 +3628,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "pale",
+          translation: "pálido",
+          example: "She went pale.",
+          exampleTranslation: "Ela ficou pálida.",
+          more: [
+            { label: "Outro sentido", text: "claro, em cores: pale blue = azul claro.", example: "She wore a pale blue dress.", exampleTranslation: "Ela usou um vestido azul claro." },
+          ],
+        },
+        {
           term: "part",
           translation: "parte",
           example: "This is the best part.",
@@ -3644,6 +3812,7 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Outro sentido", text: "pobre: a poor family = uma família pobre.", example: "He grew up in a poor family.", exampleTranslation: "Ele cresceu numa família pobre." },
             { label: "Expressão", text: "Poor guy! = coitado!", example: "Poor guy, he lost his job yesterday.", exampleTranslation: "Coitado, ele perdeu o emprego ontem." },
             { label: "Oposto", text: "good (em qualidade)." },
+            { label: "Expressão", text: "Poor thing! = coitadinho!", example: "Poor thing!", exampleTranslation: "Coitadinho!" },
           ],
         },
         {
@@ -3678,6 +3847,15 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "anterior",
           example: "In the previous chapter, we covered security.",
           exampleTranslation: "No capítulo anterior, vimos segurança.",
+        },
+        {
+          term: "prickly",
+          translation: "espinhoso, irritadiço",
+          example: "A prickly cactus.",
+          exampleTranslation: "Um cacto espinhoso.",
+          more: [
+            { label: "Outro sentido", text: "pessoa: a prickly character = alguém que se irrita fácil.", example: "He's a prickly character.", exampleTranslation: "Ele é alguém que se irrita fácil." },
+          ],
         },
         {
           term: "pride",
@@ -3923,6 +4101,24 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "ravishing",
+          translation: "deslumbrante, de tirar o fôlego",
+          example: "You look ravishing.",
+          exampleTranslation: "Você está deslumbrante.",
+          more: [
+            { label: "Observação", text: "mais formal e antiquado que gorgeous." },
+          ],
+        },
+        {
+          term: "raw",
+          translation: "cru",
+          example: "Don't eat raw chicken.",
+          exampleTranslation: "Não coma frango cru.",
+          more: [
+            { label: "Em tecnologia", text: "raw data = dados brutos.", example: "The script cleans the raw data.", exampleTranslation: "O script limpa os dados brutos." },
+          ],
+        },
+        {
           term: "readable",
           translation: "legível",
           example: "Make the strings readable.",
@@ -3993,6 +4189,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "regardless",
+          translation: "independentemente, mesmo assim",
+          example: "Regardless of the cost, we'll do it.",
+          exampleTranslation: "Independentemente do custo, vamos fazer.",
+          more: [
+            { label: "Uso", text: "regardless of + substantivo." },
+            { label: "Outro sentido", text: "sozinho, no fim da frase: mesmo assim.", example: "It was raining, but we went regardless.", exampleTranslation: "Estava chovendo, mas fomos mesmo assim." },
+          ],
+        },
+        {
           term: "relationship",
           translation: "relação, relacionamento",
           example: "The relationship between users and orders is clear.",
@@ -4051,6 +4257,15 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "API retrieval = buscar dados pela API.", example: "API retrieval is slower than reading from the cache.", exampleTranslation: "Buscar dados pela API é mais lento do que ler do cache." },
             { label: "Verbo", text: "retrieve = recuperar, buscar.", example: "The function retrieves the user from the database.", exampleTranslation: "A função busca o usuário no banco de dados." },
+          ],
+        },
+        {
+          term: "revealing",
+          translation: "revelador / que mostra muito",
+          example: "A revealing dress.",
+          exampleTranslation: "Um vestido que mostra bastante.",
+          more: [
+            { label: "Outro sentido", text: "revelador.", example: "A revealing study.", exampleTranslation: "Um estudo revelador." },
           ],
         },
         {
@@ -4162,6 +4377,21 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "same here = eu também.", example: "\"I'm so tired today.\" \"Same here.\"", exampleTranslation: "\"Tô muito cansado hoje.\" \"Eu também.\"" },
           ],
+        },
+        {
+          term: "scar",
+          translation: "cicatriz",
+          example: "He has scars on his arm.",
+          exampleTranslation: "Ele tem cicatrizes no braço.",
+          more: [
+            { label: "Outro sentido", text: "figurado: emotional scars = cicatrizes emocionais.", example: "The war left emotional scars.", exampleTranslation: "A guerra deixou cicatrizes emocionais." },
+          ],
+        },
+        {
+          term: "scary",
+          translation: "assustador",
+          example: "That was a scary movie.",
+          exampleTranslation: "Foi um filme assustador.",
         },
         {
           term: "schedule",
@@ -4463,6 +4693,7 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Perto do bug em produção, isso é fichinha.",
           more: [
             { label: "Expressão", text: "small talk = conversa fiada, papo de elevador.", example: "I'm really bad at small talk.", exampleTranslation: "Eu sou péssimo em papo de elevador." },
+            { label: "Forma", text: "smaller = menor; smallest = o menor.", example: "The smallest detail.", exampleTranslation: "O menor detalhe." },
           ],
         },
         {
@@ -4517,6 +4748,19 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "algo, alguma coisa",
           example: "Clickjacking tricks you into clicking something hidden.",
           exampleTranslation: "O clickjacking te engana pra clicar em algo escondido.",
+          more: [
+            { label: "Expressão", text: "something else = outra coisa, algo mais.", example: "Let's try something else.", exampleTranslation: "Vamos tentar outra coisa." },
+            { label: "Outro sentido", text: "something else também é elogio: algo fora de série.", example: "This food is something else!", exampleTranslation: "Essa comida é demais!" },
+          ],
+        },
+        {
+          term: "soon",
+          translation: "logo, em breve",
+          example: "See you soon.",
+          exampleTranslation: "Até logo.",
+          more: [
+            { label: "Expressão", text: "as soon as = assim que.", example: "Call me as soon as you arrive.", exampleTranslation: "Me liga assim que chegar." },
+          ],
         },
         {
           term: "sophomore",
@@ -4578,6 +4822,15 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Expressão", text: "out of spite = por maldade, de pirraça, só pra provocar.", example: "She ignored my calls out of spite.", exampleTranslation: "Ela ignorou minhas ligações de pirraça." },
             { label: "Expressão", text: "in spite of = apesar de.", example: "We went out in spite of the rain.", exampleTranslation: "A gente saiu apesar da chuva." },
             { label: "Parecido", text: "despite = apesar de (sem o of)." },
+          ],
+        },
+        {
+          term: "splendid",
+          translation: "esplêndido, ótimo",
+          example: "What a splendid idea!",
+          exampleTranslation: "Que ideia esplêndida!",
+          more: [
+            { label: "Observação", text: "bem britânico e um pouco formal." },
           ],
         },
         {
@@ -4706,6 +4959,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "suddenly",
+          translation: "de repente",
+          example: "Suddenly, the lights went out.",
+          exampleTranslation: "De repente, as luzes apagaram.",
+        },
+        {
           term: "sure",
           translation: "certo, com certeza",
           example: "Are you sure?",
@@ -4721,6 +4980,15 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "cirurgia",
           example: "After the surgery, she came back stronger than ever.",
           exampleTranslation: "Depois da cirurgia, ela voltou mais forte do que nunca.",
+        },
+        {
+          term: "sweetheart",
+          translation: "querido(a), amor",
+          example: "Thanks, sweetheart.",
+          exampleTranslation: "Obrigado, querida.",
+          more: [
+            { label: "Observação", text: "carinhoso, mas pode soar condescendente com estranhos." },
+          ],
         },
         {
           term: "sweetie",
@@ -4793,6 +5061,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Garanta que os desenvolvedores consigam fazer a tarefa.",
         },
         {
+          term: "temper",
+          translation: "temperamento, pavio curto",
+          example: "She has a bad temper.",
+          exampleTranslation: "Ela tem um gênio ruim.",
+          more: [
+            { label: "Expressão", text: "lose your temper = perder a cabeça.", example: "Don't lose your temper over this.", exampleTranslation: "Não perde a cabeça por causa disso." },
+          ],
+        },
+        {
           term: "tendency",
           translation: "tendência",
           example: "He has a tendency to talk too much.",
@@ -4803,6 +5080,12 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "barraca",
           example: "We need to set up the tent before it gets dark.",
           exampleTranslation: "Precisamos montar a barraca antes de escurecer.",
+        },
+        {
+          term: "terrace",
+          translation: "terraço",
+          example: "We had dinner on the terrace.",
+          exampleTranslation: "Jantamos no terraço.",
         },
         {
           term: "thankfully",
@@ -5174,6 +5457,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "truly",
+          translation: "realmente, de verdade",
+          example: "It was truly scary.",
+          exampleTranslation: "Foi realmente assustador.",
+          more: [
+            { label: "Expressão", text: "Yours truly = atenciosamente, no fim de uma carta.", example: "Yours truly, Anna.", exampleTranslation: "Atenciosamente, Anna." },
+          ],
+        },
+        {
           term: "tv",
           translation: "TV, televisão",
           example: "Turn off the TV before you sleep.",
@@ -5452,6 +5744,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "wee",
+          translation: "pequeno (escocês/irlandês)",
+          example: "She lives in a wee house by the sea.",
+          exampleTranslation: "Ela mora numa casinha perto do mar.",
+          more: [
+            { label: "Expressão", text: "wee bit = um pouquinho.", example: "Just a wee bit tired.", exampleTranslation: "Só um pouquinho cansado." },
+          ],
+        },
+        {
           term: "week",
           translation: "semana",
           example: "You traveled last week, is that right?",
@@ -5593,6 +5894,12 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "janela",
           example: "That little hellion broke the window.",
           exampleTranslation: "Esse pestinha quebrou a janela.",
+        },
+        {
+          term: "witch",
+          translation: "bruxa",
+          example: "The witch cast a spell.",
+          exampleTranslation: "A bruxa lançou um feitiço.",
         },
         {
           term: "with no",
