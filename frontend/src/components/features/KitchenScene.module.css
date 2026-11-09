@@ -1,0 +1,344 @@
+.flame,
+.steam,
+.bubble,
+.spatter,
+.ovenGlow,
+.loaf,
+.roastItem,
+.piece,
+.cube,
+.servePlate,
+.microwaveGlow {
+  opacity: 0;
+  transform-box: fill-box;
+}
+
+.flame {
+  transform-origin: 50% 100%;
+}
+
+.flameKettle {
+  opacity: 0.85;
+  animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+.steamKettle {
+  animation: rise 3.4s ease-out infinite;
+}
+
+.steamKettle:nth-of-type(2) {
+  animation-delay: 1.7s;
+}
+
+.knife,
+.spoonStir,
+.panBody {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.spoonStir {
+  opacity: 0;
+}
+
+.scene[data-action="boil"] .flamePot,
+.scene[data-action="stir"] .flamePot,
+.scene[data-action="drain"] .flamePot,
+.scene[data-action="fry"] .flamePan,
+.scene[data-action="cook"] .flame {
+  opacity: 1;
+  animation: flicker 0.32s ease-in-out infinite alternate;
+}
+
+.scene[data-action="simmer"] .flamePot {
+  opacity: 0.7;
+  transform: scaleY(0.5);
+  animation: flickerLow 0.7s ease-in-out infinite alternate;
+}
+
+.scene[data-action="boil"] .bubble {
+  animation: bubble 0.7s ease-out infinite;
+}
+
+.scene[data-action="simmer"] .bubble {
+  animation: bubble 2.2s ease-out infinite;
+}
+
+.bubble:nth-of-type(2) {
+  animation-delay: 0.2s !important;
+}
+
+.bubble:nth-of-type(3) {
+  animation-delay: 0.42s !important;
+}
+
+.bubble:nth-of-type(4) {
+  animation-delay: 0.6s !important;
+}
+
+.scene[data-action="boil"] .steamPot,
+.scene[data-action="simmer"] .steamPot,
+.scene[data-action="stir"] .steamPot,
+.scene[data-action="cook"] .steamPot {
+  animation: rise 2.2s ease-out infinite;
+}
+
+.steamPot:nth-of-type(2) {
+  animation-delay: 1.1s !important;
+}
+
+.scene[data-action="stir"] .spoonStir {
+  opacity: 1;
+  animation: stir 1.3s ease-in-out infinite;
+}
+
+.scene[data-action="fry"] .panBody {
+  animation: shake 0.22s linear infinite;
+}
+
+.scene[data-action="fry"] .spatter {
+  animation: spatter 0.6s ease-out infinite;
+}
+
+.spatter:nth-of-type(2) {
+  animation-delay: 0.15s !important;
+}
+
+.spatter:nth-of-type(3) {
+  animation-delay: 0.3s !important;
+}
+
+.spatter:nth-of-type(4) {
+  animation-delay: 0.45s !important;
+}
+
+.scene[data-action="preheat"] .ovenGlow {
+  animation: preheat 3s ease-in infinite;
+}
+
+.scene[data-action="bake"] .ovenGlow,
+.scene[data-action="roast"] .ovenGlow {
+  opacity: 0.8;
+  animation: glow 1.6s ease-in-out infinite alternate;
+}
+
+.scene[data-action="bake"] .loaf {
+  opacity: 1;
+  transform-origin: 50% 100%;
+  animation: loaf 3.2s ease-out infinite;
+}
+
+.scene[data-action="roast"] .roastItem {
+  opacity: 1;
+  animation: roast 3s ease-in-out infinite alternate;
+}
+
+.scene[data-action="microwave"] .microwaveGlow {
+  opacity: 0.75;
+  animation: glow 0.9s ease-in-out infinite alternate;
+}
+
+.scene[data-action="cut"] .knife,
+.scene[data-action="chop"] .knife {
+  animation: chop 0.42s ease-in-out infinite;
+}
+
+.scene[data-action="slice"] .knife {
+  animation: sliceMove 1.2s ease-in-out infinite;
+}
+
+.scene[data-action="dice"] .knife {
+  animation: chop 0.24s ease-in-out infinite;
+}
+
+.scene[data-action="carve"] .knife {
+  animation: carve 1.8s ease-in-out infinite;
+}
+
+.scene[data-action="cut"] .piece,
+.scene[data-action="chop"] .piece,
+.scene[data-action="slice"] .piece,
+.scene[data-action="carve"] .piece {
+  opacity: 1;
+}
+
+.scene[data-action="dice"] .cube {
+  opacity: 1;
+}
+
+.scene[data-action="serve"] .servePlate {
+  opacity: 1;
+  animation: serve 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    transform: scaleY(0.82) scaleX(1.05);
+  }
+  to {
+    transform: scaleY(1.18) scaleX(0.93);
+  }
+}
+
+@keyframes flickerLow {
+  from {
+    transform: scaleY(0.4);
+  }
+  to {
+    transform: scaleY(0.6);
+  }
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  30% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-62px) scaleX(1.5);
+  }
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(1.2);
+  }
+}
+
+@keyframes stir {
+  0% {
+    transform: translate(-16px, 0) rotate(-7deg);
+  }
+  25% {
+    transform: translate(0, -5px) rotate(0deg);
+  }
+  50% {
+    transform: translate(16px, 0) rotate(7deg);
+  }
+  75% {
+    transform: translate(0, 5px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-16px, 0) rotate(-7deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-2px) rotate(-0.7deg);
+  }
+  50% {
+    transform: translateX(2px) rotate(0.7deg);
+  }
+}
+
+@keyframes spatter {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 8px), -32px);
+  }
+}
+
+@keyframes preheat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 0.95;
+  }
+}
+
+@keyframes loaf {
+  0% {
+    transform: scaleY(0.45);
+  }
+  70%,
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes roast {
+  from {
+    filter: brightness(0.85);
+  }
+  to {
+    filter: brightness(1.2) sepia(0.3);
+  }
+}
+
+@keyframes chop {
+  0%,
+  100% {
+    transform: translateY(-26px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sliceMove {
+  0%,
+  100% {
+    transform: translate(-22px, -6px);
+  }
+  50% {
+    transform: translate(22px, 2px);
+  }
+}
+
+@keyframes carve {
+  0%,
+  100% {
+    transform: translate(-10px, -18px) rotate(-14deg);
+  }
+  50% {
+    transform: translate(14px, 0) rotate(-3deg);
+  }
+}
+
+@keyframes serve {
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-9px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene *,
+  .scene[data-action] * {
+    animation: none !important;
+  }
+
+  .steamKettle {
+    opacity: 0.3;
+  }
+}

@@ -9,6 +9,7 @@ import { Lineup } from "./Lineup";
 import { Interrogation } from "./Interrogation";
 import { Confrontation } from "./Confrontation";
 import { VocabDetails } from "./VocabDetails";
+import { BritishTag } from "./BritishTag";
 
 interface TopicSectionsProps {
   sections: TopicSection[];
@@ -322,6 +323,7 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
                       </span>{" "}
                       <SpeakButton text={entry.term} accent={accent} />
                       <span className="text-stone-400"> — {entry.translation}</span>
+                      {entry.british && <BritishTag className="ml-2" />}
                     </p>
                     {entry.example && (
                       <div className="mt-2 pl-3 border-l-2" style={{ borderColor: `${accent}40` }}>

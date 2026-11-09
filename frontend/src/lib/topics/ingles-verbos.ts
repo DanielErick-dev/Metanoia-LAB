@@ -104,6 +104,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "anoint",
+          translation: "ungir",
+          example: "They anointed the new queen.",
+          exampleTranslation: "Eles ungiram a nova rainha.",
+          conjugation: { base: "anoint", past: "anointed", participle: "anointed", irregular: false },
+          more: [
+            { label: "Expressão", text: "the Lord’s anointed = o ungido do Senhor.", example: "David was the Lord’s anointed.", exampleTranslation: "Davi era o ungido do Senhor." },
+          ],
+        },
+        {
           term: "apologize",
           translation: "pedir desculpas",
           example: "If I were you, I would apologize.",
@@ -111,7 +121,7 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "apologize", past: "apologized", participle: "apologized", irregular: false },
           more: [
             { label: "Expressão", text: "apologize for = pedir desculpas por.", example: "I apologize for the delay.", exampleTranslation: "Peço desculpas pela demora." },
-            { label: "Variação", text: "apologise (britânico).", example: "I apologise for the confusion.", exampleTranslation: "Peço desculpas pela confusão." },
+            { label: "Variação", british: true, text: "apologise.", example: "I apologise for the confusion.", exampleTranslation: "Peço desculpas pela confusão." },
             { label: "Substantivo", text: "apology = pedido de desculpas.", example: "I owe you an apology.", exampleTranslation: "Te devo um pedido de desculpas." },
           ],
         },
@@ -233,6 +243,13 @@ export const inglesVerbos: TopicData = {
             { label: "Exemplo", example: "It becomes harder over time.", exampleTranslation: "Fica mais difícil com o tempo." },
             { label: "Passado simples", example: "She became a developer.", exampleTranslation: "Ela virou desenvolvedora." },
           ],
+        },
+        {
+          term: "begin",
+          translation: "começar",
+          example: "The ceremony begins at noon.",
+          exampleTranslation: "A cerimônia começa ao meio-dia.",
+          conjugation: { base: "begin", past: "began", participle: "begun", irregular: true },
         },
         {
           term: "behave",
@@ -375,7 +392,7 @@ export const inglesVerbos: TopicData = {
           exampleTranslation: "Eles tiveram uma briga feia ontem à noite.",
           conjugation: { base: "bust", past: "busted / bust", participle: "busted / bust", irregular: true },
           more: [
-            { label: "Substantivo", text: "bust-up = briga, discussão feia (britânico).", example: "I don't want another bust-up with my brother.", exampleTranslation: "Não quero outra briga feia com meu irmão." },
+            { label: "Substantivo", british: true, text: "bust-up = briga, discussão feia.", example: "I don't want another bust-up with my brother.", exampleTranslation: "Não quero outra briga feia com meu irmão." },
           ],
         },
         {
@@ -564,6 +581,17 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "commence",
+          translation: "começar, iniciar (formal)",
+          example: "The ceremony commences at dawn.",
+          exampleTranslation: "A cerimônia começa ao amanhecer.",
+          conjugation: { base: "commence", past: "commenced", participle: "commenced", irregular: false },
+          more: [
+            { label: "Parecido", text: "begin e start, que são menos formais." },
+            { label: "Substantivo", text: "commencement = formatura, nos EUA.", example: "Her commencement is in May.", exampleTranslation: "A formatura dela é em maio." },
+          ],
+        },
+        {
           term: "compare",
           translation: "comparar",
           example: "Compare the signatures.",
@@ -705,6 +733,9 @@ export const inglesVerbos: TopicData = {
           example: "The lights dazzled me.",
           exampleTranslation: "As luzes me ofuscaram.",
           conjugation: { base: "dazzle", past: "dazzled", participle: "dazzled", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "dazzling = deslumbrante, ofuscante.", example: "A dazzling smile.", exampleTranslation: "Um sorriso deslumbrante." },
+          ],
         },
         {
           term: "decide",
@@ -1258,18 +1289,9 @@ export const inglesVerbos: TopicData = {
             { label: "Phrasal verb", text: "get through = conseguir passar, atravessar.", example: "The message didn't get through.", exampleTranslation: "A mensagem não chegou (não passou)." },
             { label: "Phrasal verb", text: "get through = terminar algo longo.", example: "I got through the book.", exampleTranslation: "Eu terminei o livro." },
             { label: "Phrasal verb", text: "get on with = continuar, seguir com.", example: "Let's stop talking and get on with the work.", exampleTranslation: "Vamos parar de conversar e seguir com o trabalho." },
-            { label: "Expressão", text: "get the most out of = tirar o máximo de.", example: "Help developers get the most out of your API.", exampleTranslation: "Ajude os devs a tirarem o máximo da sua API." },
-          ],
-        },
-        {
-          term: "get on with it",
-          translation: "anda logo, continua com isso",
-          example: "Stop complaining and get on with it!",
-          exampleTranslation: "Para de reclamar e anda logo com isso!",
-          conjugation: { base: "get on with", past: "got on with", participle: "gotten on with (EUA) / got on with (Reino Unido)", irregular: true },
-          more: [
             { label: "Exemplo", example: "Let’s get on with the meeting.", exampleTranslation: "Vamos seguir com a reunião." },
-            { label: "Observação", text: "É um phrasal verb (get on with = continuar, seguir com)." },
+            { label: "Expressão", text: "get on with it = anda logo, continua com isso.", example: "Stop complaining and get on with it!", exampleTranslation: "Para de reclamar e anda logo com isso!" },
+            { label: "Expressão", text: "get the most out of = tirar o máximo de.", example: "Help developers get the most out of your API.", exampleTranslation: "Ajude os devs a tirarem o máximo da sua API." },
           ],
         },
         {
@@ -1537,6 +1559,16 @@ export const inglesVerbos: TopicData = {
           example: "His attitude infuriates me.",
           exampleTranslation: "A atitude dele me enfurece.",
           conjugation: { base: "infuriate", past: "infuriated", participle: "infuriated", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "infuriating = irritante, de deixar furioso.", example: "It's infuriating when the bug disappears.", exampleTranslation: "É de enfurecer quando o bug some." },
+          ],
+        },
+        {
+          term: "inherit",
+          translation: "herdar",
+          example: "He inherited the throne from his father.",
+          exampleTranslation: "Ele herdou o trono do pai.",
+          conjugation: { base: "inherit", past: "inherited", participle: "inherited", irregular: false },
         },
         {
           term: "install",
@@ -2265,6 +2297,10 @@ export const inglesVerbos: TopicData = {
           example: "He revealed the secret.",
           exampleTranslation: "Ele revelou o segredo.",
           conjugation: { base: "reveal", past: "revealed", participle: "revealed", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "revealing = que mostra muito.", example: "A revealing dress.", exampleTranslation: "Um vestido que mostra bastante." },
+            { label: "Adjetivo", text: "revealing = revelador.", example: "A revealing study.", exampleTranslation: "Um estudo revelador." },
+          ],
         },
         {
           term: "revoke",
@@ -2308,6 +2344,9 @@ export const inglesVerbos: TopicData = {
           example: "The noise roused me from a deep sleep.",
           exampleTranslation: "O barulho me despertou de um sono profundo.",
           conjugation: { base: "rouse", past: "roused", participle: "roused", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "rousing = empolgante, que levanta o ânimo.", example: "She gave a rousing speech.", exampleTranslation: "Ela fez um discurso empolgante." },
+          ],
         },
         {
           term: "ruin",
@@ -2546,6 +2585,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "sing",
+          translation: "cantar",
+          example: "The congregation sang together.",
+          exampleTranslation: "A congregação cantou junta.",
+          conjugation: { base: "sing", past: "sang", participle: "sung", irregular: true },
+        },
+        {
           term: "sit",
           translation: "sentar",
           example: "Sit down, dinner is ready.",
@@ -2578,7 +2624,8 @@ export const inglesVerbos: TopicData = {
         },
         {
           term: "snog",
-          translation: "beijar na boca, “pegar” (britânico, informal)",
+          translation: "beijar na boca, “pegar” (informal)",
+          british: true,
           example: "They were snogging behind the library.",
           exampleTranslation: "Eles estavam se beijando atrás da biblioteca.",
           conjugation: { base: "snog", past: "snogged", participle: "snogged", irregular: false },
@@ -2948,7 +2995,7 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "tuck in your shirt = põe a camisa pra dentro.", example: "Tuck in your shirt before the interview.", exampleTranslation: "Põe a camisa pra dentro antes da entrevista." },
             { label: "Expressão", text: "tuck someone in = ajeitar a coberta de alguém na cama.", example: "Mom tucked me in every night.", exampleTranslation: "Minha mãe me cobria toda noite." },
             { label: "Expressão", text: "tucked away = escondido, num cantinho.", example: "There’s a little café tucked away in the alley.", exampleTranslation: "Tem um cafezinho escondido no beco." },
-            { label: "Outro sentido", text: "tuck in = atacar a comida, começar a comer (britânico).", example: "Dinner’s ready, tuck in!", exampleTranslation: "O jantar tá pronto, pode atacar!" },
+            { label: "Outro sentido", british: true, text: "tuck in = atacar a comida, começar a comer.", example: "Dinner’s ready, tuck in!", exampleTranslation: "O jantar tá pronto, pode atacar!" },
           ],
         },
         {
@@ -3069,6 +3116,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "wear", past: "wore", participle: "worn", irregular: true },
           more: [
             { label: "Diferença", text: "wear é estar vestindo; put on é o ato de vestir." },
+          ],
+        },
+        {
+          term: "welcome",
+          translation: "dar as boas-vindas, receber",
+          example: "The minister welcomed everyone.",
+          exampleTranslation: "O ministro deu as boas-vindas a todos.",
+          conjugation: { base: "welcome", past: "welcomed", participle: "welcomed", irregular: false },
+          more: [
+            { label: "Expressão", text: "you’re welcome = de nada.", example: "Thanks for the help! You’re welcome.", exampleTranslation: "Valeu pela ajuda! De nada." },
           ],
         },
         {

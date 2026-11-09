@@ -8,6 +8,7 @@ import { DictionaryEntry, dictionary, searchDictionary } from "@/lib/dictionary"
 import { normalize } from "@/lib/text-match";
 import { Breadcrumb } from "./Breadcrumb";
 import { SpeakButton } from "./SpeakButton";
+import { BritishTag } from "./BritishTag";
 import { VocabDetails } from "./VocabDetails";
 import { ScrollToTopButton } from "./ScrollToTopButton";
 
@@ -91,6 +92,7 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
             <span className="text-stone-400 text-[0.95rem]" style={SERIF}>
               {entry.senses.map((s) => s.meaning).join(" · ")}
             </span>
+            {entry.senses.some((s) => s.british) && <BritishTag />}
           </button>
           <SpeakButton text={entry.term} accent={accent} />
           <button

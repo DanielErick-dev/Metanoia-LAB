@@ -12,6 +12,7 @@ import { getFlashcardsForTopic } from "@/lib/flashcards";
 import { categories, getCategoryBySlug, getCategoryPath } from "@/lib/categories";
 import { getQuizByPath, getQuizPath, quizzes } from "@/lib/quizzes";
 import { TopicPage } from "@/components/features/TopicPage";
+import { ScenePage } from "@/components/features/ScenePage";
 import { CategoryPage } from "@/components/features/CategoryPage";
 import { GuidePage } from "@/components/features/GuidePage";
 import { QuizPage } from "@/components/features/QuizPage";
@@ -101,6 +102,10 @@ export default async function Page({ params }: PageProps) {
     const relatedTopics = topic.relatedSlugs
       .map((s) => topics.find((t) => t.slug === s))
       .filter(Boolean) as typeof topics;
+
+    if (topic.scene) {
+      return <ScenePage topic={topic} kind={topic.scene} relatedTopics={relatedTopics} />;
+    }
 
     const topicCategory = getCategoryBySlug(topic.categorySlug);
     if (topicCategory?.layout === "guide") {

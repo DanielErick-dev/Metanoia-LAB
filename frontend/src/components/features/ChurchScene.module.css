@@ -1,0 +1,387 @@
+.candle,
+.arc,
+.note,
+.petal,
+.drop,
+.anointGlow,
+.ring,
+.doorLight {
+  transform-box: fill-box;
+}
+
+.arc,
+.note,
+.petal,
+.drop,
+.anointGlow,
+.ring,
+.doorLight {
+  opacity: 0;
+}
+
+.candle {
+  transform-origin: 50% 100%;
+  animation: candle 0.55s ease-in-out infinite alternate;
+}
+
+.beam {
+  opacity: 0.3;
+  animation: beam 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.pane {
+  transition: filter 0.6s ease;
+}
+
+.door {
+  transform-box: fill-box;
+  transform-origin: 0 50%;
+  transition: transform 0.7s ease;
+}
+
+.arm,
+.head,
+.bell,
+.flask,
+.nod {
+  transform-box: fill-box;
+}
+
+.arm {
+  transform-origin: 8% 92%;
+}
+
+.head {
+  transform-origin: 50% 100%;
+}
+
+.bell {
+  transform-origin: 50% 0;
+}
+
+.flask {
+  transform-origin: 80% 80%;
+}
+
+.nod {
+  transform-origin: 50% 100%;
+}
+
+.scene[data-action="preach"] .preacherArm,
+.scene[data-action="preaching"] .preacherArm {
+  animation: gesture 1.1s ease-in-out infinite alternate;
+}
+
+.scene[data-action="preach"] .arc,
+.scene[data-action="preaching"] .arc,
+.scene[data-action="sermon"] .arc {
+  animation: arc 1.6s ease-out infinite;
+}
+
+.arc:nth-of-type(2) {
+  animation-delay: 0.4s !important;
+}
+
+.arc:nth-of-type(3) {
+  animation-delay: 0.8s !important;
+}
+
+.arc:nth-of-type(4) {
+  animation-delay: 1.2s !important;
+}
+
+.scene[data-action="sermon"] .book {
+  filter: brightness(1.6) drop-shadow(0 0 8px #fde68a);
+}
+
+.scene[data-action="sing"] .head,
+.scene[data-action="congregation"] .head {
+  animation: sway 1.5s ease-in-out infinite alternate;
+}
+
+.head:nth-of-type(even) {
+  animation-delay: 0.45s !important;
+}
+
+.head:nth-of-type(3n) {
+  animation-delay: 0.8s !important;
+}
+
+.scene[data-action="sing"] .note,
+.scene[data-action="congregation"] .note {
+  animation: note 2.6s ease-out infinite;
+}
+
+.note:nth-of-type(2) {
+  animation-delay: 0.5s !important;
+}
+
+.note:nth-of-type(3) {
+  animation-delay: 1s !important;
+}
+
+.note:nth-of-type(4) {
+  animation-delay: 1.5s !important;
+}
+
+.note:nth-of-type(5) {
+  animation-delay: 2s !important;
+}
+
+.scene[data-action="welcome"] .door,
+.scene[data-action="minister"] .door {
+  transform: scaleX(0.22);
+}
+
+.scene[data-action="welcome"] .doorLight,
+.scene[data-action="minister"] .doorLight {
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.scene[data-action="welcome"] .ministerArm,
+.scene[data-action="minister"] .ministerArm {
+  animation: wave 0.7s ease-in-out infinite alternate;
+}
+
+.scene[data-action="pastor"] .pastorArm {
+  animation: wave 1s ease-in-out infinite alternate;
+}
+
+.scene[data-action="ceremony"] .candle,
+.scene[data-action="wedding"] .candle {
+  animation: candleHigh 0.4s ease-in-out infinite alternate;
+}
+
+.scene[data-action="ceremony"] .beam,
+.scene[data-action="wedding"] .beam,
+.scene[data-action="faith"] .beam {
+  animation: beamHigh 2.4s ease-in-out infinite alternate;
+}
+
+.scene[data-action="faith"] .pane {
+  filter: brightness(1.5) saturate(1.25);
+}
+
+.scene[data-action="ceremony"] .petal,
+.scene[data-action="wedding"] .petal {
+  animation: petal 3.4s linear infinite;
+}
+
+.petal:nth-of-type(2) {
+  animation-delay: 0.6s !important;
+}
+
+.petal:nth-of-type(3) {
+  animation-delay: 1.2s !important;
+}
+
+.petal:nth-of-type(4) {
+  animation-delay: 1.9s !important;
+}
+
+.petal:nth-of-type(5) {
+  animation-delay: 2.6s !important;
+}
+
+.scene[data-action="wedding"] .ring {
+  animation: ring 1.1s ease-in-out infinite alternate;
+}
+
+.scene[data-action="anoint"] .flask,
+.scene[data-action="anointment"] .flask {
+  transform: rotate(-32deg);
+  transition: transform 0.5s ease;
+}
+
+.scene[data-action="anoint"] .drop,
+.scene[data-action="anointment"] .drop {
+  animation: drop 1.3s ease-in infinite;
+}
+
+.scene[data-action="anoint"] .anointGlow,
+.scene[data-action="anointment"] .anointGlow {
+  animation: anointGlow 1.3s ease-in-out infinite;
+}
+
+.scene[data-action="church"] .bell,
+.scene[data-action="Sunday"] .bell {
+  animation: bell 0.8s ease-in-out infinite alternate;
+}
+
+.scene[data-action="church"] .bellWave,
+.scene[data-action="Sunday"] .bellWave {
+  animation: arc 1.2s ease-out infinite;
+}
+
+.scene[data-action="church leader"] .nod {
+  animation: nod 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes candle {
+  from {
+    transform: scaleY(0.9) scaleX(1.05);
+  }
+  to {
+    transform: scaleY(1.1) scaleX(0.92);
+  }
+}
+
+@keyframes candleHigh {
+  from {
+    transform: scale(1.2, 1.3);
+  }
+  to {
+    transform: scale(1, 1.65);
+  }
+}
+
+@keyframes beam {
+  from {
+    opacity: 0.22;
+  }
+  to {
+    opacity: 0.36;
+  }
+}
+
+@keyframes beamHigh {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes gesture {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(34deg);
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(-12deg);
+  }
+  to {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes arc {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes note {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(12px, -80px) rotate(14deg);
+  }
+}
+
+@keyframes petal {
+  0% {
+    opacity: 0;
+    transform: translate(0, -20px) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(26px, 170px) rotate(220deg);
+  }
+}
+
+@keyframes ring {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.7) drop-shadow(0 0 7px #fde68a);
+  }
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+}
+
+@keyframes anointGlow {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bell {
+  from {
+    transform: rotate(-16deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes nod {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene *,
+  .scene[data-action] * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

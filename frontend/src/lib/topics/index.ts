@@ -34,6 +34,8 @@ import { pytestDjangoMarcacaoDb } from "./pytest-django-marcacao-db";
 import { pytestDjangoParametroDb } from "./pytest-django-parametro-db";
 import { pytestDjangoConftest } from "./pytest-django-conftest";
 import { inglesOughGang } from "./ingles-ough-gang";
+import { inglesIgreja } from "./ingles-igreja";
+import { inglesCozinha } from "./ingles-cozinha";
 import { someAnyNo } from "./some-any-no";
 import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
 import { designingWebApisCap2 } from "./designing-web-apis-paradigmas";
@@ -79,6 +81,8 @@ export const topics: TopicData[] = [
   inglesReacoesInterjeicoes,
   ingles50ExpressoesCurtas,
   inglesOughGang,
+  inglesIgreja,
+  inglesCozinha,
   pytestDjangoConfiguracao,
   pytestDjangoMarcacaoDb,
   pytestDjangoParametroDb,

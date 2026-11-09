@@ -18,6 +18,7 @@ export interface TopicCitation {
 
 export interface VocabMore {
   label: string;
+  british?: boolean;
   text?: string;
   example?: string;
   exampleTranslation?: string;
@@ -33,6 +34,7 @@ export interface VocabConjugation {
 export interface VocabEntry {
   term: string;
   translation: string;
+  british?: boolean;
   example?: string;
   exampleTranslation?: string;
   conjugation?: VocabConjugation;
@@ -110,6 +112,7 @@ export interface TopicSection {
   links?: TopicLink[];
   citation?: TopicCitation;
   vocabList?: VocabEntry[];
+  reusesVocabulary?: boolean;
   expressions?: ExpressionEntry[];
   table?: TopicTable;
   lineup?: LineupEntry[];
@@ -147,5 +150,6 @@ export interface TopicData {
   relatedSlugs: string[];
   slides?: Slide[];
   status?: "em-breve" | "em-construcao";
+  scene?: "kitchen" | "church";
   quizUrl?: string;
 }

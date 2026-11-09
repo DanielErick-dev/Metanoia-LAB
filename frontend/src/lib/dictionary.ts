@@ -7,6 +7,7 @@ const CORE_TOPICS = new Set(["verbos", "geral"]);
 
 export interface DictionarySense {
   meaning: string;
+  british?: boolean;
   conjugation?: VocabConjugation;
   informal?: LineupEntry["informal"];
   forms?: LineupEntry["forms"];
@@ -71,9 +72,10 @@ function buildDictionary(): DictionaryEntry[] {
     const source = { title: topic.title, href: `/${getTopicPath(topic)}`, accent: topic.accent };
     core = CORE_TOPICS.has(topic.slug);
     for (const section of topic.sections) {
-      for (const entry of section.vocabList ?? []) {
+      for (const entry of section.reusesVocabulary ? [] : (section.vocabList ?? [])) {
         add(entry.term, {
           meaning: entry.translation,
+          british: entry.british,
           conjugation: entry.conjugation,
           items: [...example(entry.example, entry.exampleTranslation), ...(entry.more ?? [])],
           source,

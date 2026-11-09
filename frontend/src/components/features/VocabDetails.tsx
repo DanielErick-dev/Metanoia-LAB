@@ -4,6 +4,7 @@ import { useState } from "react";
 import { VocabConjugation, VocabMore } from "@/lib/types/topic";
 import { matchesQuery } from "@/lib/text-match";
 import { SpeakButton } from "./SpeakButton";
+import { BritishTag } from "./BritishTag";
 
 interface VocabDetailsProps {
   conjugation?: VocabConjugation;
@@ -180,6 +181,7 @@ export function VocabDetails({ conjugation, items, accent, size = "md", filterab
                 >
                   {item.text && (
                     <p className={`${textClass} leading-relaxed`} style={SERIF}>
+                      {item.british && <BritishTag className="mr-2" />}
                       {item.text}
                     </p>
                   )}

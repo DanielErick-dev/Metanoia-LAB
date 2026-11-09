@@ -1,0 +1,42 @@
+.scroller {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #57534e transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  min-width: 960px;
+  height: auto;
+  user-select: none;
+}
+
+.spot {
+  cursor: pointer;
+  outline: none;
+  transition: filter 0.2s ease;
+}
+
+.spot:hover,
+.spot:focus-visible {
+  filter: brightness(1.25) drop-shadow(0 0 6px rgba(251, 191, 36, 0.55));
+}
+
+.spot[data-active="true"] {
+  filter: brightness(1.2) drop-shadow(0 0 9px rgba(251, 191, 36, 0.9));
+}
+
+.label {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  fill: #fde68a;
+  stroke: #17110c;
+  stroke-width: 4px;
+  paint-order: stroke;
+  text-anchor: middle;
+  pointer-events: none;
+}
