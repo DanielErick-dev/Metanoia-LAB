@@ -89,17 +89,54 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
           </aside>
 
           <article className="flex-1 min-w-0 max-w-170">
-            <span
-              className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border mb-5 lg:hidden"
+            <details
+              className="group mb-8 rounded-2xl border lg:hidden"
               style={{
-                color: category.accent,
                 borderColor: `${category.accent}40`,
-                backgroundColor: `${category.accent}12`,
+                backgroundColor: `${category.accent}0d`,
                 fontFamily: "var(--font-dm-sans), sans-serif",
               }}
             >
-              {category.title}
-            </span>
+              <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span className="min-w-0">
+                  <span
+                    className="block text-xs font-medium tracking-widest uppercase truncate"
+                    style={{ color: category.accent }}
+                  >
+                    {category.title}
+                  </span>
+                  <span className="block text-xs text-stone-500 mt-0.5">
+                    Capítulo {chapters.findIndex((c) => c.slug === activeChapter.slug) + 1} de{" "}
+                    {chapters.length} · ver todos
+                  </span>
+                </span>
+                <span
+                  className="shrink-0 text-sm transition-transform group-open:rotate-180"
+                  style={{ color: category.accent }}
+                >
+                  ▾
+                </span>
+              </summary>
+              <nav className="px-2 pb-2 space-y-1 border-t" style={{ borderColor: `${category.accent}25` }}>
+                {chapters.map((chapter) => {
+                  const active = chapter.slug === activeChapter.slug;
+                  return (
+                    <Link
+                      key={chapter.slug}
+                      href={`/${getTopicPath(chapter)}`}
+                      className="block rounded-lg px-3 py-2.5 mt-1 border-l-2 text-sm leading-snug"
+                      style={{
+                        borderColor: active ? category.accent : "transparent",
+                        backgroundColor: active ? `${category.accent}12` : "transparent",
+                        color: active ? "#f5f5f4" : "#a8a29e",
+                      }}
+                    >
+                      {chapter.title}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </details>
 
             <h1
               className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white leading-tight mb-3 break-words"
