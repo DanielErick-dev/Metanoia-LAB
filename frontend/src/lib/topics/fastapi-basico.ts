@@ -201,7 +201,7 @@ async def response_one_mission(mission_id: int) -> ResponseMission:
         if mission.id == mission_id:
             return mission
 
-    raise HTTPException(status_code=404, detail="Mission not Found")`,
+    raise HTTPException(status_code=404, detail="Mission not found")`,
       language: "python",
     },
     {
@@ -216,7 +216,7 @@ async def response_one_mission(mission_id: int) -> ResponseMission:
     },
     {
       heading: "Percorrendo as missões",
-      body: "Com isso, começamos a iterar sobre as nossas missões: para cada missão dentro de missions, verificamos se o ID dessa missão bate exatamente com o mission_id que recebemos por parâmetro. Buscamos pelo ID, e não pela posição com missions[mission_id], porque o índice da lista começa em 0 e o ID começa em 1, e essa conta quebra quando alguma missão for apagada. Caso bata, finalmente retornamos essa missão específica, que é uma ResponseMission. O return já encerra a função ali mesmo, sem percorrer o resto da lista. Caso não encontre, vamos levantar um erro HTTPException (importado do próprio FastAPI: from fastapi import HTTPException) com status code 404 e o detalhe \"Mission not Found\", indicando para o cliente que aquela missão específica não foi encontrada.",
+      body: "Com isso, começamos a iterar sobre as nossas missões: para cada missão dentro de missions, verificamos se o ID dessa missão bate exatamente com o mission_id que recebemos por parâmetro. Buscamos pelo ID, e não pela posição com missions[mission_id], porque o índice da lista começa em 0 e o ID começa em 1, e essa conta quebra quando alguma missão for apagada. Caso bata, finalmente retornamos essa missão específica, que é uma ResponseMission. O return já encerra a função ali mesmo, sem percorrer o resto da lista. Caso não encontre, vamos levantar um erro HTTPException (importado do próprio FastAPI: from fastapi import HTTPException) com status code 404 e o detalhe \"Mission not found\", indicando para o cliente que aquela missão específica não foi encontrada.",
       links: [
         {
           text: "Documentação do FastAPI — Tratamento de Erros",
@@ -241,7 +241,7 @@ async def response_one_mission(mission_id: Annotated[int, Path(ge=1, le=1000)]) 
         if mission.id == mission_id:
             return mission
 
-    raise HTTPException(status_code=404, detail="Mission not Found")`,
+    raise HTTPException(status_code=404, detail="Mission not found")`,
       language: "python",
     },
     {
@@ -305,7 +305,7 @@ async def response_one_mission(mission_id: MissionId) -> ResponseMission:
         if mission.id == mission_id:
             return mission
 
-    raise HTTPException(status_code=404, detail="Mission not Found")`,
+    raise HTTPException(status_code=404, detail="Mission not found")`,
       language: "python",
     },
     {
