@@ -3,7 +3,7 @@ import { TopicData } from "@/lib/types/topic";
 export const fastapiBasico: TopicData = {
   slug: "fastapi-basico",
   title: "Capítulo 4 — FastAPI básico",
-  subtitle: "BaseModel, Field, Schemas, criando, listando e buscando missões pelo ID e testando tudo pelo /docs",
+  subtitle: "BaseModel, Field, Schemas, criando, listando, buscando, atualizando e deletando missões e testando tudo pelo /docs",
   categorySlug: "fastapi",
   accent: "#009688",
   status: "em-construcao",
@@ -311,6 +311,90 @@ async def response_one_mission(mission_id: MissionId) -> ResponseMission:
     {
       heading: "Reaproveitando a validação",
       body: "O que, para mim, fica bem mais limpo (me lembra muito TypeScript, inclusive é parecido com type MissionId = number, só que levando a validação junto). Assim, caso precisássemos reutilizar a validação do MissionId, poderíamos usá-la sem dificuldade em vez de ficar repetindo em todas as funções. Isso vai ser útil já no PUT e no DELETE, que também recebem o ID pelo path.",
+    },
+    {
+      heading: "Atualizando uma missão (PUT)",
+      body: "Mas digamos que eu criei uma missão e agora quero editá-la, porque coloquei uma informação errada. Até o momento, teríamos que criar uma completamente do zero. Então vamos implementar um update agora, indo por partes:",
+      code: `@app.put("/missions/{mission_id}", status_code=200)
+async def update_mission(mission_id: MissionId, new_item: CreateMission) -> ResponseMission:`,
+      language: "python",
+    },
+    {
+      heading: "Path parameter e body juntos",
+      body: "Criamos a nossa rota de PUT passando o caminho, que é a rota de missões com um path parameter, para sabermos qual missão especificamente será atualizada. O status_code colocamos 200, o padrão mesmo. Criamos a função update_mission pegando esse mesmo mission_id do path parameter (lembra que eu disse que iríamos usar o MissionId? Pois é, está aqui). Mas, além do ID, onde ficam os dados alterados? Ficam justamente no new_item, que é o nosso novo item, e ele é do tipo CreateMission, o schema criado lá no início. O FastAPI sabe separar os dois sozinho: o mission_id tem o mesmo nome que está entre {} no caminho, então vem da URL; o new_item é um modelo Pydantic, então vem do corpo (body) da requisição. A resposta é a mesma de sempre, um ResponseMission, que também já vimos antes.",
+    },
+    {
+      heading: "A lógica do update",
+      body: "Agora entramos na parte lógica em si:",
+      code: `@app.put("/missions/{mission_id}", status_code=200)
+async def update_mission(mission_id: MissionId, new_item: CreateMission) -> ResponseMission:
+    for position, mission in enumerate(missions):
+        if mission.id == mission_id:
+            updated_mission = ResponseMission(id=mission.id, **new_item.model_dump())
+            missions[position] = updated_mission
+            return updated_mission
+
+    raise HTTPException(status_code=404, detail="Mission not found")`,
+      language: "python",
+    },
+    {
+      heading: "Entendendo o enumerate",
+      body: "Aqui usamos o enumerate para, na lista de missões, pegar cada missão específica e também a posição de cada uma. Então position (que poderia ser qualquer outro nome) guarda a posição de cada missão, começando em 0: a primeira missão da lista vale 0 na variável position. Já mission é a própria missão, com os seus respectivos campos, como o id. O enumerate é nativo do Python, não precisa importar nada.",
+      links: [
+        {
+          text: "Documentação do Python — enumerate",
+          url: "https://docs.python.org/pt-br/3/library/functions.html#enumerate",
+        },
+      ],
+    },
+    {
+      heading: "Substituindo a missão",
+      body: "Em seguida, verificamos se o id da missão que está sendo iterada é igual ao mission_id que foi passado na rota. Caso seja, encontramos o elemento que será atualizado. Criamos então uma variável updated_mission, que guarda exatamente a nova missão: ela é do tipo ResponseMission, recebendo exatamente o mesmo id (o id não muda, lembra?) e todos os dados novos vindos de new_item, com o ** e o model_dump() que já vimos anteriormente. Depois, dentro da lista missions, pegamos a missão específica através do position e trocamos ela inteira pela updated_mission. Dessa forma fazemos uma substituição completa e, por último, retornamos. Caso o ID dessa missão não seja encontrado (passaram um ID errado), cai no HTTPException, que retorna 404 com a mensagem detalhada de que a missão não foi encontrada.",
+    },
+    {
+      heading: "PUT substitui tudo",
+      body: "Repare que o PUT troca a missão inteira, por isso o new_item é um CreateMission completo, e não só o campo que mudou. Cuidado com um detalhe: o difficulty tem default=1, então, se você mandar só title e reward no PUT, a dificuldade volta para 1, mesmo que antes fosse 4. Para atualizar só alguns campos existe o PATCH, que fica para outro momento.",
+      links: [
+        {
+          text: "Documentação do FastAPI — Corpo - Atualizações",
+          url: "https://fastapi.tiangolo.com/pt/tutorial/body-updates/",
+        },
+      ],
+    },
+    {
+      heading: "Deletando uma missão (DELETE)",
+      body: "Agora precisamos deletar uma missão, então vejamos:",
+      code: `@app.delete("/missions/{mission_id}", status_code=204)
+async def delete_mission(mission_id: MissionId):
+    for position, mission in enumerate(missions):
+        if mission.id == mission_id:
+            del missions[position]
+            return
+
+    raise HTTPException(status_code=404, detail="Mission not found")`,
+      language: "python",
+    },
+    {
+      heading: "Entendendo o DELETE",
+      body: "Veja que é bem parecido com o que já fizemos. Recebemos um path parameter e retornamos 204, status code que significa sucesso, porém sem conteúdo na resposta. Recebemos esse ID por parâmetro na função, usamos o enumerate novamente para pegar a missão e a posição, verificamos pelo ID para achar a missão específica, igual fizemos no PUT, e deletamos essa missão da lista através do del.",
+      links: [
+        {
+          text: "Documentação do Python — A instrução del",
+          url: "https://docs.python.org/pt-br/3/tutorial/datastructures.html#the-del-statement",
+        },
+        {
+          text: "MDN — 204 No Content",
+          url: "https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Status/204",
+        },
+      ],
+    },
+    {
+      heading: "Por que o return sozinho",
+      body: "Em seguida colocamos um return. Esse return serve para encerrar a função ali, porque senão o código continuaria o for e, no final, cairia no 404 do HTTPException. E não colocamos return mission nem nada, porque não tem o que retornar, já que o elemento foi deletado: retornamos apenas o status code 204 mesmo. Por isso também não tem -> ResponseMission nessa função.",
+    },
+    {
+      heading: "O ID incremental quebra aqui",
+      body: "Lembra do aviso sobre o ID incremental? Com o DELETE ele finalmente quebra. Imagine que temos as missões 1, 2 e 3 e deletamos a 2: a lista fica com 2 missões, então a próxima criada recebe len(missions) + 1 = 3, e agora temos duas missões com ID 3. Com um banco de dados de verdade, quem gera o ID é o próprio banco, e esse problema some.",
     },
   ],
   relatedSlugs: [],
