@@ -37,6 +37,7 @@ import { inglesOughGang } from "./ingles-ough-gang";
 import { inglesIgreja } from "./ingles-igreja";
 import { inglesCozinha } from "./ingles-cozinha";
 import { someAnyNo } from "./some-any-no";
+import { inglesPresentPerfectContinuous } from "./ingles-present-perfect-continuous";
 import { designingWebApisCap1 } from "./designing-web-apis-o-que-e-uma-api";
 import { designingWebApisCap2 } from "./designing-web-apis-paradigmas";
 import { designingWebApisCap3 } from "./designing-web-apis-seguranca";
@@ -88,6 +89,7 @@ export const topics: TopicData[] = [
   pytestDjangoParametroDb,
   pytestDjangoConftest,
   someAnyNo,
+  inglesPresentPerfectContinuous,
   designingWebApisCap1,
   designingWebApisCap2,
   designingWebApisCap3,
