@@ -245,7 +245,7 @@ export function TopicPage({ topic, relatedTopics }: TopicPageProps) {
                   className="text-sm text-stone-300"
                   style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
                 >
-                  📇 Pratique com flashcards e repetição espaçada ({flashcardsCount}{" "}
+                  📇 Pratique com quiz, digitação ou flashcards ({flashcardsCount}{" "}
                   {flashcardsCount === 1 ? "cartão" : "cartões"}).
                 </p>
                 <Link
