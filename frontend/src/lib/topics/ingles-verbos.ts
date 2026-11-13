@@ -284,6 +284,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "blend",
+          translation: "bater (no liquidificador), misturar",
+          example: "Blend the fruit with milk.",
+          exampleTranslation: "Bata a fruta com leite.",
+          conjugation: { base: "blend", past: "blended", participle: "blended", irregular: false },
+        },
+        {
           term: "blind",
           translation: "cegar, ofuscar",
           example: "I was blinded by the light.",
@@ -818,6 +825,18 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "dine",
+          translation: "jantar (formal)",
+          example: "We dine at eight.",
+          exampleTranslation: "Nós jantamos às oito.",
+          conjugation: { base: "dine", past: "dined", participle: "dined", irregular: false },
+          more: [
+            { label: "Expressão", text: "dining room = sala de jantar.", example: "We eat dinner in the dining room.", exampleTranslation: "A gente janta na sala de jantar." },
+            { label: "Expressão", text: "dining area = área de jantar (espaço aberto, sem paredes).", example: "The dining area is next to the kitchen.", exampleTranslation: "A área de jantar fica ao lado da cozinha." },
+            { label: "Expressão", text: "dining table = mesa de jantar.", example: "Set the dining table.", exampleTranslation: "Arrume a mesa de jantar." },
+          ],
+        },
+        {
           term: "direct",
           translation: "direcionar, encaminhar / direto",
           example: "The link directs you to the login page.",
@@ -930,6 +949,16 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "drop in on + pessoa = dar uma passada na casa de alguém.", example: "I’ll drop in on you tomorrow.", exampleTranslation: "Vou dar uma passada aí amanhã." },
             { label: "Parecido", text: "drop by, stop by." },
             { label: "Substantivo", text: "drop = gota; queda.", example: "I felt a drop of rain.", exampleTranslation: "Senti uma gota de chuva." },
+          ],
+        },
+        {
+          term: "dry",
+          translation: "secar / seco",
+          example: "Dry the plates.",
+          exampleTranslation: "Seque os pratos.",
+          conjugation: { base: "dry", past: "dried", participle: "dried", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "dry = seco.", example: "The towel is dry.", exampleTranslation: "A toalha está seca." },
           ],
         },
         {
@@ -1342,6 +1371,16 @@ export const inglesVerbos: TopicData = {
           conjugation: { base: "grant", past: "granted", participle: "granted", irregular: false },
           more: [
             { label: "Em tecnologia", text: "grant permissions = conceder permissões.", example: "The app asked me to grant camera permissions.", exampleTranslation: "O app me pediu pra conceder permissões da câmera." },
+          ],
+        },
+        {
+          term: "grate",
+          translation: "ralar",
+          example: "Grate the cheese.",
+          exampleTranslation: "Rale o queijo.",
+          conjugation: { base: "grate", past: "grated", participle: "grated", irregular: false },
+          more: [
+            { label: "Adjetivo", text: "grated = ralado.", example: "Add some grated cheese.", exampleTranslation: "Coloque um pouco de queijo ralado." },
           ],
         },
         {
@@ -1913,6 +1952,16 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "mix",
+          translation: "misturar",
+          example: "Mix the flour with the eggs.",
+          exampleTranslation: "Misture a farinha com os ovos.",
+          conjugation: { base: "mix", past: "mixed", participle: "mixed", irregular: false },
+          more: [
+            { label: "Expressão", text: "mixing bowl = tigela de misturar, bacia.", example: "Mix the flour in a large mixing bowl.", exampleTranslation: "Misture a farinha numa bacia grande." },
+          ],
+        },
+        {
           term: "monitor",
           translation: "monitorar / monitor / fiscal",
           example: "The teacher asked a student to monitor the hall.",
@@ -2017,6 +2066,16 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Expressão", text: "pay attention = prestar atenção.", example: "Pay attention, this part is important.", exampleTranslation: "Presta atenção, essa parte é importante." },
             { label: "Substantivo", text: "payment = pagamento.", example: "The payment failed, so try another card.", exampleTranslation: "O pagamento falhou, então tenta outro cartão." },
+          ],
+        },
+        {
+          term: "peel",
+          translation: "descascar / casca",
+          example: "Peel the potatoes.",
+          exampleTranslation: "Descasque as batatas.",
+          conjugation: { base: "peel", past: "peeled", participle: "peeled", irregular: false },
+          more: [
+            { label: "Substantivo", text: "peel = casca (de fruta).", example: "Throw the orange peel away.", exampleTranslation: "Joga fora a casca da laranja." },
           ],
         },
         {
@@ -2315,6 +2374,13 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "rinse",
+          translation: "enxaguar",
+          example: "Rinse the cup in the sink.",
+          exampleTranslation: "Enxágue a xícara na pia.",
+          conjugation: { base: "rinse", past: "rinsed", participle: "rinsed", irregular: false },
+        },
+        {
           term: "rise",
           translation: "erguer-se",
           example: "After the fall, he rose again.",
@@ -2336,6 +2402,17 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "roast beef = rosbife.", example: "We had roast beef for lunch.", exampleTranslation: "Comemos rosbife no almoço." },
             { label: "Expressão", text: "roast chicken = frango assado.", example: "Sunday is roast chicken day.", exampleTranslation: "Domingo é dia de frango assado." },
             { label: "Outro sentido", text: "torrar (café, castanhas).", example: "I love the smell of roasted coffee.", exampleTranslation: "Adoro o cheiro de café torrado." },
+          ],
+        },
+        {
+          term: "roll",
+          translation: "rolar; enrolar, abrir (massa)",
+          example: "The ball rolled under the table.",
+          exampleTranslation: "A bola rolou pra baixo da mesa.",
+          conjugation: { base: "roll", past: "rolled", participle: "rolled", irregular: false },
+          more: [
+            { label: "Phrasal verb", text: "roll out = abrir (massa) com rolo.", example: "Roll out the dough.", exampleTranslation: "Abra a massa." },
+            { label: "Expressão", text: "rolling pin = rolo de massa.", example: "Roll out the dough with a rolling pin.", exampleTranslation: "Abra a massa com o rolo." },
           ],
         },
         {
@@ -3096,6 +3173,13 @@ export const inglesVerbos: TopicData = {
             { label: "Expressão", text: "go for a walk = dar uma caminhada.", example: "Let's go for a walk after lunch.", exampleTranslation: "Bora dar uma caminhada depois do almoço." },
             { label: "Phrasal verb", text: "walk into = entrar (num lugar).", example: "He walked into the room.", exampleTranslation: "Ele entrou na sala." },
           ],
+        },
+        {
+          term: "wash",
+          translation: "lavar",
+          example: "Wash the dishes.",
+          exampleTranslation: "Lave a louça.",
+          conjugation: { base: "wash", past: "washed", participle: "washed", irregular: false },
         },
         {
           term: "watch",

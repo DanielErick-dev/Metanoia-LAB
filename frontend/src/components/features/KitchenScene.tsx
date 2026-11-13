@@ -14,14 +14,14 @@ function Hanging({ x, children }: { x: number; children: React.ReactNode }) {
 }
 
 const TILE_ROWS = [200, 248, 296, 344, 392];
-const TILE_COLUMNS = Array.from({ length: 25 }, (_, i) => i * 48);
+const TILE_COLUMNS = Array.from({ length: 46 }, (_, i) => i * 48);
 
 export function KitchenScene({ action }: SceneProps) {
   return (
     <svg
       className={`${shared.canvas} ${styles.scene}`}
       data-action={action ?? undefined}
-      viewBox="0 0 1200 620"
+      viewBox="0 0 2200 620"
       role="group"
       aria-label="Cozinha ilustrada: clique em um objeto para ver a palavra em inglês"
     >
@@ -51,32 +51,42 @@ export function KitchenScene({ action }: SceneProps) {
         </radialGradient>
       </defs>
 
-      <rect width="1200" height="620" fill="url(#kitchen-wall)" />
+      <rect width="2200" height="620" fill="url(#kitchen-wall)" />
       <g stroke="#1c140e" strokeWidth="1.5" opacity="0.65">
-        <rect x="0" y="176" width="1200" height="254" fill="#4a382b" stroke="none" />
+        <rect x="0" y="176" width="2200" height="254" fill="#4a382b" stroke="none" />
         {TILE_ROWS.map((y) => (
-          <line key={y} x1="0" y1={y} x2="1200" y2={y} />
+          <line key={y} x1="0" y1={y} x2="2200" y2={y} />
         ))}
         {TILE_COLUMNS.map((x) => (
           <line key={x} x1={x} y1="176" x2={x} y2="430" />
         ))}
       </g>
-      <rect width="1200" height="620" fill="url(#kitchen-lamp)" />
-      <rect x="0" y="560" width="1200" height="60" fill="#1a130e" />
+      <rect width="2200" height="620" fill="url(#kitchen-lamp)" />
+      <rect x="0" y="560" width="2200" height="60" fill="#1a130e" />
 
-      <rect x="0" y="430" width="1200" height="18" fill="#7c5a3c" />
-      <rect x="0" y="448" width="1200" height="112" fill="#33261c" />
+      <rect x="0" y="430" width="2200" height="18" fill="#7c5a3c" />
+      <rect x="0" y="448" width="2200" height="112" fill="#33261c" />
       <g fill="none" stroke="#4d3a2b" strokeWidth="3">
         <rect x="175" y="460" width="135" height="88" rx="4" />
         <rect x="322" y="460" width="135" height="88" rx="4" />
         <rect x="845" y="460" width="150" height="88" rx="4" />
         <rect x="1007" y="460" width="150" height="88" rx="4" />
+        <rect x="1440" y="460" width="150" height="88" rx="4" />
+        <rect x="1602" y="460" width="150" height="88" rx="4" />
+        <rect x="1764" y="460" width="150" height="88" rx="4" />
+        <rect x="1926" y="460" width="150" height="88" rx="4" />
+        <rect x="2088" y="460" width="100" height="88" rx="4" />
       </g>
       <g fill="#a8a29e">
         <rect x="228" y="470" width="30" height="5" rx="2" />
         <rect x="375" y="470" width="30" height="5" rx="2" />
         <rect x="905" y="470" width="30" height="5" rx="2" />
         <rect x="1067" y="470" width="30" height="5" rx="2" />
+        <rect x="1500" y="470" width="30" height="5" rx="2" />
+        <rect x="1662" y="470" width="30" height="5" rx="2" />
+        <rect x="1824" y="470" width="30" height="5" rx="2" />
+        <rect x="1986" y="470" width="30" height="5" rx="2" />
+        <rect x="2123" y="470" width="30" height="5" rx="2" />
       </g>
 
       <polygon points="560,40 760,40 800,176 520,176" fill="#292524" />
@@ -85,12 +95,19 @@ export function KitchenScene({ action }: SceneProps) {
       <rect x="172" y="132" width="310" height="9" fill="#7c5a3c" />
       <rect x="172" y="262" width="310" height="9" fill="#7c5a3c" />
       <rect x="850" y="112" width="320" height="6" rx="3" fill="#a8a29e" />
+      <rect x="1480" y="132" width="360" height="9" fill="#7c5a3c" />
+      <rect x="1480" y="262" width="360" height="9" fill="#7c5a3c" />
+      <rect x="1850" y="112" width="330" height="6" rx="3" fill="#a8a29e" />
 
-      <Spot term="fridge" labelX={92} labelY={160}>
-        <rect x="30" y="172" width="125" height="388" rx="10" fill="#a8a29e" />
-        <rect x="30" y="172" width="125" height="388" rx="10" fill="url(#kitchen-steel)" opacity="0.6" />
-        <line x1="30" y1="300" x2="155" y2="300" stroke="#44403c" strokeWidth="3" />
+      <Spot term="freezer" labelX={92} labelY={160}>
+        <rect x="30" y="172" width="125" height="127" rx="10" fill="#a8a29e" />
+        <rect x="30" y="172" width="125" height="127" rx="10" fill="url(#kitchen-steel)" opacity="0.6" />
         <rect x="138" y="225" width="7" height="55" rx="3" fill="#44403c" />
+        <path d="M56 214 v28 M44 221 l24 14 M44 235 l24 -14" stroke="#e0f2fe" strokeWidth="3" strokeLinecap="round" />
+      </Spot>
+      <Spot term="fridge" labelX={92} labelY={440}>
+        <rect x="30" y="301" width="125" height="259" rx="10" fill="#a8a29e" />
+        <rect x="30" y="301" width="125" height="259" rx="10" fill="url(#kitchen-steel)" opacity="0.6" />
         <rect x="138" y="320" width="7" height="85" rx="3" fill="#44403c" />
       </Spot>
 
@@ -326,6 +343,218 @@ export function KitchenScene({ action }: SceneProps) {
         </text>
         <circle cx="1160" cy="375" r="6" fill="#57534e" />
         <circle cx="1160" cy="398" r="6" fill="#57534e" />
+      </Spot>
+
+      <Spot term="cupboard" labelX={1340} labelY={30}>
+        <rect x="1230" y="44" width="220" height="150" rx="6" fill="#5b4331" stroke="#3f2d20" strokeWidth="3" />
+        <rect x="1242" y="56" width="94" height="126" rx="4" fill="none" stroke="#7c5a3c" strokeWidth="3" />
+        <rect x="1344" y="56" width="94" height="126" rx="4" fill="none" stroke="#7c5a3c" strokeWidth="3" />
+        <circle cx="1326" cy="120" r="5" fill="#a8a29e" />
+        <circle cx="1354" cy="120" r="5" fill="#a8a29e" />
+      </Spot>
+
+      <Spot term="flour" labelX={1505} labelY={48}>
+        <path d="M1482 132 v-52 l6 -8 h34 l6 8 v52 z" fill="#f5f5f4" />
+        <rect x="1482" y="96" width="46" height="10" fill="#fbbf24" />
+      </Spot>
+      <Spot term="oats" labelX={1565} labelY={34}>
+        <rect x="1545" y="84" width="40" height="48" rx="6" fill="#92400e" />
+        <rect x="1542" y="76" width="46" height="10" rx="3" fill="#fde68a" />
+      </Spot>
+      <Spot term="oil" labelX={1622} labelY={48}>
+        <path d="M1612 132 v-40 q0 -9 7 -13 v-12 h8 v12 q7 4 7 13 v40 z" fill="#eab308" opacity="0.85" />
+        <rect x="1618" y="61" width="10" height="7" rx="2" fill="#15803d" />
+      </Spot>
+      <Spot term="margarine" labelX={1686} labelY={34}>
+        <path d="M1662 132 l-4 -28 h56 l-4 28 z" fill="#fde047" />
+        <rect x="1655" y="96" width="62" height="9" rx="3" fill="#ca8a04" />
+      </Spot>
+      <Spot term="wheat" labelX={1750} labelY={48}>
+        <path d="M1738 132 l-3 -24 h30 l-3 24 z" fill="#a16207" />
+        <path d="M1750 108 l-12 -36 M1750 108 v-40 M1750 108 l12 -36" stroke="#ca8a04" strokeWidth="2.5" fill="none" />
+        <g fill="#facc15">
+          <ellipse cx="1737" cy="70" rx="4" ry="9" transform="rotate(-18 1737 70)" />
+          <ellipse cx="1750" cy="64" rx="4" ry="9" />
+          <ellipse cx="1763" cy="70" rx="4" ry="9" transform="rotate(18 1763 70)" />
+        </g>
+      </Spot>
+      <Spot term="chopsticks" labelX={1818} labelY={34}>
+        <path d="M1808 100 l-6 -40 M1818 100 l6 -40" stroke="#b91c1c" strokeWidth="4" strokeLinecap="round" />
+        <rect x="1802" y="98" width="24" height="34" rx="3" fill="#1c1917" />
+      </Spot>
+
+      <Spot term="cup" labelX={1500} labelY={204}>
+        <ellipse cx="1500" cy="258" rx="24" ry="4" fill="#e7e5e4" />
+        <path d="M1486 255 l-2 -22 h32 l-2 22 z" fill="#f5f5f4" />
+        <rect x="1485" y="240" width="30" height="5" fill="#2563eb" />
+        <path d="M1515 238 q12 0 10 10 q-2 7 -11 6" stroke="#f5f5f4" strokeWidth="4" fill="none" />
+      </Spot>
+      <Spot term="mug" labelX={1557} labelY={204}>
+        <rect x="1540" y="228" width="32" height="34" rx="4" fill="#2563eb" />
+        <path d="M1572 236 q14 0 12 12 q-2 10 -12 8" stroke="#2563eb" strokeWidth="5" fill="none" />
+      </Spot>
+      <Spot term="egg" labelX={1616} labelY={204}>
+        <g fill="#fef3c7">
+          <ellipse cx="1602" cy="242" rx="7" ry="9" />
+          <ellipse cx="1616" cy="240" rx="7" ry="9" />
+          <ellipse cx="1630" cy="242" rx="7" ry="9" />
+        </g>
+        <rect x="1592" y="246" width="48" height="16" rx="2" fill="#a8a29e" />
+      </Spot>
+      <Spot term="onion" labelX={1676} labelY={204}>
+        <path d="M1676 262 q-18 -3 -17 -20 q2 -13 17 -19 q15 6 17 19 q1 17 -17 20 z" fill="#c084fc" />
+        <path d="M1676 223 q-2 -8 2 -12" stroke="#4d7c0f" strokeWidth="3" fill="none" />
+        <path d="M1676 228 q-10 14 0 32 M1676 228 q10 14 0 32" stroke="#7e22ce" strokeWidth="1.5" fill="none" />
+      </Spot>
+      <Spot term="lettuce" labelX={1734} labelY={204}>
+        <circle cx="1734" cy="244" r="17" fill="#4ade80" />
+        <circle cx="1720" cy="252" r="11" fill="#22c55e" />
+        <circle cx="1748" cy="252" r="11" fill="#22c55e" />
+        <path d="M1734 232 v26" stroke="#bbf7d0" strokeWidth="2" />
+      </Spot>
+      <Spot term="poultry" labelX={1800} labelY={204}>
+        <ellipse cx="1800" cy="258" rx="30" ry="4" fill="#e7e5e4" />
+        <path d="M1780 255 q0 -24 22 -24 q20 0 20 24 z" fill="#fca5a5" />
+        <path d="M1784 248 l-10 -8 M1818 248 l10 -8" stroke="#fca5a5" strokeWidth="7" strokeLinecap="round" />
+        <circle cx="1772" cy="239" r="4" fill="#fef2f2" />
+        <circle cx="1830" cy="239" r="4" fill="#fef2f2" />
+      </Spot>
+
+      <Hanging x={1875}>
+        <Spot term="spatula" labelX={0} labelY={100}>
+          <rect x="-3" y="132" width="6" height="60" fill="#1c1917" />
+          <rect x="-14" y="190" width="28" height="36" rx="4" fill="#f97316" />
+        </Spot>
+      </Hanging>
+      <Hanging x={1925}>
+        <Spot term="tongs" labelX={0} labelY={86}>
+          <path d="M-3 132 L-11 226 M3 132 L11 226" stroke="url(#kitchen-steel)" strokeWidth="6" strokeLinecap="round" fill="none" />
+          <rect x="-6" y="130" width="12" height="10" rx="3" fill="#44403c" />
+        </Spot>
+      </Hanging>
+      <Hanging x={1975}>
+        <Spot term="whisk" labelX={0} labelY={100}>
+          <rect x="-4" y="132" width="8" height="42" rx="3" fill="#a8a29e" />
+          <path d="M0 172 q-20 32 0 62 q20 -30 0 -62 M0 172 q-9 32 0 62 q9 -30 0 -62" stroke="#d6d3d1" strokeWidth="2.5" fill="none" />
+        </Spot>
+      </Hanging>
+      <Hanging x={2030}>
+        <Spot term="peeler" labelX={0} labelY={86}>
+          <rect x="-5" y="132" width="10" height="46" rx="4" fill="#16a34a" />
+          <rect x="-10" y="178" width="20" height="28" rx="3" fill="none" stroke="#d6d3d1" strokeWidth="3" />
+          <line x1="0" y1="181" x2="0" y2="203" stroke="#d6d3d1" strokeWidth="2" />
+        </Spot>
+      </Hanging>
+      <Hanging x={2085}>
+        <Spot term="shears" labelX={0} labelY={100}>
+          <circle cx="-8" cy="142" r="8" fill="none" stroke="#dc2626" strokeWidth="4" />
+          <circle cx="8" cy="142" r="8" fill="none" stroke="#dc2626" strokeWidth="4" />
+          <path d="M-5 150 L5 222 M5 150 L-5 222" stroke="url(#kitchen-steel)" strokeWidth="5" strokeLinecap="round" />
+        </Spot>
+      </Hanging>
+      <Hanging x={2145}>
+        <Spot term="corkscrew" labelX={0} labelY={86}>
+          <rect x="-18" y="132" width="36" height="9" rx="4" fill="#92400e" />
+          <path d="M0 141 v8 q9 4 0 8 q-9 4 0 8 q9 4 0 8 q-9 4 0 8 q9 4 0 8 v8" stroke="#d6d3d1" strokeWidth="3" fill="none" />
+        </Spot>
+      </Hanging>
+
+      <Spot term="dishwasher" labelX={1330} labelY={582}>
+        <rect x="1240" y="452" width="180" height="104" rx="4" fill="url(#kitchen-steel)" />
+        <rect x="1240" y="452" width="180" height="16" fill="#44403c" />
+        <circle cx="1400" cy="460" r="3" fill="#4ade80" />
+        <circle cx="1388" cy="460" r="3" fill="#a8a29e" />
+        <rect x="1300" y="478" width="60" height="6" rx="3" fill="#292524" />
+      </Spot>
+
+      <Spot term="sink" labelX={1270} labelY={412}>
+        <rect x="1250" y="420" width="160" height="12" rx="3" fill="url(#kitchen-steel)" />
+        <rect x="1262" y="424" width="136" height="5" rx="2" fill="#1c1917" />
+      </Spot>
+      <rect className={styles.water} x="1300" y="358" width="7" height="64" rx="3" fill="#7dd3fc" style={{ pointerEvents: "none" }} />
+      <Spot term="faucet" labelX={1356} labelY={330}>
+        <rect x="1342" y="402" width="16" height="20" rx="3" fill="#a8a29e" />
+        <path d="M1350 404 V362 q0 -20 -20 -20 h-26 v14" stroke="url(#kitchen-steel)" strokeWidth="9" fill="none" />
+        <rect x="1358" y="392" width="16" height="6" rx="3" fill="#57534e" />
+      </Spot>
+
+      <Spot term="soap" labelX={1447} labelY={356}>
+        <path d="M1436 430 v-38 q0 -8 8 -8 h6 q8 0 8 8 v38 z" fill="#22c55e" />
+        <rect x="1444" y="370" width="6" height="14" fill="#e7e5e4" />
+        <rect x="1440" y="366" width="16" height="5" rx="2" fill="#e7e5e4" />
+      </Spot>
+      <Spot term="sponge" labelX={1487} labelY={404}>
+        <rect x="1468" y="414" width="38" height="16" rx="3" fill="#facc15" />
+        <rect x="1468" y="414" width="38" height="5" rx="2" fill="#16a34a" />
+      </Spot>
+      <Spot term="colander" labelX={1555} labelY={382}>
+        <path d="M1520 400 h70 q-4 30 -35 30 q-31 0 -35 -30 z" fill="#e11d48" />
+        <rect x="1512" y="398" width="86" height="5" rx="2" fill="#be123c" />
+        <g fill="#261b14">
+          <circle cx="1540" cy="412" r="2.5" />
+          <circle cx="1555" cy="414" r="2.5" />
+          <circle cx="1570" cy="412" r="2.5" />
+          <circle cx="1547" cy="422" r="2.5" />
+          <circle cx="1563" cy="422" r="2.5" />
+        </g>
+      </Spot>
+
+      <Spot term="toast" labelX={1660} labelY={346}>
+        <g className={styles.toastSlice}>
+          <path d="M1634 386 v-18 q0 -8 10 -8 q10 0 10 8 v18 z" fill="#d97706" />
+          <path d="M1668 386 v-18 q0 -8 10 -8 q10 0 10 8 v18 z" fill="#d97706" />
+        </g>
+      </Spot>
+      <Spot term="toaster" labelX={1660} labelY={414}>
+        <rect x="1615" y="382" width="90" height="48" rx="14" fill="url(#kitchen-steel)" />
+        <rect x="1631" y="380" width="26" height="6" rx="2" fill="#1c1917" />
+        <rect x="1665" y="380" width="26" height="6" rx="2" fill="#1c1917" />
+        <rect x="1703" y="396" width="9" height="6" rx="2" fill="#1c1917" />
+      </Spot>
+
+      <Spot term="blender" labelX={1752} labelY={300}>
+        <rect x="1728" y="400" width="48" height="30" rx="4" fill="#292524" />
+        <circle cx="1752" cy="415" r="4" fill="#ef4444" />
+        <path d="M1730 400 l-4 -76 h52 l-4 76 z" fill="#bae6fd" opacity="0.45" />
+        <path className={styles.blendContent} d="M1732 400 l-2 -38 h44 l-2 38 z" fill="#f472b6" opacity="0.75" />
+        <rect x="1724" y="318" width="56" height="8" rx="3" fill="#1c1917" />
+      </Spot>
+      <Spot term="juicer" labelX={1815} labelY={382}>
+        <path d="M1792 430 q0 -16 23 -16 q23 0 23 16 z" fill="#fbbf24" />
+        <path d="M1804 416 l11 -22 l11 22 z" fill="#fde68a" />
+      </Spot>
+      <Spot term="juice" labelX={1872} labelY={356}>
+        <path d="M1857 430 l-3 -48 h36 l-3 48 z" fill="#bae6fd" opacity="0.5" />
+        <path d="M1856 404 h34 l-2 26 h-30 z" fill="#fb923c" />
+      </Spot>
+      <Spot term="grater" labelX={1925} labelY={352}>
+        <path d="M1908 430 l4 -60 h26 l4 60 z" fill="url(#kitchen-steel)" />
+        <rect x="1916" y="362" width="18" height="7" rx="3" fill="#1c1917" />
+        <g fill="#44403c">
+          <circle cx="1918" cy="390" r="1.6" />
+          <circle cx="1925" cy="390" r="1.6" />
+          <circle cx="1932" cy="390" r="1.6" />
+          <circle cx="1918" cy="402" r="1.6" />
+          <circle cx="1925" cy="402" r="1.6" />
+          <circle cx="1932" cy="402" r="1.6" />
+          <circle cx="1918" cy="414" r="1.6" />
+          <circle cx="1925" cy="414" r="1.6" />
+          <circle cx="1932" cy="414" r="1.6" />
+        </g>
+      </Spot>
+      <Spot term="tray" labelX={2010} labelY={402}>
+        <rect x="1960" y="423" width="100" height="7" rx="2" fill="#78716c" />
+        <g fill="#b45309">
+          <ellipse cx="1980" cy="420" rx="9" ry="4" />
+          <ellipse cx="2005" cy="420" rx="9" ry="4" />
+          <ellipse cx="2030" cy="420" rx="9" ry="4" />
+        </g>
+      </Spot>
+      <Spot term="roll" labelX={2130} labelY={392}>
+        <ellipse cx="2128" cy="426" rx="46" ry="5" fill="#fef3c7" />
+        <rect x="2090" y="406" width="76" height="14" rx="7" fill="#d4a373" />
+        <rect x="2074" y="410" width="18" height="6" rx="3" fill="#92400e" />
+        <rect x="2164" y="410" width="18" height="6" rx="3" fill="#92400e" />
       </Spot>
     </svg>
   );
