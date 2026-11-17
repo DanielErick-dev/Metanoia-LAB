@@ -1,8 +1,8 @@
 import { TopicData } from "@/lib/types/topic";
 
-export const fastapiCrudBasico: TopicData = {
-  slug: "crud-basico",
-  title: "Capítulo 7 — CRUD Básico",
+export const fastapiCrudBancoDeDados: TopicData = {
+  slug: "crud-banco-de-dados",
+  title: "Capítulo 8 — CRUD com Banco de Dados",
   subtitle: "Em breve",
   categorySlug: "fastapi",
   accent: "#009688",

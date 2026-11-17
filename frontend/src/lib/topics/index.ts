@@ -48,8 +48,8 @@ import { fastapiTypeHintsPydantic } from "./fastapi-type-hints-pydantic";
 import { fastapiBasico } from "./fastapi-basico";
 import { fastapiUrlsRouters } from "./fastapi-urls-routers";
 import { fastapiSchemas } from "./fastapi-schemas";
-import { fastapiCrudBasico } from "./fastapi-crud-basico";
 import { fastapiModelsOrm } from "./fastapi-models-orm";
+import { fastapiCrudBancoDeDados } from "./fastapi-crud-banco-de-dados";
 import { fastapiCrudUsuarios } from "./fastapi-crud-usuarios";
 import { fastapiCrudMarcasCarros } from "./fastapi-crud-marcas-carros";
 import { fastapiProgramacaoAssincrona } from "./fastapi-programacao-assincrona";
@@ -100,8 +100,8 @@ export const topics: TopicData[] = [
   fastapiBasico,
   fastapiUrlsRouters,
   fastapiSchemas,
-  fastapiCrudBasico,
   fastapiModelsOrm,
+  fastapiCrudBancoDeDados,
   fastapiCrudUsuarios,
   fastapiCrudMarcasCarros,
   fastapiProgramacaoAssincrona,

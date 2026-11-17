@@ -394,7 +394,40 @@ async def delete_mission(mission_id: MissionId):
     },
     {
       heading: "O ID incremental quebra aqui",
-      body: "Lembra do aviso sobre o ID incremental? Com o DELETE ele finalmente quebra. Imagine que temos as missões 1, 2 e 3 e deletamos a 2: a lista fica com 2 missões, então a próxima criada recebe len(missions) + 1 = 3, e agora temos duas missões com ID 3. Com um banco de dados de verdade, quem gera o ID é o próprio banco, e esse problema some.",
+      body: "Agora perceba que temos um bug: o número do nosso ID é gerado a partir do tamanho da lista + 1. Se a lista ficar sempre crescendo, o ID vai ser incremental, mas se deletar, o que acontece? Exatamente o que você pensou: missões com IDs repetidos. Exemplo: crio 3 missões (ids 1, 2 e 3), deleto a 2 e sobram 2 → próximo id = 2 + 1 = 3, que já existe. E o GET /missions/3 sempre devolve a primeira, porque o for para no primeiro que encontra, então a segunda missão fica inacessível.",
+    },
+    {
+      heading: "Resolvendo com um contador",
+      body: "Uma forma de resolver isso por enquanto é colocando um contador, vejamos então:",
+      code: `contador: int = 0
+
+@app.post("/missions", status_code=201)
+async def create_mission(mission: CreateMission) -> ResponseMission:
+    global contador
+    new_id = contador + 1
+    new_mission = ResponseMission(id=new_id, **mission.model_dump())
+    missions.append(new_mission)
+    contador += 1
+    return new_mission`,
+      language: "python",
+    },
+    {
+      heading: "Por que o global",
+      body: "Dessa forma criamos uma variável do lado de fora da nossa função, do tipo inteiro, recebendo 0. Por ser de escopo global, até conseguimos acessar ela dentro da nossa função, porém, se tentarmos alterar, o Python passa a entender que é uma variável de escopo de função e puff, UnboundLocalError: ela virou uma variável local que ainda não recebeu valor. E isso vale para a função inteira, até nas linhas antes da atribuição, porque o Python decide isso ao compilar o código, antes de rodar. Por isso precisamos dizer para o Python que é uma variável global, isto é, o único contador. Com isso, o novo ID é sempre o número do contador + 1 e, ao ser adicionada uma nova missão, o contador soma +1 para se manter atualizado. Assim, mesmo que a gente delete todas as missões disponíveis e crie novamente, não teremos IDs duplicados igual antes. O id de uma missão deletada nunca é reaproveitado (ex.: 1, 3, 4, 5), e banco de dados de verdade faz igual.",
+      links: [
+        {
+          text: "Documentação do Python — A instrução global",
+          url: "https://docs.python.org/pt-br/3/reference/simple_stmts.html#the-global-statement",
+        },
+        {
+          text: "Documentação do Python — Por que recebo UnboundLocalError?",
+          url: "https://docs.python.org/pt-br/3/faq/programming.html#why-am-i-getting-an-unboundlocalerror-when-the-variable-has-a-value",
+        },
+      ],
+    },
+    {
+      heading: "E por que a lista não precisou de global?",
+      body: "Talvez você se pergunte por que a lista missions nunca precisou de global. A resposta é que missions.append(...) modifica a lista que já existe, sem atribuir nada ao nome. Já contador += 1 é uma atribuição (contador = contador + 1). Modificar não precisa de global; atribuir precisa.",
     },
   ],
   relatedSlugs: [],
