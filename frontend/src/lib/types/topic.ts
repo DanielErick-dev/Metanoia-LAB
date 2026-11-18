@@ -131,6 +131,11 @@ export interface Slide {
   video?: string;
 }
 
+export interface TopicObjectives {
+  style: "checklist" | "terminal" | "roadmap" | "cards" | "tree";
+  items: string[];
+}
+
 export interface TopicData {
   slug: string;
   title: string;
@@ -146,6 +151,7 @@ export interface TopicData {
     sourceUrl?: string;
   };
   intro: string;
+  objectives?: TopicObjectives;
   sections: TopicSection[];
   relatedSlugs: string[];
   slides?: Slide[];

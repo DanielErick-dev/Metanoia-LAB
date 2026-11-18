@@ -9,6 +9,15 @@ export const fastapiIntroducao: TopicData = {
   status: "em-construcao",
   intro:
     "O FastAPI é um framework Python para criação de APIs de alta performance, que suporta programação assíncrona nativamente e é baseado nos type hints/annotations do Python, com compatibilidade com o Pydantic, que será explicado em breve.",
+  objectives: {
+    style: "checklist",
+    items: [
+      "Entender o que é o FastAPI e de onde vem o desempenho dele",
+      "Conhecer o papel do Uvicorn, do ASGI e do uvloop",
+      "Saber a diferença entre WSGI e ASGI",
+      "Comparar o FastAPI com o Django e o Flask",
+    ],
+  },
   sections: [
     {
       heading: "Uvicorn, ASGI e uvloop",

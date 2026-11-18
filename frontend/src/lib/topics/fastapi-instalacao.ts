@@ -9,6 +9,15 @@ export const fastapiInstalacao: TopicData = {
   status: "em-construcao",
   intro:
     "Instalação e passos iniciais: vamos criar o projeto com o uv, instalar o FastAPI e subir o nosso primeiro servidor.",
+  objectives: {
+    style: "terminal",
+    items: [
+      "Validar que o uv está instalado",
+      "Criar o projeto e adicionar o FastAPI",
+      "Escrever o primeiro main.py",
+      "Subir o servidor com fastapi dev e ver a primeira resposta",
+    ],
+  },
   sections: [
     {
       heading: "Validando o uv",

@@ -6,6 +6,8 @@ import { getTopicPath } from "@/lib/topics";
 import { Breadcrumb } from "./Breadcrumb";
 import { TopicSections } from "./TopicSections";
 import { ScrollToTopButton } from "./ScrollToTopButton";
+import { ChapterObjectives } from "./ChapterObjectives";
+import { ChapterToc } from "./ChapterToc";
 
 interface GuidePageProps {
   category: CategoryData;
@@ -23,6 +25,10 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
   ];
   const backHref = parentCategory ? `/${getCategoryPath(parentCategory.slug)}` : "/";
   const backLabel = parentCategory?.title ?? "Início";
+  const tocItems = [
+    ...(activeChapter.objectives ? [{ id: "objetivos", label: "Objetivos" }] : []),
+    ...activeChapter.sections.map((section, i) => ({ id: `section-${i}`, label: section.heading })),
+  ];
 
   return (
     <main className="min-h-screen bg-[#0f0e0d] text-stone-100">
@@ -50,7 +56,7 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
       </div>
 
       <div className="max-w-7xl mx-auto px-8 pb-24">
-        <div className="flex gap-12 items-start">
+        <div className="flex gap-12 xl:gap-10 items-start">
           <aside
             className="w-72 shrink-0 hidden lg:block sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hide pb-8"
             style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
@@ -179,6 +185,10 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
               {activeChapter.intro}
             </p>
 
+            {activeChapter.objectives && (
+              <ChapterObjectives objectives={activeChapter.objectives} accent={activeChapter.accent} />
+            )}
+
             <TopicSections sections={activeChapter.sections} accent={activeChapter.accent} />
 
             <div className="flex items-center justify-between pt-6 border-t border-stone-800/60 gap-4">
@@ -238,6 +248,12 @@ export function GuidePage({ category, chapters, activeChapter, relatedTopics }: 
               </div>
             )}
           </article>
+
+          {tocItems.length > 1 && (
+            <aside className="w-56 shrink-0 hidden xl:block sticky top-8">
+              <ChapterToc items={tocItems} accent={activeChapter.accent} />
+            </aside>
+          )}
         </div>
       </div>
 

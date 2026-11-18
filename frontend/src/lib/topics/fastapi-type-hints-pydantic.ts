@@ -9,6 +9,16 @@ export const fastapiTypeHintsPydantic: TopicData = {
   status: "em-construcao",
   intro:
     "Antes de avançar no FastAPI, precisamos entender a tipagem no Python: os tipos de tipagem, os type hints e o Pydantic, que usa esses tipos para validar e converter dados.",
+  objectives: {
+    style: "roadmap",
+    items: [
+      "Diferenciar tipagem dinâmica, estática e gradual",
+      "Usar type hints e annotations no estilo moderno do Python",
+      "Entender o Annotated e a pegadinha do Optional",
+      "Validar e converter dados com o Pydantic e o Field",
+      "Montar o padrão Base → Create / Update / Response com herança",
+    ],
+  },
   sections: [
     {
       heading: "Tipagem dinâmica",

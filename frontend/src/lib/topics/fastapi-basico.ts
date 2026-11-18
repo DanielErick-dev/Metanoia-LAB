@@ -9,6 +9,16 @@ export const fastapiBasico: TopicData = {
   status: "em-construcao",
   intro:
     "Agora que já temos tudo instalado na nossa máquina, vamos iniciar um código simples.",
+  objectives: {
+    style: "cards",
+    items: [
+      "Criar models com BaseModel e validar campos com Field",
+      "Montar um CRUD de missões em memória com POST, GET, PUT e DELETE",
+      "Validar path parameters com Annotated e Path e tratar os erros 404 e 422",
+      "Testar tudo pelo /docs",
+      "Corrigir o ID duplicado com um contador global",
+    ],
+  },
   sections: [
     {
       heading: "Criando o mission.py",
