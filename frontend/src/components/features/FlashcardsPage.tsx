@@ -72,7 +72,7 @@ export function FlashcardsPage({ topic }: FlashcardsPageProps) {
           {topic.subtitle}
         </p>
 
-        <Flashcards cards={cards} accent={topic.accent} storageKey={storageKey} />
+        <Flashcards cards={cards} accent={topic.accent} storageKey={storageKey} scene={topic.scene} />
       </div>
 
       <footer className="border-t border-stone-800/60 py-8 text-center text-stone-700 text-xs tracking-wide">

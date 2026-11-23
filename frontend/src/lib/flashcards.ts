@@ -7,6 +7,8 @@ export interface Flashcard {
   note?: string;
   example?: string;
   exampleTranslation?: string;
+  group?: string;
+  verb?: boolean;
 }
 
 function slugifyId(text: string): string {
@@ -29,6 +31,8 @@ export function getFlashcardsForTopic(topic: TopicData): Flashcard[] {
         translation: entry.translation,
         example: entry.example,
         exampleTranslation: entry.exampleTranslation,
+        group: section.heading,
+        verb: Boolean(entry.conjugation),
       });
     }
     for (const entry of section.lineup ?? []) {
@@ -38,6 +42,7 @@ export function getFlashcardsForTopic(topic: TopicData): Flashcard[] {
         translation: entry.meaning,
         example: entry.examples?.[0]?.en,
         exampleTranslation: entry.examples?.[0]?.pt,
+        group: section.heading,
       });
     }
     for (const entry of section.expressions ?? []) {
@@ -48,6 +53,7 @@ export function getFlashcardsForTopic(topic: TopicData): Flashcard[] {
         note: entry.explanation,
         example: entry.example,
         exampleTranslation: entry.exampleTranslation,
+        group: section.heading,
       });
     }
   }
