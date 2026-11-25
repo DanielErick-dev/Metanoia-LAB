@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { TopicSection, VocabEntry, ExpressionEntry } from "@/lib/types/topic";
 import Image from "next/image";
+import Link from "next/link";
 import { CodeBlock } from "./CodeBlock";
 import { SpeakButton } from "./SpeakButton";
 import { Lineup } from "./Lineup";
@@ -299,15 +300,25 @@ export function TopicSections({ sections, accent }: TopicSectionsProps) {
               <ul className="mt-6 space-y-2">
                 {section.links.map((link, k) => (
                   <li key={k}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
-                      style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
-                    >
-                      {link.text} ↗
-                    </a>
+                    {link.url.startsWith("/") ? (
+                      <Link
+                        href={link.url}
+                        className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
+                        style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
+                      >
+                        {link.text} →
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm underline underline-offset-4 decoration-1 hover:text-stone-300 transition-colors"
+                        style={{ color: accent, fontFamily: "var(--font-dm-sans), sans-serif" }}
+                      >
+                        {link.text} ↗
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

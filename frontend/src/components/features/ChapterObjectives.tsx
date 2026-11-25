@@ -170,6 +170,43 @@ function Tree({ items, accent }: { items: string[]; accent: string }) {
   );
 }
 
+function Pytest({ items, accent }: { items: string[]; accent: string }) {
+  return (
+    <div className="rounded-xl border border-stone-800 bg-[#0a0a09] p-5 sm:p-6 font-mono text-[0.8125rem] leading-relaxed">
+      <p className="text-stone-500 mb-1">
+        <span style={{ color: accent }}>$</span> uv run pytest -v
+      </p>
+      <p className="flex items-center gap-3 text-stone-400 mb-4">
+        <span className="h-px flex-1 bg-stone-700" />
+        objetivos do capítulo
+        <span className="h-px flex-1 bg-stone-700" />
+      </p>
+      <ul className="space-y-2.5">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-baseline gap-3">
+            <span className="flex-1 min-w-0 text-stone-300" style={sans}>
+              <span className="text-stone-600 font-mono text-xs mr-2">test_{String(i + 1).padStart(2, "0")}</span>
+              {item}
+            </span>
+            <span className="shrink-0 font-semibold text-xs" style={{ color: accent }}>
+              PASSED
+            </span>
+            <span className="shrink-0 w-12 text-right text-xs text-stone-600">
+              [{Math.round(((i + 1) / items.length) * 100)}%]
+            </span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-5 h-1 rounded-full overflow-hidden bg-stone-800">
+        <div className="h-full w-full" style={{ backgroundColor: accent }} />
+      </div>
+      <p className="mt-3 text-center text-xs font-semibold" style={{ color: accent }}>
+        {items.length} passed
+      </p>
+    </div>
+  );
+}
+
 export function ChapterObjectives({ objectives, accent }: ChapterObjectivesProps) {
   const { style, items } = objectives;
   return (
@@ -179,6 +216,7 @@ export function ChapterObjectives({ objectives, accent }: ChapterObjectivesProps
       {style === "roadmap" && <Roadmap items={items} accent={accent} />}
       {style === "cards" && <Cards items={items} accent={accent} />}
       {style === "tree" && <Tree items={items} accent={accent} />}
+      {style === "pytest" && <Pytest items={items} accent={accent} />}
     </section>
   );
 }

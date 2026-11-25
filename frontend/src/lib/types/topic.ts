@@ -132,7 +132,7 @@ export interface Slide {
 }
 
 export interface TopicObjectives {
-  style: "checklist" | "terminal" | "roadmap" | "cards" | "tree";
+  style: "checklist" | "terminal" | "roadmap" | "cards" | "tree" | "pytest";
   items: string[];
 }
 
