@@ -3,7 +3,7 @@ import { TopicData } from "@/lib/types/topic";
 export const designingWebApisCap4: TopicData = {
   slug: "boas-praticas-de-design",
   title: "Capítulo 4 — Boas práticas de design",
-  subtitle: "Definir os casos de uso, não expor a arquitetura interna, não tentar resolver problemas demais de uma vez, cuidar da experiência do desenvolvedor e oferecer uma boa documentação",
+  subtitle: "Definir os casos de uso, não expor a arquitetura interna, não tentar resolver problemas demais de uma vez, cuidar da experiência do desenvolvedor, oferecer uma boa documentação e manter a API consistente",
   categorySlug: "designing-web-apis",
   accent: "#2dd4bf",
   status: "em-construcao",
@@ -45,6 +45,22 @@ export const designingWebApisCap4: TopicData = {
     {
       heading: "Testar a API sem barreiras",
       body: "Além dessas informações, é sempre bom ter uma área onde o usuário possa interagir com a API sem a necessidade de fazer login. Caso não seja possível testar a API sem login, ou caso seja apenas por OAuth, o ideal é que o cadastro seja o mínimo possível para poder usar, ou, no caso do OAuth, talvez gerar um access token pela própria interface. Se ficar complicado demais, existe uma chance alta de os devs desistirem e optarem por outra API.",
+    },
+    {
+      heading: "Consistência",
+      body: "O autor agora começa a falar sobre a importância de a API ter uma boa consistência. É bom que o dev seja capaz de adivinhar boa parte da API sem precisar ler a doc, porque se ela for consistente, fica previsível.",
+    },
+    {
+      heading: "Previsibilidade acima da correção",
+      body: "Se a API já usa users e depois surge a ideia de chamar de members, talvez o melhor seja manter users: mesmo que members pareça um nome melhor, às vezes vale mais a previsibilidade do que a correção.",
+    },
+    {
+      heading: "Um tipo só por campo",
+      body: "Também é bom evitar campos com tipos variados, como um user que às vezes é um ID e às vezes um objeto, o que obriga o dev a verificar tudo e infla o código dele.",
+    },
+    {
+      heading: "O custo da inconsistência",
+      body: "A conclusão é que uma API sem consistência faz com que cada dev precise reimplementar a mesma lógica várias e várias vezes, enquanto uma API consistente permite que o dev recém-chegado pegue rápido a utilização geral e que quem já usa crie novos recursos com mais facilidade.",
     },
   ],
   relatedSlugs: ["seguranca-de-api", "paradigmas-de-api"],
