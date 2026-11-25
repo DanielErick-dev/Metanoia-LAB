@@ -147,6 +147,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Terminar a faculdade foi uma grande conquista.",
         },
         {
+          term: "accordingly",
+          translation: "de acordo, de forma correspondente",
+          example: "You named the endpoints accordingly.",
+          exampleTranslation: "Você nomeou os endpoints de acordo com isso.",
+          more: [
+            { label: "Exemplo", example: "Read the rules and act accordingly.", exampleTranslation: "Leia as regras e aja de acordo." },
+          ],
+        },
+        {
           term: "acquaintance",
           translation: "conhecido (não um amigo próximo)",
           example: "He's an acquaintance, not a friend.",
@@ -159,6 +168,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Identidade é criada e mantida através de contas de software na nuvem.",
           more: [
             { label: "Exemplo", example: "The bank is across the street.", exampleTranslation: "O banco fica do outro lado da rua." },
+          ],
+        },
+        {
+          term: "actionable",
+          translation: "que dá pra agir sobre, acionável",
+          example: "An actionable error tells you what to do next.",
+          exampleTranslation: "Um erro acionável diz o que fazer em seguida.",
+          more: [
+            { label: "Formação", text: "action + -able." },
           ],
         },
         {
@@ -326,6 +344,16 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "ambiguous",
+          translation: "ambíguo",
+          example: "The error message was ambiguous.",
+          exampleTranslation: "A mensagem de erro era ambígua.",
+          more: [
+            { label: "Substantivo", text: "ambiguity = ambiguidade.", example: "Clear names remove ambiguity.", exampleTranslation: "Nomes claros tiram a ambiguidade." },
+            { label: "Oposto", text: "unambiguous." },
+          ],
+        },
+        {
           term: "among",
           translation: "entre",
           example: "The prize was divided among the three winners.",
@@ -366,6 +394,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Embora eu estivesse com fome, não comi nada.",
           more: [
             { label: "Exemplo", example: "Do you need anything?", exampleTranslation: "Precisa de alguma coisa?" },
+          ],
+        },
+        {
+          term: "anywhere",
+          translation: "em qualquer lugar",
+          example: "You can sit anywhere.",
+          exampleTranslation: "Você pode sentar em qualquer lugar.",
+          more: [
+            { label: "Outro sentido", text: "em frases negativas: em lugar nenhum.", example: "I can't find my keys anywhere.", exampleTranslation: "Não acho minhas chaves em lugar nenhum." },
           ],
         },
         {
@@ -786,6 +823,18 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "bloat",
+          translation: "inchaço",
+          example: "The app suffers from bloat.",
+          exampleTranslation: "O app sofre de inchaço.",
+          conjugation: { base: "bloat", past: "bloated", participle: "bloated", irregular: false },
+          more: [
+            { label: "Expressão", text: "code bloat = código inchado, com coisa demais.", example: "Too many features led to code bloat.", exampleTranslation: "Recursos demais deixaram o código inchado." },
+            { label: "Verbo", text: "bloat = inchar.", example: "Extra fields bloat the response.", exampleTranslation: "Campos extras incham a resposta." },
+            { label: "Adjetivo", text: "bloated = inchado.", example: "The codebase is bloated.", exampleTranslation: "O código está inchado." },
+          ],
+        },
+        {
           term: "bloody",
           translation: "maldito, “droga de” (intensificador)",
           british: true,
@@ -935,6 +984,19 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "bullet point = tópico de lista com marcador.", example: "Add a bullet point for each task.", exampleTranslation: "Coloca um tópico com marcador pra cada tarefa." },
             { label: "Expressão", text: "bulletproof = à prova de balas.", example: "The car has bulletproof windows.", exampleTranslation: "O carro tem vidros à prova de balas." },
+          ],
+        },
+        {
+          term: "bump",
+          translation: "solavanco, lombada; aumento pequeno",
+          example: "We hit a bump in the road.",
+          exampleTranslation: "Passamos por uma lombada na estrada.",
+          conjugation: { base: "bump", past: "bumped", participle: "bumped", irregular: false },
+          more: [
+            { label: "Expressão", text: "a bump in the road = um pequeno contratempo.", example: "Losing that client was just a bump in the road.", exampleTranslation: "Perder aquele cliente foi só um pequeno contratempo." },
+            { label: "Expressão", text: "version bump = subir a versão (ex.: 1.2 → 1.3).", example: "This fix needs a version bump.", exampleTranslation: "Essa correção pede subir a versão." },
+            { label: "Phrasal verb", text: "bump up = aumentar.", example: "They bumped up the price.", exampleTranslation: "Eles aumentaram o preço." },
+            { label: "Verbo", text: "bump = esbarrar, bater.", example: "I bumped into the table.", exampleTranslation: "Eu esbarrei na mesa." },
           ],
         },
         {
@@ -1279,6 +1341,24 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "O handshake TLS estabelece a conexão.",
           more: [
             { label: "Verbo", text: "connect = conectar.", example: "I can't connect to the Wi-Fi.", exampleTranslation: "Não consigo conectar no Wi-Fi." },
+          ],
+        },
+        {
+          term: "consistency",
+          translation: "consistência, coerência",
+          example: "Consistency makes an API predictable.",
+          exampleTranslation: "A consistência torna a API previsível.",
+          more: [
+            { label: "Adjetivo", text: "consistent = consistente.", example: "Keep your naming consistent.", exampleTranslation: "Mantenha os nomes consistentes." },
+          ],
+        },
+        {
+          term: "consistent",
+          translation: "consistente, coerente",
+          example: "Keep your naming consistent.",
+          exampleTranslation: "Mantenha os nomes consistentes.",
+          more: [
+            { label: "Oposto", text: "inconsistent = inconsistente.", example: "The field types are inconsistent.", exampleTranslation: "Os tipos dos campos são inconsistentes." },
           ],
         },
         {
@@ -1780,6 +1860,27 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "else",
+          translation: "mais, outro",
+          example: "What else do you need?",
+          exampleTranslation: "Do que mais você precisa?",
+          more: [
+            { label: "Expressão", text: "someone else = outra pessoa.", example: "Ask someone else.", exampleTranslation: "Pergunta pra outra pessoa." },
+            { label: "Expressão", text: "something else = outra coisa.", example: "Let's talk about something else.", exampleTranslation: "Vamos falar de outra coisa." },
+            { label: "Expressão", text: "anyone else = mais alguém.", example: "Does anyone else want coffee?", exampleTranslation: "Mais alguém quer café?" },
+          ],
+        },
+        {
+          term: "elsewhere",
+          translation: "em outro lugar",
+          example: "The same name appears elsewhere in the API.",
+          exampleTranslation: "O mesmo nome aparece em outros pontos da API.",
+          more: [
+            { label: "Formação", text: "else + where." },
+            { label: "Oposto", text: "everywhere." },
+          ],
+        },
+        {
           term: "email",
           translation: "e-mail",
           example: "A new email arrived in the inbox.",
@@ -1897,6 +1998,12 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Parecido", text: "everybody." },
           ],
+        },
+        {
+          term: "everywhere",
+          translation: "em todo lugar",
+          example: "I looked everywhere for my phone.",
+          exampleTranslation: "Procurei meu celular em todo lugar.",
         },
         {
           term: "exam",
@@ -2903,6 +3010,24 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "intuition",
+          translation: "intuição",
+          example: "Trust your intuition.",
+          exampleTranslation: "Confie na sua intuição.",
+        },
+        {
+          term: "intuitive",
+          translation: "intuitivo",
+          example: "The interface is very intuitive.",
+          exampleTranslation: "A interface é bem intuitiva.",
+        },
+        {
+          term: "intuitively",
+          translation: "intuitivamente",
+          example: "The API should be intuitively consistent.",
+          exampleTranslation: "A API deve ser intuitivamente consistente.",
+        },
+        {
           term: "issue",
           translation: "problema, questão / emitir",
           example: "We have a performance issue.",
@@ -3093,6 +3218,16 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Outro sentido", text: "paisagem.", example: "We stopped the car to look at the landscape.", exampleTranslation: "A gente parou o carro pra olhar a paisagem." },
             { label: "Outro sentido", text: "modo paisagem (horizontal), em tela ou impressão.", example: "Turn your phone to landscape to watch the video.", exampleTranslation: "Vira o celular pro modo paisagem pra ver o vídeo." },
+          ],
+        },
+        {
+          term: "large",
+          translation: "grande",
+          example: "It was a large release.",
+          exampleTranslation: "Foi um lançamento grande.",
+          more: [
+            { label: "Uso", text: "mais formal que big.", example: "We received a large number of requests.", exampleTranslation: "Recebemos um grande número de requisições." },
+            { label: "Diferença", text: "“largo” em inglês é wide." },
           ],
         },
         {
@@ -3392,6 +3527,23 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "refeição",
           example: "That was a delicious meal.",
           exampleTranslation: "Aquela foi uma refeição deliciosa.",
+        },
+        {
+          term: "meaning",
+          translation: "significado, sentido",
+          example: "What's the meaning of this word?",
+          exampleTranslation: "Qual o significado dessa palavra?",
+        },
+        {
+          term: "meaningful",
+          translation: "significativo, que faz sentido",
+          example: "We had a meaningful conversation.",
+          exampleTranslation: "Tivemos uma conversa significativa.",
+          more: [
+            { label: "Expressão", text: "meaningful errors = erros que realmente informam.", example: "Meaningful errors save hours of debugging.", exampleTranslation: "Erros que realmente informam economizam horas de debug." },
+            { label: "Formação", text: "meaning + -ful." },
+            { label: "Oposto", text: "meaningless = sem sentido.", example: "That message is meaningless.", exampleTranslation: "Essa mensagem não faz sentido." },
+          ],
         },
         {
           term: "means",
@@ -3790,6 +3942,12 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "nowhere",
+          translation: "em lugar nenhum",
+          example: "The file is nowhere to be found.",
+          exampleTranslation: "O arquivo não está em lugar nenhum.",
+        },
+        {
           term: "numb",
           translation: "dormente, entorpecido",
           example: "My hand went numb.",
@@ -3912,6 +4070,12 @@ export const inglesVocabularioGeral: TopicData = {
             { label: "Adjetivo", text: "open-ended = aberto, sem resposta fechada.", example: "An open-ended question.", exampleTranslation: "Uma pergunta aberta." },
             { label: "Oposto", text: "closed = fechado (closed question = pergunta fechada)." },
           ],
+        },
+        {
+          term: "optimal",
+          translation: "ideal, ótimo",
+          example: "This is the optimal solution.",
+          exampleTranslation: "Essa é a solução ideal.",
         },
         {
           term: "out",
@@ -4285,6 +4449,12 @@ export const inglesVocabularioGeral: TopicData = {
           translation: "anterior",
           example: "In the previous chapter, we covered security.",
           exampleTranslation: "No capítulo anterior, vimos segurança.",
+        },
+        {
+          term: "previously",
+          translation: "anteriormente, antes",
+          example: "You previously named the resources “users”.",
+          exampleTranslation: "Você nomeou antes os recursos de “users”.",
         },
         {
           term: "prickly",
@@ -5244,6 +5414,31 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "sometime",
+          translation: "algum dia, em algum momento",
+          example: "Let's grab coffee sometime.",
+          exampleTranslation: "Vamos tomar um café qualquer dia.",
+        },
+        {
+          term: "sometimes",
+          translation: "às vezes",
+          example: "Sometimes the type is an integer.",
+          exampleTranslation: "Às vezes o tipo é um inteiro.",
+          more: [
+            { label: "Diferença", text: "sometime = algum dia." },
+          ],
+        },
+        {
+          term: "somewhere",
+          translation: "em algum lugar",
+          example: "The error is somewhere in the payload.",
+          exampleTranslation: "O erro está em algum lugar do payload.",
+          more: [
+            { label: "Expressão", text: "somewhere else = em algum outro lugar.", example: "Put the details somewhere else.", exampleTranslation: "Coloque os detalhes em outro lugar." },
+            { label: "Palavra relacionada", text: "nowhere, anywhere, everywhere." },
+          ],
+        },
+        {
           term: "soon",
           translation: "logo, em breve",
           example: "See you soon.",
@@ -5465,6 +5660,15 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "suboptimal",
+          translation: "abaixo do ideal",
+          example: "It was a suboptimal experience.",
+          exampleTranslation: "Foi uma experiência abaixo do ideal.",
+          more: [
+            { label: "Formação", text: "sub- (abaixo) + optimal (ótimo)." },
+          ],
+        },
+        {
           term: "subresource",
           translation: "subrecurso",
           example: "Issues are a subresource of a repository.",
@@ -5478,6 +5682,7 @@ export const inglesVocabularioGeral: TopicData = {
           more: [
             { label: "Expressão", text: "such as = tal como, como. Aparece pra listar exemplos.", example: "I like fruit such as apples and bananas.", exampleTranslation: "Eu gosto de frutas como maçã e banana." },
             { label: "Expressão", text: "such a good idea = uma ideia tão boa.", example: "That's such a good idea!", exampleTranslation: "Que ideia boa!" },
+            { label: "Expressão", text: "in such a way (that) = de tal forma (que). A ordem é such a way, e não a such way.", example: "Patterns are repeated in such a way that developers can predict them.", exampleTranslation: "Os padrões se repetem de tal forma que os devs conseguem prevê-los." },
             { label: "Expressão", text: "as such = sendo assim, portanto.", example: "He is the manager, and as such, he makes the final decisions.", exampleTranslation: "Ele é o gerente e, sendo assim, toma as decisões finais." },
           ],
         },
@@ -5914,6 +6119,21 @@ export const inglesVocabularioGeral: TopicData = {
           ],
         },
         {
+          term: "tool",
+          translation: "ferramenta",
+          example: "A hammer is a useful tool.",
+          exampleTranslation: "Um martelo é uma ferramenta útil.",
+        },
+        {
+          term: "tooling",
+          translation: "ferramentas (o conjunto)",
+          example: "Build tooling to help developers.",
+          exampleTranslation: "Construa ferramentas pra ajudar os devs.",
+          more: [
+            { label: "Em tecnologia", text: "o conjunto de ferramentas de apoio (CLI, testes, builds).", example: "Good tooling makes testing easier.", exampleTranslation: "Boas ferramentas facilitam os testes." },
+          ],
+        },
+        {
           term: "toplofty",
           translation: "arrogante, pretensioso",
           example: "She’s a toplofty girl.",
@@ -5930,6 +6150,7 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Isso é muito difícil.",
           more: [
             { label: "Outro sentido", text: "durão, rígido (pessoa).", example: "Her father is very tough.", exampleTranslation: "O pai dela é muito durão." },
+            { label: "Outro sentido", text: "resistente, rígido (objeto).", example: "These boots are tough enough for hiking.", exampleTranslation: "Essas botas são resistentes o bastante pra fazer trilha." },
             { label: "Expressão", text: "tough luck = azar.", example: "You missed the bus? Tough luck.", exampleTranslation: "Perdeu o ônibus? Azar." },
           ],
         },
@@ -6109,6 +6330,15 @@ export const inglesVocabularioGeral: TopicData = {
           exampleTranslation: "Eu não consegui comparecer à reunião.",
           more: [
             { label: "Oposto", text: "able (capaz)." },
+          ],
+        },
+        {
+          term: "unambiguous",
+          translation: "sem ambiguidade, claro, inequívoco",
+          example: "Meaningful errors are unambiguous.",
+          exampleTranslation: "Erros úteis são inequívocos.",
+          more: [
+            { label: "Formação", text: "un- + ambiguous." },
           ],
         },
         {

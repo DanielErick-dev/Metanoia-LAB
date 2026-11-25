@@ -2018,6 +2018,18 @@ export const inglesVerbos: TopicData = {
           ],
         },
         {
+          term: "occur",
+          translation: "ocorrer, acontecer",
+          example: "An error can occur in many places.",
+          exampleTranslation: "Um erro pode ocorrer em vários lugares.",
+          conjugation: { base: "occur", past: "occurred", participle: "occurred", irregular: false },
+          more: [
+            { label: "Substantivo", text: "occurrence = ocorrência.", example: "Errors are a common occurrence.", exampleTranslation: "Erros são uma ocorrência comum." },
+            { label: "Expressão", text: "occur to = passar pela cabeça.", example: "It never occurred to me.", exampleTranslation: "Isso nunca me passou pela cabeça." },
+            { label: "Parecido", text: "happen, mas occur é mais formal." },
+          ],
+        },
+        {
           term: "offer",
           translation: "oferecer",
           example: "They offered me a job.",
@@ -2240,6 +2252,17 @@ export const inglesVerbos: TopicData = {
           more: [
             { label: "Exemplo", example: "Reclaim your life.", exampleTranslation: "Recupere sua vida." },
             { label: "Origem", text: "re- (de novo) + claim (reivindicar)." },
+          ],
+        },
+        {
+          term: "refer",
+          translation: "referir-se, mencionar",
+          example: "Which page are you referring to?",
+          exampleTranslation: "A qual página você está se referindo?",
+          conjugation: { base: "refer", past: "referred", participle: "referred", irregular: false },
+          more: [
+            { label: "Particípio", example: "These are sometimes referred to as human-readable errors.", exampleTranslation: "Esses às vezes são chamados de erros legíveis por humanos." },
+            { label: "Expressão", text: "be referred to as = ser chamado de.", example: "He is often referred to as the father of the web.", exampleTranslation: "Ele costuma ser chamado de pai da web." },
           ],
         },
         {
