@@ -115,18 +115,6 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
                   </p>
                 )}
 
-                {sense.informal && (
-                  <p className="text-[0.95rem] text-stone-300 leading-relaxed mb-3" style={SERIF}>
-                    <span className="text-xs font-bold tracking-widest uppercase text-stone-500 mr-2" style={SANS}>
-                      Informal
-                    </span>
-                    <span className="font-semibold" style={{ color: accent }}>
-                      {sense.informal.word}
-                    </span>{" "}
-                    — {sense.informal.note}
-                  </p>
-                )}
-
                 {sense.forms && (
                   <div className="mb-3">
                     <p className="text-xs font-bold tracking-widest uppercase text-stone-500 mb-2" style={SANS}>
@@ -165,6 +153,21 @@ export function DictionaryPage({ category }: DictionaryPageProps) {
                 </Link>
               </div>
             ))}
+            {entry.alsoIn.length > 0 && (
+              <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs tracking-wide text-stone-500" style={SANS}>
+                Também em
+                {entry.alsoIn.map((source) => (
+                  <Link
+                    key={source.href}
+                    href={source.href}
+                    className="inline-flex items-center gap-1.5 hover:text-stone-200 transition-colors"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: source.accent }} />
+                    {source.title} →
+                  </Link>
+                ))}
+              </p>
+            )}
           </div>
         )}
       </li>

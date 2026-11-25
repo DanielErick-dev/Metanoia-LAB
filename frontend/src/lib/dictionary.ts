@@ -9,14 +9,16 @@ export interface DictionarySense {
   meaning: string;
   british?: boolean;
   conjugation?: VocabConjugation;
-  informal?: LineupEntry["informal"];
   forms?: LineupEntry["forms"];
   items: VocabMore[];
-  source: {
-    title: string;
-    href: string;
-    accent: string;
-  };
+  core?: boolean;
+  source: DictionarySource;
+}
+
+export interface DictionarySource {
+  title: string;
+  href: string;
+  accent: string;
 }
 
 export interface DictionaryEntry {
@@ -25,6 +27,7 @@ export interface DictionaryEntry {
   letter: string;
   isPhrase: boolean;
   senses: DictionarySense[];
+  alsoIn: DictionarySource[];
 }
 
 function termKey(text: string): string {
@@ -53,6 +56,7 @@ function buildDictionary(): DictionaryEntry[] {
   function add(term: string, sense: DictionarySense) {
     const key = termKey(term);
     if (core) coreKeys.add(key);
+    sense.core = core;
     const existing = byTerm.get(key);
     if (existing) {
       existing.senses.push(sense);
@@ -65,6 +69,7 @@ function buildDictionary(): DictionaryEntry[] {
       letter: first.toUpperCase(),
       isPhrase: /\s/.test(term.trim()),
       senses: [sense],
+      alsoIn: [],
     });
   }
 
@@ -84,9 +89,11 @@ function buildDictionary(): DictionaryEntry[] {
       for (const entry of section.lineup ?? []) {
         add(entry.word, {
           meaning: entry.meaning,
-          informal: entry.informal,
           forms: entry.forms,
           items: [
+            ...(entry.informal
+              ? [{ label: "Informal", text: `${entry.informal.word} — ${entry.informal.note}` }]
+              : []),
             ...notes(entry.details ?? []),
             ...(entry.examples ?? []).flatMap((e) => example(e.en, e.pt)),
           ],
@@ -102,6 +109,8 @@ function buildDictionary(): DictionaryEntry[] {
       }
     }
   }
+
+  byTerm.forEach(dedupeAgainstCore);
 
   const conjugated = new Set(
     [...byTerm.values()].flatMap((e) =>
@@ -125,6 +134,37 @@ function buildDictionary(): DictionaryEntry[] {
     usedIds.add(id);
   }
   return entries.sort((a, b) => normalize(a.term).localeCompare(normalize(b.term)));
+}
+
+function dedupeAgainstCore(entry: DictionaryEntry) {
+  const coreSenses = entry.senses.filter((s) => s.core);
+  if (coreSenses.length === 0) return;
+  const coreItems = coreSenses.flatMap((s) => s.items);
+  const coreExamples = coreItems.flatMap((i) => (i.example ? [termKey(i.example)] : []));
+  const coversExample = (text: string) => coreExamples.some((e) => e.includes(termKey(text)));
+  const coreTexts = coreItems.flatMap((i) => (i.text ? [termKey(i.text)] : []));
+  const coversInformal = (text: string) => {
+    const word = termKey(text.split(" — ")[0]);
+    return coreTexts.some((t) => t.startsWith(`${word} `));
+  };
+  const kept: DictionarySense[] = [];
+  for (const sense of entry.senses) {
+    if (sense.core) {
+      kept.push(sense);
+      continue;
+    }
+    const items = sense.items.filter((item) => {
+      if (item.label === "Observação") return false;
+      if (item.label === "Informal" && item.text) return !coversInformal(item.text);
+      return !(item.example && coversExample(item.example));
+    });
+    if (items.length === 0 && !sense.forms) {
+      entry.alsoIn.push(sense.source);
+      continue;
+    }
+    kept.push({ ...sense, items });
+  }
+  entry.senses = kept;
 }
 
 function isCompound(entry: DictionaryEntry): boolean {
