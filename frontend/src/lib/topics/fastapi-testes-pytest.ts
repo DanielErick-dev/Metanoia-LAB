@@ -209,7 +209,7 @@ tests/routers/test_missions.py::test_create_mission PASSED               [100%]
       code: `import pytest
 
 @pytest.fixture()
-def missoes_prontas(client):
+def seeded_missions(client):
     data = [
         {"title": "Missão Escarlate", "reward": 2, "difficulty": 3},
         {"title": "Missão SuperNova", "reward": 5, "difficulty": 2}
@@ -237,7 +237,7 @@ def missoes_prontas(client):
     {
       heading: "Usando a fixture num teste",
       body: "Agora usamos a fixture num teste:",
-      code: `def test_response_one_mission(client, missoes_prontas):
+      code: `def test_response_one_mission(client, seeded_missions):
     response = client.get("/missions/1")
     assert response.status_code == 200
     assert response.json() == {
@@ -250,7 +250,7 @@ def missoes_prontas(client):
     },
     {
       heading: "Basta pedir por parâmetro",
-      body: "Basta colocar missoes_prontas nos parâmetros: o pytest roda a fixture antes do teste, e o teste não precisa saber como as missões foram criadas.",
+      body: "Basta colocar seeded_missions nos parâmetros: o pytest roda a fixture antes do teste, e o teste não precisa saber como as missões foram criadas.",
     },
     {
       heading: "O vazamento de estado",
@@ -262,7 +262,7 @@ def missoes_prontas(client):
       code: `from app.routers import missions as missions_router
 
 @pytest.fixture(autouse=True)
-def limpar_missoes():
+def reset_missions():
     missions_router.missions.clear()
     missions_router.contador = 0
     yield`,
@@ -270,7 +270,7 @@ def limpar_missoes():
     },
     {
       heading: "autouse=True",
-      body: "O autouse=True faz a fixture rodar automaticamente antes de todo teste, sem a necessidade de ficar passando por parâmetro. Como ela está no conftest.py, fica disponível para todos os testes da pasta. E o pytest roda as fixtures autouse antes das outras do mesmo escopo, então a limpeza acontece antes de a missoes_prontas criar as missões.",
+      body: "O autouse=True faz a fixture rodar automaticamente antes de todo teste, sem a necessidade de ficar passando por parâmetro. Como ela está no conftest.py, fica disponível para todos os testes da pasta. E o pytest roda as fixtures autouse antes das outras do mesmo escopo, então a limpeza acontece antes de a seeded_missions criar as missões.",
     },
     {
       heading: "Por que .clear() e não missions = []",
@@ -286,7 +286,7 @@ def limpar_missoes():
     },
     {
       heading: "Testes isolados",
-      body: "Agora o test_response_one_mission passa sozinho, junto com os outros e em qualquer ordem, porque o id 1 vem sempre da fixture missoes_prontas, e não de outro teste. Então, até aqui, entendemos que o isolamento de testes é crucial: não pode sobrar dados de um teste para o outro, cada teste deve começar limpo.",
+      body: "Agora o test_response_one_mission passa sozinho, junto com os outros e em qualquer ordem, porque o id 1 vem sempre da fixture seeded_missions, e não de outro teste. Então, até aqui, entendemos que o isolamento de testes é crucial: não pode sobrar dados de um teste para o outro, cada teste deve começar limpo.",
     },
     {
       heading: "Cobrindo todos os casos",
@@ -390,11 +390,11 @@ def test_delete_mission(client, seeded_missions):
     },
     {
       heading: "Cada teste recebe o que precisa",
-      body: "Cada teste recebe só aquilo que precisa: se precisa de dados prontos, recebe o seeded_missions, a nossa fixture (que inclusive mudou de nome, de missoes_prontas para seeded_missions). Os testes de criação recebem só o client, porque começam com a lista vazia.",
+      body: "Cada teste recebe só aquilo que precisa: se precisa de dados prontos, recebe o seeded_missions, a nossa fixture. Os testes de criação recebem só o client, porque começam com a lista vazia.",
     },
     {
       heading: "Inglês ou português, mas um só",
-      body: "Também é uma boa forma de organizar o código deixá-lo todo em inglês ou todo em português. Eu opto por manter sempre tudo em inglês.",
+      body: "Também é uma boa forma de organizar o código deixá-lo todo em inglês ou todo em português. Eu opto por manter sempre tudo em inglês. Se você começou com nomes em português nas fixtures, vale a pena trocá-los: aqui elas se chamam seeded_missions (as missões prontas) e reset_missions (a limpeza antes de cada teste).",
     },
     {
       heading: "A base para o que vem",
